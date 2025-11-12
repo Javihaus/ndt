@@ -1,6 +1,8 @@
 """Matplotlib-based plotting utilities for dimensionality tracking."""
 
-from typing import Dict, List, Optional
+from typing import Dict
+from typing import List
+from typing import Optional
 
 import matplotlib.pyplot as plt
 import numpy as np

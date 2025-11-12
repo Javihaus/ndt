@@ -1,6 +1,7 @@
 """Registry for auto-detecting and selecting architecture handlers."""
 
-from typing import List, Optional
+from typing import List
+from typing import Optional
 
 import torch.nn as nn
 

@@ -1,7 +1,8 @@
 """Configuration management utilities."""
 
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
+from typing import Dict
 
 import yaml
 

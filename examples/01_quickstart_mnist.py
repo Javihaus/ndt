@@ -8,9 +8,12 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
-from torchvision import datasets, transforms
+from torchvision import datasets
+from torchvision import transforms
 
-from ndt import HighFrequencyTracker, export_to_csv, plot_phases
+from ndt import HighFrequencyTracker
+from ndt import export_to_csv
+from ndt import plot_phases
 
 # 1. Define a simple MLP
 model = nn.Sequential(

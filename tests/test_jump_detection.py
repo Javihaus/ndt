@@ -3,7 +3,8 @@
 import numpy as np
 import pytest
 
-from ndt.core.jump_detector import Jump, JumpDetector
+from ndt.core.jump_detector import Jump
+from ndt.core.jump_detector import JumpDetector
 
 
 class TestJump:

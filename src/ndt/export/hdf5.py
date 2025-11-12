@@ -1,7 +1,9 @@
 """HDF5 export functionality for large-scale tracking results."""
 
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any
+from typing import Dict
+from typing import Optional
 
 import h5py
 import numpy as np

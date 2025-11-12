@@ -1,6 +1,9 @@
 """Forward hooks for capturing neural network activations."""
 
-from typing import Callable, Dict, List, Optional
+from typing import Callable
+from typing import Dict
+from typing import List
+from typing import Optional
 
 import torch
 import torch.nn as nn

@@ -2,7 +2,8 @@
 
 import json
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any
+from typing import Dict
 
 import pandas as pd
 

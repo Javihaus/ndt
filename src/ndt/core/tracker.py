@@ -1,8 +1,12 @@
 """High-frequency tracking of neural network dimensionality during training."""
 
 import logging
-from dataclasses import asdict, dataclass
-from typing import Dict, List, Optional, Union
+from dataclasses import asdict
+from dataclasses import dataclass
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Union
 
 import pandas as pd
 import torch

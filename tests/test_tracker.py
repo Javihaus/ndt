@@ -2,7 +2,8 @@
 
 import pytest
 
-from ndt.core.tracker import DimensionalityMetrics, HighFrequencyTracker
+from ndt.core.tracker import DimensionalityMetrics
+from ndt.core.tracker import HighFrequencyTracker
 
 
 class TestDimensionalityMetrics:

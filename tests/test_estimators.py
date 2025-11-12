@@ -3,13 +3,11 @@
 import pytest
 import torch
 
-from ndt.core.estimators import (
-    compute_all_metrics,
-    cumulative_energy_90,
-    nuclear_norm_ratio,
-    participation_ratio,
-    stable_rank,
-)
+from ndt.core.estimators import compute_all_metrics
+from ndt.core.estimators import cumulative_energy_90
+from ndt.core.estimators import nuclear_norm_ratio
+from ndt.core.estimators import participation_ratio
+from ndt.core.estimators import stable_rank
 
 
 class TestStableRank:

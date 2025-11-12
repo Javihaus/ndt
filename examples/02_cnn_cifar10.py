@@ -4,9 +4,12 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
-from torchvision import datasets, transforms
+from torchvision import datasets
+from torchvision import transforms
 
-from ndt import HighFrequencyTracker, export_to_json, plot_metrics_comparison
+from ndt import HighFrequencyTracker
+from ndt import export_to_json
+from ndt import plot_metrics_comparison
 
 
 class SimpleCNN(nn.Module):
