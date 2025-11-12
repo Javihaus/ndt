@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any
 from typing import Dict
 from typing import Optional
+from typing import Tuple
 
 import h5py
 import numpy as np
@@ -69,7 +70,7 @@ def export_to_hdf5(
     print(f"Exported results to {output_path}")
 
 
-def load_from_hdf5(input_path: str) -> tuple[Dict[str, pd.DataFrame], Dict[str, Any]]:
+def load_from_hdf5(input_path: str) -> Tuple[Dict[str, pd.DataFrame], Dict[str, Any]]:
     """Load tracking results from HDF5 format.
 
     Args:
