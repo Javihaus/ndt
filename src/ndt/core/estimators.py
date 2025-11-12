@@ -46,7 +46,9 @@ def stable_rank(matrix: torch.Tensor, eps: float = 1e-10) -> float:
 
     with torch.no_grad():
         frobenius_norm = torch.norm(matrix, p="fro")
-        spectral_norm = torch.norm(matrix, p=2)
+        # Spectral norm is the largest singular value
+        _, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)
+        spectral_norm = singular_values[0]
 
         result = (frobenius_norm**2) / (spectral_norm**2 + eps)
         return result.item()
@@ -218,16 +220,16 @@ def compute_all_metrics(
         raise ValueError(f"Expected 2D matrix, got {matrix.ndim}D")
 
     with torch.no_grad():
-        # Compute norms for stable rank
-        frobenius_norm = torch.norm(matrix, p="fro")
-        spectral_norm = torch.norm(matrix, p=2)
-        sr = ((frobenius_norm**2) / (spectral_norm**2 + eps)).item()
-
-        # Compute SVD once for other metrics
+        # Compute SVD once for all metrics
         try:
             _, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)
         except RuntimeError as e:
             raise ValueError(f"SVD computation failed: {e}")
+
+        # Compute norms for stable rank
+        frobenius_norm = torch.norm(matrix, p="fro")
+        spectral_norm = singular_values[0]  # Largest singular value
+        sr = ((frobenius_norm**2) / (spectral_norm**2 + eps)).item()
 
         # Participation ratio
         sv_normalized = singular_values / (torch.sum(singular_values) + eps)

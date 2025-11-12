@@ -118,7 +118,9 @@ def create_multi_layer_plot(
                     mode="lines",
                     name=layer_name,
                     line=dict(width=2),
-                    hovertemplate=f"{layer_name}<br>Step: %{{x}}<br>{metric}: %{{y:.2f}}<extra></extra>",
+                    hovertemplate=(
+                        f"{layer_name}<br>Step: %{{x}}<br>{metric}: %{{y:.2f}}<extra></extra>"
+                    ),
                 )
             )
 
