@@ -2,6 +2,7 @@
 
 from typing import List
 from typing import Optional
+from typing import Tuple
 
 import torch.nn as nn
 
@@ -102,7 +103,7 @@ def get_handler(model: nn.Module, architecture: Optional[str] = None) -> Archite
 
 def get_layers_for_model(
     model: nn.Module, architecture: Optional[str] = None
-) -> tuple[List[nn.Module], List[str]]:
+) -> Tuple[List[nn.Module], List[str]]:
     """Convenience function to get layers and names for a model.
 
     Args:
