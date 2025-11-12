@@ -1,14 +1,13 @@
 """CSV export functionality for tracking results."""
 
-from typing import Dict, Optional
 from pathlib import Path
+from typing import Dict
+
 import pandas as pd
 
 
 def export_to_csv(
-    results: Dict[str, pd.DataFrame],
-    output_path: str,
-    separate_files: bool = False
+    results: Dict[str, pd.DataFrame], output_path: str, separate_files: bool = False
 ) -> None:
     """Export tracking results to CSV format.
 
@@ -44,14 +43,14 @@ def export_to_csv(
         combined_data = []
         for layer_name, df in results.items():
             df_copy = df.copy()
-            df_copy['layer'] = layer_name
+            df_copy["layer"] = layer_name
             combined_data.append(df_copy)
 
         if combined_data:
             combined_df = pd.concat(combined_data, ignore_index=True)
 
             # Reorder columns to put layer first
-            cols = ['layer'] + [col for col in combined_df.columns if col != 'layer']
+            cols = ["layer"] + [col for col in combined_df.columns if col != "layer"]
             combined_df = combined_df[cols]
 
             combined_df.to_csv(output_path, index=False)
@@ -60,10 +59,7 @@ def export_to_csv(
             print("No data to export")
 
 
-def load_from_csv(
-    input_path: str,
-    separate_files: bool = False
-) -> Dict[str, pd.DataFrame]:
+def load_from_csv(input_path: str, separate_files: bool = False) -> Dict[str, pd.DataFrame]:
     """Load tracking results from CSV format.
 
     Args:
@@ -105,13 +101,13 @@ def load_from_csv(
         # Load combined CSV
         df = pd.read_csv(input_path)
 
-        if 'layer' not in df.columns:
+        if "layer" not in df.columns:
             raise ValueError("CSV must have 'layer' column for combined format")
 
         results = {}
-        for layer_name in df['layer'].unique():
-            layer_df = df[df['layer'] == layer_name].copy()
-            layer_df = layer_df.drop(columns=['layer'])
+        for layer_name in df["layer"].unique():
+            layer_df = df[df["layer"] == layer_name].copy()
+            layer_df = layer_df.drop(columns=["layer"])
             results[layer_name] = layer_df
 
         return results

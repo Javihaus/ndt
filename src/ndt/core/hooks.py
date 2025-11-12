@@ -1,6 +1,7 @@
 """Forward hooks for capturing neural network activations."""
 
-from typing import Dict, List, Optional, Callable
+from typing import Callable, Dict, List, Optional
+
 import torch
 import torch.nn as nn
 
@@ -40,6 +41,7 @@ class ActivationCapture:
         Returns:
             Hook function that captures activations
         """
+
         def hook(module: nn.Module, input: tuple, output: torch.Tensor) -> None:
             """Forward hook that stores the output activation.
 
@@ -54,10 +56,7 @@ class ActivationCapture:
         return hook
 
     def register_hooks(
-        self,
-        model: nn.Module,
-        layers: List[nn.Module],
-        layer_names: Optional[List[str]] = None
+        self, model: nn.Module, layers: List[nn.Module], layer_names: Optional[List[str]] = None
     ) -> None:
         """Register forward hooks on specified layers.
 

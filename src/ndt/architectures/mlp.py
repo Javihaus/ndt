@@ -1,7 +1,9 @@
 """Handler for Multi-Layer Perceptron (MLP) architectures."""
 
 from typing import List
+
 import torch.nn as nn
+
 from ndt.architectures.base import ArchitectureHandler
 
 

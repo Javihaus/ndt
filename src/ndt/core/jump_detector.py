@@ -1,8 +1,9 @@
 """Statistical detection of dimensionality jumps during training."""
 
-from typing import List, Tuple, Optional
-import numpy as np
 from dataclasses import dataclass
+from typing import List, Optional, Tuple
+
+import numpy as np
 
 
 @dataclass
@@ -16,6 +17,7 @@ class Jump:
         value_after: Dimensionality value after jump
         metric_name: Name of the metric that jumped
     """
+
     step: int
     z_score: float
     value_before: float
@@ -51,10 +53,7 @@ class JumpDetector:
     """
 
     def __init__(
-        self,
-        window_size: int = 50,
-        z_threshold: float = 3.0,
-        min_samples: int = 20
+        self, window_size: int = 50, z_threshold: float = 3.0, min_samples: int = 20
     ) -> None:
         """Initialize the jump detector.
 
@@ -78,10 +77,7 @@ class JumpDetector:
         self.min_samples = min_samples
 
     def detect_jumps(
-        self,
-        values: List[float],
-        metric_name: str = "dimensionality",
-        step_offset: int = 0
+        self, values: List[float], metric_name: str = "dimensionality", step_offset: int = 0
     ) -> List[Jump]:
         """Detect jumps in a sequence of dimensionality values.
 
@@ -127,7 +123,7 @@ class JumpDetector:
                     z_score=z_score,
                     value_before=values_array[i - 1],
                     value_after=current_value,
-                    metric_name=metric_name
+                    metric_name=metric_name,
                 )
                 jumps.append(jump)
 
@@ -138,7 +134,7 @@ class JumpDetector:
         values: List[float],
         metric_name: str = "dimensionality",
         step_offset: int = 0,
-        direction: Optional[str] = None
+        direction: Optional[str] = None,
     ) -> List[Jump]:
         """Detect jumps with optional direction filtering.
 
@@ -174,8 +170,7 @@ class JumpDetector:
         return filtered_jumps
 
     def compute_rolling_statistics(
-        self,
-        values: List[float]
+        self, values: List[float]
     ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Compute rolling mean, std, and z-scores for visualization.
 

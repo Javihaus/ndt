@@ -1,7 +1,9 @@
 """Handler for Transformer architectures (BERT, GPT, etc.)."""
 
 from typing import List
+
 import torch.nn as nn
+
 from ndt.architectures.base import ArchitectureHandler
 
 
@@ -27,7 +29,7 @@ class TransformerHandler(ArchitectureHandler):
                 has_attention = True
                 break
             # Also check for common transformer layer names
-            if module.__class__.__name__ in ['TransformerEncoderLayer', 'TransformerDecoderLayer']:
+            if module.__class__.__name__ in ["TransformerEncoderLayer", "TransformerDecoderLayer"]:
                 has_attention = True
                 break
         return has_attention
@@ -52,12 +54,12 @@ class TransformerHandler(ArchitectureHandler):
         # Typically the first Linear in each transformer block's FFN
         in_transformer_block = False
         for name, module in model.named_modules():
-            if 'encoder' in name.lower() or 'decoder' in name.lower() or 'layer' in name.lower():
+            if "encoder" in name.lower() or "decoder" in name.lower() or "layer" in name.lower():
                 in_transformer_block = True
 
             if in_transformer_block and isinstance(module, nn.Linear):
                 # Add FFN layers (typically 2 per transformer block)
-                if 'fc1' in name or 'fc2' in name or 'ffn' in name.lower():
+                if "fc1" in name or "fc2" in name or "ffn" in name.lower():
                     layers.append(module)
 
         # If no structured layers found, fall back to sampling Linear layers
@@ -96,7 +98,7 @@ class TransformerHandler(ArchitectureHandler):
                         layer_name = name
                         break
 
-                if layer_name and ('fc' in layer_name.lower() or 'ffn' in layer_name.lower()):
+                if layer_name and ("fc" in layer_name.lower() or "ffn" in layer_name.lower()):
                     names.append(f"FFN_{ffn_count}_{layer.out_features}")
                     ffn_count += 1
                 else:

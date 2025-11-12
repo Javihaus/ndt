@@ -7,9 +7,9 @@ This module provides four key dimensionality metrics:
 4. Nuclear Norm Ratio: Nuclear norm normalized by spectral norm
 """
 
-from typing import Optional, Tuple
+from typing import Tuple
+
 import torch
-import numpy as np
 
 
 def stable_rank(matrix: torch.Tensor, eps: float = 1e-10) -> float:
@@ -45,10 +45,10 @@ def stable_rank(matrix: torch.Tensor, eps: float = 1e-10) -> float:
         raise ValueError("Matrix contains NaN or Inf values")
 
     with torch.no_grad():
-        frobenius_norm = torch.norm(matrix, p='fro')
+        frobenius_norm = torch.norm(matrix, p="fro")
         spectral_norm = torch.norm(matrix, p=2)
 
-        result = (frobenius_norm ** 2) / (spectral_norm ** 2 + eps)
+        result = (frobenius_norm**2) / (spectral_norm**2 + eps)
         return result.item()
 
 
@@ -92,7 +92,7 @@ def participation_ratio(matrix: torch.Tensor, eps: float = 1e-10) -> float:
         sv_normalized = singular_values / (torch.sum(singular_values) + eps)
 
         # Compute participation ratio
-        pr = 1.0 / (torch.sum(sv_normalized ** 2) + eps)
+        pr = 1.0 / (torch.sum(sv_normalized**2) + eps)
         return pr.item()
 
 
@@ -135,7 +135,7 @@ def cumulative_energy_90(matrix: torch.Tensor, threshold: float = 0.90) -> int:
             raise ValueError(f"SVD computation failed: {e}")
 
         # Compute explained variance
-        explained_variance = singular_values ** 2
+        explained_variance = singular_values**2
         total_variance = torch.sum(explained_variance)
 
         # Compute cumulative explained variance ratio
@@ -191,8 +191,7 @@ def nuclear_norm_ratio(matrix: torch.Tensor, eps: float = 1e-10) -> float:
 
 
 def compute_all_metrics(
-    matrix: torch.Tensor,
-    eps: float = 1e-10
+    matrix: torch.Tensor, eps: float = 1e-10
 ) -> Tuple[float, float, int, float]:
     """Compute all four dimensionality metrics efficiently.
 
@@ -220,9 +219,9 @@ def compute_all_metrics(
 
     with torch.no_grad():
         # Compute norms for stable rank
-        frobenius_norm = torch.norm(matrix, p='fro')
+        frobenius_norm = torch.norm(matrix, p="fro")
         spectral_norm = torch.norm(matrix, p=2)
-        sr = ((frobenius_norm ** 2) / (spectral_norm ** 2 + eps)).item()
+        sr = ((frobenius_norm**2) / (spectral_norm**2 + eps)).item()
 
         # Compute SVD once for other metrics
         try:
@@ -232,10 +231,10 @@ def compute_all_metrics(
 
         # Participation ratio
         sv_normalized = singular_values / (torch.sum(singular_values) + eps)
-        pr = (1.0 / (torch.sum(sv_normalized ** 2) + eps)).item()
+        pr = (1.0 / (torch.sum(sv_normalized**2) + eps)).item()
 
         # Cumulative energy 90%
-        explained_variance = singular_values ** 2
+        explained_variance = singular_values**2
         total_variance = torch.sum(explained_variance)
         cumsum = torch.cumsum(explained_variance, dim=0)
         cumsum_ratio = cumsum / total_variance

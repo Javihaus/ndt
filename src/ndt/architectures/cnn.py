@@ -1,7 +1,9 @@
 """Handler for Convolutional Neural Network (CNN) architectures."""
 
 from typing import List
+
 import torch.nn as nn
+
 from ndt.architectures.base import ArchitectureHandler
 
 
@@ -69,7 +71,7 @@ class CNNHandler(ArchitectureHandler):
         """
         # Check for common ResNet layer names
         for name, module in model.named_modules():
-            if 'layer1' in name or 'layer2' in name or 'layer3' in name or 'layer4' in name:
+            if "layer1" in name or "layer2" in name or "layer3" in name or "layer4" in name:
                 return True
         return False
 
@@ -88,7 +90,7 @@ class CNNHandler(ArchitectureHandler):
 
         # Get the main residual blocks (layer1, layer2, layer3, layer4)
         for name, module in model.named_children():
-            if name.startswith('layer'):
+            if name.startswith("layer"):
                 # Get last conv in this layer group
                 conv_layers = [m for m in module.modules() if isinstance(m, nn.Conv2d)]
                 if conv_layers:

@@ -1,13 +1,14 @@
 """Registry for auto-detecting and selecting architecture handlers."""
 
-from typing import Optional, List
+from typing import List, Optional
+
 import torch.nn as nn
+
 from ndt.architectures.base import ArchitectureHandler
-from ndt.architectures.mlp import MLPHandler
 from ndt.architectures.cnn import CNNHandler
+from ndt.architectures.mlp import MLPHandler
 from ndt.architectures.transformer import TransformerHandler
 from ndt.architectures.vit import ViTHandler
-
 
 # Default handler priority order (more specific first)
 DEFAULT_HANDLERS = [
@@ -42,10 +43,7 @@ def detect_architecture(model: nn.Module) -> Optional[ArchitectureHandler]:
     return None
 
 
-def get_handler(
-    model: nn.Module,
-    architecture: Optional[str] = None
-) -> ArchitectureHandler:
+def get_handler(model: nn.Module, architecture: Optional[str] = None) -> ArchitectureHandler:
     """Get an architecture handler for a model.
 
     Args:
@@ -67,10 +65,10 @@ def get_handler(
         # Explicit architecture specified
         architecture = architecture.lower()
         handler_map = {
-            'mlp': MLPHandler(),
-            'cnn': CNNHandler(),
-            'transformer': TransformerHandler(),
-            'vit': ViTHandler(),
+            "mlp": MLPHandler(),
+            "cnn": CNNHandler(),
+            "transformer": TransformerHandler(),
+            "vit": ViTHandler(),
         }
 
         if architecture not in handler_map:
@@ -102,8 +100,7 @@ def get_handler(
 
 
 def get_layers_for_model(
-    model: nn.Module,
-    architecture: Optional[str] = None
+    model: nn.Module, architecture: Optional[str] = None
 ) -> tuple[List[nn.Module], List[str]]:
     """Convenience function to get layers and names for a model.
 

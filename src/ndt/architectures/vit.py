@@ -1,7 +1,9 @@
 """Handler for Vision Transformer (ViT) architectures."""
 
 from typing import List
+
 import torch.nn as nn
+
 from ndt.architectures.base import ArchitectureHandler
 
 
@@ -28,7 +30,7 @@ class ViTHandler(ArchitectureHandler):
         for name, module in model.named_modules():
             if isinstance(module, (nn.Conv2d, nn.Conv1d)):
                 has_conv = True
-                if 'patch' in name.lower() or 'embed' in name.lower():
+                if "patch" in name.lower() or "embed" in name.lower():
                     has_patch_embed = True
             if isinstance(module, nn.MultiheadAttention):
                 has_attention = True
@@ -52,7 +54,7 @@ class ViTHandler(ArchitectureHandler):
         # 1. Patch embedding layer
         for name, module in model.named_modules():
             if isinstance(module, (nn.Conv2d, nn.Linear)):
-                if 'patch' in name.lower() or 'embed' in name.lower():
+                if "patch" in name.lower() or "embed" in name.lower():
                     layers.append(module)
                     break  # Usually just one
 
@@ -63,7 +65,7 @@ class ViTHandler(ArchitectureHandler):
         # 3. MLP/FFN blocks (sample to avoid too many)
         mlp_layers = []
         for name, module in model.named_modules():
-            if isinstance(module, nn.Linear) and ('mlp' in name.lower() or 'ffn' in name.lower()):
+            if isinstance(module, nn.Linear) and ("mlp" in name.lower() or "ffn" in name.lower()):
                 mlp_layers.append(module)
 
         # Sample MLP layers if too many (keep first Linear of each MLP block)
@@ -100,13 +102,13 @@ class ViTHandler(ArchitectureHandler):
                     break
 
             if layer_name:
-                if 'patch' in layer_name.lower() or 'embed' in layer_name.lower():
+                if "patch" in layer_name.lower() or "embed" in layer_name.lower():
                     names.append(f"PatchEmbed_{patch_count}")
                     patch_count += 1
                 elif isinstance(layer, nn.MultiheadAttention):
                     names.append(f"Attention_{attn_count}")
                     attn_count += 1
-                elif 'mlp' in layer_name.lower() or 'ffn' in layer_name.lower():
+                elif "mlp" in layer_name.lower() or "ffn" in layer_name.lower():
                     names.append(f"MLP_{mlp_count}")
                     mlp_count += 1
                 else:

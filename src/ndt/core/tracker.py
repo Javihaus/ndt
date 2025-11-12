@@ -1,11 +1,12 @@
 """High-frequency tracking of neural network dimensionality during training."""
 
+import logging
+from dataclasses import asdict, dataclass
 from typing import Dict, List, Optional, Union
-from dataclasses import dataclass, asdict
+
+import pandas as pd
 import torch
 import torch.nn as nn
-import pandas as pd
-import logging
 
 from ndt.core.estimators import compute_all_metrics
 from ndt.core.hooks import ActivationCapture
@@ -25,6 +26,7 @@ class DimensionalityMetrics:
         loss: Training loss at this step
         grad_norm: Gradient norm at this step (optional)
     """
+
     step: int
     stable_rank: float
     participation_ratio: float
@@ -76,7 +78,7 @@ class HighFrequencyTracker:
         enable_jump_detection: bool = True,
         jump_window_size: int = 50,
         jump_z_threshold: float = 3.0,
-        device: Optional[torch.device] = None
+        device: Optional[torch.device] = None,
     ) -> None:
         """Initialize the high-frequency tracker.
 
@@ -105,12 +107,16 @@ class HighFrequencyTracker:
             layers = self._auto_detect_layers()
 
         if not layers:
-            raise ValueError("No layers to track. Provide layers explicitly or use supported architecture.")
+            raise ValueError(
+                "No layers to track. Provide layers explicitly or use supported architecture."
+            )
 
         # Set up activation capture
         self.activation_capture = ActivationCapture()
         self.activation_capture.register_hooks(model, layers, layer_names)
-        self.layer_names = layer_names or [f"{layer.__class__.__name__}_{i}" for i, layer in enumerate(layers)]
+        self.layer_names = layer_names or [
+            f"{layer.__class__.__name__}_{i}" for i, layer in enumerate(layers)
+        ]
 
         # Initialize storage
         self.metrics_history: Dict[str, List[DimensionalityMetrics]] = {
@@ -122,8 +128,7 @@ class HighFrequencyTracker:
         self.enable_jump_detection = enable_jump_detection
         if enable_jump_detection:
             self.jump_detector = JumpDetector(
-                window_size=jump_window_size,
-                z_threshold=jump_z_threshold
+                window_size=jump_window_size, z_threshold=jump_z_threshold
             )
         else:
             self.jump_detector = None
@@ -151,11 +156,7 @@ class HighFrequencyTracker:
         return layers
 
     def log(
-        self,
-        step: int,
-        loss: float,
-        grad_norm: Optional[float] = None,
-        force: bool = False
+        self, step: int, loss: float, grad_norm: Optional[float] = None, force: bool = False
     ) -> None:
         """Log dimensionality metrics for the current step.
 
@@ -190,7 +191,9 @@ class HighFrequencyTracker:
                 activation = self.activation_capture.get_activation(layer_name)
 
                 if activation is None:
-                    self.logger.warning(f"No activation captured for layer {layer_name} at step {step}")
+                    self.logger.warning(
+                        f"No activation captured for layer {layer_name} at step {step}"
+                    )
                     continue
 
                 try:
@@ -208,14 +211,16 @@ class HighFrequencyTracker:
                         cumulative_90=ce90,
                         nuclear_norm_ratio=nnr,
                         loss=loss,
-                        grad_norm=grad_norm
+                        grad_norm=grad_norm,
                     )
 
                     # Store metrics
                     self.metrics_history[layer_name].append(metrics)
 
                 except Exception as e:
-                    self.logger.error(f"Error computing metrics for {layer_name} at step {step}: {e}")
+                    self.logger.error(
+                        f"Error computing metrics for {layer_name} at step {step}: {e}"
+                    )
 
         # Clear activations for next step
         self.activation_capture.clear_activations()
@@ -247,7 +252,9 @@ class HighFrequencyTracker:
             batch_size = activation.size(0)
             return activation.view(batch_size, -1)
 
-    def get_results(self, layer_name: Optional[str] = None) -> Union[pd.DataFrame, Dict[str, pd.DataFrame]]:
+    def get_results(
+        self, layer_name: Optional[str] = None
+    ) -> Union[pd.DataFrame, Dict[str, pd.DataFrame]]:
         """Get tracked metrics as pandas DataFrame(s).
 
         Args:
@@ -288,9 +295,7 @@ class HighFrequencyTracker:
         return pd.DataFrame(data)
 
     def detect_jumps(
-        self,
-        layer_name: Optional[str] = None,
-        metric: str = "stable_rank"
+        self, layer_name: Optional[str] = None, metric: str = "stable_rank"
     ) -> Dict[str, List]:
         """Detect dimensionality jumps in tracked metrics.
 
@@ -309,7 +314,12 @@ class HighFrequencyTracker:
         if not self.enable_jump_detection:
             raise ValueError("Jump detection is disabled. Enable it during initialization.")
 
-        valid_metrics = ["stable_rank", "participation_ratio", "cumulative_90", "nuclear_norm_ratio"]
+        valid_metrics = [
+            "stable_rank",
+            "participation_ratio",
+            "cumulative_90",
+            "nuclear_norm_ratio",
+        ]
         if metric not in valid_metrics:
             raise ValueError(f"metric must be one of {valid_metrics}, got {metric}")
 
@@ -347,5 +357,5 @@ class HighFrequencyTracker:
 
     def __del__(self) -> None:
         """Cleanup on deletion."""
-        if hasattr(self, 'activation_capture'):
+        if hasattr(self, "activation_capture"):
             self.activation_capture.remove_hooks()

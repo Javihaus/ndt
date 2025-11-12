@@ -1,8 +1,8 @@
 """Abstract base class for architecture-specific handlers."""
 
 from abc import ABC, abstractmethod
-from typing import List, Optional
-import torch
+from typing import List
+
 import torch.nn as nn
 
 

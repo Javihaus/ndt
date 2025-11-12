@@ -1,7 +1,8 @@
 """Configuration management utilities."""
 
-from typing import Any, Dict
 from pathlib import Path
+from typing import Any, Dict
+
 import yaml
 
 
@@ -27,7 +28,7 @@ def load_config(config_path: str) -> Dict[str, Any]:
     if not config_path.exists():
         raise FileNotFoundError(f"Config file not found: {config_path}")
 
-    with open(config_path, 'r') as f:
+    with open(config_path, "r") as f:
         config = yaml.safe_load(f)
 
     return config
@@ -50,7 +51,7 @@ def save_config(config: Dict[str, Any], output_path: str) -> None:
     """
     output_path = Path(output_path)
 
-    with open(output_path, 'w') as f:
+    with open(output_path, "w") as f:
         yaml.dump(config, f, default_flow_style=False, sort_keys=False)
 
     print(f"Saved configuration to {output_path}")

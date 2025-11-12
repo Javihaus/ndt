@@ -7,11 +7,10 @@ Dimensionality Tracker in just a few lines of code.
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
 
-from ndt import HighFrequencyTracker, plot_phases, export_to_csv
-
+from ndt import HighFrequencyTracker, export_to_csv, plot_phases
 
 # 1. Define a simple MLP
 model = nn.Sequential(
@@ -27,14 +26,12 @@ model = nn.Sequential(
 
 # 2. Set up MNIST data
 transform = transforms.Compose([transforms.ToTensor()])
-train_data = datasets.MNIST('./data', train=True, download=True, transform=transform)
+train_data = datasets.MNIST("./data", train=True, download=True, transform=transform)
 train_loader = DataLoader(train_data, batch_size=64, shuffle=True)
 
 # 3. Create tracker (automatically detects layers to monitor)
 tracker = HighFrequencyTracker(
-    model,
-    sampling_frequency=10,  # Record every 10 steps
-    enable_jump_detection=True
+    model, sampling_frequency=10, enable_jump_detection=True  # Record every 10 steps
 )
 
 # 4. Standard training loop
@@ -86,7 +83,7 @@ for layer_name, jumps in jumps_dict.items():
 # 7. Visualize
 print("\nCreating visualization...")
 fig = plot_phases(results, metric="stable_rank")
-fig.savefig("mnist_stable_rank.png", dpi=150, bbox_inches='tight')
+fig.savefig("mnist_stable_rank.png", dpi=150, bbox_inches="tight")
 print("Saved visualization to mnist_stable_rank.png")
 
 # 8. Export results

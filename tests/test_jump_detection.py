@@ -1,8 +1,9 @@
 """Tests for jump detection."""
 
-import pytest
 import numpy as np
-from ndt.core.jump_detector import JumpDetector, Jump
+import pytest
+
+from ndt.core.jump_detector import Jump, JumpDetector
 
 
 class TestJump:
@@ -11,11 +12,7 @@ class TestJump:
     def test_creation(self):
         """Should create jump object successfully."""
         jump = Jump(
-            step=100,
-            z_score=5.2,
-            value_before=10.0,
-            value_after=20.0,
-            metric_name="stable_rank"
+            step=100, z_score=5.2, value_before=10.0, value_after=20.0, metric_name="stable_rank"
         )
 
         assert jump.step == 100
@@ -25,11 +22,7 @@ class TestJump:
     def test_repr(self):
         """Should have readable string representation."""
         jump = Jump(
-            step=100,
-            z_score=5.2,
-            value_before=10.0,
-            value_after=20.0,
-            metric_name="stable_rank"
+            step=100, z_score=5.2, value_before=10.0, value_after=20.0, metric_name="stable_rank"
         )
 
         repr_str = repr(jump)
@@ -194,9 +187,8 @@ class TestJumpDetector:
         np.random.seed(42)
         # Noisy signal with one clear jump
         noise_level = 0.5
-        values = (
-            list(10 + noise_level * np.random.randn(50)) +
-            list(20 + noise_level * np.random.randn(50))
+        values = list(10 + noise_level * np.random.randn(50)) + list(
+            20 + noise_level * np.random.randn(50)
         )
 
         jumps = detector.detect_jumps(values)

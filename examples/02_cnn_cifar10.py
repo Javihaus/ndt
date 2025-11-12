@@ -3,10 +3,10 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
 
-from ndt import HighFrequencyTracker, plot_metrics_comparison, export_to_json
+from ndt import HighFrequencyTracker, export_to_json, plot_metrics_comparison
 
 
 class SimpleCNN(nn.Module):
@@ -40,15 +40,14 @@ def main():
 
     # Model and data
     model = SimpleCNN()
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
 
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-    ])
+    transform = transforms.Compose(
+        [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
+    )
 
-    train_data = datasets.CIFAR10('./data', train=True, download=True, transform=transform)
+    train_data = datasets.CIFAR10("./data", train=True, download=True, transform=transform)
     train_loader = DataLoader(train_data, batch_size=128, shuffle=True, num_workers=2)
 
     # Create tracker - explicitly specify conv layers and fc layers
@@ -57,7 +56,7 @@ def main():
         layers=[model.conv1, model.conv2, model.conv3, model.fc1],
         layer_names=["Conv1", "Conv2", "Conv3", "FC1"],
         sampling_frequency=20,  # Sample less frequently for speed
-        device=device
+        device=device,
     )
 
     # Training setup
@@ -78,7 +77,7 @@ def main():
             loss.backward()
 
             # Compute gradient norm
-            grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=float('inf'))
+            grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=float("inf"))
 
             optimizer.step()
 
@@ -104,7 +103,7 @@ def main():
     print("\nGenerating metric comparison plot for Conv3...")
     conv3_results = tracker.get_results(layer_name="Conv3")
     fig = plot_metrics_comparison(conv3_results, layer_name="Conv3")
-    fig.savefig("cifar10_conv3_metrics.png", dpi=150, bbox_inches='tight')
+    fig.savefig("cifar10_conv3_metrics.png", dpi=150, bbox_inches="tight")
     print("Saved to cifar10_conv3_metrics.png")
 
     # Export

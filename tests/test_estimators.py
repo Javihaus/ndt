@@ -2,13 +2,13 @@
 
 import pytest
 import torch
-import numpy as np
+
 from ndt.core.estimators import (
-    stable_rank,
-    participation_ratio,
+    compute_all_metrics,
     cumulative_energy_90,
     nuclear_norm_ratio,
-    compute_all_metrics,
+    participation_ratio,
+    stable_rank,
 )
 
 
@@ -38,7 +38,7 @@ class TestStableRank:
     def test_nan_input(self):
         """Should raise error for NaN values."""
         matrix = torch.randn(10, 10)
-        matrix[0, 0] = float('nan')
+        matrix[0, 0] = float("nan")
         with pytest.raises(ValueError, match="NaN or Inf"):
             stable_rank(matrix)
 

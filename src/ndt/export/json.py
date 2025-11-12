@@ -1,16 +1,13 @@
 """JSON export functionality for tracking results."""
 
-from typing import Dict, Any
-from pathlib import Path
-import pandas as pd
 import json
+from pathlib import Path
+from typing import Any, Dict
+
+import pandas as pd
 
 
-def export_to_json(
-    results: Dict[str, pd.DataFrame],
-    output_path: str,
-    pretty: bool = True
-) -> None:
+def export_to_json(results: Dict[str, pd.DataFrame], output_path: str, pretty: bool = True) -> None:
     """Export tracking results to JSON format.
 
     Args:
@@ -30,10 +27,10 @@ def export_to_json(
     # Convert DataFrames to dictionaries
     json_data = {}
     for layer_name, df in results.items():
-        json_data[layer_name] = df.to_dict(orient='records')
+        json_data[layer_name] = df.to_dict(orient="records")
 
     # Write to file
-    with open(output_path, 'w') as f:
+    with open(output_path, "w") as f:
         if pretty:
             json.dump(json_data, f, indent=2)
         else:
@@ -63,7 +60,7 @@ def load_from_json(input_path: str) -> Dict[str, pd.DataFrame]:
     if not input_path.exists():
         raise FileNotFoundError(f"File not found: {input_path}")
 
-    with open(input_path, 'r') as f:
+    with open(input_path, "r") as f:
         json_data = json.load(f)
 
     if not isinstance(json_data, dict):
@@ -77,11 +74,7 @@ def load_from_json(input_path: str) -> Dict[str, pd.DataFrame]:
     return results
 
 
-def export_metadata(
-    metadata: Dict[str, Any],
-    output_path: str,
-    pretty: bool = True
-) -> None:
+def export_metadata(metadata: Dict[str, Any], output_path: str, pretty: bool = True) -> None:
     """Export tracker metadata to JSON.
 
     Args:
@@ -100,7 +93,7 @@ def export_metadata(
     """
     output_path = Path(output_path)
 
-    with open(output_path, 'w') as f:
+    with open(output_path, "w") as f:
         if pretty:
             json.dump(metadata, f, indent=2)
         else:

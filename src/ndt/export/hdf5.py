@@ -1,10 +1,11 @@
 """HDF5 export functionality for large-scale tracking results."""
 
-from typing import Dict, Optional, Any
 from pathlib import Path
-import pandas as pd
+from typing import Any, Dict, Optional
+
 import h5py
 import numpy as np
+import pandas as pd
 
 
 def export_to_hdf5(
@@ -12,7 +13,7 @@ def export_to_hdf5(
     output_path: str,
     compression: str = "gzip",
     compression_opts: int = 4,
-    metadata: Optional[Dict[str, Any]] = None
+    metadata: Optional[Dict[str, Any]] = None,
 ) -> None:
     """Export tracking results to HDF5 format (efficient for large data).
 
@@ -33,7 +34,7 @@ def export_to_hdf5(
     """
     output_path = Path(output_path)
 
-    with h5py.File(output_path, 'w') as f:
+    with h5py.File(output_path, "w") as f:
         # Store metadata as root attributes
         if metadata:
             for key, value in metadata.items():
@@ -57,11 +58,11 @@ def export_to_hdf5(
                     col,
                     data=data,
                     compression=compression,
-                    compression_opts=compression_opts if compression == "gzip" else None
+                    compression_opts=compression_opts if compression == "gzip" else None,
                 )
 
             # Store column names as attribute
-            group.attrs['columns'] = list(df.columns)
+            group.attrs["columns"] = list(df.columns)
 
     print(f"Exported results to {output_path}")
 
@@ -90,7 +91,7 @@ def load_from_hdf5(input_path: str) -> tuple[Dict[str, pd.DataFrame], Dict[str, 
     results = {}
     metadata = {}
 
-    with h5py.File(input_path, 'r') as f:
+    with h5py.File(input_path, "r") as f:
         # Load root metadata
         for key in f.attrs.keys():
             metadata[key] = f.attrs[key]
@@ -101,7 +102,7 @@ def load_from_hdf5(input_path: str) -> tuple[Dict[str, pd.DataFrame], Dict[str, 
 
             # Reconstruct DataFrame
             data = {}
-            for col in group.attrs['columns']:
+            for col in group.attrs["columns"]:
                 data[col] = group[col][:]
 
             results[layer_name] = pd.DataFrame(data)
@@ -110,9 +111,7 @@ def load_from_hdf5(input_path: str) -> tuple[Dict[str, pd.DataFrame], Dict[str, 
 
 
 def append_to_hdf5(
-    results: Dict[str, pd.DataFrame],
-    output_path: str,
-    compression: str = "gzip"
+    results: Dict[str, pd.DataFrame], output_path: str, compression: str = "gzip"
 ) -> None:
     """Append new tracking results to existing HDF5 file.
 
@@ -139,7 +138,7 @@ def append_to_hdf5(
             f"File not found: {output_path}. Use export_to_hdf5() to create new file."
         )
 
-    with h5py.File(output_path, 'a') as f:
+    with h5py.File(output_path, "a") as f:
         for layer_name, new_df in results.items():
             if layer_name not in f:
                 raise ValueError(f"Layer {layer_name} not found in existing file")
