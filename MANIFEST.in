@@ -1,0 +1,13 @@
+include README.md
+include LICENSE
+include pyproject.toml
+include setup.py
+
+recursive-include src/ndt *.py
+recursive-include tests *.py
+recursive-include examples *.py *.md
+
+exclude .gitignore
+exclude .github
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
