@@ -4,8 +4,6 @@ High-frequency monitoring of neural network representational dimensionality duri
 """
 
 from ndt.__version__ import __version__
-
-# Architecture handlers
 from ndt.architectures import (
     CNNHandler,
     MLPHandler,
@@ -23,21 +21,13 @@ from ndt.core.estimators import (
 )
 from ndt.core.hooks import ActivationCapture
 from ndt.core.jump_detector import Jump, JumpDetector
-
-# Core functionality
 from ndt.core.tracker import DimensionalityMetrics, HighFrequencyTracker
-
-# Export
 from ndt.export import (
     export_to_csv,
     export_to_hdf5,
     export_to_json,
 )
-
-# Utilities
 from ndt.utils import load_config, save_config, setup_logger
-
-# Visualization
 from ndt.visualization import (
     create_interactive_plot,
     create_multi_layer_plot,

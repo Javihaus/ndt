@@ -1,9 +1,6 @@
 """Visualization utilities for dimensionality tracking results."""
 
-from ndt.visualization.interactive import (
-    create_interactive_plot,
-    create_multi_layer_plot,
-)
+from ndt.visualization.interactive import create_interactive_plot, create_multi_layer_plot
 from ndt.visualization.plots import (
     plot_jumps,
     plot_metrics_comparison,
