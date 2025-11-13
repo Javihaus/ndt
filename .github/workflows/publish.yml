@@ -49,5 +49,5 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             release_id: release.id,
-            body: release.body + '\n\n## Installation\n\n```bash\npip install ndt\n```'
+            body: release.body + '\n\n## Installation\n\n```bash\npip install ndtracker\n```'
           });

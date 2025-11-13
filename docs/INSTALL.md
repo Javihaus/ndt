@@ -5,7 +5,7 @@
 The easiest way to install NDT:
 
 ```bash
-pip install ndt
+pip install ndtracker
 ```
 
 ## From Source (Development)
@@ -41,19 +41,19 @@ python -c "from ndt import HighFrequencyTracker; print('NDT installed successful
 ### For JAX Support
 
 ```bash
-pip install ndt[jax]
+pip install ndtracker[jax]
 ```
 
 ### For Documentation Building
 
 ```bash
-pip install ndt[docs]
+pip install ndtracker[docs]
 ```
 
 ### All Optional Dependencies
 
 ```bash
-pip install ndt[dev,docs,jax]
+pip install ndtracker[dev,docs,jax]
 ```
 
 ## System Requirements

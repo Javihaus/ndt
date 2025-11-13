@@ -76,7 +76,7 @@ The article identifies three distinct phases:
 
 ```bash
 # Install NDT
-pip install ndt
+pip install ndtracker
 
 # Run TDS experiment
 python examples/03_reproduce_tds_experiment.py
