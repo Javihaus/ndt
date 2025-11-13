@@ -24,10 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-11-13
 
 ### Changed
-- Package name changed to `ndt` on PyPI
-  - Install with `pip install ndt`
+- Package name changed to `ndtracker` on PyPI (name `ndt` was already taken)
+  - Install with `pip install ndtracker`
   - Import as `import ndt` (module name unchanged)
-  - Simplified package name for easier installation
+  - Updated package name for PyPI compatibility
 
 ### Fixed
 - PyPI packaging compatibility by constraining setuptools to <70.0
