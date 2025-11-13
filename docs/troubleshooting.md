@@ -8,7 +8,7 @@ Common issues and solutions when using Neural Dimensionality Tracker.
 
 **Error message:**
 ```
-ERROR: Could not find a version that satisfies the requirement ndt
+ERROR: Could not find a version that satisfies the requirement ndtracker
 ```
 
 **Causes & Solutions:**
@@ -28,7 +28,7 @@ ERROR: Could not find a version that satisfies the requirement ndt
 
 3. **Network/proxy issues**
    ```bash
-   pip install --index-url https://pypi.org/simple/ ndt
+   pip install --index-url https://pypi.org/simple/ ndtracker
    ```
 
 ---
@@ -760,7 +760,7 @@ import ndt
 print(ndt.__version__)
 
 # Ensure you have latest version
-# pip install --upgrade ndt
+# pip install --upgrade ndtracker
 ```
 
 ---

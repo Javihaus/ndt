@@ -118,7 +118,7 @@ pytest tests/ -v
 ## Uninstallation
 
 ```bash
-pip uninstall ndt
+pip uninstall ndtracker
 ```
 
 ## Docker (Coming Soon)
