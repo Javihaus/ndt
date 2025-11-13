@@ -5,6 +5,28 @@ All notable changes to the Neural Dimensionality Tracker will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-11-13
+
+### Fixed
+- Merge and synchronization updates for stability
+
+## [1.0.0] - 2025-11-13
+
+### Changed
+- **BREAKING**: Package name changed from `neural-dimensionality-tracker` to `ndt`
+  - Install with `pip install ndt` instead of `pip install neural-dimensionality-tracker`
+  - Simpler, more memorable package name
+  - Updated all documentation and examples
+
+### Fixed
+- PyPI packaging compatibility by constraining setuptools to <70.0
+- Removed duplicate license classifier to avoid metadata conflicts
+- Fixed GitHub Actions publish workflow for tag push events
+- Package now passes twine validation checks
+
+### Added
+- Codecov integration with v5 action for test coverage reporting
+
 ## [0.1.0] - 2024-11-12
 
 ### Added
