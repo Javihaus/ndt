@@ -17,18 +17,18 @@ sys.path.insert(0, str(examples_dir))
 @pytest.fixture
 def mock_mnist_data():
     """Create mock MNIST data for fast testing."""
-    # Create small dataset that mimics MNIST
-    x_train = torch.randn(320, 1, 28, 28)  # 5 batches of 64
-    y_train = torch.randint(0, 10, (320,))
+    # Create dataset large enough for 100+ steps with batch_size=64
+    x_train = torch.randn(6400, 1, 28, 28)  # 100 batches of 64
+    y_train = torch.randint(0, 10, (6400,))
     return TensorDataset(x_train, y_train)
 
 
 @pytest.fixture
 def mock_cifar_data():
     """Create mock CIFAR-10 data for fast testing."""
-    # Create small dataset that mimics CIFAR-10
-    x_train = torch.randn(256, 3, 32, 32)  # 2 batches of 128
-    y_train = torch.randint(0, 10, (256,))
+    # Create dataset large enough for multiple batches with batch_size=128
+    x_train = torch.randn(2560, 3, 32, 32)  # 20 batches of 128
+    y_train = torch.randint(0, 10, (2560,))
     return TensorDataset(x_train, y_train)
 
 
