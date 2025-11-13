@@ -154,7 +154,7 @@ Neural Dimensionality Tracker (NDT) is a Python library for high-frequency monit
 requires = ["setuptools>=61.0", "wheel"]
 
 [project]
-name = "neural-dimensionality-tracker"
+name = "ndt"
 version = "0.1.0"
 requires-python = ">=3.8"
 

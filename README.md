@@ -2,7 +2,7 @@
 
 [![Tests](https://github.com/Javihaus/ndt/workflows/Tests/badge.svg)](https://github.com/Javihaus/ndt/actions)
 [![codecov](https://codecov.io/gh/Javihaus/ndt/branch/main/graph/badge.svg)](https://codecov.io/gh/Javihaus/ndt)
-[![PyPI version](https://badge.fury.io/py/neural-dimensionality-tracker.svg)](https://pypi.org/project/neural-dimensionality-tracker/)
+[![PyPI version](https://badge.fury.io/py/ndt.svg)](https://pypi.org/project/ndt/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -22,7 +22,7 @@
 ## Installation
 
 ```bash
-pip install neural-dimensionality-tracker
+pip install ndt
 ```
 
 ## Quick Start
