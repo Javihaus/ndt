@@ -107,7 +107,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Javihaus/ndt
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/neural-dimensionality-tracker/
+      link: https://pypi.org/project/ndt/
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/jmarin
     - icon: fontawesome/brands/twitter

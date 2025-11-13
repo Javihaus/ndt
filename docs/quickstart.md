@@ -5,7 +5,7 @@ Get started with Neural Dimensionality Tracker in 5 minutes.
 ## Installation
 
 ```bash
-pip install neural-dimensionality-tracker
+pip install ndt
 ```
 
 ## Basic Usage

@@ -5,7 +5,7 @@
 The easiest way to install NDT:
 
 ```bash
-pip install neural-dimensionality-tracker
+pip install ndt
 ```
 
 ## From Source (Development)
@@ -41,19 +41,19 @@ python -c "from ndt import HighFrequencyTracker; print('NDT installed successful
 ### For JAX Support
 
 ```bash
-pip install neural-dimensionality-tracker[jax]
+pip install ndt[jax]
 ```
 
 ### For Documentation Building
 
 ```bash
-pip install neural-dimensionality-tracker[docs]
+pip install ndt[docs]
 ```
 
 ### All Optional Dependencies
 
 ```bash
-pip install neural-dimensionality-tracker[dev,docs,jax]
+pip install ndt[dev,docs,jax]
 ```
 
 ## System Requirements
@@ -118,7 +118,7 @@ pytest tests/ -v
 ## Uninstallation
 
 ```bash
-pip uninstall neural-dimensionality-tracker
+pip uninstall ndt
 ```
 
 ## Docker (Coming Soon)
