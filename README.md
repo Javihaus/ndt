@@ -117,13 +117,13 @@ MIT License - see [LICENSE](LICENSE) file for details
 ## Author
 
 **Javier Marín**
-- LinkedIn: [linkedin.com/in/jmarin](https://linkedin.com/in/jmarin)
+- LinkedIn: [linkedin.com/in/jmarin](https://linkedin.com/in/javiermarinvalenzuela)
 - Twitter: [@javihaus](https://twitter.com/javihaus)
 - Email: javier@jmarin.info
 
 ## Acknowledgments
 
 This work builds on research by:
-- Ansuini et al. (2019) - Intrinsic dimension of data representations in deep neural networks
-- Yang et al. (2024) - ε-rank and the staircase phenomenon
-- Achille et al. (2019) - Critical learning periods in deep networks
+- Achille, A., Rovere, M., & Soatto, S. (2019). Critical learning periods in deep networks. In International Conference on Learning Representations (ICLR). https://openreview.net/forum?id=BkeStsCcKQ
+- Ansuini, A., Laio, A., Macke, J. H., & Zoccolan, D. (2019). Intrinsic dimension of data representations in deep neural networks. In Advances in Neural Information Processing Systems (Vol. 32, pp. 6109-6119). https://proceedings.neurips.cc/paper/2019/hash/cfcce0621b49c983991ead4c3d4d3b6b-Abstract.html
+- Yang, J., Zhao, Y., & Zhu, Q. (2024). ε-rank and the staircase phenomenon: New insights into neural network training dynamics. arXiv preprint arXiv:2412.05144. https://arxiv.org/abs/2412.05144
