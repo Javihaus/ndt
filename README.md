@@ -1,12 +1,13 @@
 # Neural Dimensionality Tracker (NDT)
 
 [![Tests](https://github.com/Javihaus/ndt/workflows/Tests/badge.svg)](https://github.com/Javihaus/ndt/actions)
+[![codecov](https://codecov.io/gh/Javihaus/ndt/branch/main/graph/badge.svg)](https://codecov.io/gh/Javihaus/ndt)
 [![PyPI version](https://badge.fury.io/py/neural-dimensionality-tracker.svg)](https://pypi.org/project/neural-dimensionality-tracker/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-High-frequency monitoring of neural network representational dimensionality during training. Track how your network's internal representations evolve, detect phase transitions, and gain insights into the learning dynamics of deep neural networks.
+**Neural Dimensionality Tracker (NDT)** is a production-ready Python library for high-frequency monitoring of neural network representational dimensionality during training, enabling researchers and practitioners to track how internal representations evolve, detect discrete phase transitions (jumps), and gain mechanistic insights into the learning dynamics of deep neural networks across architectures (MLPs, CNNs, Transformers, Vision Transformers).
 
 ## Features
 
@@ -57,8 +58,72 @@ plot_phases(results, metric="stable_rank")
 
 ## Documentation
 
-See [examples/](examples/) for complete working examples and detailed usage guides.
+- **Quick Start**: See above for 3-line integration
+- **Examples**: [examples/](examples/) contains complete working examples:
+  - [`01_quickstart_mnist.py`](examples/01_quickstart_mnist.py) - Basic MLP on MNIST
+  - [`02_cnn_cifar10.py`](examples/02_cnn_cifar10.py) - CNN on CIFAR-10
+  - [`03_reproduce_tds_experiment.py`](examples/03_reproduce_tds_experiment.py) - Reproduce TDS article experiment
+- **Full API Documentation**: [docs/](docs/)
+- **Installation Guide**: [INSTALL.md](INSTALL.md)
+- **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Reproducing the TDS Article Experiment
+
+The repository includes a complete reproduction of the experiment described in the Towards Data Science article "I Measured Neural Network Training Every 5 Steps for 10,000 Iterations":
+
+```bash
+python examples/03_reproduce_tds_experiment.py
+```
+
+This script uses the exact specifications from the article:
+- Architecture: 784-256-128-10 (3-layer MLP)
+- Dataset: MNIST (60k train/10k test)
+- Optimizer: Adam (β1=0.9, β2=0.999)
+- Learning rate: 0.001, batch size: 64
+- Training: 8000 steps with measurements every 5 steps
+- Expected results: 3 distinct phases (collapse, expansion, stabilization)
+
+## Citation
+
+If you use Neural Dimensionality Tracker in your research, please cite:
+
+```bibtex
+@software{marin2024ndt,
+  author = {Marín, Javier},
+  title = {Neural Dimensionality Tracker: High-Frequency Monitoring of Neural Network Training Dynamics},
+  year = {2024},
+  publisher = {GitHub},
+  url = {https://github.com/Javihaus/ndt},
+  version = {0.1.0}
+}
+```
+
+**Associated article:**
+```bibtex
+@article{marin2025measuring,
+  author = {Marín, Javier},
+  title = {I Measured Neural Network Training Every 5 Steps for 10,000 Iterations: What High-Resolution Training Dynamics Taught Me About Feature Formation},
+  journal = {Towards Data Science},
+  year = {2025},
+  month = {November},
+  url = {https://towardsdatascience.com/}
+}
+```
 
 ## License
 
 MIT License - see [LICENSE](LICENSE) file for details
+
+## Author
+
+**Javier Marín**
+- LinkedIn: [linkedin.com/in/jmarin](https://linkedin.com/in/jmarin)
+- Twitter: [@javihaus](https://twitter.com/javihaus)
+- Email: javier@jmarin.info
+
+## Acknowledgments
+
+This work builds on research by:
+- Ansuini et al. (2019) - Intrinsic dimension of data representations in deep neural networks
+- Yang et al. (2024) - ε-rank and the staircase phenomenon
+- Achille et al. (2019) - Critical learning periods in deep networks
