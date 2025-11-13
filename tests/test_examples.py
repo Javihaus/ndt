@@ -3,6 +3,10 @@
 import sys
 from pathlib import Path
 
+import matplotlib
+
+matplotlib.use("Agg")  # Use non-interactive backend for CI environments
+
 import pytest
 import torch
 import torch.nn as nn
