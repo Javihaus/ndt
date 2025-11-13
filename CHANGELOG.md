@@ -13,10 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-11-13
 
 ### Changed
-- Package remains `neural-dimensionality-tracker` on PyPI for compatibility
-  - Install with `pip install neural-dimensionality-tracker`
+- Package name changed to `ndt` on PyPI
+  - Install with `pip install ndt`
   - Import as `import ndt` (module name unchanged)
-  - No breaking changes to existing users
+  - Simplified package name for easier installation
 
 ### Fixed
 - PyPI packaging compatibility by constraining setuptools to <70.0
