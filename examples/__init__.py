@@ -13,10 +13,15 @@ from pathlib import Path
 _examples_dir = Path(__file__).parent
 _tds_path = _examples_dir / "03_reproduce_tds_experiment.py"
 
+reproduce_tds_experiment = None
 if _tds_path.exists():
-    _spec = importlib.util.spec_from_file_location("reproduce_tds_experiment", _tds_path)
-    reproduce_tds_experiment = importlib.util.module_from_spec(_spec)
-    sys.modules["examples.reproduce_tds_experiment"] = reproduce_tds_experiment
-    _spec.loader.exec_module(reproduce_tds_experiment)
+    try:
+        _spec = importlib.util.spec_from_file_location("reproduce_tds_experiment", _tds_path)
+        reproduce_tds_experiment = importlib.util.module_from_spec(_spec)
+        sys.modules["examples.reproduce_tds_experiment"] = reproduce_tds_experiment
+        _spec.loader.exec_module(reproduce_tds_experiment)
+    except ImportError:
+        # torchvision might not be available in test environment
+        pass
 
 __all__ = ["reproduce_tds_experiment"]

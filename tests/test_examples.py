@@ -217,7 +217,10 @@ class TestTDSExperiment:
 
     def test_tds_architecture_spec(self):
         """Test that TDS architecture matches specification (784-256-128-10)."""
-        from examples.reproduce_tds_experiment import TDSExperimentMLP
+        try:
+            from examples.reproduce_tds_experiment import TDSExperimentMLP
+        except (ImportError, AttributeError):
+            pytest.skip("torchvision not available or module failed to load")
 
         model = TDSExperimentMLP()
 
@@ -324,7 +327,7 @@ class TestTDSExperiment:
             assert "grad_norm" in df.columns
 
         # Test jump detection
-        jumps_dict = tracker.detect_jumps(metric="stable_rank", threshold_z=2.0)
+        jumps_dict = tracker.detect_jumps(metric="stable_rank")
         assert isinstance(jumps_dict, dict), "Should return jump dictionary"
         assert len(jumps_dict) == 3, "Should have jumps for 3 layers"
 
@@ -400,6 +403,9 @@ class TestExampleOutputs:
         """Test that example scripts can be imported without errors."""
         # Import TDS experiment module
         from examples import reproduce_tds_experiment
+
+        if reproduce_tds_experiment is None:
+            pytest.skip("torchvision not available - reproduce_tds_experiment could not be loaded")
 
         assert hasattr(
             reproduce_tds_experiment, "TDSExperimentMLP"
