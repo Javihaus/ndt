@@ -7,11 +7,11 @@ import matplotlib
 
 matplotlib.use("Agg")  # Use non-interactive backend for CI environments
 
-import pytest
-import torch
-import torch.nn as nn
-from torch.utils.data import DataLoader
-from torch.utils.data import TensorDataset
+import pytest  # noqa: E402
+import torch  # noqa: E402
+import torch.nn as nn  # noqa: E402
+from torch.utils.data import DataLoader  # noqa: E402
+from torch.utils.data import TensorDataset  # noqa: E402
 
 # Add examples directory to path
 examples_dir = Path(__file__).parent.parent / "examples"
