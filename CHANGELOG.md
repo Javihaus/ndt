@@ -5,6 +5,17 @@ All notable changes to the Neural Dimensionality Tracker will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2025-11-13
+
+### Fixed
+- Reverted package name to `neural-dimensionality-tracker` (name `ndt` is already taken on PyPI)
+- Fixed version synchronization between `pyproject.toml` and `__version__.py`
+- Package now correctly reports version 1.0.2 when installed
+
+### Changed
+- Install command remains: `pip install neural-dimensionality-tracker`
+- Import remains: `import ndt`
+
 ## [1.0.1] - 2025-11-13
 
 ### Fixed
@@ -13,10 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-11-13
 
 ### Changed
-- **BREAKING**: Package name changed from `neural-dimensionality-tracker` to `ndt`
-  - Install with `pip install ndt` instead of `pip install neural-dimensionality-tracker`
-  - Simpler, more memorable package name
-  - Updated all documentation and examples
+- Package name changed to `ndt` on PyPI
+  - Install with `pip install ndt`
+  - Import as `import ndt` (module name unchanged)
+  - Simplified package name for easier installation
 
 ### Fixed
 - PyPI packaging compatibility by constraining setuptools to <70.0

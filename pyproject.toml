@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0,<70.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "ndt"
-version = "1.0.1"
+name = "neural-dimensionality-tracker"
+version = "1.0.2"
 description = "High-frequency monitoring of neural network representational dimensionality"
 readme = "README.md"
 authors = [{name = "Javier Marín", email = "javier@jmarin.info"}]
