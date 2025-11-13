@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ndt"
-version = "0.1.0"
+version = "1.0.0"
 description = "High-frequency monitoring of neural network representational dimensionality"
 readme = "README.md"
 authors = [{name = "Javier Marín", email = "javier@jmarin.info"}]
