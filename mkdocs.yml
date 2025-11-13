@@ -1,0 +1,123 @@
+site_name: Neural Dimensionality Tracker (NDT)
+site_description: High-frequency monitoring of neural network representational dimensionality during training
+site_author: Javier Marín
+site_url: https://javihaus.github.io/ndt
+
+repo_name: Javihaus/ndt
+repo_url: https://github.com/Javihaus/ndt
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2024-2025 Javier Marín
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Quickstart: quickstart.md
+      - Installation: INSTALL.md
+      - Examples Gallery: examples_gallery.md
+  - Documentation:
+      - API Reference: api_reference.md
+      - Architecture Support: architecture_support.md
+      - Performance Benchmarks: performance_benchmarks.md
+      - Troubleshooting: troubleshooting.md
+  - Research:
+      - TDS Article Reproduction: tds_reproduction.md
+  - Contributing: CONTRIBUTING.md
+  - License: LICENSE
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            show_root_toc_entry: true
+            show_object_full_path: false
+            show_category_heading: true
+            show_if_no_docstring: false
+            inherited_members: false
+            members_order: source
+            separate_signature: true
+            filters: ["!^_"]
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+  - tables
+  - attr_list
+  - md_in_html
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Javihaus/ndt
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/neural-dimensionality-tracker/
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/jmarin
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/javihaus
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js

@@ -25,6 +25,20 @@ python examples/01_quickstart_mnist.py
 python examples/02_cnn_cifar10.py
 ```
 
+### Research Reproduction
+
+**03_reproduce_tds_experiment.py** - Reproduce TDS article experiment
+- Exact reproduction of "I Measured Neural Network Training Every 5 Steps for 10,000 Iterations"
+- Architecture: 784-256-128-10 (3-layer MLP)
+- High-frequency sampling: Every 5 steps over 8000 steps
+- Demonstrates 3 distinct phases: collapse, expansion, stabilization
+- Generates figures matching TDS article (Figures 2 & 3)
+- Run time: ~15 minutes on CPU, ~5 minutes on GPU
+
+```bash
+python examples/03_reproduce_tds_experiment.py
+```
+
 ### Requirements
 
 Install dependencies:
