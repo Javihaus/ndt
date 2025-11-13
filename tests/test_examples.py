@@ -1,6 +1,5 @@
 """Tests for example scripts to ensure they run without errors."""
 
-import os
 import sys
 from pathlib import Path
 
