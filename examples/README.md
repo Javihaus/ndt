@@ -44,7 +44,7 @@ python examples/03_reproduce_tds_experiment.py
 Install dependencies:
 ```bash
 pip install torch torchvision
-pip install ndt
+pip install ndtracker
 ```
 
 ### Output Files

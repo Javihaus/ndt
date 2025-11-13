@@ -4,7 +4,7 @@ Common issues and solutions when using Neural Dimensionality Tracker.
 
 ## Installation Issues
 
-### Issue: `pip install ndt` fails
+### Issue: `pip install ndtracker` fails
 
 **Error message:**
 ```
@@ -23,7 +23,7 @@ ERROR: Could not find a version that satisfies the requirement ndt
 2. **pip too old**
    ```bash
    pip install --upgrade pip
-   pip install ndt
+   pip install ndtracker
    ```
 
 3. **Network/proxy issues**
@@ -50,7 +50,7 @@ ImportError: No module named 'ndt'
 2. **Wrong Python environment:**
    ```bash
    which python  # Verify correct Python
-   pip install ndt  # Reinstall in correct env
+   pip install ndtracker  # Reinstall in correct env
    ```
 
 3. **Development installation:**

@@ -7,14 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.2] - 2025-11-13
 
+### Changed
+- Package name changed to `ndtracker` on PyPI (name `ndt` was already taken)
+- Install command: `pip install ndtracker`
+- Import remains: `import ndt`
+
 ### Fixed
-- Reverted package name to `neural-dimensionality-tracker` (name `ndt` is already taken on PyPI)
 - Fixed version synchronization between `pyproject.toml` and `__version__.py`
 - Package now correctly reports version 1.0.2 when installed
-
-### Changed
-- Install command remains: `pip install neural-dimensionality-tracker`
-- Import remains: `import ndt`
 
 ## [1.0.1] - 2025-11-13
 

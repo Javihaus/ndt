@@ -37,7 +37,7 @@ NDT enables you to:
 ### Installation
 
 ```bash
-pip install ndt
+pip install ndtracker
 ```
 
 ### Basic Usage
@@ -190,7 +190,7 @@ If you use Neural Dimensionality Tracker in your research, please cite:
 - **GitHub:** [github.com/Javihaus/ndt](https://github.com/Javihaus/ndt)
 - **Issues:** [Report bugs or request features](https://github.com/Javihaus/ndt/issues)
 - **Discussions:** [Ask questions](https://github.com/Javihaus/ndt/discussions)
-- **PyPI:** [pypi.org/project/ndt](https://pypi.org/project/ndt/)
+- **PyPI:** [pypi.org/project/ndtracker](https://pypi.org/project/ndtracker/)
 
 ## License
 
