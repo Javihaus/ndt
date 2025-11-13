@@ -16,7 +16,7 @@ Complete collection of examples demonstrating Neural Dimensionality Tracker acro
 
 ### 01: Quickstart MNIST
 
-**File:** [`01_quickstart_mnist.py`](../examples/01_quickstart_mnist.py)
+**File:** [`01_quickstart_mnist.py`](https://github.com/Javihaus/ndt/blob/main/examples/01_quickstart_mnist.py)
 
 **Description:** Minimal example showing core NDT functionality with a simple MLP on MNIST.
 
@@ -68,7 +68,7 @@ python examples/01_quickstart_mnist.py
 
 ### 02: CNN on CIFAR-10
 
-**File:** [`02_cnn_cifar10.py`](../examples/02_cnn_cifar10.py)
+**File:** [`02_cnn_cifar10.py`](https://github.com/Javihaus/ndt/blob/main/examples/02_cnn_cifar10.py)
 
 **Description:** Track dimensionality in a convolutional neural network with both conv and FC layers.
 
@@ -117,7 +117,7 @@ python examples/02_cnn_cifar10.py
 
 ### 03: TDS Article Experiment
 
-**File:** [`03_reproduce_tds_experiment.py`](../examples/03_reproduce_tds_experiment.py)
+**File:** [`03_reproduce_tds_experiment.py`](https://github.com/Javihaus/ndt/blob/main/examples/03_reproduce_tds_experiment.py)
 
 **Description:** Exact reproduction of the experiment from the TDS article "I Measured Neural Network Training Every 5 Steps for 10,000 Iterations".
 

@@ -498,5 +498,5 @@ Request support for your architecture: [Open an issue](https://github.com/Javiha
 ## See Also
 
 - [API Reference](api_reference.md)
-- [Examples](../examples/)
+- [Examples](https://github.com/Javihaus/ndt/tree/main/examples)
 - [Performance Benchmarks](performance_benchmarks.md)

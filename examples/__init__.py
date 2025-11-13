@@ -22,6 +22,8 @@ if _tds_path.exists():
         _spec.loader.exec_module(reproduce_tds_experiment)
     except ImportError:
         # torchvision might not be available in test environment
-        pass
+        reproduce_tds_experiment = None
+        if "examples.reproduce_tds_experiment" in sys.modules:
+            del sys.modules["examples.reproduce_tds_experiment"]
 
 __all__ = ["reproduce_tds_experiment"]

@@ -844,4 +844,4 @@ A: Not directly, but you can close and recreate the tracker.
 - [API Reference](api_reference.md)
 - [Architecture Support](architecture_support.md)
 - [Performance Benchmarks](performance_benchmarks.md)
-- [Examples](../examples/)
+- [Examples](https://github.com/Javihaus/ndt/tree/main/examples)

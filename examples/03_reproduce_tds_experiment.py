@@ -29,15 +29,14 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
-from torchvision import datasets, transforms
+from torchvision import datasets
+from torchvision import transforms
 
-from ndt import (
-    HighFrequencyTracker,
-    export_to_csv,
-    export_to_hdf5,
-    plot_metrics_comparison,
-    plot_phases,
-)
+from ndt import HighFrequencyTracker
+from ndt import export_to_csv
+from ndt import export_to_hdf5
+from ndt import plot_metrics_comparison
+from ndt import plot_phases
 
 
 # 1. Define the exact architecture from TDS article: 784-256-128-10

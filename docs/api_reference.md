@@ -532,6 +532,6 @@ with HighFrequencyTracker(model, sampling_frequency=10) as tracker:
 ## See Also
 
 - [Quickstart Guide](quickstart.md)
-- [Examples](../examples/)
+- [Examples](https://github.com/Javihaus/ndt/tree/main/examples)
 - [Troubleshooting](troubleshooting.md)
 - [Architecture Support](architecture_support.md)

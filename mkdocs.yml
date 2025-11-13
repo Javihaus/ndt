@@ -45,7 +45,7 @@ nav:
   - Home: index.md
   - Getting Started:
       - Quickstart: quickstart.md
-      - Installation: ../INSTALL.md
+      - Installation: INSTALL.md
       - Examples Gallery: examples_gallery.md
   - Documentation:
       - API Reference: api_reference.md
@@ -54,8 +54,8 @@ nav:
       - Troubleshooting: troubleshooting.md
   - Research:
       - TDS Article Reproduction: tds_reproduction.md
-  - Contributing: ../CONTRIBUTING.md
-  - License: ../LICENSE
+  - Contributing: CONTRIBUTING.md
+  - License: LICENSE
 
 plugins:
   - search

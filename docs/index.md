@@ -105,7 +105,7 @@ See [TDS Article Reproduction](tds_reproduction.md) for details.
 
 ### Getting Started
 - [Quickstart Guide](quickstart.md) - Get started in 5 minutes
-- [Installation](../INSTALL.md) - Detailed installation instructions
+- [Installation](INSTALL.md) - Detailed installation instructions
 - [Examples Gallery](examples_gallery.md) - Complete collection of examples
 
 ### Reference
@@ -118,7 +118,7 @@ See [TDS Article Reproduction](tds_reproduction.md) for details.
 - [TDS Article Reproduction](tds_reproduction.md) - Reproduce research results
 
 ### Contributing
-- [Contributing Guide](../CONTRIBUTING.md) - How to contribute
+- [Contributing Guide](CONTRIBUTING.md) - How to contribute
 
 ## Use Cases
 
@@ -194,7 +194,7 @@ If you use Neural Dimensionality Tracker in your research, please cite:
 
 ## License
 
-MIT License - see [LICENSE](../LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 
@@ -206,11 +206,11 @@ This work builds on research by:
 
 ## Next Steps
 
-- [Install NDT](../INSTALL.md) and try the [Quickstart](quickstart.md)
+- [Install NDT](INSTALL.md) and try the [Quickstart](quickstart.md)
 - Explore [Examples](examples_gallery.md)
 - Read the [API Reference](api_reference.md)
 - Reproduce the [TDS experiment](tds_reproduction.md)
-- [Contribute](../CONTRIBUTING.md) to the project
+- [Contribute](CONTRIBUTING.md) to the project
 
 ---
 

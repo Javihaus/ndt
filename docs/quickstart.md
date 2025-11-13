@@ -160,7 +160,7 @@ tracker = HighFrequencyTracker(
 
 ## Next Steps
 
-- See [examples/](../examples/) for complete working code
+- See [examples/](https://github.com/Javihaus/ndt/tree/main/examples) for complete working code
 - Check API documentation for advanced features
 - Try with your own models and datasets
 
