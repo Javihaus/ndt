@@ -429,7 +429,12 @@ class TestExampleDifferences:
 
         # TDS: 784 → 256 → 128 → 10
         tds_model = nn.Sequential(
-            nn.Flatten(), nn.Linear(784, 256), nn.ReLU(), nn.Linear(256, 128), nn.ReLU(), nn.Linear(128, 10)
+            nn.Flatten(),
+            nn.Linear(784, 256),
+            nn.ReLU(),
+            nn.Linear(256, 128),
+            nn.ReLU(),
+            nn.Linear(128, 10),
         )
 
         quickstart_tracker = HighFrequencyTracker(quickstart_model)
@@ -447,4 +452,6 @@ class TestExampleDifferences:
 
 def pytest_configure(config):
     """Configure pytest with custom markers."""
-    config.addinivalue_line("markers", "slow: marks tests as slow (deselect with '-m \"not slow\"')")
+    config.addinivalue_line(
+        "markers", "slow: marks tests as slow (deselect with '-m \"not slow\"')"
+    )
