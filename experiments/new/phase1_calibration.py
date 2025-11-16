@@ -709,10 +709,22 @@ def run_phase1_calibration(output_dir: str = './experiments/new/results/phase1',
     print(f"  Measurement interval: {measurement_interval}")
 
     all_results = []
+    total_experiments = len(architectures) * len(datasets)
+    completed_count = 0
+    skipped_count = 0
 
     for dataset_name in datasets:
         for arch_name in architectures:
+            # Check if experiment already exists
+            output_file = Path(output_dir) / f'{arch_name}_{dataset_name}.json'
+            if output_file.exists():
+                print(f"⏭ Skipping {arch_name} on {dataset_name} (already exists)")
+                skipped_count += 1
+                completed_count += 1
+                continue
+
             try:
+                print(f"\n[{completed_count + 1}/{total_experiments}] Running {arch_name} on {dataset_name}...")
                 results = run_single_experiment(
                     arch_name, dataset_name,
                     num_steps=num_steps,
@@ -722,24 +734,27 @@ def run_phase1_calibration(output_dir: str = './experiments/new/results/phase1',
                 all_results.append(results)
 
                 # Save individual result
-                output_file = Path(output_dir) / f'{arch_name}_{dataset_name}.json'
                 with open(output_file, 'w') as f:
                     json.dump(results, f, indent=2)
 
                 print(f"✓ Saved: {output_file}")
+                completed_count += 1
 
             except Exception as e:
                 print(f"✗ Failed {arch_name} on {dataset_name}: {e}")
                 continue
 
-    # Save combined results
-    combined_file = Path(output_dir) / 'phase1_all_results.json'
-    with open(combined_file, 'w') as f:
-        json.dump(all_results, f, indent=2)
-
     print(f"\n{'='*70}")
-    print(f"Phase 1 complete. {len(all_results)} experiments saved to {output_dir}")
+    print(f"Progress: {completed_count}/{total_experiments} experiments")
+    print(f"  Skipped (already complete): {skipped_count}")
+    print(f"  Newly completed: {len(all_results)}")
     print(f"{'='*70}")
+
+    # Save combined results (only newly completed ones)
+    if all_results:
+        combined_file = Path(output_dir) / 'phase1_all_results.json'
+        with open(combined_file, 'w') as f:
+            json.dump(all_results, f, indent=2)
 
     return all_results
 
