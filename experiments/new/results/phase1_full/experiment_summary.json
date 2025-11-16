@@ -1,0 +1,14 @@
+{
+  "total_time": 213.12789297103882,
+  "completed": 1,
+  "skipped": 11,
+  "failed": 1,
+  "results": [
+    {
+      "arch": "transformer_shallow",
+      "dataset": "fashion_mnist",
+      "time": 208.4054741859436,
+      "accuracy": 0.756
+    }
+  ]
+}

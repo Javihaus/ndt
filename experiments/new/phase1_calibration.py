@@ -514,12 +514,72 @@ def get_cifar100_loaders(batch_size: int = 64, subset_size: Optional[int] = None
     return train_loader, test_loader, 3072, 100, 3
 
 
+def get_ag_news_loaders(batch_size: int = 64, subset_size: Optional[int] = None):
+    """Load AG News text classification dataset."""
+    import pandas as pd
+    import re
+    from collections import Counter
+
+    # Load CSV files
+    train_df = pd.read_csv('./data/ag_news_train.csv', header=None, names=['label', 'title', 'description'])
+    test_df = pd.read_csv('./data/ag_news_test.csv', header=None, names=['label', 'title', 'description'])
+
+    # Combine title and description
+    train_df['text'] = train_df['title'] + ' ' + train_df['description']
+    test_df['text'] = test_df['title'] + ' ' + test_df['description']
+
+    # Simple text preprocessing
+    def preprocess(text):
+        text = text.lower()
+        text = re.sub(r'[^a-z0-9\s]', '', text)
+        return text.split()
+
+    train_df['tokens'] = train_df['text'].apply(preprocess)
+    test_df['tokens'] = test_df['text'].apply(preprocess)
+
+    # Build vocabulary from train set
+    all_tokens = [token for tokens in train_df['tokens'] for token in tokens]
+    vocab = {'<PAD>': 0, '<UNK>': 1}
+    for token, _ in Counter(all_tokens).most_common(5000):  # Top 5000 words
+        vocab[token] = len(vocab)
+
+    max_len = 100
+
+    def tokens_to_ids(tokens):
+        ids = [vocab.get(token, vocab['<UNK>']) for token in tokens[:max_len]]
+        ids = ids + [vocab['<PAD>']] * (max_len - len(ids))
+        return ids
+
+    # Convert to tensors
+    train_X = torch.tensor([tokens_to_ids(tokens) for tokens in train_df['tokens']], dtype=torch.long)
+    train_y = torch.tensor(train_df['label'].values - 1, dtype=torch.long)  # Labels are 1-4, convert to 0-3
+    test_X = torch.tensor([tokens_to_ids(tokens) for tokens in test_df['tokens']], dtype=torch.long)
+    test_y = torch.tensor(test_df['label'].values - 1, dtype=torch.long)
+
+    if subset_size:
+        indices = torch.randperm(len(train_X))[:subset_size]
+        train_X = train_X[indices]
+        train_y = train_y[indices]
+        test_indices = torch.randperm(len(test_X))[:subset_size//5]
+        test_X = test_X[test_indices]
+        test_y = test_y[test_indices]
+
+    train_dataset = torch.utils.data.TensorDataset(train_X, train_y)
+    test_dataset = torch.utils.data.TensorDataset(test_X, test_y)
+
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=2)
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=2)
+
+    return train_loader, test_loader, len(vocab) * max_len, 4, 1  # input_dim, num_classes, in_channels
+
+
 DATASET_LOADERS = {
     'mnist': get_mnist_loaders,
     'fashion_mnist': get_fashion_mnist_loaders,
     'cifar10': get_cifar10_loaders,
     'svhn': get_svhn_loaders,
     'cifar100': get_cifar100_loaders,
+    'ag_news': get_ag_news_loaders,
 }
 
 

@@ -15,25 +15,31 @@ from phase1_calibration import run_single_experiment
 import argparse
 
 
-# Reduced experiment plan for available datasets
-EXPERIMENT_PLAN = [
-    # MLPs with MNIST (9 already complete, will be skipped)
-    ('mlp_shallow_2', 'mnist'),
-    ('mlp_medium_5', 'mnist'),
-    ('mlp_deep_10', 'mnist'),
-    ('mlp_verydeep_15', 'mnist'),
-    ('mlp_narrow', 'mnist'),
-    ('mlp_medium', 'mnist'),
-    ('mlp_wide', 'mnist'),
-    ('mlp_verywide', 'mnist'),
-    ('transformer_shallow', 'mnist'),
+# Full Architecture-Dataset Mapping
+# Original plan: 17 architectures × 5 datasets = 85 experiments
+# Current: 17 architectures × 4 datasets = 68 experiments
+# Modalities: Vision (MNIST, Fashion-MNIST, CIFAR-10) + Text (AG News)
 
-    # Additional experiments with available datasets
-    ('mlp_shallow_2', 'fashion_mnist'),
-    ('mlp_medium_5', 'fashion_mnist'),
-    ('cnn_shallow', 'fashion_mnist'),
-    ('transformer_shallow', 'fashion_mnist'),
+# All 17 architectures from phase1_calibration.py
+ARCHITECTURES = [
+    # Depth variation (MLPs)
+    'mlp_shallow_2', 'mlp_medium_5', 'mlp_deep_10', 'mlp_verydeep_15',
+    # Width variation (MLPs)
+    'mlp_narrow', 'mlp_medium', 'mlp_wide', 'mlp_verywide',
+    # CNNs
+    'cnn_shallow', 'cnn_medium', 'cnn_deep',
+    # ResNet
+    'resnet18',
+    # Transformers
+    'transformer_shallow', 'transformer_medium', 'transformer_deep',
+    'transformer_narrow', 'transformer_wide',
 ]
+
+# Available datasets: 3 vision + 1 text (multimodal validation of TAP framework)
+DATASETS = ['mnist', 'fashion_mnist', 'cifar10', 'ag_news']
+
+# Generate all 68 combinations
+EXPERIMENT_PLAN = [(arch, dataset) for arch in ARCHITECTURES for dataset in DATASETS]
 
 
 def run_sequential_experiments(num_steps=2000, output_dir='./results/phase1_full'):
