@@ -23,6 +23,7 @@ from tqdm import tqdm
 import json
 import time
 from pathlib import Path
+from dataset_downloader import get_dataset
 from typing import Dict, List, Tuple, Optional
 import warnings
 warnings.filterwarnings('ignore')
@@ -406,12 +407,8 @@ def get_mnist_loaders(batch_size: int = 64, subset_size: Optional[int] = None):
         transforms.Normalize((0.1307,), (0.3081,))
     ])
 
-    trainset = torchvision.datasets.MNIST(
-        root='./data', train=True, download=True, transform=transform
-    )
-    testset = torchvision.datasets.MNIST(
-        root='./data', train=False, download=True, transform=transform
-    )
+    trainset = get_dataset('mnist', root='./data', train=True, download=True, transform=transform)
+    testset = get_dataset('mnist', root='./data', train=False, download=True, transform=transform)
 
     if subset_size:
         trainset = Subset(trainset, torch.randperm(len(trainset))[:subset_size])
@@ -430,12 +427,8 @@ def get_fashion_mnist_loaders(batch_size: int = 64, subset_size: Optional[int] =
         transforms.Normalize((0.2860,), (0.3530,))
     ])
 
-    trainset = torchvision.datasets.FashionMNIST(
-        root='./data', train=True, download=True, transform=transform
-    )
-    testset = torchvision.datasets.FashionMNIST(
-        root='./data', train=False, download=True, transform=transform
-    )
+    trainset = get_dataset('fashion_mnist', root='./data', train=True, download=True, transform=transform)
+    testset = get_dataset('fashion_mnist', root='./data', train=False, download=True, transform=transform)
 
     if subset_size:
         trainset = Subset(trainset, torch.randperm(len(trainset))[:subset_size])
@@ -461,12 +454,8 @@ def get_cifar10_loaders(batch_size: int = 64, subset_size: Optional[int] = None)
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
     ])
 
-    trainset = torchvision.datasets.CIFAR10(
-        root='./data', train=True, download=True, transform=transform_train
-    )
-    testset = torchvision.datasets.CIFAR10(
-        root='./data', train=False, download=True, transform=transform_test
-    )
+    trainset = get_dataset('cifar10', root='./data', train=True, download=True, transform=transform_train)
+    testset = get_dataset('cifar10', root='./data', train=False, download=True, transform=transform_test)
 
     if subset_size:
         trainset = Subset(trainset, torch.randperm(len(trainset))[:subset_size])
@@ -485,12 +474,8 @@ def get_svhn_loaders(batch_size: int = 64, subset_size: Optional[int] = None):
         transforms.Normalize((0.4377, 0.4438, 0.4728), (0.1980, 0.2010, 0.1970))
     ])
 
-    trainset = torchvision.datasets.SVHN(
-        root='./data', split='train', download=True, transform=transform
-    )
-    testset = torchvision.datasets.SVHN(
-        root='./data', split='test', download=True, transform=transform
-    )
+    trainset = get_dataset('svhn', root='./data', train=True, download=True, transform=transform)
+    testset = get_dataset('svhn', root='./data', train=False, download=True, transform=transform)
 
     if subset_size:
         trainset = Subset(trainset, torch.randperm(len(trainset))[:subset_size])
@@ -516,12 +501,8 @@ def get_cifar100_loaders(batch_size: int = 64, subset_size: Optional[int] = None
         transforms.Normalize((0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761))
     ])
 
-    trainset = torchvision.datasets.CIFAR100(
-        root='./data', train=True, download=True, transform=transform_train
-    )
-    testset = torchvision.datasets.CIFAR100(
-        root='./data', train=False, download=True, transform=transform_test
-    )
+    trainset = get_dataset('cifar100', root='./data', train=True, download=True, transform=transform_train)
+    testset = get_dataset('cifar100', root='./data', train=False, download=True, transform=transform_test)
 
     if subset_size:
         trainset = Subset(trainset, torch.randperm(len(trainset))[:subset_size])
