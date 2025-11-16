@@ -1,0 +1,160 @@
+================================================================================
+TAP DYNAMICS EXPERIMENTS - QUICK START GUIDE
+================================================================================
+
+📁 Location: experiments/new/
+
+✅ All experiments have been implemented and committed to the repository.
+
+================================================================================
+WHAT WAS CREATED
+================================================================================
+
+1. Complete 4-Phase Experimental Framework (~160 KB of code)
+   ✓ Phase 1: Calibration (17 architectures × 5 datasets)
+   ✓ Phase 2: Prediction (test predictive power)
+   ✓ Phase 3: Real-Time Monitoring (practical tool)
+   ✓ Phase 4: Capability Emergence (dimensionality → performance link)
+
+2. Comprehensive Documentation
+   ✓ README.md (12 KB) - Complete usage guide
+   ✓ EXPERIMENT_PLAN.md (8 KB) - Implementation summary
+   ✓ CLAUDE.md (original critique explaining motivation)
+
+3. Master Runner Script
+   ✓ run_all_experiments.py - Orchestrates all 4 phases
+
+================================================================================
+QUICK START COMMANDS
+================================================================================
+
+1. QUICK TEST (Recommended First - 30 minutes)
+   
+   cd experiments/new
+   python run_all_experiments.py --all --quick-test
+   
+   This runs a small-scale test to verify everything works.
+
+2. FULL EXPERIMENTS (8-12 hours on GPU, ~48 hours on CPU)
+   
+   cd experiments/new
+   python run_all_experiments.py --all
+   
+   This runs the complete research program.
+
+3. INDIVIDUAL PHASES
+   
+   python run_all_experiments.py --phase 1  # Calibration
+   python run_all_experiments.py --phase 2  # Prediction
+   python run_all_experiments.py --phase 3  # Monitoring
+   python run_all_experiments.py --phase 4  # Capability emergence
+
+================================================================================
+THE CORE QUESTION
+================================================================================
+
+Can we predict neural network training dynamics from architecture 
+BEFORE training?
+
+If YES → Practical value for:
+  • Architecture search
+  • Early stopping
+  • Capability prediction
+
+If NO → TAP is descriptive, not predictive
+  • Still valuable to know!
+  • Honest negative results are publishable
+
+================================================================================
+FILE STRUCTURE
+================================================================================
+
+experiments/new/
+├── README.md                          Complete usage guide
+├── EXPERIMENT_PLAN.md                 Implementation summary
+├── CLAUDE.md                          Original critique
+│
+├── phase1_calibration.py              Establish α = f(architecture)
+├── phase1_analysis.py                 Extract α parameters
+├── phase2_prediction.py               Test predictive power
+├── phase3_realtime_monitor.py         Practical monitoring tool
+├── phase4_capability_emergence.py     Dimensionality → capability
+├── run_all_experiments.py             Master runner
+├── visualization_utils.py             Common plotting utilities
+│
+└── results/                           (Created during experiments)
+    ├── phase1/                        Raw calibration data
+    ├── phase1_analysis/               α models and visualizations
+    ├── phase2/                        Prediction results
+    ├── phase3/                        Monitoring demo
+    └── phase4/                        Capability emergence findings
+
+================================================================================
+SUCCESS CRITERIA
+================================================================================
+
+Phase 1: R² > 0.7 for α = f(architecture) model
+Phase 2: R² > 0.8 for predictions, 70%+ success rate
+Phase 3: Accurate monitoring with useful warnings
+Phase 4: Significant correlation (p < 0.05) between jumps
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Run quick test to verify setup:
+   python run_all_experiments.py --all --quick-test
+
+2. If successful, run full experiments:
+   python run_all_experiments.py --all
+
+3. Review results in:
+   results/EXPERIMENTS_SUMMARY.md
+
+4. Examine visualizations in each phase directory
+
+5. Interpret findings using criteria in README.md
+
+================================================================================
+DOCUMENTATION
+================================================================================
+
+- README.md: Complete usage guide with troubleshooting
+- EXPERIMENT_PLAN.md: Quick reference and success criteria
+- CLAUDE.md: Original critique explaining motivation
+
+All scripts have detailed docstrings and inline comments.
+
+================================================================================
+COMPUTATIONAL REQUIREMENTS
+================================================================================
+
+Quick Test:  ~30 min GPU,  ~2 hours CPU,  ~100 MB disk
+Full Run:    ~8-12 hours GPU,  ~48 hours CPU,  ~2-5 GB disk
+
+GPU strongly recommended for full experiments.
+
+================================================================================
+HELP
+================================================================================
+
+For usage questions:
+  python run_all_experiments.py --help
+  python phase1_calibration.py --help
+  
+Read the README:
+  cat experiments/new/README.md
+
+For bugs or issues:
+  Open GitHub issue
+
+================================================================================
+REMEMBER
+================================================================================
+
+The goal is to TEST the hypothesis rigorously, not confirm it.
+Negative results are valuable if honestly reported.
+
+Good luck with the experiments!
+
+================================================================================
