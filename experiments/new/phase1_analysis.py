@@ -210,7 +210,8 @@ def analyze_phase1_results(results_dir: str = './experiments/new/results/phase1'
 
     Returns DataFrame with architecture parameters and fitted α values.
     """
-    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     results_dir = Path(results_dir)
     result_files = list(results_dir.glob('*.json'))
