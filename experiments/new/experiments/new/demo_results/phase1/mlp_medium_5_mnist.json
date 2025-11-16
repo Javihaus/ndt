@@ -1,0 +1,2614 @@
+{
+  "arch_name": "mlp_medium_5",
+  "dataset_name": "mnist",
+  "architecture_params": {
+    "depth": 5,
+    "width": 64,
+    "num_params": 55000
+  },
+  "measurements": [
+    {
+      "step": 0,
+      "loss": 2.4,
+      "grad_norm": 2.1,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.5,
+          "participation_ratio": 0.475,
+          "effective_rank_90": 0.425,
+          "nuclear_norm_ratio": 0.55
+        }
+      }
+    },
+    {
+      "step": 5,
+      "loss": 2.343212797665165,
+      "grad_norm": 2.066942907643235,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3776727392494129,
+          "participation_ratio": 0.3587891022869423,
+          "effective_rank_90": 0.321021828362001,
+          "nuclear_norm_ratio": 0.41544001317435425
+        }
+      }
+    },
+    {
+      "step": 10,
+      "loss": 2.2878276763516423,
+      "grad_norm": 2.034432200964012,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.23995582888166947,
+          "participation_ratio": 0.227958037437586,
+          "effective_rank_90": 0.20396245454941905,
+          "nuclear_norm_ratio": 0.26395141176983644
+        }
+      }
+    },
+    {
+      "step": 15,
+      "loss": 2.2338100185556713,
+      "grad_norm": 2.002458849001428,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.1648236342295552,
+          "participation_ratio": 0.15658245251807743,
+          "effective_rank_90": 0.14010008909512192,
+          "nuclear_norm_ratio": 0.18130599765251074
+        }
+      }
+    },
+    {
+      "step": 20,
+      "loss": 2.181126061482707,
+      "grad_norm": 1.9710139700632356,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.03731940728953505,
+          "participation_ratio": 0.03545343692505829,
+          "effective_rank_90": 0.03172149619610479,
+          "nuclear_norm_ratio": 0.04105134801848855
+        }
+      }
+    },
+    {
+      "step": 25,
+      "loss": 2.129742875944569,
+      "grad_norm": 1.9400888292586467,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.09225201396710714,
+          "participation_ratio": 0.08763941326875178,
+          "effective_rank_90": 0.07841421187204106,
+          "nuclear_norm_ratio": 0.10147721536381786
+        }
+      }
+    },
+    {
+      "step": 30,
+      "loss": 2.079628345777633,
+      "grad_norm": 1.9096748360719191,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.1613267593250403,
+          "participation_ratio": 0.15326042135878826,
+          "effective_rank_90": 0.13712774542628425,
+          "nuclear_norm_ratio": 0.17745943525754432
+        }
+      }
+    },
+    {
+      "step": 35,
+      "loss": 2.030751147769177,
+      "grad_norm": 1.8797635419760477,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.16391566397623178,
+          "participation_ratio": 0.1557198807774202,
+          "effective_rank_90": 0.139328314379797,
+          "nuclear_norm_ratio": 0.18030723037385496
+        }
+      }
+    },
+    {
+      "step": 40,
+      "loss": 1.9830807320793582,
+      "grad_norm": 1.850346638085895,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.37634144794826935,
+          "participation_ratio": 0.35752437555085587,
+          "effective_rank_90": 0.31989023075602896,
+          "nuclear_norm_ratio": 0.4139755927430963
+        }
+      }
+    },
+    {
+      "step": 45,
+      "loss": 1.9365873031465672,
+      "grad_norm": 1.8214159528501157,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.20737435465663018,
+          "participation_ratio": 0.19700563692379866,
+          "effective_rank_90": 0.17626820145813565,
+          "nuclear_norm_ratio": 0.2281117901222932
+        }
+      }
+    },
+    {
+      "step": 50,
+      "loss": 1.8912418010642311,
+      "grad_norm": 1.7929634497812283,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.23095218975624257,
+          "participation_ratio": 0.21940458026843043,
+          "effective_rank_90": 0.19630936129280618,
+          "nuclear_norm_ratio": 0.2540474087318669
+        }
+      }
+    },
+    {
+      "step": 55,
+      "loss": 1.8470158834174275,
+      "grad_norm": 1.7649812252232056,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.1889021801474779,
+          "participation_ratio": 0.17945707114010398,
+          "effective_rank_90": 0.1605668531253562,
+          "nuclear_norm_ratio": 0.2077923981622257
+        }
+      }
+    },
+    {
+      "step": 60,
+      "loss": 1.803881907567951,
+      "grad_norm": 1.7374615061559637,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.08615645887777258,
+          "participation_ratio": 0.08184863593388395,
+          "effective_rank_90": 0.0732329900461067,
+          "nuclear_norm_ratio": 0.09477210476554984
+        }
+      }
+    },
+    {
+      "step": 65,
+      "loss": 1.7618129133767662,
+      "grad_norm": 1.7103966480361412,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.1649561648745474,
+          "participation_ratio": 0.15670835663082003,
+          "effective_rank_90": 0.1402127401433653,
+          "nuclear_norm_ratio": 0.18145178136200216
+        }
+      }
+    },
+    {
+      "step": 70,
+      "loss": 1.720782606353041,
+      "grad_norm": 1.6837791326735634,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.016149505299755364,
+          "participation_ratio": 0.015342030034767595,
+          "effective_rank_90": 0.013727079504792059,
+          "nuclear_norm_ratio": 0.017764455829730904
+        }
+      }
+    },
+    {
+      "step": 75,
+      "loss": 1.680765341219236,
+      "grad_norm": 1.6576015661428098,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.24896544797256265,
+          "participation_ratio": 0.2365171755739345,
+          "effective_rank_90": 0.21162063077667825,
+          "nuclear_norm_ratio": 0.27386199276981893
+        }
+      }
+    },
+    {
+      "step": 80,
+      "loss": 1.6417361058819704,
+      "grad_norm": 1.6318566767292975,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3046502150838394,
+          "participation_ratio": 0.2894177043296474,
+          "effective_rank_90": 0.2589526828212635,
+          "nuclear_norm_ratio": 0.33511523659222336
+        }
+      }
+    },
+    {
+      "step": 85,
+      "loss": 1.6036705057986487,
+      "grad_norm": 1.6065373129093137,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.23489463761917134,
+          "participation_ratio": 0.22314990573821278,
+          "effective_rank_90": 0.19966044197629565,
+          "nuclear_norm_ratio": 0.25838410138108847
+        }
+      }
+    },
+    {
+      "step": 90,
+      "loss": 1.5665447487300785,
+      "grad_norm": 1.5816364413634358,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.0,
+          "participation_ratio": 0.0,
+          "effective_rank_90": 0.0,
+          "nuclear_norm_ratio": 0.0
+        }
+      }
+    },
+    {
+      "step": 95,
+      "loss": 1.5303356298695463,
+      "grad_norm": 1.557147145022786,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.13541819393651913,
+          "participation_ratio": 0.12864728423969318,
+          "effective_rank_90": 0.11510546484604126,
+          "nuclear_norm_ratio": 0.14896001333017106
+        }
+      }
+    },
+    {
+      "step": 100,
+      "loss": 1.495020517339057,
+      "grad_norm": 1.5330626211475786,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.10733437112077046,
+          "participation_ratio": 0.10196765256473193,
+          "effective_rank_90": 0.0912342154526549,
+          "nuclear_norm_ratio": 0.11806780823284752
+        }
+      }
+    },
+    {
+      "step": 105,
+      "loss": 1.4605773380436746,
+      "grad_norm": 1.509376179437427,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.0011808443626379964,
+          "participation_ratio": 0.0011218021445060964,
+          "effective_rank_90": 0.001003717708242297,
+          "nuclear_norm_ratio": 0.001298928798901796
+        }
+      }
+    },
+    {
+      "step": 110,
+      "loss": 1.4269845638751193,
+      "grad_norm": 1.4860812401728831,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.06916077976191815,
+          "participation_ratio": 0.06570274077382224,
+          "effective_rank_90": 0.05878666279763042,
+          "nuclear_norm_ratio": 0.07607685773810996
+        }
+      }
+    },
+    {
+      "step": 115,
+      "loss": 1.394221198255998,
+      "grad_norm": 1.4631713323876958,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.0499444788650772,
+          "participation_ratio": 0.047447254921823334,
+          "effective_rank_90": 0.042452807035315614,
+          "nuclear_norm_ratio": 0.054938926751584925
+        }
+      }
+    },
+    {
+      "step": 120,
+      "loss": 1.3622667630162606,
+      "grad_norm": 1.4406400920712787,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.0,
+          "participation_ratio": 0.0,
+          "effective_rank_90": 0.0,
+          "nuclear_norm_ratio": 0.0
+        }
+      }
+    },
+    {
+      "step": 125,
+      "loss": 1.3311012855936777,
+      "grad_norm": 1.4184812604008876,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.15920817851196714,
+          "participation_ratio": 0.15124776958636876,
+          "effective_rank_90": 0.13532695173517206,
+          "nuclear_norm_ratio": 0.17512899636316387
+        }
+      }
+    },
+    {
+      "step": 130,
+      "loss": 1.3007052865503368,
+      "grad_norm": 1.3966886820030195,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.17203232741433883,
+          "participation_ratio": 0.1634307110436219,
+          "effective_rank_90": 0.146227478302188,
+          "nuclear_norm_ratio": 0.18923556015577273
+        }
+      }
+    },
+    {
+      "step": 135,
+      "loss": 1.2710597673973631,
+      "grad_norm": 1.3752563032435468,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3015017263481331,
+          "participation_ratio": 0.28642664003072643,
+          "effective_rank_90": 0.25627646739591314,
+          "nuclear_norm_ratio": 0.33165189898294645
+        }
+      }
+    },
+    {
+      "step": 140,
+      "loss": 1.242146198720242,
+      "grad_norm": 1.3541781705461122,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3688636522576081,
+          "participation_ratio": 0.3504204696447277,
+          "effective_rank_90": 0.31353410441896684,
+          "nuclear_norm_ratio": 0.4057500174833689
+        }
+      }
+    },
+    {
+      "step": 145,
+      "loss": 1.2139465085973338,
+      "grad_norm": 1.3334484287383217,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2544376283083933,
+          "participation_ratio": 0.2417157468929736,
+          "effective_rank_90": 0.21627198406213427,
+          "nuclear_norm_ratio": 0.27988139113923266
+        }
+      }
+    },
+    {
+      "step": 150,
+      "loss": 1.1864430713043337,
+      "grad_norm": 1.313061319425267,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2098910184020512,
+          "participation_ratio": 0.19939646748194864,
+          "effective_rank_90": 0.17840736564174353,
+          "nuclear_norm_ratio": 0.23088012024225635
+        }
+      }
+    },
+    {
+      "step": 155,
+      "loss": 1.1596186962976214,
+      "grad_norm": 1.2930111793899368,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.1987537889139787,
+          "participation_ratio": 0.18881609946827976,
+          "effective_rank_90": 0.1689407205768819,
+          "nuclear_norm_ratio": 0.2186291678053766
+        }
+      }
+    },
+    {
+      "step": 160,
+      "loss": 1.1334566174696097,
+      "grad_norm": 1.2732924390200637,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.08258743825137108,
+          "participation_ratio": 0.07845806633880252,
+          "effective_rank_90": 0.07019932251366541,
+          "nuclear_norm_ratio": 0.09084618207650819
+        }
+      }
+    },
+    {
+      "step": 165,
+      "loss": 1.1079404826693833,
+      "grad_norm": 1.2538996207609734,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.15686090384806567,
+          "participation_ratio": 0.1490178586556624,
+          "effective_rank_90": 0.13333176827085583,
+          "nuclear_norm_ratio": 0.17254699423287226
+        }
+      }
+    },
+    {
+      "step": 170,
+      "loss": 1.0830543434820712,
+      "grad_norm": 1.2348273375940078,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.13978887278654953,
+          "participation_ratio": 0.13279942914722204,
+          "effective_rank_90": 0.1188205418685671,
+          "nuclear_norm_ratio": 0.15376776006520448
+        }
+      }
+    },
+    {
+      "step": 175,
+      "loss": 1.0587826452605693,
+      "grad_norm": 1.2160702915400943,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.18176084117961944,
+          "participation_ratio": 0.17267279912063846,
+          "effective_rank_90": 0.1544967150026765,
+          "nuclear_norm_ratio": 0.1999369252975814
+        }
+      }
+    },
+    {
+      "step": 180,
+      "loss": 1.035110217403378,
+      "grad_norm": 1.1976232721880529,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.18180664083660253,
+          "participation_ratio": 0.1727163087947724,
+          "effective_rank_90": 0.15453564471111214,
+          "nuclear_norm_ratio": 0.1999873049202628
+        }
+      }
+    },
+    {
+      "step": 185,
+      "loss": 1.0120222638724834,
+      "grad_norm": 1.1794811552472253,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2481114686664592,
+          "participation_ratio": 0.23570589523313623,
+          "effective_rank_90": 0.2108947483664903,
+          "nuclear_norm_ratio": 0.27292261553310515
+        }
+      }
+    },
+    {
+      "step": 190,
+      "loss": 0.9895043539453527,
+      "grad_norm": 1.161638901124028,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.1994521159175026,
+          "participation_ratio": 0.18947951012162745,
+          "effective_rank_90": 0.1695342985298772,
+          "nuclear_norm_ratio": 0.21939732750925287
+        }
+      }
+    },
+    {
+      "step": 195,
+      "loss": 0.9675424131952609,
+      "grad_norm": 1.1440915535220322,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2526097522201782,
+          "participation_ratio": 0.23997926460916924,
+          "effective_rank_90": 0.21471828938715143,
+          "nuclear_norm_ratio": 0.27787072744219604
+        }
+      }
+    },
+    {
+      "step": 200,
+      "loss": 0.9461227146943173,
+      "grad_norm": 1.1268342380651841,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.1839491651276721,
+          "participation_ratio": 0.1747517068712885,
+          "effective_rank_90": 0.15635679035852126,
+          "nuclear_norm_ratio": 0.20234408164043932
+        }
+      }
+    },
+    {
+      "step": 205,
+      "loss": 0.9252318704336886,
+      "grad_norm": 1.1098621609437795,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.29382738945855047,
+          "participation_ratio": 0.27913601998562293,
+          "effective_rank_90": 0.2497532810397679,
+          "nuclear_norm_ratio": 0.32321012840440555
+        }
+      }
+    },
+    {
+      "step": 210,
+      "loss": 0.9048568229556572,
+      "grad_norm": 1.0931706075828191,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2979652015279114,
+          "participation_ratio": 0.2830669414515158,
+          "effective_rank_90": 0.2532704212987247,
+          "nuclear_norm_ratio": 0.32776172168070256
+        }
+      }
+    },
+    {
+      "step": 215,
+      "loss": 0.8849848371922855,
+      "grad_norm": 1.0767549413323743,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.29522089620858966,
+          "participation_ratio": 0.28045985139816015,
+          "effective_rank_90": 0.2509377617773012,
+          "nuclear_norm_ratio": 0.32474298582944866
+        }
+      }
+    },
+    {
+      "step": 220,
+      "loss": 0.8656034925055829,
+      "grad_norm": 1.060610602179599,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.23836043039654087,
+          "participation_ratio": 0.22644240887671382,
+          "effective_rank_90": 0.20260636583705974,
+          "nuclear_norm_ratio": 0.26219647343619495
+        }
+      }
+    },
+    {
+      "step": 225,
+      "loss": 0.8467006749242043,
+      "grad_norm": 1.0447331054820295,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.31913972303349447,
+          "participation_ratio": 0.30318273688181974,
+          "effective_rank_90": 0.27126876457847027,
+          "nuclear_norm_ratio": 0.35105369533684394
+        }
+      }
+    },
+    {
+      "step": 230,
+      "loss": 0.8282645695718224,
+      "grad_norm": 1.029118040721823,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3859704963700803,
+          "participation_ratio": 0.36667197155157627,
+          "effective_rank_90": 0.3280749219145682,
+          "nuclear_norm_ratio": 0.42456754600708835
+        }
+      }
+    },
+    {
+      "step": 235,
+      "loss": 0.8102836532824456,
+      "grad_norm": 1.0137610702805842,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.25114185311719617,
+          "participation_ratio": 0.23858476046133634,
+          "effective_rank_90": 0.21347057514961673,
+          "nuclear_norm_ratio": 0.27625603842891583
+        }
+      }
+    },
+    {
+      "step": 240,
+      "loss": 0.7927466873980648,
+      "grad_norm": 0.9986579282344431,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2258033168455942,
+          "participation_ratio": 0.2145131510033145,
+          "effective_rank_90": 0.19193281931875508,
+          "nuclear_norm_ratio": 0.24838364853015366
+        }
+      }
+    },
+    {
+      "step": 245,
+      "loss": 0.7756427107441253,
+      "grad_norm": 0.9838044191690506,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.37402040694961036,
+          "participation_ratio": 0.3553193866021298,
+          "effective_rank_90": 0.3179173459071688,
+          "nuclear_norm_ratio": 0.4114224476445714
+        }
+      }
+    },
+    {
+      "step": 250,
+      "loss": 0.7589610327784372,
+      "grad_norm": 0.9691964170141564,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.27176610664639866,
+          "participation_ratio": 0.2581778013140787,
+          "effective_rank_90": 0.23100119064943886,
+          "nuclear_norm_ratio": 0.29894271731103855
+        }
+      }
+    },
+    {
+      "step": 255,
+      "loss": 0.7426912269092368,
+      "grad_norm": 0.9548298638974533,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3061480377647868,
+          "participation_ratio": 0.2908406358765474,
+          "effective_rank_90": 0.2602258321000688,
+          "nuclear_norm_ratio": 0.33676284154126546
+        }
+      }
+    },
+    {
+      "step": 260,
+      "loss": 0.7268231239782289,
+      "grad_norm": 0.9407007690173638,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.28545623452637886,
+          "participation_ratio": 0.2711834228000599,
+          "effective_rank_90": 0.24263779934742202,
+          "nuclear_norm_ratio": 0.31400185797901675
+        }
+      }
+    },
+    {
+      "step": 265,
+      "loss": 0.7113468059045311,
+      "grad_norm": 0.9268052075344586,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.26975951793408914,
+          "participation_ratio": 0.25627154203738467,
+          "effective_rank_90": 0.22929559024397578,
+          "nuclear_norm_ratio": 0.2967354697274981
+        }
+      }
+    },
+    {
+      "step": 270,
+      "loss": 0.6962525994855504,
+      "grad_norm": 0.9131393194811982,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2378005333099484,
+          "participation_ratio": 0.22591050664445098,
+          "effective_rank_90": 0.20213045331345614,
+          "nuclear_norm_ratio": 0.26158058664094325
+        }
+      }
+    },
+    {
+      "step": 275,
+      "loss": 0.6815310703509168,
+      "grad_norm": 0.8996993086896947,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.16851727522801335,
+          "participation_ratio": 0.16009141146661268,
+          "effective_rank_90": 0.14323968394381134,
+          "nuclear_norm_ratio": 0.1853690027508147
+        }
+      }
+    },
+    {
+      "step": 280,
+      "loss": 0.6671730170656949,
+      "grad_norm": 0.8864814417371965,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.038526089481536296,
+          "participation_ratio": 0.03659978500745948,
+          "effective_rank_90": 0.03274717605930585,
+          "nuclear_norm_ratio": 0.04237869842968993
+        }
+      }
+    },
+    {
+      "step": 285,
+      "loss": 0.6531694653791869,
+      "grad_norm": 0.8734820469090024,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.05970547015236863,
+          "participation_ratio": 0.05672019664475019,
+          "effective_rank_90": 0.05074964962951333,
+          "nuclear_norm_ratio": 0.0656760171676055
+        }
+      }
+    },
+    {
+      "step": 290,
+      "loss": 0.6395116626157346,
+      "grad_norm": 0.8606975131785171,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.04975299355963276,
+          "participation_ratio": 0.04726534388165112,
+          "effective_rank_90": 0.042290044525687846,
+          "nuclear_norm_ratio": 0.05472829291559604
+        }
+      }
+    },
+    {
+      "step": 295,
+      "loss": 0.6261910722040115,
+      "grad_norm": 0.8481242892041653,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2315242030097553,
+          "participation_ratio": 0.21994799285926753,
+          "effective_rank_90": 0.196795572558292,
+          "nuclear_norm_ratio": 0.2546766233107308
+        }
+      }
+    },
+    {
+      "step": 300,
+      "loss": 0.6131993683413886,
+      "grad_norm": 0.8357588823428846,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2673323914134299,
+          "participation_ratio": 0.25396577184275837,
+          "effective_rank_90": 0.2272325327014154,
+          "nuclear_norm_ratio": 0.2940656305547729
+        }
+      }
+    },
+    {
+      "step": 305,
+      "loss": 0.6005284307900356,
+      "grad_norm": 0.8235978576799252,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.20903129369726725,
+          "participation_ratio": 0.19857972901240387,
+          "effective_rank_90": 0.17767659964267715,
+          "nuclear_norm_ratio": 0.229934423066994
+        }
+      }
+    },
+    {
+      "step": 310,
+      "loss": 0.588170339801509,
+      "grad_norm": 0.8116378370746837,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.4990922641130419,
+          "participation_ratio": 0.4741376509073898,
+          "effective_rank_90": 0.4242284244960856,
+          "nuclear_norm_ratio": 0.5490014905243461
+        }
+      }
+    },
+    {
+      "step": 315,
+      "loss": 0.5761173711666511,
+      "grad_norm": 0.7998754982223106,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6571627427976154,
+          "participation_ratio": 0.6243046056577346,
+          "effective_rank_90": 0.5585883313779731,
+          "nuclear_norm_ratio": 0.722879017077377
+        }
+      }
+    },
+    {
+      "step": 320,
+      "loss": 0.5643619913877074,
+      "grad_norm": 0.7883075737308247,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7496823489386074,
+          "participation_ratio": 0.712198231491677,
+          "effective_rank_90": 0.6372299965978163,
+          "nuclear_norm_ratio": 0.8246505838324683
+        }
+      }
+    },
+    {
+      "step": 325,
+      "loss": 0.5528968529696463,
+      "grad_norm": 0.7769308502134844,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7527033601213076,
+          "participation_ratio": 0.7150681921152422,
+          "effective_rank_90": 0.6397978561031115,
+          "nuclear_norm_ratio": 0.8279736961334384
+        }
+      }
+    },
+    {
+      "step": 330,
+      "loss": 0.5417147898277345,
+      "grad_norm": 0.7657421673961591,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7980687030248088,
+          "participation_ratio": 0.7581652678735683,
+          "effective_rank_90": 0.6783583975710875,
+          "nuclear_norm_ratio": 0.8778755733272897
+        }
+      }
+    },
+    {
+      "step": 335,
+      "loss": 0.5308088128085011,
+      "grad_norm": 0.7547384172394552,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7835821602501805,
+          "participation_ratio": 0.7444030522376714,
+          "effective_rank_90": 0.6660448362126534,
+          "nuclear_norm_ratio": 0.8619403762751986
+        }
+      }
+    },
+    {
+      "step": 340,
+      "loss": 0.5201721053212897,
+      "grad_norm": 0.7439165430753518,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8688596699595975,
+          "participation_ratio": 0.8254166864616176,
+          "effective_rank_90": 0.7385307194656578,
+          "nuclear_norm_ratio": 0.9557456369555574
+        }
+      }
+    },
+    {
+      "step": 345,
+      "loss": 0.5097980190776663,
+      "grad_norm": 0.7332735387581064,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9192342903550067,
+          "participation_ratio": 0.8732725758372564,
+          "effective_rank_90": 0.7813491468017557,
+          "nuclear_norm_ratio": 1.0111577193905075
+        }
+      }
+    },
+    {
+      "step": 350,
+      "loss": 0.49968006993602376,
+      "grad_norm": 0.7228064478291953,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7754086977821886,
+          "participation_ratio": 0.7366382628930791,
+          "effective_rank_90": 0.6590973931148603,
+          "nuclear_norm_ratio": 0.8529495675604075
+        }
+      }
+    },
+    {
+      "step": 355,
+      "loss": 0.4898119338487812,
+      "grad_norm": 0.7125123626960561,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9107534447271672,
+          "participation_ratio": 0.8652157724908088,
+          "effective_rank_90": 0.7741404280180921,
+          "nuclear_norm_ratio": 1.001828789199884
+        }
+      }
+    },
+    {
+      "step": 360,
+      "loss": 0.480187442909649,
+      "grad_norm": 0.7023884238244041,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9072340497459404,
+          "participation_ratio": 0.8618723472586433,
+          "effective_rank_90": 0.7711489422840493,
+          "nuclear_norm_ratio": 0.9979574547205344
+        }
+      }
+    },
+    {
+      "step": 365,
+      "loss": 0.4708005814984866,
+      "grad_norm": 0.6924318189438995,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6458066909156602,
+          "participation_ratio": 0.6135163563698772,
+          "effective_rank_90": 0.5489356872783112,
+          "nuclear_norm_ratio": 0.7103873600072264
+        }
+      }
+    },
+    {
+      "step": 370,
+      "loss": 0.4616454825213435,
+      "grad_norm": 0.682639782266942,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6363429367976231,
+          "participation_ratio": 0.6045257899577419,
+          "effective_rank_90": 0.5408914962779796,
+          "nuclear_norm_ratio": 0.6999772304773855
+        }
+      }
+    },
+    {
+      "step": 375,
+      "loss": 0.4527164237433354,
+      "grad_norm": 0.6730095937203802,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6167139857692443,
+          "participation_ratio": 0.5858782864807821,
+          "effective_rank_90": 0.5242068879038576,
+          "nuclear_norm_ratio": 0.6783853843461688
+        }
+      }
+    },
+    {
+      "step": 380,
+      "loss": 0.44400782421206064,
+      "grad_norm": 0.6635385781899167,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6875890771883888,
+          "participation_ratio": 0.6532096233289694,
+          "effective_rank_90": 0.5844507156101305,
+          "nuclear_norm_ratio": 0.7563479849072278
+        }
+      }
+    },
+    {
+      "step": 385,
+      "loss": 0.4355142407693229,
+      "grad_norm": 0.6542241047770045,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6027182737851389,
+          "participation_ratio": 0.5725823600958819,
+          "effective_rank_90": 0.512310532717368,
+          "nuclear_norm_ratio": 0.6629901011636528
+        }
+      }
+    },
+    {
+      "step": 390,
+      "loss": 0.42723036464898123,
+      "grad_norm": 0.6450635860680252,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.5077288859186999,
+          "participation_ratio": 0.4823424416227649,
+          "effective_rank_90": 0.4315695530308949,
+          "nuclear_norm_ratio": 0.5585017745105699
+        }
+      }
+    },
+    {
+      "step": 395,
+      "loss": 0.4191510181587971,
+      "grad_norm": 0.6360544774155451,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3916928000545778,
+          "participation_ratio": 0.3721081600518489,
+          "effective_rank_90": 0.3329388800463911,
+          "nuclear_norm_ratio": 0.4308620800600356
+        }
+      }
+    },
+    {
+      "step": 400,
+      "loss": 0.4112711514442092,
+      "grad_norm": 0.6271942762314535,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.18704151485154472,
+          "participation_ratio": 0.17768943910896748,
+          "effective_rank_90": 0.158985287623813,
+          "nuclear_norm_ratio": 0.2057456663366992
+        }
+      }
+    },
+    {
+      "step": 405,
+      "loss": 0.40358583933200953,
+      "grad_norm": 0.618480521291783,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.14673929872772606,
+          "participation_ratio": 0.13940233379133976,
+          "effective_rank_90": 0.12472840391856715,
+          "nuclear_norm_ratio": 0.16141322860049867
+        }
+      }
+    },
+    {
+      "step": 410,
+      "loss": 0.39609027825194976,
+      "grad_norm": 0.6099107920530199,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.2608358167591771,
+          "participation_ratio": 0.24779402592121824,
+          "effective_rank_90": 0.22171044424530054,
+          "nuclear_norm_ratio": 0.28691939843509484
+        }
+      }
+    },
+    {
+      "step": 415,
+      "loss": 0.3887797832343536,
+      "grad_norm": 0.601482707979716,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3063821933760394,
+          "participation_ratio": 0.29106308370723744,
+          "effective_rank_90": 0.26042486436963347,
+          "nuclear_norm_ratio": 0.33702041271364336
+        }
+      }
+    },
+    {
+      "step": 420,
+      "loss": 0.3816497849818584,
+      "grad_norm": 0.593193927883213,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.37028751068310306,
+          "participation_ratio": 0.35177313514894787,
+          "effective_rank_90": 0.3147443840806376,
+          "nuclear_norm_ratio": 0.4073162617514134
+        }
+      }
+    },
+    {
+      "step": 425,
+      "loss": 0.37469582701345516,
+      "grad_norm": 0.5850421492712974,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.4237367546846919,
+          "participation_ratio": 0.4025499169504573,
+          "effective_rank_90": 0.3601762414819881,
+          "nuclear_norm_ratio": 0.4661104301531611
+        }
+      }
+    },
+    {
+      "step": 430,
+      "loss": 0.367913562879043,
+      "grad_norm": 0.5770251077086048,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3970938643969862,
+          "participation_ratio": 0.37723917117713684,
+          "effective_rank_90": 0.3375297847374382,
+          "nuclear_norm_ratio": 0.43680325083668486
+        }
+      }
+    },
+    {
+      "step": 435,
+      "loss": 0.36129875344275664,
+      "grad_norm": 0.5691405761875953,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.41363511237696304,
+          "participation_ratio": 0.3929533567581149,
+          "effective_rank_90": 0.35158984552041855,
+          "nuclear_norm_ratio": 0.45499862361465937
+        }
+      }
+    },
+    {
+      "step": 440,
+      "loss": 0.3548472642333679,
+      "grad_norm": 0.5613863645099257,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.43331884358570427,
+          "participation_ratio": 0.411652901406419,
+          "effective_rank_90": 0.36832101704784864,
+          "nuclear_norm_ratio": 0.4766507279442747
+        }
+      }
+    },
+    {
+      "step": 445,
+      "loss": 0.3485550628601073,
+      "grad_norm": 0.5537603186780473,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.4239868330022101,
+          "participation_ratio": 0.40278749135209957,
+          "effective_rank_90": 0.36038880805187856,
+          "nuclear_norm_ratio": 0.46638551630243114
+        }
+      }
+    },
+    {
+      "step": 450,
+      "loss": 0.342418216492288,
+      "grad_norm": 0.5462603202968597,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.45043227639968897,
+          "participation_ratio": 0.4279106625797045,
+          "effective_rank_90": 0.38286743493973563,
+          "nuclear_norm_ratio": 0.4954755040396579
+        }
+      }
+    },
+    {
+      "step": 455,
+      "loss": 0.3364328894011587,
+      "grad_norm": 0.5388842859852533,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.286737278261132,
+          "participation_ratio": 0.2724004143480754,
+          "effective_rank_90": 0.2437266865219622,
+          "nuclear_norm_ratio": 0.3154110060872452
+        }
+      }
+    },
+    {
+      "step": 460,
+      "loss": 0.3305953405624486,
+      "grad_norm": 0.5316301667973795,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.3430084085170486,
+          "participation_ratio": 0.32585798809119615,
+          "effective_rank_90": 0.29155714723949133,
+          "nuclear_norm_ratio": 0.3773092493687535
+        }
+      }
+    },
+    {
+      "step": 465,
+      "loss": 0.32490192131810514,
+      "grad_norm": 0.5244959476534861,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.4574245993068101,
+          "participation_ratio": 0.4345533693414696,
+          "effective_rank_90": 0.3888109094107886,
+          "nuclear_norm_ratio": 0.5031670592374912
+        }
+      }
+    },
+    {
+      "step": 470,
+      "loss": 0.3193490730957641,
+      "grad_norm": 0.5174796467801592,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.4479889701886368,
+          "participation_ratio": 0.42558952167920494,
+          "effective_rank_90": 0.3807906246603413,
+          "nuclear_norm_ratio": 0.49278786720750056
+        }
+      }
+    },
+    {
+      "step": 475,
+      "loss": 0.313933325184526,
+      "grad_norm": 0.5105793151598186,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.605250019778845,
+          "participation_ratio": 0.5749875187899027,
+          "effective_rank_90": 0.5144625168120182,
+          "nuclear_norm_ratio": 0.6657750217567295
+        }
+      }
+    },
+    {
+      "step": 480,
+      "loss": 0.30865129256564877,
+      "grad_norm": 0.5037930359893108,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6497007266089051,
+          "participation_ratio": 0.6172156902784598,
+          "effective_rank_90": 0.5522456176175693,
+          "nuclear_norm_ratio": 0.7146707992697957
+        }
+      }
+    },
+    {
+      "step": 485,
+      "loss": 0.3034996737968008,
+      "grad_norm": 0.4971189241474522,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7739134343570111,
+          "participation_ratio": 0.7352177626391605,
+          "effective_rank_90": 0.6578264192034594,
+          "nuclear_norm_ratio": 0.8513047777927123
+        }
+      }
+    },
+    {
+      "step": 490,
+      "loss": 0.29847524894855215,
+      "grad_norm": 0.4905551256713715,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7308545383738461,
+          "participation_ratio": 0.6943118114551537,
+          "effective_rank_90": 0.6212263576177691,
+          "nuclear_norm_ratio": 0.8039399922112307
+        }
+      }
+    },
+    {
+      "step": 495,
+      "loss": 0.29357487759181383,
+      "grad_norm": 0.4840998172415083,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.5775532582437536,
+          "participation_ratio": 0.5486755953315658,
+          "effective_rank_90": 0.49092026950719053,
+          "nuclear_norm_ratio": 0.635308584068129
+        }
+      }
+    },
+    {
+      "step": 500,
+      "loss": 0.2887954968349672,
+      "grad_norm": 0.47775120567512364,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6007624901200121,
+          "participation_ratio": 0.5707243656140115,
+          "effective_rank_90": 0.5106481166020103,
+          "nuclear_norm_ratio": 0.6608387391320134
+        }
+      }
+    },
+    {
+      "step": 505,
+      "loss": 0.2841341194094572,
+      "grad_norm": 0.4715075274281827,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7188661265929008,
+          "participation_ratio": 0.6829228202632558,
+          "effective_rank_90": 0.6110362076039657,
+          "nuclear_norm_ratio": 0.790752739252191
+        }
+      }
+    },
+    {
+      "step": 510,
+      "loss": 0.2795878318026523,
+      "grad_norm": 0.46536704810546936,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8036271794625879,
+          "participation_ratio": 0.7634458204894584,
+          "effective_rank_90": 0.6830831025431997,
+          "nuclear_norm_ratio": 0.8839898974088467
+        }
+      }
+    },
+    {
+      "step": 515,
+      "loss": 0.2751537924368037,
+      "grad_norm": 0.45932806197879883,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7501353592054179,
+          "participation_ratio": 0.7126285912451469,
+          "effective_rank_90": 0.6376150553246052,
+          "nuclear_norm_ratio": 0.8251488951259597
+        }
+      }
+    },
+    {
+      "step": 520,
+      "loss": 0.27082922989296787,
+      "grad_norm": 0.4533888915131935,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6421375825265149,
+          "participation_ratio": 0.6100307034001891,
+          "effective_rank_90": 0.5458169451475376,
+          "nuclear_norm_ratio": 0.7063513407791664
+        }
+      }
+    },
+    {
+      "step": 525,
+      "loss": 0.26661144117877833,
+      "grad_norm": 0.4475478869008903,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7655824849902518,
+          "participation_ratio": 0.7273033607407392,
+          "effective_rank_90": 0.650745112241714,
+          "nuclear_norm_ratio": 0.8421407334892771
+        }
+      }
+    },
+    {
+      "step": 530,
+      "loss": 0.2624977900389881,
+      "grad_norm": 0.44180342560304964,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8728282946388213,
+          "participation_ratio": 0.8291868799068802,
+          "effective_rank_90": 0.7419040504429981,
+          "nuclear_norm_ratio": 0.9601111241027035
+        }
+      }
+    },
+    {
+      "step": 535,
+      "loss": 0.25848570530772397,
+      "grad_norm": 0.4361539118990403,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9257905127296264,
+          "participation_ratio": 0.8795009870931451,
+          "effective_rank_90": 0.7869219358201824,
+          "nuclear_norm_ratio": 1.0183695640025892
+        }
+      }
+    },
+    {
+      "step": 540,
+      "loss": 0.25457267930142446,
+      "grad_norm": 0.4305977764431731,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9404024540120637,
+          "participation_ratio": 0.8933823313114605,
+          "effective_rank_90": 0.7993420859102541,
+          "nuclear_norm_ratio": 1.03444269941327
+        }
+      }
+    },
+    {
+      "step": 545,
+      "loss": 0.250756266251456,
+      "grad_norm": 0.4251334758287615,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.773021535076492,
+          "participation_ratio": 0.7343704583226673,
+          "effective_rank_90": 0.6570683048150181,
+          "nuclear_norm_ratio": 0.8503236885841412
+        }
+      }
+    },
+    {
+      "step": 550,
+      "loss": 0.2470340807754274,
+      "grad_norm": 0.4197594921593878,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8047979687190648,
+          "participation_ratio": 0.7645580702831115,
+          "effective_rank_90": 0.6840782734112051,
+          "nuclear_norm_ratio": 0.8852777655909714
+        }
+      }
+    },
+    {
+      "step": 555,
+      "loss": 0.24340379638624887,
+      "grad_norm": 0.4144743326272552,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8819076685541665,
+          "participation_ratio": 0.8378122851264581,
+          "effective_rank_90": 0.7496215182710415,
+          "nuclear_norm_ratio": 0.9700984354095832
+        }
+      }
+    },
+    {
+      "step": 560,
+      "loss": 0.23986314403800132,
+      "grad_norm": 0.40927652909850964,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7544321098145471,
+          "participation_ratio": 0.7167105043238198,
+          "effective_rank_90": 0.641267293342365,
+          "nuclear_norm_ratio": 0.8298753207960019
+        }
+      }
+    },
+    {
+      "step": 565,
+      "loss": 0.23640991070770906,
+      "grad_norm": 0.4041646377054151,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.7255618877281185,
+          "participation_ratio": 0.6892837933417125,
+          "effective_rank_90": 0.6167276045689006,
+          "nuclear_norm_ratio": 0.7981180765009304
+        }
+      }
+    },
+    {
+      "step": 570,
+      "loss": 0.23304193801212844,
+      "grad_norm": 0.39913723844527016,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.656988432477745,
+          "participation_ratio": 0.6241390108538577,
+          "effective_rank_90": 0.5584401676060832,
+          "nuclear_norm_ratio": 0.7226872757255195
+        }
+      }
+    },
+    {
+      "step": 575,
+      "loss": 0.2297571208586879,
+      "grad_norm": 0.39419293478595363,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6036985560225684,
+          "participation_ratio": 0.5735136282214399,
+          "effective_rank_90": 0.5131437726191831,
+          "nuclear_norm_ratio": 0.6640684116248253
+        }
+      }
+    },
+    {
+      "step": 580,
+      "loss": 0.22655340612973662,
+      "grad_norm": 0.38933035327799015,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8006915910968497,
+          "participation_ratio": 0.7606570115420072,
+          "effective_rank_90": 0.6805878524323222,
+          "nuclear_norm_ratio": 0.8807607502065348
+        }
+      }
+    },
+    {
+      "step": 585,
+      "loss": 0.2234287913992793,
+      "grad_norm": 0.3845481431730272,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9393542773621685,
+          "participation_ratio": 0.89238656349406,
+          "effective_rank_90": 0.7984511357578432,
+          "nuclear_norm_ratio": 1.0332897050983854
+        }
+      }
+    },
+    {
+      "step": 590,
+      "loss": 0.22038132368139446,
+      "grad_norm": 0.3798449760486188,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9494077779984779,
+          "participation_ratio": 0.9019373890985539,
+          "effective_rank_90": 0.8069966112987061,
+          "nuclear_norm_ratio": 1.0443485557983256
+        }
+      }
+    },
+    {
+      "step": 595,
+      "loss": 0.21740909820955512,
+      "grad_norm": 0.37521954543921077,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9444406963365453,
+          "participation_ratio": 0.897218661519718,
+          "effective_rank_90": 0.8027745918860635,
+          "nuclear_norm_ratio": 1.0388847659701999
+        }
+      }
+    },
+    {
+      "step": 600,
+      "loss": 0.21451025724608708,
+      "grad_norm": 0.3706705664732254,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8589572354236097,
+          "participation_ratio": 0.8160093736524292,
+          "effective_rank_90": 0.7301136501100682,
+          "nuclear_norm_ratio": 0.9448529589659708
+        }
+      }
+    },
+    {
+      "step": 605,
+      "loss": 0.21168298892102294,
+      "grad_norm": 0.3661967755161437,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.800966305714046,
+          "participation_ratio": 0.7609179904283437,
+          "effective_rank_90": 0.6808213598569391,
+          "nuclear_norm_ratio": 0.8810629362854507
+        }
+      }
+    },
+    {
+      "step": 610,
+      "loss": 0.20892552609962411,
+      "grad_norm": 0.36179692981948863,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.5615344768930386,
+          "participation_ratio": 0.5334577530483866,
+          "effective_rank_90": 0.4773043053590828,
+          "nuclear_norm_ratio": 0.6176879245823425
+        }
+      }
+    },
+    {
+      "step": 615,
+      "loss": 0.2062361452778642,
+      "grad_norm": 0.3574698071756085,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6366281296263067,
+          "participation_ratio": 0.6047967231449913,
+          "effective_rank_90": 0.5411339101823607,
+          "nuclear_norm_ratio": 0.7002909425889374
+        }
+      }
+    },
+    {
+      "step": 620,
+      "loss": 0.20361316550518294,
+      "grad_norm": 0.3532142055781671,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.6679498086011174,
+          "participation_ratio": 0.6345523181710615,
+          "effective_rank_90": 0.5677573373109498,
+          "nuclear_norm_ratio": 0.7347447894612292
+        }
+      }
+    },
+    {
+      "step": 625,
+      "loss": 0.20105494733383705,
+      "grad_norm": 0.34902894288824593,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8434842175433012,
+          "participation_ratio": 0.801310006666136,
+          "effective_rank_90": 0.716961584911806,
+          "nuclear_norm_ratio": 0.9278326392976314
+        }
+      }
+    },
+    {
+      "step": 630,
+      "loss": 0.19855989179419242,
+      "grad_norm": 0.3449128565059638,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.997706419488257,
+          "participation_ratio": 0.9478210985138441,
+          "effective_rank_90": 0.8480504565650184,
+          "nuclear_norm_ratio": 1.0974770614370828
+        }
+      }
+    },
+    {
+      "step": 635,
+      "loss": 0.19612643939531582,
+      "grad_norm": 0.3408648030475254,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.0007056564297643,
+          "participation_ratio": 0.950670373608276,
+          "effective_rank_90": 0.8505998079652997,
+          "nuclear_norm_ratio": 1.1007762220727408
+        }
+      }
+    },
+    {
+      "step": 640,
+      "loss": 0.19375306915024226,
+      "grad_norm": 0.3368836580276074,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.212841020067631,
+          "participation_ratio": 1.1521989690642493,
+          "effective_rank_90": 1.0309148670574864,
+          "nuclear_norm_ratio": 1.3341251220743942
+        }
+      }
+    },
+    {
+      "step": 645,
+      "loss": 0.191438297625309,
+      "grad_norm": 0.3329683155469939,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.2198340496415196,
+          "participation_ratio": 1.1588423471594436,
+          "effective_rank_90": 1.0368589421952916,
+          "nuclear_norm_ratio": 1.3418174546056718
+        }
+      }
+    },
+    {
+      "step": 650,
+      "loss": 0.18918067801296062,
+      "grad_norm": 0.32911768798537544,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.0061379871176488,
+          "participation_ratio": 0.9558310877617663,
+          "effective_rank_90": 0.8552172890500015,
+          "nuclear_norm_ratio": 1.1067517858294138
+        }
+      }
+    },
+    {
+      "step": 655,
+      "loss": 0.1869787992274477,
+      "grad_norm": 0.32533070569922495,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.109430144733341,
+          "participation_ratio": 1.0539586374966738,
+          "effective_rank_90": 0.9430156230233399,
+          "nuclear_norm_ratio": 1.220373159206675
+        }
+      }
+    },
+    {
+      "step": 660,
+      "loss": 0.184831285022852,
+      "grad_norm": 0.3216063167246678,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.1621028662614896,
+          "participation_ratio": 1.103997722948415,
+          "effective_rank_90": 0.9877874363222662,
+          "nuclear_norm_ratio": 1.2783131528876386
+        }
+      }
+    },
+    {
+      "step": 665,
+      "loss": 0.1827367931328882,
+      "grad_norm": 0.3179434864852628,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.1260820621594896,
+          "participation_ratio": 1.069777959051515,
+          "effective_rank_90": 0.9571697528355662,
+          "nuclear_norm_ratio": 1.2386902683754386
+        }
+      }
+    },
+    {
+      "step": 670,
+      "loss": 0.18069401443194355,
+      "grad_norm": 0.3143411975046135,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.015549844076474,
+          "participation_ratio": 0.9647723518726503,
+          "effective_rank_90": 0.863217367465003,
+          "nuclear_norm_ratio": 1.1171048284841216
+        }
+      }
+    },
+    {
+      "step": 675,
+      "loss": 0.17870167211683186,
+      "grad_norm": 0.31079844912372867,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.082975370488441,
+          "participation_ratio": 1.0288266019640189,
+          "effective_rank_90": 0.9205290649151748,
+          "nuclear_norm_ratio": 1.1912729075372852
+        }
+      }
+    },
+    {
+      "step": 680,
+      "loss": 0.17675852090875,
+      "grad_norm": 0.3073142572230557,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8478864729755021,
+          "participation_ratio": 0.805492149326727,
+          "effective_rank_90": 0.7207035020291768,
+          "nuclear_norm_ratio": 0.9326751202730524
+        }
+      }
+    },
+    {
+      "step": 685,
+      "loss": 0.17486334627493788,
+      "grad_norm": 0.3038876539491074,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8428600553447706,
+          "participation_ratio": 0.800717052577532,
+          "effective_rank_90": 0.7164310470430549,
+          "nuclear_norm_ratio": 0.9271460608792478
+        }
+      }
+    },
+    {
+      "step": 690,
+      "loss": 0.17301496366955627,
+      "grad_norm": 0.3005176874456075,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8597279303475669,
+          "participation_ratio": 0.8167415338301885,
+          "effective_rank_90": 0.7307687407954319,
+          "nuclear_norm_ratio": 0.9457007233823237
+        }
+      }
+    },
+    {
+      "step": 695,
+      "loss": 0.1712122177933068,
+      "grad_norm": 0.2972034215890802,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.8641964057279021,
+          "participation_ratio": 0.8209865854415069,
+          "effective_rank_90": 0.7345669448687168,
+          "nuclear_norm_ratio": 0.9506160463006924
+        }
+      }
+    },
+    {
+      "step": 700,
+      "loss": 0.16945398187133254,
+      "grad_norm": 0.2939439357288101,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.935233012551416,
+          "participation_ratio": 0.8884713619238451,
+          "effective_rank_90": 0.7949480606687036,
+          "nuclear_norm_ratio": 1.0287563138065576
+        }
+      }
+    },
+    {
+      "step": 705,
+      "loss": 0.16773915694894675,
+      "grad_norm": 0.29073832443109926,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.20841735591998,
+          "participation_ratio": 1.147996488123981,
+          "effective_rank_90": 1.027154752531983,
+          "nuclear_norm_ratio": 1.3292590915119782
+        }
+      }
+    },
+    {
+      "step": 710,
+      "loss": 0.16606667120475072,
+      "grad_norm": 0.2875856972277525,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3341581316349542,
+          "participation_ratio": 1.2674502250532065,
+          "effective_rank_90": 1.134034411889711,
+          "nuclear_norm_ratio": 1.4675739447984497
+        }
+      }
+    },
+    {
+      "step": 715,
+      "loss": 0.16443547928071017,
+      "grad_norm": 0.28448517836871956,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.4569194529825504,
+          "participation_ratio": 1.384073480333423,
+          "effective_rank_90": 1.238381535035168,
+          "nuclear_norm_ratio": 1.6026113982808057
+        }
+      }
+    },
+    {
+      "step": 720,
+      "loss": 0.16284456162877287,
+      "grad_norm": 0.281435906578825,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3773384300596934,
+          "participation_ratio": 1.3084715085567087,
+          "effective_rank_90": 1.1707376655507393,
+          "nuclear_norm_ratio": 1.5150722730656627
+        }
+      }
+    },
+    {
+      "step": 725,
+      "loss": 0.1612929238736176,
+      "grad_norm": 0.2784370348185202,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.374838824586341,
+          "participation_ratio": 1.306096883357024,
+          "effective_rank_90": 1.1686130008983897,
+          "nuclear_norm_ratio": 1.5123227070449752
+        }
+      }
+    },
+    {
+      "step": 730,
+      "loss": 0.1597795961911373,
+      "grad_norm": 0.2754877300485887,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.666444841946043,
+          "participation_ratio": 1.5831225998487406,
+          "effective_rank_90": 1.4164781156541364,
+          "nuclear_norm_ratio": 1.8330893261406473
+        }
+      }
+    },
+    {
+      "step": 735,
+      "loss": 0.15830363270226738,
+      "grad_norm": 0.272587172998741,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.780697216638449,
+          "participation_ratio": 1.6916623558065265,
+          "effective_rank_90": 1.5135926341426815,
+          "nuclear_norm_ratio": 1.958766938302294
+        }
+      }
+    },
+    {
+      "step": 740,
+      "loss": 0.1568641108817806,
+      "grad_norm": 0.2697345579400348,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.8116797323195934,
+          "participation_ratio": 1.7210957457036138,
+          "effective_rank_90": 1.5399277724716545,
+          "nuclear_norm_ratio": 1.992847705551553
+        }
+      }
+    },
+    {
+      "step": 745,
+      "loss": 0.1554601309816788,
+      "grad_norm": 0.2669290924610556,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.9800747271431574,
+          "participation_ratio": 1.8810709907859995,
+          "effective_rank_90": 1.6830635180716838,
+          "nuclear_norm_ratio": 2.178082199857473
+        }
+      }
+    },
+    {
+      "step": 750,
+      "loss": 0.15409081546882095,
+      "grad_norm": 0.2641699972477976,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.8230839230809852,
+          "participation_ratio": 1.7319297269269358,
+          "effective_rank_90": 1.5496213346188374,
+          "nuclear_norm_ratio": 2.005392315389084
+        }
+      }
+    },
+    {
+      "step": 755,
+      "loss": 0.15275530847643654,
+      "grad_norm": 0.26145650586718244,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.9771494710803512,
+          "participation_ratio": 1.8782919975263335,
+          "effective_rank_90": 1.6805770504182984,
+          "nuclear_norm_ratio": 2.1748644181883865
+        }
+      }
+    },
+    {
+      "step": 760,
+      "loss": 0.15145277526918088,
+      "grad_norm": 0.2587878645541565,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.9170563244469523,
+          "participation_ratio": 1.8212035082246045,
+          "effective_rank_90": 1.6294978757799095,
+          "nuclear_norm_ratio": 2.1087619568916476
+        }
+      }
+    },
+    {
+      "step": 765,
+      "loss": 0.15018240172139835,
+      "grad_norm": 0.25616333200230634,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.9295016776268024,
+          "participation_ratio": 1.8330265937454622,
+          "effective_rank_90": 1.640076425982782,
+          "nuclear_norm_ratio": 2.1224518453894827
+        }
+      }
+    },
+    {
+      "step": 770,
+      "loss": 0.1489433938082675,
+      "grad_norm": 0.25358217915793607,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.974477906204503,
+          "participation_ratio": 1.8757540108942778,
+          "effective_rank_90": 1.6783062202738275,
+          "nuclear_norm_ratio": 2.1719256968249536
+        }
+      }
+    },
+    {
+      "step": 775,
+      "loss": 0.14773497710950942,
+      "grad_norm": 0.25104368901754753,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.8841850054662457,
+          "participation_ratio": 1.7899757551929334,
+          "effective_rank_90": 1.6015572546463088,
+          "nuclear_norm_ratio": 2.0726035060128702
+        }
+      }
+    },
+    {
+      "step": 780,
+      "loss": 0.1465563963253501,
+      "grad_norm": 0.24854715642866776,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.7447421491381192,
+          "participation_ratio": 1.6575050416812132,
+          "effective_rank_90": 1.4830308267674013,
+          "nuclear_norm_ratio": 1.9192163640519313
+        }
+      }
+    },
+    {
+      "step": 785,
+      "loss": 0.1454069148044334,
+      "grad_norm": 0.24609188789396913,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.7183324650574616,
+          "participation_ratio": 1.6324158418045884,
+          "effective_rank_90": 1.4605825952988423,
+          "nuclear_norm_ratio": 1.890165711563208
+        }
+      }
+    },
+    {
+      "step": 790,
+      "loss": 0.14428581408338992,
+      "grad_norm": 0.24367720137862658,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.5224762963793919,
+          "participation_ratio": 1.4463524815604223,
+          "effective_rank_90": 1.2941048519224831,
+          "nuclear_norm_ratio": 1.6747239260173312
+        }
+      }
+    },
+    {
+      "step": 795,
+      "loss": 0.14319239343777412,
+      "grad_norm": 0.2413024261208592,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.4913507801368173,
+          "participation_ratio": 1.4167832411299763,
+          "effective_rank_90": 1.2676481631162948,
+          "nuclear_norm_ratio": 1.640485858150499
+        }
+      }
+    },
+    {
+      "step": 800,
+      "loss": 0.14212596944408862,
+      "grad_norm": 0.2389669024456031,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3416868923926006,
+          "participation_ratio": 1.2746025477729706,
+          "effective_rank_90": 1.1404338585337106,
+          "nuclear_norm_ratio": 1.4758555816318608
+        }
+      }
+    },
+    {
+      "step": 805,
+      "loss": 0.14108587555262228,
+      "grad_norm": 0.23666998158126418,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.501317955760168,
+          "participation_ratio": 1.4262520579721594,
+          "effective_rank_90": 1.2761202623961427,
+          "nuclear_norm_ratio": 1.6514497513361848
+        }
+      }
+    },
+    {
+      "step": 810,
+      "loss": 0.1400714616708351,
+      "grad_norm": 0.23441102547949952,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3131061891909963,
+          "participation_ratio": 1.2474508797314465,
+          "effective_rank_90": 1.1161402608123467,
+          "nuclear_norm_ratio": 1.444416808110096
+        }
+      }
+    },
+    {
+      "step": 815,
+      "loss": 0.13908209375702885,
+      "grad_norm": 0.23218940663797785,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3818898039220644,
+          "participation_ratio": 1.3127953137259611,
+          "effective_rank_90": 1.1746063333337546,
+          "nuclear_norm_ratio": 1.520078784314271
+        }
+      }
+    },
+    {
+      "step": 820,
+      "loss": 0.1381171534240509,
+      "grad_norm": 0.23000450792606908,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.5419576764481822,
+          "participation_ratio": 1.464859792625773,
+          "effective_rank_90": 1.3106640249809547,
+          "nuclear_norm_ratio": 1.6961534440930006
+        }
+      }
+    },
+    {
+      "step": 825,
+      "loss": 0.13717603755278152,
+      "grad_norm": 0.22785572241341515,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.4924234799466656,
+          "participation_ratio": 1.4178023059493323,
+          "effective_rank_90": 1.2685599579546658,
+          "nuclear_norm_ratio": 1.6416658279413323
+        }
+      }
+    },
+    {
+      "step": 830,
+      "loss": 0.13625815791516532,
+      "grad_norm": 0.22574245320133457,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.5652542853631726,
+          "participation_ratio": 1.486991571095014,
+          "effective_rank_90": 1.3304661425586966,
+          "nuclear_norm_ratio": 1.72177971389949
+        }
+      }
+    },
+    {
+      "step": 835,
+      "loss": 0.13536294080654931,
+      "grad_norm": 0.22366411325701321,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.5425332166383399,
+          "participation_ratio": 1.4654065558064229,
+          "effective_rank_90": 1.3111532341425889,
+          "nuclear_norm_ratio": 1.696786538302174
+        }
+      }
+    },
+    {
+      "step": 840,
+      "loss": 0.13448982668709872,
+      "grad_norm": 0.22162012525043595,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.679460076081381,
+          "participation_ratio": 1.5954870722773118,
+          "effective_rank_90": 1.4275410646691737,
+          "nuclear_norm_ratio": 1.8474060836895192
+        }
+      }
+    },
+    {
+      "step": 845,
+      "loss": 0.13363826983206673,
+      "grad_norm": 0.21960992139401342,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.7966849194667942,
+          "participation_ratio": 1.7068506734934543,
+          "effective_rank_90": 1.527182181546775,
+          "nuclear_norm_ratio": 1.9763534114134738
+        }
+      }
+    },
+    {
+      "step": 850,
+      "loss": 0.13280773799069828,
+      "grad_norm": 0.21763294328485977,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.6243726106254823,
+          "participation_ratio": 1.5431539800942082,
+          "effective_rank_90": 1.38071671903166,
+          "nuclear_norm_ratio": 1.7868098716880307
+        }
+      }
+    },
+    {
+      "step": 855,
+      "loss": 0.13199771205355654,
+      "grad_norm": 0.21568864174967692,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.5273154602451706,
+          "participation_ratio": 1.450949687232912,
+          "effective_rank_90": 1.298218141208395,
+          "nuclear_norm_ratio": 1.6800470062696877
+        }
+      }
+    },
+    {
+      "step": 860,
+      "loss": 0.13120768572806216,
+      "grad_norm": 0.21377647669220304,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.5274095715594185,
+          "participation_ratio": 1.4510390929814474,
+          "effective_rank_90": 1.2982981358255057,
+          "nuclear_norm_ratio": 1.6801505287153604
+        }
+      }
+    },
+    {
+      "step": 865,
+      "loss": 0.13043716522204413,
+      "grad_norm": 0.21189591694318233,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.5398745611371842,
+          "participation_ratio": 1.462880833080325,
+          "effective_rank_90": 1.3088933769666065,
+          "nuclear_norm_ratio": 1.693862017250903
+        }
+      }
+    },
+    {
+      "step": 870,
+      "loss": 0.12968566893510372,
+      "grad_norm": 0.21004644011281448,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.4939555897154237,
+          "participation_ratio": 1.4192578102296525,
+          "effective_rank_90": 1.2698622512581101,
+          "nuclear_norm_ratio": 1.6433511486869663
+        }
+      }
+    },
+    {
+      "step": 875,
+      "loss": 0.1289527271575982,
+      "grad_norm": 0.20822753244564324,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.4700580694789243,
+          "participation_ratio": 1.396555166004978,
+          "effective_rank_90": 1.2495493590570856,
+          "nuclear_norm_ratio": 1.6170638764268168
+        }
+      }
+    },
+    {
+      "step": 880,
+      "loss": 0.12823788177705742,
+      "grad_norm": 0.20643868867784304,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3146812476632346,
+          "participation_ratio": 1.2489471852800729,
+          "effective_rank_90": 1.1174790605137495,
+          "nuclear_norm_ratio": 1.4461493724295582
+        }
+      }
+    },
+    {
+      "step": 885,
+      "loss": 0.12754068599184834,
+      "grad_norm": 0.20467941189686478,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.0726083978381558,
+          "participation_ratio": 1.018977977946248,
+          "effective_rank_90": 0.9117171381624324,
+          "nuclear_norm_ratio": 1.1798692376219715
+        }
+      }
+    },
+    {
+      "step": 890,
+      "loss": 0.12686070403190952,
+      "grad_norm": 0.20294921340340152,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9770049265375896,
+          "participation_ratio": 0.9281546802107101,
+          "effective_rank_90": 0.8304541875569512,
+          "nuclear_norm_ratio": 1.0747054191913488
+        }
+      }
+    },
+    {
+      "step": 895,
+      "loss": 0.12619751088638076,
+      "grad_norm": 0.20124761257563525,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9165822026417166,
+          "participation_ratio": 0.8707530925096307,
+          "effective_rank_90": 0.7790948722454591,
+          "nuclear_norm_ratio": 1.0082404229058883
+        }
+      }
+    },
+    {
+      "step": 900,
+      "loss": 0.1255506920379573,
+      "grad_norm": 0.19957413673572788,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.1318664523971917,
+          "participation_ratio": 1.0752731297773321,
+          "effective_rank_90": 0.9620864845376129,
+          "nuclear_norm_ratio": 1.245053097636911
+        }
+      }
+    },
+    {
+      "step": 905,
+      "loss": 0.12491984320380314,
+      "grad_norm": 0.19792832101851884,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.0807275637008236,
+          "participation_ratio": 1.0266911855157823,
+          "effective_rank_90": 0.9186184291457,
+          "nuclear_norm_ratio": 1.188800320070906
+        }
+      }
+    },
+    {
+      "step": 910,
+      "loss": 0.12430457008286111,
+      "grad_norm": 0.1963097082423928,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9823523420074416,
+          "participation_ratio": 0.9332347249070695,
+          "effective_rank_90": 0.8349994907063253,
+          "nuclear_norm_ratio": 1.0805875762081858
+        }
+      }
+    },
+    {
+      "step": 915,
+      "loss": 0.12370448810940171,
+      "grad_norm": 0.19471784878228188,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 0.9780565371397741,
+          "participation_ratio": 0.9291537102827854,
+          "effective_rank_90": 0.831348056568808,
+          "nuclear_norm_ratio": 1.0758621908537516
+        }
+      }
+    },
+    {
+      "step": 920,
+      "loss": 0.12311922221265725,
+      "grad_norm": 0.19315230044476683,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.1680957538475476,
+          "participation_ratio": 1.1096909661551702,
+          "effective_rank_90": 0.9928813907704155,
+          "nuclear_norm_ratio": 1.2849053292323025
+        }
+      }
+    },
+    {
+      "step": 925,
+      "loss": 0.1225484065823902,
+      "grad_norm": 0.19161262834524295,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.2302419937783238,
+          "participation_ratio": 1.1687298940894075,
+          "effective_rank_90": 1.0457056947115753,
+          "nuclear_norm_ratio": 1.3532661931561563
+        }
+      }
+    },
+    {
+      "step": 930,
+      "loss": 0.12199168444025006,
+      "grad_norm": 0.1900984047871156,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.2500462147902924,
+          "participation_ratio": 1.1875439040507778,
+          "effective_rank_90": 1.0625392825717486,
+          "nuclear_norm_ratio": 1.375050836269322
+        }
+      }
+    },
+    {
+      "step": 935,
+      "loss": 0.12144870781677515,
+      "grad_norm": 0.18860920914299317,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3554096168204772,
+          "participation_ratio": 1.2876391359794532,
+          "effective_rank_90": 1.1520981742974057,
+          "nuclear_norm_ratio": 1.490950578502525
+        }
+      }
+    },
+    {
+      "step": 940,
+      "loss": 0.12091913733390038,
+      "grad_norm": 0.18714462773784327,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.4799525748280784,
+          "participation_ratio": 1.4059549460866745,
+          "effective_rank_90": 1.2579596886038666,
+          "nuclear_norm_ratio": 1.6279478323108865
+        }
+      }
+    },
+    {
+      "step": 945,
+      "loss": 0.120402641992835,
+      "grad_norm": 0.18570425373408037,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.4378761853612374,
+          "participation_ratio": 1.3659823760931755,
+          "effective_rank_90": 1.2221947575570518,
+          "nuclear_norm_ratio": 1.5816638038973612
+        }
+      }
+    },
+    {
+      "step": 950,
+      "loss": 0.11989889896717747,
+      "grad_norm": 0.1842876870185528,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.2428590127127699,
+          "participation_ratio": 1.1807160620771313,
+          "effective_rank_90": 1.0564301608058544,
+          "nuclear_norm_ratio": 1.367144913984047
+        }
+      }
+    },
+    {
+      "step": 955,
+      "loss": 0.11940759340113852,
+      "grad_norm": 0.1828945340913976,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.2753393358035485,
+          "participation_ratio": 1.211572369013371,
+          "effective_rank_90": 1.0840384354330161,
+          "nuclear_norm_ratio": 1.4028732693839034
+        }
+      }
+    },
+    {
+      "step": 960,
+      "loss": 0.11892841821274608,
+      "grad_norm": 0.18152440795673241,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.427021242140521,
+          "participation_ratio": 1.355670180033495,
+          "effective_rank_90": 1.212968055819443,
+          "nuclear_norm_ratio": 1.5697233663545733
+        }
+      }
+    },
+    {
+      "step": 965,
+      "loss": 0.11846107390190885,
+      "grad_norm": 0.18017692801515428,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3313466175393434,
+          "participation_ratio": 1.2647792866623762,
+          "effective_rank_90": 1.1316446249084418,
+          "nuclear_norm_ratio": 1.4644812792932778
+        }
+      }
+    },
+    {
+      "step": 970,
+      "loss": 0.11800526836321928,
+      "grad_norm": 0.17885171995801497,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3167334909550372,
+          "participation_ratio": 1.2508968164072853,
+          "effective_rank_90": 1.1192234673117816,
+          "nuclear_norm_ratio": 1.448406840050541
+        }
+      }
+    },
+    {
+      "step": 975,
+      "loss": 0.11756071670337792,
+      "grad_norm": 0.17754841566344404,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.0725628860197354,
+          "participation_ratio": 1.0189347417187486,
+          "effective_rank_90": 0.9116784531167751,
+          "nuclear_norm_ratio": 1.179819174621709
+        }
+      }
+    },
+    {
+      "step": 980,
+      "loss": 0.11712714106312598,
+      "grad_norm": 0.1762666530940904,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.244450542641874,
+          "participation_ratio": 1.1822280155097802,
+          "effective_rank_90": 1.057782961245593,
+          "nuclear_norm_ratio": 1.3688955969060614
+        }
+      }
+    },
+    {
+      "step": 985,
+      "loss": 0.11670427044357426,
+      "grad_norm": 0.17500607619655406,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.3959128290145786,
+          "participation_ratio": 1.3261171875638496,
+          "effective_rank_90": 1.1865259046623917,
+          "nuclear_norm_ratio": 1.5355041119160366
+        }
+      }
+    },
+    {
+      "step": 990,
+      "loss": 0.11629184053681987,
+      "grad_norm": 0.17376633480248002,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.2790139809509558,
+          "participation_ratio": 1.215063281903408,
+          "effective_rank_90": 1.0871618838083124,
+          "nuclear_norm_ratio": 1.4069153790460514
+        }
+      }
+    },
+    {
+      "step": 995,
+      "loss": 0.11588959356074544,
+      "grad_norm": 0.1725470845312872,
+      "layer_metrics": {
+        "layer_0": {
+          "stable_rank": 1.4534903514536917,
+          "participation_ratio": 1.380815833881007,
+          "effective_rank_90": 1.2354667987356378,
+          "nuclear_norm_ratio": 1.5988393865990609
+        }
+      }
+    }
+  ],
+  "final_accuracy": 0.9343693090597818,
+  "num_steps": 1000,
+  "measurement_interval": 5
+}

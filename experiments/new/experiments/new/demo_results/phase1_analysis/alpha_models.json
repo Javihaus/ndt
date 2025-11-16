@@ -1,0 +1,85 @@
+{
+  "linear": {
+    "R2": 0.9893618685888519,
+    "coefficients": {
+      "depth": 0.00021699127049590458,
+      "width": 4.399541566405536e-07,
+      "connectivity": 7.815835788895876e-08,
+      "intercept": 0.0009399953096426497
+    }
+  },
+  "data": [
+    {
+      "depth": 4,
+      "width": 256,
+      "num_params": 180000,
+      "connectivity": 692.3076923076923,
+      "alpha": 0.002,
+      "R2": 0.85,
+      "arch_name": "mlp_wide"
+    },
+    {
+      "depth": 6,
+      "width": 128,
+      "num_params": 280000,
+      "connectivity": 2089.5522388059703,
+      "alpha": 0.002449489742783178,
+      "R2": 0.85,
+      "arch_name": "transformer_deep"
+    },
+    {
+      "depth": 2,
+      "width": 96,
+      "num_params": 45000,
+      "connectivity": 459.18367346938777,
+      "alpha": 0.0014142135623730952,
+      "R2": 0.85,
+      "arch_name": "mlp_shallow_2"
+    },
+    {
+      "depth": 3,
+      "width": 48,
+      "num_params": 65000,
+      "connectivity": 1274.5098039215686,
+      "alpha": 0.0017320508075688772,
+      "R2": 0.85,
+      "arch_name": "cnn_shallow"
+    },
+    {
+      "depth": 10,
+      "width": 32,
+      "num_params": 48000,
+      "connectivity": 1142.857142857143,
+      "alpha": 0.0031622776601683794,
+      "R2": 0.85,
+      "arch_name": "mlp_deep_10"
+    },
+    {
+      "depth": 2,
+      "width": 128,
+      "num_params": 95000,
+      "connectivity": 730.7692307692307,
+      "alpha": 0.0014142135623730952,
+      "R2": 0.85,
+      "arch_name": "transformer_shallow"
+    },
+    {
+      "depth": 5,
+      "width": 128,
+      "num_params": 250000,
+      "connectivity": 1879.6992481203008,
+      "alpha": 0.00223606797749979,
+      "R2": 0.85,
+      "arch_name": "cnn_deep"
+    },
+    {
+      "depth": 5,
+      "width": 64,
+      "num_params": 55000,
+      "connectivity": 797.1014492753624,
+      "alpha": 0.00223606797749979,
+      "R2": 0.85,
+      "arch_name": "mlp_medium_5"
+    }
+  ]
+}
