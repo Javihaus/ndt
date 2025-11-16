@@ -1,12 +1,12 @@
 """
 Phase 1: Establish the Phenomenon (Proper Scale)
 
-Goal: Measure α_empirical for each architecture and find α = f(depth, width, connectivity)
+Goal: Measure alpha_empirical for each architecture and find alpha = f(depth, width, connectivity)
 
 Specifications:
 - 10+ architectures (MLPs, CNNs, ResNets, Transformers of varying depths/widths)
 - 5+ datasets (MNIST, CIFAR-10, Fashion-MNIST, SVHN, subset of ImageNet)
-- Measure: α_empirical for each architecture
+- Measure: alpha_empirical for each architecture
 - High-frequency measurement: every 5-10 steps
 - Training duration: 5000-8000 steps per experiment
 """
@@ -22,7 +22,7 @@ import numpy as np
 from tqdm import tqdm
 import json
 import time
-from pathlib import Path
+import os
 from dataset_downloader import get_dataset
 from typing import Dict, List, Tuple, Optional
 import warnings
@@ -219,7 +219,7 @@ class SimpleMLP(nn.Module):
         return self.network(x)
 
     def get_architecture_params(self) -> Dict:
-        """Return architectural parameters for α estimation."""
+        """Return architectural parameters for alpha estimation."""
         total_params = sum(p.numel() for p in self.parameters())
         return {
             'depth': len(self.hidden_dims),
@@ -286,7 +286,7 @@ class ResNetWrapper(nn.Module):
         if depth == '18':
             self.model = resnet18(pretrained=False, num_classes=num_classes)
         else:
-            raise ValueError(f"Unsupported depth: {depth}")
+            raise ValueError("Unsupported depth: {}".format(depth))
 
         # Modify first conv for smaller images (32x32)
         self.model.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1, bias=False)
@@ -391,7 +391,7 @@ def create_architecture(arch_name: str, input_dim: int,
     }
 
     if arch_name not in architectures:
-        raise ValueError(f"Unknown architecture: {arch_name}")
+        raise ValueError("Unknown architecture: {}".format(arch_name))
 
     return architectures[arch_name]()
 
@@ -552,8 +552,8 @@ def train_with_measurement(model: nn.Module,
     # Get architecture parameters
     arch_params = model.get_architecture_params()
 
-    print(f"Training {arch_params['depth']} layer network, "
-          f"{arch_params['num_params']:,} parameters")
+    print("Training {} layer network, {:,} parameters".format(
+          arch_params['depth'], arch_params['num_params']))
 
     pbar = tqdm(total=num_steps, desc="Training")
 
@@ -598,7 +598,7 @@ def train_with_measurement(model: nn.Module,
 
             step += 1
             pbar.update(1)
-            pbar.set_postfix({'loss': f'{loss.item():.4f}', 'epoch': epoch})
+            pbar.set_postfix({'loss': '{:.4f}'.format(loss.item()), 'epoch': epoch})
 
     pbar.close()
 
@@ -637,9 +637,9 @@ def run_single_experiment(arch_name: str,
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    print(f"\n{'='*70}")
-    print(f"Experiment: {arch_name} on {dataset_name}")
-    print(f"{'='*70}")
+    print("\n" + "="*70)
+    print("Experiment: {} on {}".format(arch_name, dataset_name))
+    print("="*70)
 
     # Load data
     loader_fn = DATASET_LOADERS[dataset_name]
@@ -664,8 +664,8 @@ def run_single_experiment(arch_name: str,
     results['num_steps'] = num_steps
     results['measurement_interval'] = measurement_interval
 
-    print(f"\nCompleted in {elapsed/60:.1f} minutes")
-    print(f"Final accuracy: {results['final_accuracy']:.4f}")
+    print("\nCompleted in {:.1f} minutes".format(elapsed/60))
+    print("Final accuracy: {:.4f}".format(results['final_accuracy']))
 
     return results
 
@@ -677,9 +677,10 @@ def run_phase1_calibration(output_dir: str = './experiments/new/results/phase1',
                            measurement_interval: int = 5):
     """
     Phase 1: Train all architectures on all datasets.
-    This establishes the α = f(architecture) relationship.
+    This establishes the alpha = f(architecture) relationship.
     """
-    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     if architectures is None:
         architectures = [
@@ -700,13 +701,13 @@ def run_phase1_calibration(output_dir: str = './experiments/new/results/phase1',
         datasets = ['mnist', 'fashion_mnist', 'cifar10', 'svhn', 'cifar100']
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"Using device: {device}")
-    print(f"\nPhase 1 Calibration:")
-    print(f"  Architectures: {len(architectures)}")
-    print(f"  Datasets: {len(datasets)}")
-    print(f"  Total experiments: {len(architectures) * len(datasets)}")
-    print(f"  Steps per experiment: {num_steps}")
-    print(f"  Measurement interval: {measurement_interval}")
+    print("Using device: {}".format(device))
+    print("\nPhase 1 Calibration:")
+    print("  Architectures: {}".format(len(architectures)))
+    print("  Datasets: {}".format(len(datasets)))
+    print("  Total experiments: {}".format(len(architectures) * len(datasets)))
+    print("  Steps per experiment: {}".format(num_steps))
+    print("  Measurement interval: {}".format(measurement_interval))
 
     all_results = []
     total_experiments = len(architectures) * len(datasets)
@@ -716,15 +717,15 @@ def run_phase1_calibration(output_dir: str = './experiments/new/results/phase1',
     for dataset_name in datasets:
         for arch_name in architectures:
             # Check if experiment already exists
-            output_file = Path(output_dir) / f'{arch_name}_{dataset_name}.json'
-            if output_file.exists():
-                print(f"⏭ Skipping {arch_name} on {dataset_name} (already exists)")
+            output_file = os.path.join(output_dir, '{}_{}.json'.format(arch_name, dataset_name))
+            if os.path.exists(output_file):
+                print("[SKIP] Skipping {} on {} (already exists)".format(arch_name, dataset_name))
                 skipped_count += 1
                 completed_count += 1
                 continue
 
             try:
-                print(f"\n[{completed_count + 1}/{total_experiments}] Running {arch_name} on {dataset_name}...")
+                print("\n[{}/{}] Running {} on {}...".format(completed_count + 1, total_experiments, arch_name, dataset_name))
                 results = run_single_experiment(
                     arch_name, dataset_name,
                     num_steps=num_steps,
@@ -737,22 +738,22 @@ def run_phase1_calibration(output_dir: str = './experiments/new/results/phase1',
                 with open(output_file, 'w') as f:
                     json.dump(results, f, indent=2)
 
-                print(f"✓ Saved: {output_file}")
+                print("[OK] Saved: {}".format(output_file))
                 completed_count += 1
 
             except Exception as e:
-                print(f"✗ Failed {arch_name} on {dataset_name}: {e}")
+                print("[FAIL] Failed {} on {}: {}".format(arch_name, dataset_name, e))
                 continue
 
-    print(f"\n{'='*70}")
-    print(f"Progress: {completed_count}/{total_experiments} experiments")
-    print(f"  Skipped (already complete): {skipped_count}")
-    print(f"  Newly completed: {len(all_results)}")
-    print(f"{'='*70}")
+    print("\n" + "="*70)
+    print("Progress: {}/{} experiments".format(completed_count, total_experiments))
+    print("  Skipped (already complete): {}".format(skipped_count))
+    print("  Newly completed: {}".format(len(all_results)))
+    print("="*70)
 
     # Save combined results (only newly completed ones)
     if all_results:
-        combined_file = Path(output_dir) / 'phase1_all_results.json'
+        combined_file = os.path.join(output_dir, 'phase1_all_results.json')
         with open(combined_file, 'w') as f:
             json.dump(all_results, f, indent=2)
 
@@ -790,4 +791,4 @@ if __name__ == "__main__":
         )
 
     print("\nPhase 1 complete!")
-    print("Next: Run phase1_analysis.py to extract α parameters")
+    print("Next: Run phase1_analysis.py to extract alpha parameters")
