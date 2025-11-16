@@ -641,10 +641,10 @@ def run_single_experiment(arch_name: str,
     print("Experiment: {} on {}".format(arch_name, dataset_name))
     print("="*70)
 
-    # Load data
+    # Load data (reduced for memory constraints)
     loader_fn = DATASET_LOADERS[dataset_name]
     train_loader, val_loader, input_dim, num_classes, in_channels = loader_fn(
-        batch_size=64, subset_size=10000  # Use subset for faster experiments
+        batch_size=32, subset_size=1500  # Reduced for memory constraints
     )
 
     # Create model
