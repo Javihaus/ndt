@@ -62,7 +62,7 @@ Stop writing this one paper and thinking you're done. Here's what you should act
 - Compare: Predicted vs actual curves
 - Success criterion: R² > 0.8 between predicted and actual
 
-### Phase 3: Interpretability Tool
+## Phase 3: Interpretability Tool
 
 Build a real-time monitor that:
 
@@ -74,7 +74,7 @@ Build a real-time monitor that:
 
 This is useful to practitioners
 
-### Phase 4: Connection to Emergent Capabilities
+## Phase 4: Connection to Emergent Capabilities
 
 - The transformer literature (which you reference) shows capabilities emerge discretely
 - Hypothesis: Your dimensionality jumps correlate with capability emergence
