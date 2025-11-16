@@ -63,7 +63,7 @@ def run_experiment_worker(args):
 
     # Skip if already exists
     if output_file.exists():
-        return "⏭  Skipped {} × {} (already exists)".format(arch_name, dataset_name)
+        return "[SKIP] Skipped {} x {} (already exists)".format(arch_name, dataset_name)
 
     try:
         start = time.time()
@@ -79,10 +79,10 @@ def run_experiment_worker(args):
             json.dump(result, f, indent=2)
 
         elapsed = time.time() - start
-        return "✓ Completed {} × {} in {:.1f} min".format(arch_name, dataset_name, elapsed/60)
+        return "[OK] Completed {} x {} in {:.1f} min".format(arch_name, dataset_name, elapsed/60)
 
     except Exception as e:
-        return "✗ Failed {} × {}: {}".format(arch_name, dataset_name, str(e)[:100])
+        return "[FAIL] Failed {} x {}: {}".format(arch_name, dataset_name, str(e)[:100])
 
 
 def run_parallel_experiments(num_processes=4, num_steps=2000, output_dir='./results/phase1_full'):
@@ -126,9 +126,9 @@ def run_parallel_experiments(num_processes=4, num_steps=2000, output_dir='./resu
     elapsed = time.time() - start_time
 
     # Summary
-    completed = sum(1 for r in results if r.startswith("✓"))
-    skipped = sum(1 for r in results if r.startswith("⏭"))
-    failed = sum(1 for r in results if r.startswith("✗"))
+    completed = sum(1 for r in results if r.startswith("[OK]"))
+    skipped = sum(1 for r in results if r.startswith("[SKIP]"))
+    failed = sum(1 for r in results if r.startswith("[FAIL]"))
 
     print()
     print("=" * 70)
