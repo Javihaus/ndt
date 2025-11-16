@@ -59,11 +59,11 @@ def run_experiment_worker(args):
     """Worker function to run a single experiment."""
     arch_name, dataset_name, num_steps, output_dir = args
 
-    output_file = Path(output_dir) / f'{arch_name}_{dataset_name}.json'
+    output_file = Path(output_dir) / '{}_{}.json'.format(arch_name, dataset_name)
 
     # Skip if already exists
     if output_file.exists():
-        return f"⏭  Skipped {arch_name} × {dataset_name} (already exists)"
+        return "⏭  Skipped {} × {} (already exists)".format(arch_name, dataset_name)
 
     try:
         start = time.time()
@@ -75,14 +75,14 @@ def run_experiment_worker(args):
         )
 
         # Save result
-        with open(output_file, 'w') as f:
+        with open(str(output_file), 'w') as f:
             json.dump(result, f, indent=2)
 
         elapsed = time.time() - start
-        return f"✓ Completed {arch_name} × {dataset_name} in {elapsed/60:.1f} min"
+        return "✓ Completed {} × {} in {:.1f} min".format(arch_name, dataset_name, elapsed/60)
 
     except Exception as e:
-        return f"✗ Failed {arch_name} × {dataset_name}: {str(e)[:100]}"
+        return "✗ Failed {} × {}: {}".format(arch_name, dataset_name, str(e)[:100])
 
 
 def run_parallel_experiments(num_processes=4, num_steps=2000, output_dir='./results/phase1_full'):
@@ -102,24 +102,26 @@ def run_parallel_experiments(num_processes=4, num_steps=2000, output_dir='./resu
         for arch, dataset in EXPERIMENT_PLAN
     ]
 
-    print(f"=" * 70)
-    print(f"PARALLEL EXPERIMENT RUNNER")
-    print(f"=" * 70)
-    print(f"Total experiments: {len(experiment_args)}")
-    print(f"Parallel processes: {num_processes}")
-    print(f"Steps per experiment: {num_steps}")
-    print(f"Output directory: {output_dir}")
-    print(f"=" * 70)
+    print("=" * 70)
+    print("PARALLEL EXPERIMENT RUNNER")
+    print("=" * 70)
+    print("Total experiments: {}".format(len(experiment_args)))
+    print("Parallel processes: {}".format(num_processes))
+    print("Steps per experiment: {}".format(num_steps))
+    print("Output directory: {}".format(output_dir))
+    print("=" * 70)
     print()
 
     # Run experiments in parallel
     start_time = time.time()
 
-    with mp.Pool(processes=num_processes) as pool:
-        results = []
-        for i, result in enumerate(pool.imap_unordered(run_experiment_worker, experiment_args)):
-            print(f"[{i+1}/{len(experiment_args)}] {result}")
-            results.append(result)
+    pool = mp.Pool(processes=num_processes)
+    results = []
+    for i, result in enumerate(pool.imap_unordered(run_experiment_worker, experiment_args)):
+        print("[{}/{}] {}".format(i+1, len(experiment_args), result))
+        results.append(result)
+    pool.close()
+    pool.join()
 
     elapsed = time.time() - start_time
 
@@ -129,14 +131,14 @@ def run_parallel_experiments(num_processes=4, num_steps=2000, output_dir='./resu
     failed = sum(1 for r in results if r.startswith("✗"))
 
     print()
-    print(f"=" * 70)
-    print(f"EXPERIMENT SUMMARY")
-    print(f"=" * 70)
-    print(f"Total time: {elapsed/60:.1f} minutes ({elapsed/3600:.1f} hours)")
-    print(f"Completed: {completed}")
-    print(f"Skipped: {skipped}")
-    print(f"Failed: {failed}")
-    print(f"=" * 70)
+    print("=" * 70)
+    print("EXPERIMENT SUMMARY")
+    print("=" * 70)
+    print("Total time: {:.1f} minutes ({:.1f} hours)".format(elapsed/60, elapsed/3600))
+    print("Completed: {}".format(completed))
+    print("Skipped: {}".format(skipped))
+    print("Failed: {}".format(failed))
+    print("=" * 70)
 
 
 if __name__ == "__main__":
