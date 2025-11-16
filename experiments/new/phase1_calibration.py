@@ -40,7 +40,7 @@ class DimensionalityEstimator:
     """
 
     @staticmethod
-    def stable_rank(matrix: torch.Tensor, eps: float = 1e-10) -> float:
+    def stable_rank(matrix, eps = 1e-10) -> float:
         """
         Stable rank: ||A||_F^2 / ||A||_2^2
         Estimates effective number of linearly independent dimensions.
