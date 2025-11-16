@@ -7,7 +7,7 @@ Uses multiprocessing to run multiple experiments simultaneously.
 """
 
 import multiprocessing as mp
-from pathlib import Path
+import os
 import json
 import time
 from phase1_calibration import run_single_experiment, DATASET_LOADERS
@@ -59,10 +59,10 @@ def run_experiment_worker(args):
     """Worker function to run a single experiment."""
     arch_name, dataset_name, num_steps, output_dir = args
 
-    output_file = Path(output_dir) / '{}_{}.json'.format(arch_name, dataset_name)
+    output_file = os.path.join(output_dir, '{}_{}.json'.format(arch_name, dataset_name))
 
     # Skip if already exists
-    if output_file.exists():
+    if os.path.exists(output_file):
         return "[SKIP] Skipped {} x {} (already exists)".format(arch_name, dataset_name)
 
     try:
@@ -75,7 +75,7 @@ def run_experiment_worker(args):
         )
 
         # Save result
-        with open(str(output_file), 'w') as f:
+        with open(output_file, 'w') as f:
             json.dump(result, f, indent=2)
 
         elapsed = time.time() - start
@@ -94,7 +94,9 @@ def run_parallel_experiments(num_processes=4, num_steps=2000, output_dir='./resu
         num_steps: Steps per experiment
         output_dir: Output directory
     """
-    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    # Create output directory (Python 2/3 compatible)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     # Prepare experiment arguments
     experiment_args = [
