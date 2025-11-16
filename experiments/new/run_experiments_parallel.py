@@ -63,7 +63,7 @@ def run_experiment_worker(args):
 
     # Skip if already exists
     if output_file.exists():
-        return "⏭  Skipped {} × {} (already exists)".format(arch_name, dataset_name)
+        return "Skipped {} × {} (already exists)".format(arch_name, dataset_name)
 
     try:
         start = time.time()
