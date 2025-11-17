@@ -16,9 +16,9 @@ import argparse
 
 
 # Full Architecture-Dataset Mapping
-# Original plan: 17 architectures × 5 datasets = 85 experiments
-# Current: 17 architectures × 4 datasets = 68 experiments
-# Modalities: Vision (MNIST, Fashion-MNIST, CIFAR-10) + Text (AG News)
+# REAL DATA ONLY - NO SYNTHETIC FALLBACK
+# 17 architectures × 4 datasets = 68 experiments
+# Modalities: Vision (MNIST, Fashion-MNIST, QMNIST) + Text (AG News)
 
 # All 17 architectures from phase1_calibration.py
 ARCHITECTURES = [
@@ -35,8 +35,8 @@ ARCHITECTURES = [
     'transformer_narrow', 'transformer_wide',
 ]
 
-# Available datasets: 3 vision + 1 text (multimodal validation of TAP framework)
-DATASETS = ['mnist', 'fashion_mnist', 'cifar10', 'ag_news']
+# REAL DATASETS ONLY (all verified working)
+DATASETS = ['mnist', 'fashion_mnist', 'qmnist', 'ag_news']
 
 # Generate all 68 combinations
 EXPERIMENT_PLAN = [(arch, dataset) for arch in ARCHITECTURES for dataset in DATASETS]

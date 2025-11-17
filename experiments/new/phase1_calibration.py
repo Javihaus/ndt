@@ -440,69 +440,15 @@ def get_fashion_mnist_loaders(batch_size: int = 64, subset_size: Optional[int] =
     return train_loader, test_loader, 784, 10, 1
 
 
-def get_cifar10_loaders(batch_size: int = 64, subset_size: Optional[int] = None):
-    """Load CIFAR-10 dataset."""
-    transform_train = transforms.Compose([
-        transforms.RandomCrop(32, padding=4),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
-    ])
-
-    transform_test = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
-    ])
-
-    trainset = get_dataset('cifar10', root='./data', train=True, download=True, transform=transform_train)
-    testset = get_dataset('cifar10', root='./data', train=False, download=True, transform=transform_test)
-
-    if subset_size:
-        trainset = Subset(trainset, torch.randperm(len(trainset))[:subset_size])
-        testset = Subset(testset, torch.randperm(len(testset))[:subset_size//5])
-
-    train_loader = DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)
-    test_loader = DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
-
-    return train_loader, test_loader, 3072, 10, 3
-
-
-def get_svhn_loaders(batch_size: int = 64, subset_size: Optional[int] = None):
-    """Load SVHN dataset."""
+def get_qmnist_loaders(batch_size: int = 64, subset_size: Optional[int] = None):
+    """Load QMNIST dataset (extended MNIST with 60K samples)."""
     transform = transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize((0.4377, 0.4438, 0.4728), (0.1980, 0.2010, 0.1970))
+        transforms.Normalize((0.1307,), (0.3081,))
     ])
 
-    trainset = get_dataset('svhn', root='./data', train=True, download=True, transform=transform)
-    testset = get_dataset('svhn', root='./data', train=False, download=True, transform=transform)
-
-    if subset_size:
-        trainset = Subset(trainset, torch.randperm(len(trainset))[:subset_size])
-        testset = Subset(testset, torch.randperm(len(testset))[:subset_size//7])
-
-    train_loader = DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)
-    test_loader = DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
-
-    return train_loader, test_loader, 3072, 10, 3
-
-
-def get_cifar100_loaders(batch_size: int = 64, subset_size: Optional[int] = None):
-    """Load CIFAR-100 dataset."""
-    transform_train = transforms.Compose([
-        transforms.RandomCrop(32, padding=4),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-        transforms.Normalize((0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761))
-    ])
-
-    transform_test = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761))
-    ])
-
-    trainset = get_dataset('cifar100', root='./data', train=True, download=True, transform=transform_train)
-    testset = get_dataset('cifar100', root='./data', train=False, download=True, transform=transform_test)
+    trainset = get_dataset('qmnist', root='./data', train=True, download=True, transform=transform)
+    testset = get_dataset('qmnist', root='./data', train=False, download=True, transform=transform)
 
     if subset_size:
         trainset = Subset(trainset, torch.randperm(len(trainset))[:subset_size])
@@ -511,7 +457,7 @@ def get_cifar100_loaders(batch_size: int = 64, subset_size: Optional[int] = None
     train_loader = DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)
     test_loader = DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
 
-    return train_loader, test_loader, 3072, 100, 3
+    return train_loader, test_loader, 784, 10, 1
 
 
 def get_ag_news_loaders(batch_size: int = 64, subset_size: Optional[int] = None):
@@ -576,9 +522,7 @@ def get_ag_news_loaders(batch_size: int = 64, subset_size: Optional[int] = None)
 DATASET_LOADERS = {
     'mnist': get_mnist_loaders,
     'fashion_mnist': get_fashion_mnist_loaders,
-    'cifar10': get_cifar10_loaders,
-    'svhn': get_svhn_loaders,
-    'cifar100': get_cifar100_loaders,
+    'qmnist': get_qmnist_loaders,
     'ag_news': get_ag_news_loaders,
 }
 
