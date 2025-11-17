@@ -516,7 +516,7 @@ def get_ag_news_loaders(batch_size: int = 64, subset_size: Optional[int] = None)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=2)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=2)
 
-    return train_loader, test_loader, len(vocab) * max_len, 4, 1  # input_dim, num_classes, in_channels
+    return train_loader, test_loader, max_len, 4, 1  # input_dim (100 tokens), num_classes, in_channels
 
 
 DATASET_LOADERS = {
