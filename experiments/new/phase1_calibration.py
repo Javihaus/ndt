@@ -550,10 +550,10 @@ def get_ag_news_loaders(batch_size: int = 64, subset_size: Optional[int] = None)
         ids = ids + [vocab['<PAD>']] * (max_len - len(ids))
         return ids
 
-    # Convert to tensors
-    train_X = torch.tensor([tokens_to_ids(tokens) for tokens in train_df['tokens']], dtype=torch.long)
+    # Convert to tensors (float for compatibility with vision models)
+    train_X = torch.tensor([tokens_to_ids(tokens) for tokens in train_df['tokens']], dtype=torch.float32)
     train_y = torch.tensor(train_df['label'].values - 1, dtype=torch.long)  # Labels are 1-4, convert to 0-3
-    test_X = torch.tensor([tokens_to_ids(tokens) for tokens in test_df['tokens']], dtype=torch.long)
+    test_X = torch.tensor([tokens_to_ids(tokens) for tokens in test_df['tokens']], dtype=torch.float32)
     test_y = torch.tensor(test_df['label'].values - 1, dtype=torch.long)
 
     if subset_size:
