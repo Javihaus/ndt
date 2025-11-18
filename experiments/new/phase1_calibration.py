@@ -235,11 +235,12 @@ class SimpleCNN(nn.Module):
     """Simple CNN with configurable conv layers."""
 
     def __init__(self, in_channels: int, num_classes: int,
-                 conv_channels: List[int] = [32, 64, 64]):
+                 conv_channels: List[int] = [32, 64, 64], img_size: int = 28):
         super().__init__()
         self.in_channels = in_channels
         self.num_classes = num_classes
         self.conv_channels = conv_channels
+        self.img_size = img_size
 
         layers = []
         prev_channels = in_channels
@@ -254,8 +255,11 @@ class SimpleCNN(nn.Module):
 
         self.conv_layers = nn.Sequential(*layers)
 
-        # Calculate flattened size (assuming 32x32 input, after maxpools)
-        self.flat_size = conv_channels[-1] * (32 // (2 ** len(conv_channels))) ** 2
+        # Calculate flattened size based on actual image size after maxpools
+        final_size = img_size
+        for _ in conv_channels:
+            final_size = final_size // 2
+        self.flat_size = conv_channels[-1] * final_size * final_size
         self.fc = nn.Linear(self.flat_size, num_classes)
 
     def forward(self, x):
@@ -278,18 +282,19 @@ class SimpleCNN(nn.Module):
 class ResNetWrapper(nn.Module):
     """Wrapper for ResNet with custom classifier."""
 
-    def __init__(self, num_classes: int = 10, depth: str = '18'):
+    def __init__(self, num_classes: int = 10, depth: str = '18', in_channels: int = 3):
         super().__init__()
         self.depth = depth
         self.num_classes = num_classes
+        self.in_channels = in_channels
 
         if depth == '18':
             self.model = resnet18(pretrained=False, num_classes=num_classes)
         else:
             raise ValueError("Unsupported depth: {}".format(depth))
 
-        # Modify first conv for smaller images (32x32)
-        self.model.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1, bias=False)
+        # Modify first conv for smaller images and variable input channels
+        self.model.conv1 = nn.Conv2d(in_channels, 64, kernel_size=3, stride=1, padding=1, bias=False)
         self.model.maxpool = nn.Identity()
 
     def forward(self, x):
@@ -359,6 +364,11 @@ def create_architecture(arch_name: str, input_dim: int,
                        num_classes: int, in_channels: int = 3) -> nn.Module:
     """Factory function to create architectures."""
 
+    # Calculate image size from input dimensions
+    # For MNIST: input_dim=784, in_channels=1 -> img_size=28
+    # For CIFAR: input_dim=3072, in_channels=3 -> img_size=32
+    img_size = int((input_dim / in_channels) ** 0.5)
+
     architectures = {
         # Group 1: Depth variation (MLPs, ~50K params)
         'mlp_shallow_2': lambda: SimpleMLP(input_dim, [128, 64], num_classes),
@@ -372,13 +382,13 @@ def create_architecture(arch_name: str, input_dim: int,
         'mlp_wide': lambda: SimpleMLP(input_dim, [256, 256, 128, 128], num_classes),
         'mlp_verywide': lambda: SimpleMLP(input_dim, [512, 512, 256, 256], num_classes),
 
-        # Group 3: CNNs with varying depth
-        'cnn_shallow': lambda: SimpleCNN(in_channels, num_classes, [32, 64]),
-        'cnn_medium': lambda: SimpleCNN(in_channels, num_classes, [32, 64, 128]),
-        'cnn_deep': lambda: SimpleCNN(in_channels, num_classes, [32, 64, 128, 256]),
+        # Group 3: CNNs with varying depth (now with correct img_size)
+        'cnn_shallow': lambda: SimpleCNN(in_channels, num_classes, [32, 64], img_size),
+        'cnn_medium': lambda: SimpleCNN(in_channels, num_classes, [32, 64, 128], img_size),
+        'cnn_deep': lambda: SimpleCNN(in_channels, num_classes, [32, 64, 128, 256], img_size),
 
-        # Group 4: ResNet
-        'resnet18': lambda: ResNetWrapper(num_classes, depth='18'),
+        # Group 4: ResNet (now with correct in_channels)
+        'resnet18': lambda: ResNetWrapper(num_classes, depth='18', in_channels=in_channels),
 
         # Group 5: Transformers with varying depth
         'transformer_shallow': lambda: SimpleTransformer(input_dim, 128, 4, 2, num_classes),
