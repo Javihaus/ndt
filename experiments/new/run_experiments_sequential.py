@@ -17,7 +17,6 @@ import argparse
 
 # Full Architecture-Dataset Mapping
 # REAL DATA ONLY - NO SYNTHETIC FALLBACK
-# 17 architectures × 4 datasets = 68 experiments
 # Modalities: Vision (MNIST, Fashion-MNIST, QMNIST) + Text (AG News)
 
 # All 17 architectures from phase1_calibration.py
@@ -38,8 +37,28 @@ ARCHITECTURES = [
 # REAL DATASETS ONLY (all verified working)
 DATASETS = ['mnist', 'fashion_mnist', 'qmnist', 'ag_news']
 
-# Generate all 68 combinations
-EXPERIMENT_PLAN = [(arch, dataset) for arch in ARCHITECTURES for dataset in DATASETS]
+# Vision-only architectures (require image data)
+VISION_ONLY_ARCHS = {'cnn_shallow', 'cnn_medium', 'cnn_deep', 'resnet18'}
+
+# Vision datasets
+VISION_DATASETS = {'mnist', 'fashion_mnist', 'qmnist'}
+
+# Text datasets
+TEXT_DATASETS = {'ag_news'}
+
+def is_compatible(arch, dataset):
+    """Check if architecture is compatible with dataset."""
+    # Vision-only architectures can only run on vision datasets
+    if arch in VISION_ONLY_ARCHS:
+        return dataset in VISION_DATASETS
+    # All other architectures (MLPs, Transformers) work with all datasets
+    return True
+
+# Generate compatible combinations only
+EXPERIMENT_PLAN = [(arch, dataset) for arch in ARCHITECTURES for dataset in DATASETS
+                   if is_compatible(arch, dataset)]
+
+# Total: 17 archs × 4 datasets = 68, minus 4 vision archs × 1 text dataset = 64 experiments
 
 
 def run_sequential_experiments(num_steps=2000, output_dir='./results/phase1_full'):
