@@ -27,8 +27,8 @@ ARCHITECTURES = [
     'mlp_narrow', 'mlp_medium', 'mlp_wide', 'mlp_verywide',
     # CNNs
     'cnn_shallow', 'cnn_medium', 'cnn_deep',
-    # ResNet
-    'resnet18',
+    # ResNet - SKIPPED (too slow, 11M parameters)
+    # 'resnet18',
     # Transformers
     'transformer_shallow', 'transformer_medium', 'transformer_deep',
     'transformer_narrow', 'transformer_wide',
