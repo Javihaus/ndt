@@ -61,6 +61,38 @@ Contribution: Show that coarse-grained measurements can guide fine-grained mecha
 Why This Could Work
 This is pragmatic infrastructure work that could enable scientific discovery.
 You're not claiming to have discovered fundamental principles. You're saying: "Here's a measurement tool that detects interesting moments. Here's what we found when we investigated those moments more deeply."
+
+---
+
+## Current Status (Updated)
+
+### Phase 1: COMPLETED ✓
+- 55 experiments across 15 architectures and 4 datasets
+- 17,600+ dimensionality measurements collected
+- Jump detection and TAP parameter fitting complete
+- Results in `/experiments/new/results/phase1_analysis/`
+
+### Phase 2: COMPLETED ✓
+- Analysis modules implemented in `/src/ndt/analysis/`
+  - `activation_analysis.py`: PCA, clustering, manifold visualization
+  - `feature_visualization.py`: CAM, saliency, attention maps
+- Three target experiments analyzed:
+  1. **CNN Jump Cascades**: cnn_deep/fashion_mnist (23 jumps)
+  2. **Transformer Transitions**: transformer_shallow/mnist (9 jumps)
+  3. **MLP Smooth Learning**: mlp_narrow/mnist (R²=0.934)
+- Results in `/experiments/phase2/results/`
+
+### Phase 3: IN PROGRESS
+- Paper draft structure created: `PHASE3_PAPER_DRAFT.md`
+- Title: "Layer-Wise Representational Dynamics: Using Dimensionality Measurements to Guide Mechanistic Investigation"
+- Ready for detailed writing and figure generation
+
+### Key Findings
+| Architecture | Jump Pattern | R² (TAP fit) | Interpretation |
+|-------------|--------------|--------------|----------------|
+| CNN | Many (14 avg) | 0.63 | Hierarchical feature emergence |
+| Transformer | Discrete (3 avg) | 0.26 | Attention head specialization |
+| MLP | Smooth (0.5 avg) | 0.93 | Gradual refinement |
 Key difference from TAP:
 
 TAP claimed universal predictive theory (overreach)
