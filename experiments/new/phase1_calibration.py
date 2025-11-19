@@ -316,17 +316,32 @@ class SimpleTransformer(nn.Module):
     """Simple transformer encoder for classification."""
 
     def __init__(self, input_dim: int, d_model: int, nhead: int,
-                 num_layers: int, num_classes: int, seq_len: int = 16):
+                 num_layers: int, num_classes: int, seq_len: int = None):
         super().__init__()
         self.input_dim = input_dim
         self.d_model = d_model
         self.nhead = nhead
         self.num_layers = num_layers
-        self.seq_len = seq_len
+
+        # Compute seq_len dynamically if not provided
+        if seq_len is None:
+            # Find a divisor of input_dim close to 16
+            target = 16
+            best_seq_len = 1
+            for i in range(1, int(input_dim**0.5) + 1):
+                if input_dim % i == 0:
+                    if abs(i - target) < abs(best_seq_len - target):
+                        best_seq_len = i
+                    other = input_dim // i
+                    if abs(other - target) < abs(best_seq_len - target):
+                        best_seq_len = other
+            self.seq_len = best_seq_len
+        else:
+            self.seq_len = seq_len
 
         # Project input to d_model and create sequence
-        self.input_proj = nn.Linear(input_dim // seq_len, d_model)
-        self.pos_encoder = nn.Parameter(torch.randn(seq_len, d_model))
+        self.input_proj = nn.Linear(input_dim // self.seq_len, d_model)
+        self.pos_encoder = nn.Parameter(torch.randn(self.seq_len, d_model))
 
         encoder_layer = nn.TransformerEncoderLayer(
             d_model=d_model, nhead=nhead, dim_feedforward=d_model*4,
