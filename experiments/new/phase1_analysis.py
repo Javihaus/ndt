@@ -21,6 +21,29 @@ from scipy.stats import pearsonr
 import warnings
 warnings.filterwarnings('ignore')
 
+# Academic plot style settings
+plt.rcParams.update({
+    'font.family': 'serif',
+    'font.size': 11,
+    'axes.labelsize': 12,
+    'axes.titlesize': 14,
+    'xtick.labelsize': 10,
+    'ytick.labelsize': 10,
+    'legend.fontsize': 10,
+    'figure.titlesize': 16,
+    'axes.linewidth': 1.2,
+    'lines.linewidth': 1.5,
+    'lines.markersize': 6,
+    'axes.grid': True,
+    'grid.alpha': 0.3,
+    'axes.spines.top': False,
+    'axes.spines.right': False,
+    'savefig.dpi': 300,
+    'savefig.bbox': 'tight',
+    'savefig.pad_inches': 0.1,
+})
+sns.set_palette("colorblind")
+
 
 # ============================================================================
 # TAP MODEL FITTING
@@ -221,7 +244,7 @@ def analyze_phase1_results(results_dir: str = './experiments/new/results/phase1'
     analyses = []
 
     for result_file in result_files:
-        if result_file.name == 'phase1_all_results.json':
+        if result_file.name in ['phase1_all_results.json', 'experiment_summary.json']:
             continue
 
         print(f"Analyzing {result_file.name}...")
