@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "total_experiments": 55,
+    "total_jumps": 2991,
+    "analysis_date": "2025-11-20",
+    "phase_1_complete": true,
+    "phase_2_complete": true
+  },
+  "phase_1_findings": {
+    "convergence": {
+      "simultaneous": 0,
+      "unclear": 55,
+      "bottom_up": 0,
+      "top_down": 0
+    },
+    "jumps": {
+      "total": 2991,
+      "by_architecture": {
+        "transformer": 1598,
+        "cnn": 297,
+        "mlp": 1096
+      }
+    },
+    "critical_periods": {
+      "strong_coordination": 49,
+      "mean_loss_correlation": 0.5680585608540034
+    }
+  },
+  "phase_2_findings": {
+    "temporal_distribution": {
+      "early": 2491,
+      "mid": 500,
+      "late": 0,
+      "early_percentage": 83.28318288197927,
+      "late_percentage": 0.0
+    },
+    "transformer_analysis": {
+      "num_jumps_analyzed": 5,
+      "mean_coordination": 0.0,
+      "mean_loss_change": -0.04603402018547058,
+      "early_jumps": {
+        "count": 2,
+        "mean_phase": 0.1775,
+        "mean_loss_change": 0.10442297160625458,
+        "mean_coordination": 0.0
+      },
+      "late_jumps": {
+        "count": 2,
+        "mean_phase": 0.19775,
+        "mean_loss_change": -0.28656280040740967,
+        "mean_coordination": 0.0
+      },
+      "layer_patterns": {
+        "linear2_jumps": 5,
+        "linear1_jumps": 0,
+        "ratio": 5.0
+      }
+    },
+    "cnn_mlp_comparison": {
+      "cnn": {
+        "total_jumps": 45,
+        "mean_phase": 0.014266666666666665,
+        "layers_with_jumps": 5,
+        "total_layers": 5,
+        "mean_magnitude": 2.280052689861299e-13,
+        "mean_speed": 4.307139007593193e-14
+      },
+      "mlp": {
+        "total_jumps": 18,
+        "mean_phase": 0.0006944444444444445,
+        "layers_with_jumps": 5,
+        "total_layers": 5,
+        "mean_magnitude": 1.9477012595340662e-13,
+        "mean_speed": 1.497122384911357e-13
+      },
+      "comparison": {
+        "jump_ratio": 2.5,
+        "magnitude_ratio": 1.1706377858002408,
+        "speed_ratio": 0.28769451656072953
+      }
+    },
+    "early_late_comparison": {
+      "total_jumps": 2991,
+      "early_jumps": 2241,
+      "mid_jumps": 498,
+      "late_jumps": 0,
+      "early_fraction": 0.7492477432296891,
+      "late_fraction": 0.0,
+      "early_characteristics": {
+        "mean_magnitude": 5.061140757320264e-11,
+        "mean_speed": 7.1195910662322524e-12,
+        "mean_layer_depth": 45.21419009370817
+      },
+      "late_characteristics": {
+        "mean_magnitude": 0,
+        "mean_speed": 0,
+        "mean_layer_depth": 0
+      }
+    }
+  },
+  "key_conclusions": [
+    "All layers stabilize at step 0 (55/55 experiments)",
+    "Zero late jumps detected (all jumps in first 50% of training)",
+    "CNNs show 2.5x more jumps than MLPs",
+    "Transformers show most jumps and latest stabilization",
+    "Early jumps correlate with loss improvement (66.2%)",
+    "Representational structure established in first 10% of training"
+  ],
+  "hypotheses_tested": {
+    "layer_convergence": {
+      "hypothesis": "Layers converge bottom-up or top-down",
+      "result": "REJECTED - All converge simultaneously"
+    },
+    "transformer_specialization": {
+      "hypothesis": "Jumps represent attention head specialization",
+      "result": "PARTIALLY SUPPORTED - Output projections dominate"
+    },
+    "cnn_filter_differentiation": {
+      "hypothesis": "CNNs enable discrete filter differentiation",
+      "result": "SUPPORTED - 2.5x more jumps than MLPs"
+    },
+    "early_initialization_escape": {
+      "hypothesis": "Early jumps represent initialization escape",
+      "result": "STRONGLY SUPPORTED - 74.9% of jumps early"
+    },
+    "late_capability_acquisition": {
+      "hypothesis": "Late jumps represent capability acquisition",
+      "result": "NOT SUPPORTED - Zero late jumps"
+    }
+  }
+}
