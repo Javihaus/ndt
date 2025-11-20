@@ -209,3 +209,4 @@ __marimo__/
 # Dataset directories
 data/
 experiments/new/data/
+experiments/content/

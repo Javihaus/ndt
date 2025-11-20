@@ -77,9 +77,11 @@ def load_checkpoint(experiment_name: str, step: int, base_path: Path = None):
         raise RuntimeError("PyTorch not available. Cannot load checkpoints.")
 
     if base_path is None:
-        base_path = Path('/home/user/ndt/experiments/checkpoints')
+        base_path = Path('/home/user/ndt/experiments/mechanistic_interpretability/check_points_results')
 
-    checkpoint_path = base_path / experiment_name / f'checkpoint_step_{step:05d}.pt'
+    # Handle folder naming (checkpoints are in folders with "2" suffix)
+    folder_name = f"{experiment_name}2" if not experiment_name.endswith('2') else experiment_name
+    checkpoint_path = base_path / folder_name / f'checkpoint_step_{step:05d}.pt'
 
     if not checkpoint_path.exists():
         raise FileNotFoundError(f"Checkpoint not found: {checkpoint_path}")
@@ -92,7 +94,11 @@ def load_checkpoint(experiment_name: str, step: int, base_path: Path = None):
 
 def check_checkpoints_exist(experiment_name: str, steps: List[int]) -> Dict[str, bool]:
     """Check which checkpoints exist for an experiment."""
-    checkpoint_dir = Path('/home/user/ndt/experiments/checkpoints') / experiment_name
+    base_path = Path('/home/user/ndt/experiments/mechanistic_interpretability/check_points_results')
+
+    # Handle folder naming (checkpoints are in folders with "2" suffix)
+    folder_name = f"{experiment_name}2" if not experiment_name.endswith('2') else experiment_name
+    checkpoint_dir = base_path / folder_name
 
     status = {}
     for step in steps:
