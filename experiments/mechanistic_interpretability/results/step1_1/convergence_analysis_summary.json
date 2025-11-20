@@ -1,0 +1,1117 @@
+[
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "conv_layers.6": 0,
+      "conv_layers.9": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "cnn_deep_fashion_mnist",
+    "arch_name": "cnn_deep",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "conv_layers.6": 0,
+      "conv_layers.9": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "cnn_deep_mnist",
+    "arch_name": "cnn_deep",
+    "dataset_name": "mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "conv_layers.6": 0,
+      "conv_layers.9": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "cnn_deep_qmnist",
+    "arch_name": "cnn_deep",
+    "dataset_name": "qmnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "conv_layers.6": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 4,
+    "total_layers": 4,
+    "experiment_name": "cnn_medium_fashion_mnist",
+    "arch_name": "cnn_medium",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 4
+  },
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "conv_layers.6": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 4,
+    "total_layers": 4,
+    "experiment_name": "cnn_medium_mnist",
+    "arch_name": "cnn_medium",
+    "dataset_name": "mnist",
+    "num_layers": 4
+  },
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "conv_layers.6": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 4,
+    "total_layers": 4,
+    "experiment_name": "cnn_medium_qmnist",
+    "arch_name": "cnn_medium",
+    "dataset_name": "qmnist",
+    "num_layers": 4
+  },
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 3,
+    "total_layers": 3,
+    "experiment_name": "cnn_shallow_fashion_mnist",
+    "arch_name": "cnn_shallow",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 3
+  },
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 3,
+    "total_layers": 3,
+    "experiment_name": "cnn_shallow_mnist",
+    "arch_name": "cnn_shallow",
+    "dataset_name": "mnist",
+    "num_layers": 3
+  },
+  {
+    "stabilization_points": {
+      "conv_layers.0": 0,
+      "conv_layers.3": 0,
+      "fc": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 3,
+    "total_layers": 3,
+    "experiment_name": "cnn_shallow_qmnist",
+    "arch_name": "cnn_shallow",
+    "dataset_name": "qmnist",
+    "num_layers": 3
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.12": 0,
+      "network.14": 0,
+      "network.16": 0,
+      "network.18": 0,
+      "network.2": 0,
+      "network.20": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 11,
+    "total_layers": 11,
+    "experiment_name": "mlp_deep_10_ag_news",
+    "arch_name": "mlp_deep_10",
+    "dataset_name": "ag_news",
+    "num_layers": 11
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.12": 0,
+      "network.14": 0,
+      "network.16": 0,
+      "network.18": 0,
+      "network.2": 0,
+      "network.20": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 11,
+    "total_layers": 11,
+    "experiment_name": "mlp_deep_10_fashion_mnist",
+    "arch_name": "mlp_deep_10",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 11
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.12": 0,
+      "network.14": 0,
+      "network.16": 0,
+      "network.18": 0,
+      "network.2": 0,
+      "network.20": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 11,
+    "total_layers": 11,
+    "experiment_name": "mlp_deep_10_mnist",
+    "arch_name": "mlp_deep_10",
+    "dataset_name": "mnist",
+    "num_layers": 11
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.12": 0,
+      "network.14": 0,
+      "network.16": 0,
+      "network.18": 0,
+      "network.2": 0,
+      "network.20": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 11,
+    "total_layers": 11,
+    "experiment_name": "mlp_deep_10_qmnist",
+    "arch_name": "mlp_deep_10",
+    "dataset_name": "qmnist",
+    "num_layers": 11
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 6,
+    "total_layers": 6,
+    "experiment_name": "mlp_medium_5_ag_news",
+    "arch_name": "mlp_medium_5",
+    "dataset_name": "ag_news",
+    "num_layers": 6
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 6,
+    "total_layers": 6,
+    "experiment_name": "mlp_medium_5_fashion_mnist",
+    "arch_name": "mlp_medium_5",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 6
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 6,
+    "total_layers": 6,
+    "experiment_name": "mlp_medium_5_mnist",
+    "arch_name": "mlp_medium_5",
+    "dataset_name": "mnist",
+    "num_layers": 6
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 6,
+    "total_layers": 6,
+    "experiment_name": "mlp_medium_5_qmnist",
+    "arch_name": "mlp_medium_5",
+    "dataset_name": "qmnist",
+    "num_layers": 6
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_medium_ag_news",
+    "arch_name": "mlp_medium",
+    "dataset_name": "ag_news",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_medium_fashion_mnist",
+    "arch_name": "mlp_medium",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_medium_mnist",
+    "arch_name": "mlp_medium",
+    "dataset_name": "mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_medium_qmnist",
+    "arch_name": "mlp_medium",
+    "dataset_name": "qmnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_narrow_ag_news",
+    "arch_name": "mlp_narrow",
+    "dataset_name": "ag_news",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_narrow_fashion_mnist",
+    "arch_name": "mlp_narrow",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_narrow_mnist",
+    "arch_name": "mlp_narrow",
+    "dataset_name": "mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_narrow_qmnist",
+    "arch_name": "mlp_narrow",
+    "dataset_name": "qmnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 3,
+    "total_layers": 3,
+    "experiment_name": "mlp_shallow_2_ag_news",
+    "arch_name": "mlp_shallow_2",
+    "dataset_name": "ag_news",
+    "num_layers": 3
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 3,
+    "total_layers": 3,
+    "experiment_name": "mlp_shallow_2_fashion_mnist",
+    "arch_name": "mlp_shallow_2",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 3
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 3,
+    "total_layers": 3,
+    "experiment_name": "mlp_shallow_2_mnist",
+    "arch_name": "mlp_shallow_2",
+    "dataset_name": "mnist",
+    "num_layers": 3
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 3,
+    "total_layers": 3,
+    "experiment_name": "mlp_shallow_2_qmnist",
+    "arch_name": "mlp_shallow_2",
+    "dataset_name": "qmnist",
+    "num_layers": 3
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.12": 0,
+      "network.14": 0,
+      "network.16": 0,
+      "network.18": 0,
+      "network.2": 0,
+      "network.20": 0,
+      "network.22": 0,
+      "network.24": 0,
+      "network.26": 0,
+      "network.28": 0,
+      "network.30": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 16,
+    "total_layers": 16,
+    "experiment_name": "mlp_verydeep_15_ag_news",
+    "arch_name": "mlp_verydeep_15",
+    "dataset_name": "ag_news",
+    "num_layers": 16
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.12": 0,
+      "network.14": 0,
+      "network.16": 0,
+      "network.18": 0,
+      "network.2": 0,
+      "network.20": 0,
+      "network.22": 0,
+      "network.24": 0,
+      "network.26": 0,
+      "network.28": 0,
+      "network.30": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 16,
+    "total_layers": 16,
+    "experiment_name": "mlp_verydeep_15_fashion_mnist",
+    "arch_name": "mlp_verydeep_15",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 16
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.12": 0,
+      "network.14": 0,
+      "network.16": 0,
+      "network.18": 0,
+      "network.2": 0,
+      "network.20": 0,
+      "network.22": 0,
+      "network.24": 0,
+      "network.26": 0,
+      "network.28": 0,
+      "network.30": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 16,
+    "total_layers": 16,
+    "experiment_name": "mlp_verydeep_15_mnist",
+    "arch_name": "mlp_verydeep_15",
+    "dataset_name": "mnist",
+    "num_layers": 16
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.10": 0,
+      "network.12": 0,
+      "network.14": 0,
+      "network.16": 0,
+      "network.18": 0,
+      "network.2": 0,
+      "network.20": 0,
+      "network.22": 0,
+      "network.24": 0,
+      "network.26": 0,
+      "network.28": 0,
+      "network.30": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 16,
+    "total_layers": 16,
+    "experiment_name": "mlp_verydeep_15_qmnist",
+    "arch_name": "mlp_verydeep_15",
+    "dataset_name": "qmnist",
+    "num_layers": 16
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_verywide_ag_news",
+    "arch_name": "mlp_verywide",
+    "dataset_name": "ag_news",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_verywide_fashion_mnist",
+    "arch_name": "mlp_verywide",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_verywide_mnist",
+    "arch_name": "mlp_verywide",
+    "dataset_name": "mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_verywide_qmnist",
+    "arch_name": "mlp_verywide",
+    "dataset_name": "qmnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_wide_ag_news",
+    "arch_name": "mlp_wide",
+    "dataset_name": "ag_news",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_wide_fashion_mnist",
+    "arch_name": "mlp_wide",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_wide_mnist",
+    "arch_name": "mlp_wide",
+    "dataset_name": "mnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "network.0": 0,
+      "network.2": 0,
+      "network.4": 0,
+      "network.6": 0,
+      "network.8": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 5,
+    "total_layers": 5,
+    "experiment_name": "mlp_wide_qmnist",
+    "arch_name": "mlp_wide",
+    "dataset_name": "qmnist",
+    "num_layers": 5
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0,
+      "transformer.layers.4.linear1": 0,
+      "transformer.layers.4.linear2": 0,
+      "transformer.layers.5.linear1": 0,
+      "transformer.layers.5.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 14,
+    "total_layers": 14,
+    "experiment_name": "transformer_deep_ag_news",
+    "arch_name": "transformer_deep",
+    "dataset_name": "ag_news",
+    "num_layers": 14
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0,
+      "transformer.layers.4.linear1": 0,
+      "transformer.layers.4.linear2": 0,
+      "transformer.layers.5.linear1": 0,
+      "transformer.layers.5.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 14,
+    "total_layers": 14,
+    "experiment_name": "transformer_deep_fashion_mnist",
+    "arch_name": "transformer_deep",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 14
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0,
+      "transformer.layers.4.linear1": 0,
+      "transformer.layers.4.linear2": 0,
+      "transformer.layers.5.linear1": 0,
+      "transformer.layers.5.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 14,
+    "total_layers": 14,
+    "experiment_name": "transformer_deep_mnist",
+    "arch_name": "transformer_deep",
+    "dataset_name": "mnist",
+    "num_layers": 14
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0,
+      "transformer.layers.4.linear1": 0,
+      "transformer.layers.4.linear2": 0,
+      "transformer.layers.5.linear1": 0,
+      "transformer.layers.5.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 14,
+    "total_layers": 14,
+    "experiment_name": "transformer_deep_qmnist",
+    "arch_name": "transformer_deep",
+    "dataset_name": "qmnist",
+    "num_layers": 14
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 10,
+    "total_layers": 10,
+    "experiment_name": "transformer_medium_ag_news",
+    "arch_name": "transformer_medium",
+    "dataset_name": "ag_news",
+    "num_layers": 10
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 10,
+    "total_layers": 10,
+    "experiment_name": "transformer_medium_fashion_mnist",
+    "arch_name": "transformer_medium",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 10
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 10,
+    "total_layers": 10,
+    "experiment_name": "transformer_medium_mnist",
+    "arch_name": "transformer_medium",
+    "dataset_name": "mnist",
+    "num_layers": 10
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 10,
+    "total_layers": 10,
+    "experiment_name": "transformer_medium_qmnist",
+    "arch_name": "transformer_medium",
+    "dataset_name": "qmnist",
+    "num_layers": 10
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 10,
+    "total_layers": 10,
+    "experiment_name": "transformer_narrow_fashion_mnist",
+    "arch_name": "transformer_narrow",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 10
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0,
+      "transformer.layers.2.linear1": 0,
+      "transformer.layers.2.linear2": 0,
+      "transformer.layers.3.linear1": 0,
+      "transformer.layers.3.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 10,
+    "total_layers": 10,
+    "experiment_name": "transformer_narrow_mnist",
+    "arch_name": "transformer_narrow",
+    "dataset_name": "mnist",
+    "num_layers": 10
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 6,
+    "total_layers": 6,
+    "experiment_name": "transformer_shallow_ag_news",
+    "arch_name": "transformer_shallow",
+    "dataset_name": "ag_news",
+    "num_layers": 6
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 6,
+    "total_layers": 6,
+    "experiment_name": "transformer_shallow_fashion_mnist",
+    "arch_name": "transformer_shallow",
+    "dataset_name": "fashion_mnist",
+    "num_layers": 6
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 6,
+    "total_layers": 6,
+    "experiment_name": "transformer_shallow_mnist",
+    "arch_name": "transformer_shallow",
+    "dataset_name": "mnist",
+    "num_layers": 6
+  },
+  {
+    "stabilization_points": {
+      "fc": 0,
+      "input_proj": 0,
+      "transformer.layers.0.linear1": 0,
+      "transformer.layers.0.linear2": 0,
+      "transformer.layers.1.linear1": 0,
+      "transformer.layers.1.linear2": 0
+    },
+    "convergence_correlation": NaN,
+    "convergence_p_value": NaN,
+    "convergence_pattern": "unclear",
+    "num_stabilized_layers": 6,
+    "total_layers": 6,
+    "experiment_name": "transformer_shallow_qmnist",
+    "arch_name": "transformer_shallow",
+    "dataset_name": "qmnist",
+    "num_layers": 6
+  }
+]
