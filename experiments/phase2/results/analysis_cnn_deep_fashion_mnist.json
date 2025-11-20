@@ -1,0 +1,65 @@
+{
+  "arch": "cnn_deep",
+  "dataset": "fashion_mnist",
+  "jump_analysis": {
+    "num_jumps": 23,
+    "pattern": "scattered",
+    "characteristics": "Irregular distribution of jumps",
+    "early_jumps": 14,
+    "late_jumps": 9,
+    "avg_magnitude": 0.027438851133913398,
+    "max_magnitude": 0.03907907745702487,
+    "avg_z_score": 2.9329740490349825,
+    "avg_gap": 1.4545454545454546,
+    "top_5_jumps": [
+      {
+        "index": 7,
+        "magnitude": 0.03907907745702487,
+        "z_score": 4.3609422846640795
+      },
+      {
+        "index": 6,
+        "magnitude": 0.038010685590605976,
+        "z_score": 4.229876993826774
+      },
+      {
+        "index": 8,
+        "magnitude": 0.036371930285618095,
+        "z_score": 4.0288421980646705
+      },
+      {
+        "index": 9,
+        "magnitude": 0.03229282205014644,
+        "z_score": 3.5284363787739017
+      },
+      {
+        "index": 5,
+        "magnitude": 0.031953390275164896,
+        "z_score": 3.4867964845499815
+      }
+    ]
+  },
+  "growth_analysis": {
+    "alpha": 0.0003062310939073713,
+    "D_max": 6.334297113396558,
+    "R2": 0.6317260292805014,
+    "t0": 1.152032607450504e-11,
+    "growth_type": "slow",
+    "growth_description": "Gradual dimensionality increase",
+    "fit_quality": "moderate",
+    "fit_description": "Some deviation from TAP predictions"
+  },
+  "mechanistic_interpretation": {
+    "interpretations": [
+      "The high number of jumps suggests hierarchical feature learning where different levels of abstraction emerge at distinct training phases."
+    ],
+    "hypotheses": [
+      "Each jump may correspond to the emergence of a new feature type (edges \u2192 textures \u2192 parts \u2192 objects)"
+    ],
+    "suggested_investigations": [
+      "Feature visualization at jump indices: [7, 6, 8, 9, 5]",
+      "Compare activation patterns before/after largest jumps",
+      "Analyze which neurons become active at each transition"
+    ]
+  }
+}
