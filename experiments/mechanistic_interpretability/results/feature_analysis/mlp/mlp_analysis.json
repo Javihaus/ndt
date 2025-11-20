@@ -1,0 +1,32 @@
+{
+  "experiment": "mlp_narrow_mnist",
+  "steps": [
+    100,
+    1000,
+    2000
+  ],
+  "phase_stats": {
+    "100": {
+      "checkpoint_loss": 0.7767764925956726,
+      "total_params": 28618
+    },
+    "1000": {
+      "checkpoint_loss": 0.342097669839859,
+      "total_params": 28618
+    },
+    "2000": {
+      "checkpoint_loss": 0.2408912181854248,
+      "total_params": 28618
+    }
+  },
+  "parameter_similarity": {
+    "step_100_to_1000": {
+      "mean_norm_ratio": 1.2088757904879983,
+      "std_norm_ratio": 0.09416353333746337
+    },
+    "step_1000_to_2000": {
+      "mean_norm_ratio": 1.0962562874406956,
+      "std_norm_ratio": 0.037524822477752115
+    }
+  }
+}
