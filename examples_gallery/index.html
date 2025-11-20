@@ -1,0 +1,2435 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="High-frequency monitoring of neural network representational dimensionality during training">
+      
+      
+        <meta name="author" content="Javier Marín">
+      
+      
+        <link rel="canonical" href="https://javihaus.github.io/ndt/examples_gallery/">
+      
+      
+        <link rel="prev" href="../INSTALL/">
+      
+      
+        <link rel="next" href="../api_reference/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Examples Gallery - Neural Dimensionality Tracker (NDT)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XXXXXXXXXX",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#examples-gallery" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Neural Dimensionality Tracker (NDT)" class="md-header__button md-logo" aria-label="Neural Dimensionality Tracker (NDT)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Neural Dimensionality Tracker (NDT)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Examples Gallery
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Javihaus/ndt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Javihaus/ndt
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../quickstart/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api_reference/" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../tds_reproduction/" class="md-tabs__link">
+          
+  
+  
+  Research
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CONTRIBUTING/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../LICENSE" class="md-tabs__link">
+        
+  
+  
+    
+  
+  License
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Neural Dimensionality Tracker (NDT)" class="md-nav__button md-logo" aria-label="Neural Dimensionality Tracker (NDT)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Neural Dimensionality Tracker (NDT)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Javihaus/ndt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Javihaus/ndt
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INSTALL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples Gallery
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart-basic-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quickstart &amp; Basic Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quickstart &amp; Basic Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-quickstart-mnist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01: Quickstart MNIST
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-specific-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture-Specific Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture-Specific Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#02-cnn-on-cifar-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02: CNN on CIFAR-10
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Reproduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Research Reproduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#03-tds-article-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03: TDS Article Experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#04-transformer-language-model-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04: Transformer Language Model (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-vision-transformer-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05: Vision Transformer (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-resnet-on-imagenet-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06: ResNet on ImageNet (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-gan-training-dynamics-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07: GAN Training Dynamics (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-reinforcement-learning-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08: Reinforcement Learning (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#09-distributed-training-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09: Distributed Training (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-pytorch-lightning-integration-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10: PyTorch Lightning Integration (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-continuous-monitoring-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11: Continuous Monitoring (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-custom-architectures-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12: Custom Architectures (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Templates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-template-gpu-context-manager-explicit-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Template (GPU, context manager, explicit layers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-all-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running All Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-using-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Using Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips for Using Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-start-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Start Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modify-hyperparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Modify Hyperparameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-your-own-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Add Your Own Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-experiment-with-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Experiment with Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-combine-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Combine Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture_support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance_benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tds_reproduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TDS Article Reproduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart-basic-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quickstart &amp; Basic Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quickstart &amp; Basic Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-quickstart-mnist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01: Quickstart MNIST
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-specific-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture-Specific Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture-Specific Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#02-cnn-on-cifar-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02: CNN on CIFAR-10
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Reproduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Research Reproduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#03-tds-article-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03: TDS Article Experiment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#04-transformer-language-model-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04: Transformer Language Model (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-vision-transformer-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05: Vision Transformer (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-resnet-on-imagenet-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06: ResNet on ImageNet (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-gan-training-dynamics-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07: GAN Training Dynamics (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-reinforcement-learning-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08: Reinforcement Learning (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#09-distributed-training-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09: Distributed Training (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-pytorch-lightning-integration-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10: PyTorch Lightning Integration (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-continuous-monitoring-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11: Continuous Monitoring (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-custom-architectures-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12: Custom Architectures (Coming Soon)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Templates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-template-gpu-context-manager-explicit-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Template (GPU, context manager, explicit layers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-all-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running All Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-using-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Using Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips for Using Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-start-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Start Simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modify-hyperparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Modify Hyperparameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-your-own-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Add Your Own Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-experiment-with-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Experiment with Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-combine-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Combine Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="examples-gallery">Examples Gallery<a class="headerlink" href="#examples-gallery" title="Permanent link">&para;</a></h1>
+<p>Complete collection of examples demonstrating Neural Dimensionality Tracker across different architectures, datasets, and use cases.</p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#quickstart--basic-examples">Quickstart &amp; Basic Examples</a></li>
+<li><a href="#architecture-specific-examples">Architecture-Specific Examples</a></li>
+<li><a href="#research-reproduction">Research Reproduction</a></li>
+<li><a href="#advanced-use-cases">Advanced Use Cases</a></li>
+<li><a href="#production-deployment">Production Deployment</a></li>
+</ol>
+<hr />
+<h2 id="quickstart-basic-examples">Quickstart &amp; Basic Examples<a class="headerlink" href="#quickstart-basic-examples" title="Permanent link">&para;</a></h2>
+<h3 id="01-quickstart-mnist">01: Quickstart MNIST<a class="headerlink" href="#01-quickstart-mnist" title="Permanent link">&para;</a></h3>
+<p><strong>File:</strong> <a href="https://github.com/Javihaus/ndt/blob/main/examples/01_quickstart_mnist.py"><code>01_quickstart_mnist.py</code></a></p>
+<p><strong>Description:</strong> Minimal example showing core NDT functionality with a simple MLP on MNIST.</p>
+<p><strong>What you'll learn:</strong>
+- How to create a tracker
+- How to integrate into training loop
+- How to analyze results
+- How to detect jumps
+- How to visualize metrics
+- How to export data</p>
+<p><strong>Architecture:</strong> 4-layer MLP (784 → 512 → 256 → 128 → 10)</p>
+<p><strong>Configuration:</strong>
+- Dataset: MNIST (60k train)
+- Steps: 1000
+- Sampling: Every 10 steps (100 measurements)
+- Runtime: ~2 minutes (CPU)</p>
+<p><strong>Key code:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ndt</span><span class="w"> </span><span class="kn">import</span> <span class="n">HighFrequencyTracker</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Training loop</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="c1"># ... standard training ...</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>  <span class="c1"># One line!</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Analysis</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">results</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Expected output:</strong>
+- <code>mnist_stable_rank.png</code> - Visualization
+- <code>mnist_results.csv</code> - Exported data
+- Console: Detected jumps</p>
+<p><strong>Run:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>examples/01_quickstart_mnist.py
+</code></pre></div></p>
+<hr />
+<h2 id="architecture-specific-examples">Architecture-Specific Examples<a class="headerlink" href="#architecture-specific-examples" title="Permanent link">&para;</a></h2>
+<h3 id="02-cnn-on-cifar-10">02: CNN on CIFAR-10<a class="headerlink" href="#02-cnn-on-cifar-10" title="Permanent link">&para;</a></h3>
+<p><strong>File:</strong> <a href="https://github.com/Javihaus/ndt/blob/main/examples/02_cnn_cifar10.py"><code>02_cnn_cifar10.py</code></a></p>
+<p><strong>Description:</strong> Track dimensionality in a convolutional neural network with both conv and FC layers.</p>
+<p><strong>What you'll learn:</strong>
+- How to track Conv layers
+- How to track multiple layer types
+- How to specify layers explicitly
+- How to track gradient norms
+- How to compare metrics</p>
+<p><strong>Architecture:</strong> 3-layer CNN (3→32→64→128) + 2 FC layers</p>
+<p><strong>Configuration:</strong>
+- Dataset: CIFAR-10 (50k train)
+- Steps: 2000
+- Sampling: Every 20 steps (100 measurements)
+- Runtime: ~10 min (CPU), ~3 min (GPU)</p>
+<p><strong>Key code:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">model</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">conv1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">conv2</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">conv3</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">fc1</span><span class="p">],</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Conv1&quot;</span><span class="p">,</span> <span class="s2">&quot;Conv2&quot;</span><span class="p">,</span> <span class="s2">&quot;Conv3&quot;</span><span class="p">,</span> <span class="s2">&quot;FC1&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">sampling_frequency</span><span class="o">=</span><span class="mi">20</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Track with gradient norm</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">grad_norm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">clip_grad_norm_</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">max_norm</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">))</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">grad_norm</span><span class="o">=</span><span class="n">grad_norm</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+</code></pre></div></p>
+<p><strong>Expected output:</strong>
+- <code>cifar10_conv3_metrics.png</code> - All metrics for Conv3
+- <code>cifar10_results.json</code> - JSON export
+- Console: Jump statistics per layer</p>
+<p><strong>Run:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>examples/02_cnn_cifar10.py
+</code></pre></div></p>
+<hr />
+<h2 id="research-reproduction">Research Reproduction<a class="headerlink" href="#research-reproduction" title="Permanent link">&para;</a></h2>
+<h3 id="03-tds-article-experiment">03: TDS Article Experiment<a class="headerlink" href="#03-tds-article-experiment" title="Permanent link">&para;</a></h3>
+<p><strong>File:</strong> <a href="https://github.com/Javihaus/ndt/blob/main/examples/03_reproduce_tds_experiment.py"><code>03_reproduce_tds_experiment.py</code></a></p>
+<p><strong>Description:</strong> Exact reproduction of the experiment from the TDS article "I Measured Neural Network Training Every 5 Steps for 10,000 Iterations".</p>
+<p><strong>What you'll learn:</strong>
+- High-frequency sampling (every 5 steps)
+- Phase detection (collapse, expansion, stabilization)
+- How to reproduce research results
+- How sampling frequency affects jump detection
+- How to generate publication-quality figures</p>
+<p><strong>Architecture:</strong> 3-layer MLP (784 → 256 → 128 → 10) ⚠️ Note: Different from quickstart!</p>
+<p><strong>Configuration (exact TDS specs):</strong>
+- Dataset: MNIST (60k train / 10k test)
+- Optimizer: Adam (β1=0.9, β2=0.999)
+- Learning rate: 0.001
+- Batch size: 64
+- Steps: 8000
+- Sampling: Every 5 steps (1600 measurements)
+- Runtime: ~15 min (CPU), ~5 min (GPU)</p>
+<p><strong>Key findings:</strong>
+- Phase 1 (Collapse): Steps 0-300, dimensionality drops ~2500 → ~500
+- Phase 2 (Expansion): Steps 300-5000, dimensionality climbs to ~1000
+- Phase 3 (Stabilization): Steps 5000-8000, dimensionality plateaus
+- ~85 jumps in activation space vs 1 in weight space
+- Dimensionality correlates with loss (ρ = -0.951)</p>
+<p><strong>Expected output:</strong>
+- <code>tds_figure2_activation_space.png</code> - Matches Figure 2 from article
+- <code>tds_figure3_dimensionality_loss.png</code> - Matches Figure 3 from article
+- <code>tds_experiment_results.csv</code> - Full data export
+- <code>tds_experiment_results.h5</code> - HDF5 export (efficient)
+- Console: Detailed phase analysis</p>
+<p><strong>Key code:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Exact architecture from TDS article</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">TDSExperimentMLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">layer1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>  <span class="c1"># Note: 256, not 512!</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">layer2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">layer3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># High-frequency sampling</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># Train for exactly 8000 steps</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8000</span><span class="p">):</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="c1"># ... training ...</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">grad_norm</span><span class="o">=</span><span class="n">grad_norm</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+</code></pre></div></p>
+<p><strong>Run:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>examples/03_reproduce_tds_experiment.py
+</code></pre></div></p>
+<p><strong>Compare with low-frequency sampling:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Modify sampling_frequency=5 to sampling_frequency=50</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Run again and compare jump detection results</span>
+</code></pre></div></p>
+<hr />
+<h2 id="advanced-use-cases">Advanced Use Cases<a class="headerlink" href="#advanced-use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="04-transformer-language-model-coming-soon">04: Transformer Language Model (Coming Soon)<a class="headerlink" href="#04-transformer-language-model-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Track BERT or GPT-style transformer during fine-tuning.</p>
+<p><strong>What you'll learn:</strong>
+- How to track transformer layers
+- How to select attention vs FFN layers
+- How dimensionality evolves in language models
+- How to handle large models efficiently</p>
+<p><strong>Architecture:</strong> BERT-base (12 layers, 768 hidden)</p>
+<p><strong>Configuration:</strong>
+- Dataset: GLUE benchmark
+- Sampling: Every 50 steps
+- Track: FFN layers in layers 0, 6, 11</p>
+<hr />
+<h3 id="05-vision-transformer-coming-soon">05: Vision Transformer (Coming Soon)<a class="headerlink" href="#05-vision-transformer-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Track Vision Transformer on image classification.</p>
+<p><strong>What you'll learn:</strong>
+- How to track ViT patch embeddings
+- How to track attention mechanisms
+- How visual representations evolve
+- How to optimize for large ViT models</p>
+<p><strong>Architecture:</strong> ViT-Base/16 (86M parameters)</p>
+<p><strong>Configuration:</strong>
+- Dataset: ImageNet-1k
+- Sampling: Every 100 steps
+- Track: Patch embed + 4 transformer blocks</p>
+<hr />
+<h3 id="06-resnet-on-imagenet-coming-soon">06: ResNet on ImageNet (Coming Soon)<a class="headerlink" href="#06-resnet-on-imagenet-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Production-scale tracking on ImageNet classification.</p>
+<p><strong>What you'll learn:</strong>
+- How to track deep residual networks
+- How to handle large-scale datasets
+- How to minimize overhead in production
+- How to select representative layers</p>
+<p><strong>Architecture:</strong> ResNet-50 (25M parameters)</p>
+<p><strong>Configuration:</strong>
+- Dataset: ImageNet-1k (1.2M images)
+- Sampling: Every 100 steps
+- Track: Residual blocks in stages 1, 2, 3, 4</p>
+<hr />
+<h3 id="07-gan-training-dynamics-coming-soon">07: GAN Training Dynamics (Coming Soon)<a class="headerlink" href="#07-gan-training-dynamics-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Track generator and discriminator dimensionality during GAN training.</p>
+<p><strong>What you'll learn:</strong>
+- How to track multiple networks
+- How dimensionality evolves in adversarial training
+- How to detect mode collapse
+- How to diagnose training instability</p>
+<p><strong>Architecture:</strong> DCGAN or StyleGAN</p>
+<p><strong>Configuration:</strong>
+- Dataset: CelebA
+- Sampling: Every 10 steps
+- Track: Generator layers + discriminator layers</p>
+<hr />
+<h3 id="08-reinforcement-learning-coming-soon">08: Reinforcement Learning (Coming Soon)<a class="headerlink" href="#08-reinforcement-learning-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Track policy network dimensionality during RL training.</p>
+<p><strong>What you'll learn:</strong>
+- How to track in RL context
+- How representation evolves with reward
+- How to correlate dimensionality with performance
+- How to detect learning plateaus</p>
+<p><strong>Architecture:</strong> PPO with CNN policy</p>
+<p><strong>Configuration:</strong>
+- Environment: Atari (e.g., Breakout)
+- Sampling: Every episode
+- Track: Convolutional feature layers</p>
+<hr />
+<h2 id="production-deployment">Production Deployment<a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h2>
+<h3 id="09-distributed-training-coming-soon">09: Distributed Training (Coming Soon)<a class="headerlink" href="#09-distributed-training-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Track dimensionality in multi-GPU distributed training.</p>
+<p><strong>What you'll learn:</strong>
+- How to integrate with DDP
+- How to aggregate results across GPUs
+- How to minimize communication overhead
+- How to save results from rank 0 only</p>
+<p><strong>Key code:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.distributed</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dist</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">if</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># Training loop</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">loss</span> <span class="o">=</span> <span class="n">train_step</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">if</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+</code></pre></div></p>
+<hr />
+<h3 id="10-pytorch-lightning-integration-coming-soon">10: PyTorch Lightning Integration (Coming Soon)<a class="headerlink" href="#10-pytorch-lightning-integration-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Use NDT with PyTorch Lightning's LightningModule.</p>
+<p><strong>What you'll learn:</strong>
+- How to integrate with Lightning's training loop
+- How to log to TensorBoard/Weights &amp; Biases
+- How to use callbacks
+- How to handle checkpointing</p>
+<p><strong>Key code:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">LitModel</span><span class="p">(</span><span class="n">pl</span><span class="o">.</span><span class="n">LightningModule</span><span class="p">):</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="c1"># ... training ...</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">global_step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="k">return</span> <span class="n">loss</span>
+</code></pre></div></p>
+<hr />
+<h3 id="11-continuous-monitoring-coming-soon">11: Continuous Monitoring (Coming Soon)<a class="headerlink" href="#11-continuous-monitoring-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Set up continuous dimensionality monitoring for production training.</p>
+<p><strong>What you'll learn:</strong>
+- How to export metrics to Prometheus
+- How to create Grafana dashboards
+- How to set up alerts for anomalies
+- How to track long-running jobs</p>
+<hr />
+<h3 id="12-custom-architectures-coming-soon">12: Custom Architectures (Coming Soon)<a class="headerlink" href="#12-custom-architectures-coming-soon" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Extend NDT to work with custom neural architecture.</p>
+<p><strong>What you'll learn:</strong>
+- How to add support for custom layers
+- How to write custom dimensionality metrics
+- How to handle non-standard tensor shapes
+- How to contribute back to NDT</p>
+<hr />
+<h2 id="example-templates">Example Templates<a class="headerlink" href="#example-templates" title="Permanent link">&para;</a></h2>
+<h3 id="basic-template">Basic Template<a class="headerlink" href="#basic-template" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ndt</span><span class="w"> </span><span class="kn">import</span> <span class="n">HighFrequencyTracker</span><span class="p">,</span> <span class="n">plot_phases</span><span class="p">,</span> <span class="n">export_to_csv</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># 1. Define model</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># 2. Create tracker</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># 3. Training loop</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    <span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="c1"># 4. Analysis</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="n">results</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">()</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="c1"># 5. Visualization</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;stable_rank&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;results.png&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="c1"># 6. Export</span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a><span class="n">export_to_csv</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;results.csv&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="c1"># 7. Cleanup</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a><span class="n">tracker</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h3 id="advanced-template-gpu-context-manager-explicit-layers">Advanced Template (GPU, context manager, explicit layers)<a class="headerlink" href="#advanced-template-gpu-context-manager-explicit-layers" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ndt</span><span class="w"> </span><span class="kn">import</span> <span class="n">HighFrequencyTracker</span><span class="p">,</span> <span class="n">create_interactive_dashboard</span><span class="p">,</span> <span class="n">export_to_hdf5</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># Device setup</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># Model</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">model</span> <span class="o">=</span> <span class="n">MyComplexModel</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># Context manager for automatic cleanup</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="k">with</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="n">model</span><span class="p">,</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">layer1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">layer3</span><span class="p">],</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Encoder_L1&quot;</span><span class="p">,</span> <span class="s2">&quot;Decoder_L3&quot;</span><span class="p">],</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="n">sampling_frequency</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="n">enable_jump_detection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="n">device</span><span class="o">=</span><span class="n">device</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="p">)</span> <span class="k">as</span> <span class="n">tracker</span><span class="p">:</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>    <span class="c1"># Training</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>    <span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="n">batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataloader</span><span class="p">):</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">batch</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>        <span class="c1"># Track with gradient norm</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>        <span class="n">grad_norm</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">clip_grad_norm_</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">max_norm</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>        <span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">grad_norm</span><span class="o">=</span><span class="n">grad_norm</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>        <span class="k">if</span> <span class="n">step</span> <span class="o">&gt;=</span> <span class="mi">10000</span><span class="p">:</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>            <span class="k">break</span>
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>    <span class="c1"># Analysis &amp; Export</span>
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>    <span class="n">results</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>    <span class="c1"># Interactive dashboard</span>
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>    <span class="n">fig</span> <span class="o">=</span> <span class="n">create_interactive_dashboard</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>    <span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;dashboard.html&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>    <span class="c1"># Efficient storage</span>
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>    <span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;results.h5&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>    <span class="c1"># Jump analysis</span>
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>    <span class="k">for</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">jumps</span> <span class="ow">in</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">layer_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">jumps</span><span class="p">)</span><span class="si">}</span><span class="s2"> jumps&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a><span class="c1"># Tracker automatically closed</span>
+</code></pre></div>
+<hr />
+<h2 id="running-all-examples">Running All Examples<a class="headerlink" href="#running-all-examples" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Clone repository</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Javihaus/ndt.git
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">cd</span><span class="w"> </span>ndt
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># Install dependencies</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1"># Run all examples</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>./scripts/run_all_examples.sh
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="c1"># Or run individually</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>python<span class="w"> </span>examples/01_quickstart_mnist.py
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>python<span class="w"> </span>examples/02_cnn_cifar10.py
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>python<span class="w"> </span>examples/03_reproduce_tds_experiment.py
+</code></pre></div>
+<hr />
+<h2 id="example-comparison">Example Comparison<a class="headerlink" href="#example-comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Architecture</th>
+<th>Dataset</th>
+<th>Steps</th>
+<th>Sampling</th>
+<th>Runtime</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01_quickstart</td>
+<td>MLP (4-layer)</td>
+<td>MNIST</td>
+<td>1k</td>
+<td>10</td>
+<td>2 min</td>
+<td>⭐ Beginner</td>
+</tr>
+<tr>
+<td>02_cnn_cifar10</td>
+<td>CNN</td>
+<td>CIFAR-10</td>
+<td>2k</td>
+<td>20</td>
+<td>10 min</td>
+<td>⭐⭐ Intermediate</td>
+</tr>
+<tr>
+<td>03_tds_experiment</td>
+<td>MLP (3-layer)</td>
+<td>MNIST</td>
+<td>8k</td>
+<td>5</td>
+<td>15 min</td>
+<td>⭐⭐ Intermediate</td>
+</tr>
+<tr>
+<td>04_transformer</td>
+<td>BERT</td>
+<td>GLUE</td>
+<td>10k</td>
+<td>50</td>
+<td>2 hours</td>
+<td>⭐⭐⭐ Advanced</td>
+</tr>
+<tr>
+<td>05_vit</td>
+<td>ViT-Base</td>
+<td>ImageNet</td>
+<td>100k</td>
+<td>100</td>
+<td>10 hours</td>
+<td>⭐⭐⭐ Advanced</td>
+</tr>
+<tr>
+<td>06_resnet_imagenet</td>
+<td>ResNet-50</td>
+<td>ImageNet</td>
+<td>500k</td>
+<td>100</td>
+<td>3 days</td>
+<td>⭐⭐⭐⭐ Expert</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tips-for-using-examples">Tips for Using Examples<a class="headerlink" href="#tips-for-using-examples" title="Permanent link">&para;</a></h2>
+<h3 id="1-start-simple">1. Start Simple<a class="headerlink" href="#1-start-simple" title="Permanent link">&para;</a></h3>
+<p>Begin with <code>01_quickstart_mnist.py</code> to understand the basics.</p>
+<h3 id="2-modify-hyperparameters">2. Modify Hyperparameters<a class="headerlink" href="#2-modify-hyperparameters" title="Permanent link">&para;</a></h3>
+<p>All examples are designed to be easily modified:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Change sampling frequency</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Was 10</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Change training steps</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>  <span class="c1"># Was 1000</span>
+</code></pre></div></p>
+<h3 id="3-add-your-own-models">3. Add Your Own Models<a class="headerlink" href="#3-add-your-own-models" title="Permanent link">&para;</a></h3>
+<p>Replace the model definition with your own:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Instead of example model</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">model</span> <span class="o">=</span> <span class="n">MyCustomModel</span><span class="p">()</span>  <span class="c1"># Your model here</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Rest stays the same</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="4-experiment-with-metrics">4. Experiment with Metrics<a class="headerlink" href="#4-experiment-with-metrics" title="Permanent link">&para;</a></h3>
+<p>Try different metrics for analysis:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Instead of stable_rank</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;participation_ratio&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;cum_energy_90&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="5-combine-examples">5. Combine Examples<a class="headerlink" href="#5-combine-examples" title="Permanent link">&para;</a></h3>
+<p>Mix and match techniques from different examples:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Combine TDS sampling + CNN architecture + gradient tracking</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">cnn_model</span><span class="p">,</span> <span class="n">sampling_frequency</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">grad_norm</span><span class="o">=</span><span class="n">grad_norm</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+</code></pre></div></p>
+<hr />
+<h2 id="testing-examples">Testing Examples<a class="headerlink" href="#testing-examples" title="Permanent link">&para;</a></h2>
+<p>All examples have corresponding tests in <code>tests/test_examples.py</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Test all examples (fast mode)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>pytest<span class="w"> </span>tests/test_examples.py<span class="w"> </span>-v
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Test specific example</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>pytest<span class="w"> </span>tests/test_examples.py::test_quickstart_mnist<span class="w"> </span>-v
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># Test with full runs (slow)</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>pytest<span class="w"> </span>tests/test_examples.py<span class="w"> </span>--run-full-examples
+</code></pre></div>
+<hr />
+<h2 id="contributing-examples">Contributing Examples<a class="headerlink" href="#contributing-examples" title="Permanent link">&para;</a></h2>
+<p>Have an interesting use case? Contribute an example!</p>
+<p><strong>Guidelines:</strong>
+1. <strong>Runtime:</strong> Should complete in &lt;30 minutes on CPU
+2. <strong>Comments:</strong> Explain every step clearly
+3. <strong>Output:</strong> Include visualization and export
+4. <strong>Test:</strong> Add test in <code>tests/test_examples.py</code>
+5. <strong>Documentation:</strong> Add entry to this gallery</p>
+<p><strong>Template:</strong> Use <code>examples/00_template.py</code> as starting point.</p>
+<p><strong>Submit:</strong> Open PR with:
+- Example file (<code>examples/XX_your_example.py</code>)
+- Test (<code>tests/test_examples.py</code>)
+- Documentation update (this file)
+- README update (if applicable)</p>
+<hr />
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../api_reference/">API Reference</a></li>
+<li><a href="../quickstart/">Quickstart Guide</a></li>
+<li><a href="../architecture_support/">Architecture Support</a></li>
+<li><a href="../troubleshooting/">Troubleshooting</a></li>
+</ul>
+<hr />
+<h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Issues:</strong> <a href="https://github.com/Javihaus/ndt/issues">GitHub Issues</a></li>
+<li><strong>Discussions:</strong> <a href="https://github.com/Javihaus/ndt/discussions">GitHub Discussions</a></li>
+<li><strong>Email:</strong> javier@jmarin.info</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 Javier Marín
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Javihaus/ndt" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://pypi.org/project/ndt/" target="_blank" rel="noopener" title="pypi.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6M286.2 444.7a20.4 20.4 0 1 1 0-40.7 20.4 20.4 0 1 1 0 40.7M167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4m-6.6-183.4a20.4 20.4 0 1 1 0 40.8 20.4 20.4 0 1 1 0-40.8"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/jmarin" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/javihaus" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
