@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "total_checkpoints": 9,
+    "experiments": 3,
+    "checkpoint_steps": [
+      100,
+      1000,
+      2000
+    ],
+    "phases": [
+      "early (5%)",
+      "mid (50%)",
+      "late (100%)"
+    ]
+  },
+  "experiment_dynamics": {
+    "transformer_deep_mnist": {
+      "final_loss": 0.23455002903938293,
+      "phase_stats": {
+        "early": {
+          "mean_loss": 1.1360682816732497,
+          "std_loss": 0.5959905313851498,
+          "mean_grad_norm": 2.299850817526785,
+          "std_grad_norm": 0.5839097818321767,
+          "loss_decrease": 1.8171163201332092
+        },
+        "mid": {
+          "mean_loss": 0.26363666417355036,
+          "std_loss": 0.11552745577107039,
+          "mean_grad_norm": 1.7367224541704294,
+          "std_grad_norm": 0.5439874948021097,
+          "loss_decrease": 0.24678242206573486
+        },
+        "late": {
+          "mean_loss": 0.1720365296304226,
+          "std_loss": 0.0903631945319374,
+          "mean_grad_norm": 1.431978881207024,
+          "std_grad_norm": 0.4558146419688741,
+          "loss_decrease": 0.07794550061225891
+        }
+      }
+    },
+    "cnn_deep_mnist": {
+      "final_loss": 0.05398877337574959,
+      "phase_stats": {
+        "early": {
+          "mean_loss": 0.6322274211616743,
+          "std_loss": 0.6421064848257344,
+          "mean_grad_norm": 5.036808544443455,
+          "std_grad_norm": 2.504111467756655,
+          "loss_decrease": 1.9697010517120361
+        },
+        "mid": {
+          "mean_loss": 0.07624874372055847,
+          "std_loss": 0.05904486093615056,
+          "mean_grad_norm": 1.6889263891821586,
+          "std_grad_norm": 0.928661407922866,
+          "loss_decrease": 0.28600629419088364
+        },
+        "late": {
+          "mean_loss": 0.03555027364462148,
+          "std_loss": 0.03953796683402013,
+          "mean_grad_norm": 0.8835630483018897,
+          "std_grad_norm": 0.5334685071895429,
+          "loss_decrease": -0.02772609516978264
+        }
+      }
+    },
+    "mlp_narrow_mnist": {
+      "final_loss": 0.22384265065193176,
+      "phase_stats": {
+        "early": {
+          "mean_loss": 1.4273805348646074,
+          "std_loss": 0.5889394632863251,
+          "mean_grad_norm": 1.7834973826666964,
+          "std_grad_norm": 1.1234213998533427,
+          "loss_decrease": 1.5136125683784485
+        },
+        "mid": {
+          "mean_loss": 0.37451763105326596,
+          "std_loss": 0.13600860748951374,
+          "mean_grad_norm": 2.4249669600887716,
+          "std_grad_norm": 0.7163596955475471,
+          "loss_decrease": 0.4346788227558136
+        },
+        "late": {
+          "mean_loss": 0.22294474080204962,
+          "std_loss": 0.09123134839345678,
+          "mean_grad_norm": 1.8360360723329714,
+          "std_grad_norm": 0.5127862819027934,
+          "loss_decrease": 0.11825501918792725
+        }
+      }
+    }
+  },
+  "phase_comparison": {
+    "transformer_deep_mnist": {
+      "early_to_mid_loss_change": 0.8724316174996993,
+      "mid_to_late_loss_change": 0.09160013454312776,
+      "early_vs_late_loss_ratio": 0.1514315049594025
+    },
+    "cnn_deep_mnist": {
+      "early_to_mid_loss_change": 0.5559786774411158,
+      "mid_to_late_loss_change": 0.040698470075936986,
+      "early_vs_late_loss_ratio": 0.05623019890421758
+    },
+    "mlp_narrow_mnist": {
+      "early_to_mid_loss_change": 1.0528629038113415,
+      "mid_to_late_loss_change": 0.15157289025121634,
+      "early_vs_late_loss_ratio": 0.15619152381337245
+    }
+  },
+  "findings": {
+    "early_phase": "First 100 steps (5% of training)",
+    "mid_phase": "Steps 100-1000 (50% of training)",
+    "late_phase": "Steps 1000-2000 (100% of training)",
+    "hypothesis": "Are early features qualitatively different from late features?",
+    "observation": "Training dynamics show distinct phases with varying loss and gradient characteristics"
+  }
+}
