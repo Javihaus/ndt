@@ -287,12 +287,25 @@ def analyze_cnn_phases(experiment_name='cnn_deep_mnist', steps=[100, 1000, 2000]
     print(f"\n  Comparing phases...")
     comparison = compare_filter_evolution(phase_filters, save_dir)
 
-    # Save results
+    # Save results (convert numpy types to native Python)
+    def convert_to_native(obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, dict):
+            return {key: convert_to_native(value) for key, value in obj.items()}
+        elif isinstance(obj, list):
+            return [convert_to_native(item) for item in obj]
+        return obj
+
     results = {
         'experiment': experiment_name,
         'steps': steps,
-        'diversity_by_phase': phase_diversity,
-        'phase_comparison': comparison
+        'diversity_by_phase': convert_to_native(phase_diversity),
+        'phase_comparison': convert_to_native(comparison)
     }
 
     with open(save_dir / 'cnn_analysis.json', 'w') as f:
@@ -407,16 +420,6 @@ def analyze_transformer_phases(experiment_name='transformer_deep_mnist', steps=[
     save_dir = results_dir / 'transformer'
     save_dir.mkdir(exist_ok=True)
 
-    # Load MNIST for attention extraction
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,))
-    ])
-    test_dataset = torchvision.datasets.MNIST(
-        root='/tmp/data', train=False, download=True, transform=transform
-    )
-    test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
-
     phase_results = {}
 
     for step in steps:
@@ -522,51 +525,44 @@ def analyze_mlp_phases(experiment_name='mlp_narrow_mnist', steps=[100, 1000, 200
     save_dir = results_dir / 'mlp'
     save_dir.mkdir(exist_ok=True)
 
-    # Load MNIST
-    transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize((0.1307,), (0.3081,))
-    ])
-    test_dataset = torchvision.datasets.MNIST(
-        root='/tmp/data', train=False, download=True, transform=transform
-    )
-    test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
-
-    phase_activations = {}
+    # Skip activation extraction for now - analyze parameter statistics instead
+    phase_params = {}
     phase_stats = {}
 
     for step in steps:
         print(f"\n  Loading checkpoint at step {step}...")
         model, checkpoint = load_checkpoint_model(experiment_name, step)
 
-        # Extract activations
-        activations = extract_mlp_activations(model, test_loader, num_samples=1000)
-        phase_activations[step] = activations
-
-        # Compute statistics
-        stats = {}
-        for layer_name, acts in activations.items():
-            if len(acts) > 0:
-                stats[layer_name] = {
-                    'mean': float(acts.mean()),
-                    'std': float(acts.std()),
-                    'sparsity': float((acts == 0).mean()),
-                    'max_activation': float(acts.max())
+        # Extract parameter statistics
+        param_stats = {}
+        for name, param in model.named_parameters():
+            if 'weight' in name:
+                param_stats[name] = {
+                    'mean': float(param.data.mean()),
+                    'std': float(param.data.std()),
+                    'max': float(param.data.max()),
+                    'min': float(param.data.min()),
+                    'norm': float(param.data.norm())
                 }
-                print(f"    {layer_name}: mean={stats[layer_name]['mean']:.4f}, "
-                      f"sparsity={stats[layer_name]['sparsity']:.4f}")
 
-        phase_stats[step] = stats
+        phase_params[step] = param_stats
+        phase_stats[step] = {
+            'checkpoint_loss': float(checkpoint['loss']),
+            'total_params': sum(p.numel() for p in model.parameters())
+        }
 
-    # Compare representation similarity
-    print(f"\n  Comparing representation similarity...")
-    similarity = compare_mlp_representations(phase_activations, save_dir)
+        print(f"    Checkpoint loss: {checkpoint['loss']:.4f}")
+        print(f"    Total parameters: {sum(p.numel() for p in model.parameters()):,}")
+
+    # Compare parameter evolution
+    print(f"\n  Comparing parameter evolution...")
+    similarity = compare_mlp_parameters(phase_params, save_dir)
 
     results = {
         'experiment': experiment_name,
         'steps': steps,
         'phase_stats': phase_stats,
-        'representation_similarity': similarity
+        'parameter_similarity': similarity
     }
 
     with open(save_dir / 'mlp_analysis.json', 'w') as f:
@@ -575,38 +571,33 @@ def analyze_mlp_phases(experiment_name='mlp_narrow_mnist', steps=[100, 1000, 200
     return results
 
 
-def compare_mlp_representations(phase_activations, save_dir):
-    """Compare MLP representations across phases."""
-    steps = sorted(phase_activations.keys())
-
-    # Compare last hidden layer representations
-    last_layer = 'layer_3'
+def compare_mlp_parameters(phase_params, save_dir):
+    """Compare MLP parameter weights across phases."""
+    steps = sorted(phase_params.keys())
 
     similarities = {}
 
     for i in range(len(steps) - 1):
         step1, step2 = steps[i], steps[i+1]
 
-        if last_layer in phase_activations[step1] and last_layer in phase_activations[step2]:
-            acts1 = phase_activations[step1][last_layer]
-            acts2 = phase_activations[step2][last_layer]
+        # Compare all weight matrices
+        all_sims = []
+        for param_name in phase_params[step1].keys():
+            if param_name in phase_params[step2]:
+                params1 = phase_params[step1][param_name]
+                params2 = phase_params[step2][param_name]
 
-            # Compute pairwise cosine similarity
-            sim_scores = []
-            for a1, a2 in zip(acts1[:100], acts2[:100]):  # Sample 100 examples
-                sim = 1 - cosine(a1, a2)
-                sim_scores.append(sim)
+                # Compare norms as a proxy for similarity
+                norm_ratio = params2['norm'] / params1['norm'] if params1['norm'] > 0 else 1.0
+                all_sims.append(norm_ratio)
 
-            mean_sim = np.mean(sim_scores)
-            similarities[f'step_{step1}_to_{step2}'] = {
-                'mean_similarity': float(mean_sim),
-                'std_similarity': float(np.std(sim_scores))
-            }
+        mean_ratio = np.mean(all_sims)
+        similarities[f'step_{step1}_to_{step2}'] = {
+            'mean_norm_ratio': float(mean_ratio),
+            'std_norm_ratio': float(np.std(all_sims))
+        }
 
-            print(f"    Step {step1} → {step2}: similarity = {mean_sim:.4f}")
-
-    # Plot similarity matrix
-    plot_representation_similarity(phase_activations, steps, save_dir)
+        print(f"    Step {step1} → {step2}: parameter norm ratio = {mean_ratio:.4f}")
 
     return similarities
 
