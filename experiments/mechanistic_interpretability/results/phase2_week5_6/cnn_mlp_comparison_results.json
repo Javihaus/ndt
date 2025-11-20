@@ -1,0 +1,169 @@
+{
+  "summary": {
+    "cnn": {
+      "total_jumps": 45,
+      "mean_phase": 0.014266666666666665,
+      "layers_with_jumps": 5,
+      "total_layers": 5,
+      "mean_magnitude": 2.280052689861299e-13,
+      "mean_speed": 4.307139007593193e-14
+    },
+    "mlp": {
+      "total_jumps": 18,
+      "mean_phase": 0.0006944444444444445,
+      "layers_with_jumps": 5,
+      "total_layers": 5,
+      "mean_magnitude": 1.9477012595340662e-13,
+      "mean_speed": 1.497122384911357e-13
+    },
+    "comparison": {
+      "jump_ratio": 2.5,
+      "magnitude_ratio": 1.1706377858002408,
+      "speed_ratio": 0.28769451656072953
+    }
+  },
+  "cnn_representative_jumps": [
+    {
+      "experiment": "CNN",
+      "type": "Type 5 (early, large)",
+      "step": 0,
+      "layer": "conv_layers.0",
+      "dim_before": 0.99999999999948,
+      "dim_during": 0.99999999999948,
+      "dim_after": 0.9999999999994712,
+      "dim_change": 8.770761894538737e-15,
+      "loss_before": 2.3024816513061523,
+      "loss_after": 2.222975969314575,
+      "loss_change": -0.07950568199157715,
+      "coordination": 0.0
+    },
+    {
+      "experiment": "CNN",
+      "type": "Type 5 (early, large)",
+      "step": 0,
+      "layer": "conv_layers.9",
+      "dim_before": 0.9999999999997783,
+      "dim_during": 0.9999999999997783,
+      "dim_after": 0.9999999999997286,
+      "dim_change": 4.973799150320701e-14,
+      "loss_before": 2.3024816513061523,
+      "loss_after": 2.222975969314575,
+      "loss_change": -0.07950568199157715,
+      "coordination": 0.0
+    },
+    {
+      "experiment": "CNN",
+      "type": "Type 3 (mid, moderate)",
+      "step": 16,
+      "layer": "conv_layers.0",
+      "dim_before": 0.9999999999994759,
+      "dim_during": 0.9999999999994678,
+      "dim_after": 0.999999999999471,
+      "dim_change": 4.884981308350689e-15,
+      "loss_before": 2.2909317016601562,
+      "loss_after": 1.2878072261810303,
+      "loss_change": -1.003124475479126,
+      "coordination": 0.0
+    },
+    {
+      "experiment": "CNN",
+      "type": "Type 4 (late, large)",
+      "step": 82,
+      "layer": "conv_layers.0",
+      "dim_before": 0.9999999999994641,
+      "dim_during": 0.9999999999994593,
+      "dim_after": 0.9999999999994574,
+      "dim_change": 6.661338147750939e-15,
+      "loss_before": 0.23314908146858215,
+      "loss_after": 0.4264191687107086,
+      "loss_change": 0.19327008724212646,
+      "coordination": 0.0
+    },
+    {
+      "experiment": "CNN",
+      "type": "Type 4 (late, large)",
+      "step": 84,
+      "layer": "conv_layers.0",
+      "dim_before": 0.9999999999994641,
+      "dim_during": 0.9999999999994593,
+      "dim_after": 0.9999999999994574,
+      "dim_change": 6.661338147750939e-15,
+      "loss_before": 0.23314908146858215,
+      "loss_after": 0.4264191687107086,
+      "loss_change": 0.19327008724212646,
+      "coordination": 0.0
+    }
+  ],
+  "mlp_representative_jumps": [
+    {
+      "experiment": "MLP",
+      "type": "Type 5 (early, large)",
+      "step": 0,
+      "layer": "network.0",
+      "dim_before": 0.9999999999999746,
+      "dim_during": 0.9999999999999746,
+      "dim_after": 0.9999999999999941,
+      "dim_change": 1.9539925233402755e-14,
+      "loss_before": 2.326368808746338,
+      "loss_after": 2.264045476913452,
+      "loss_change": -0.06232333183288574,
+      "coordination": 0.0
+    },
+    {
+      "experiment": "MLP",
+      "type": "Type 5 (early, large)",
+      "step": 0,
+      "layer": "network.2",
+      "dim_before": 0.9999999999998713,
+      "dim_during": 0.9999999999998713,
+      "dim_after": 0.999999999999978,
+      "dim_change": 1.0669243266647754e-13,
+      "loss_before": 2.326368808746338,
+      "loss_after": 2.264045476913452,
+      "loss_change": -0.06232333183288574,
+      "coordination": 0.0
+    },
+    {
+      "experiment": "MLP",
+      "type": "Type 3 (mid, moderate)",
+      "step": 1,
+      "layer": "network.0",
+      "dim_before": 0.9999999999999746,
+      "dim_during": 0.9999999999999746,
+      "dim_after": 0.9999999999999941,
+      "dim_change": 1.9539925233402755e-14,
+      "loss_before": 2.326368808746338,
+      "loss_after": 2.264045476913452,
+      "loss_change": -0.06232333183288574,
+      "coordination": 0.0
+    },
+    {
+      "experiment": "MLP",
+      "type": "Type 4 (late, large)",
+      "step": 3,
+      "layer": "network.6",
+      "dim_before": 0.9999999999993008,
+      "dim_during": 0.9999999999993008,
+      "dim_after": 0.9999999999997548,
+      "dim_change": 4.539701947692265e-13,
+      "loss_before": 2.326368808746338,
+      "loss_after": 2.264045476913452,
+      "loss_change": -0.06232333183288574,
+      "coordination": 0.0
+    },
+    {
+      "experiment": "MLP",
+      "type": "Type 4 (late, large)",
+      "step": 4,
+      "layer": "network.8",
+      "dim_before": 0.9999999999975463,
+      "dim_during": 0.9999999999975463,
+      "dim_after": 0.9999999999986663,
+      "dim_change": 1.119992987241858e-12,
+      "loss_before": 2.326368808746338,
+      "loss_after": 2.264045476913452,
+      "loss_change": -0.06232333183288574,
+      "coordination": 0.0
+    }
+  ]
+}
