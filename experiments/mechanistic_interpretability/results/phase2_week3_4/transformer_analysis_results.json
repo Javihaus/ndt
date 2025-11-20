@@ -1,0 +1,143 @@
+{
+  "summary": {
+    "num_jumps_analyzed": 5,
+    "mean_coordination": 0.0,
+    "mean_loss_change": -0.04603402018547058,
+    "early_jumps": {
+      "count": 2,
+      "mean_phase": 0.1775,
+      "mean_loss_change": 0.10442297160625458,
+      "mean_coordination": 0.0
+    },
+    "late_jumps": {
+      "count": 2,
+      "mean_phase": 0.19775,
+      "mean_loss_change": -0.28656280040740967,
+      "mean_coordination": 0.0
+    },
+    "layer_patterns": {
+      "linear2_jumps": 5,
+      "linear1_jumps": 0,
+      "ratio": 5.0
+    }
+  },
+  "jump_details": [
+    {
+      "jump_num": 1,
+      "type": "Type 3 (mid, moderate)",
+      "step": 111,
+      "phase": 0.0555,
+      "cluster": 2,
+      "target_layer": "transformer.layers.3.linear2",
+      "dim_before": 0.9999999999712591,
+      "dim_during": 0.9999999999786459,
+      "dim_after": 0.9999999999711859,
+      "dim_change": 7.316369732279782e-14,
+      "loss_before": 0.9546574950218201,
+      "loss_after": 1.0887670516967773,
+      "loss_change": 0.13410955667495728,
+      "num_coordinated_layers": 0
+    },
+    {
+      "jump_num": 2,
+      "type": "Type 5 (early, large)",
+      "step": 343,
+      "phase": 0.1715,
+      "cluster": 4,
+      "target_layer": "transformer.layers.5.linear2",
+      "dim_before": 0.9999999998877581,
+      "dim_during": 0.9999999998500344,
+      "dim_after": 0.9999999998379158,
+      "dim_change": 4.984235246752178e-11,
+      "loss_before": 0.18685540556907654,
+      "loss_after": 0.21386268734931946,
+      "loss_change": 0.02700728178024292,
+      "num_coordinated_layers": 0
+    },
+    {
+      "jump_num": 3,
+      "type": "Type 5 (early, large)",
+      "step": 367,
+      "phase": 0.1835,
+      "cluster": 4,
+      "target_layer": "transformer.layers.5.linear2",
+      "dim_before": 0.9999999998571582,
+      "dim_during": 0.9999999998557936,
+      "dim_after": 0.9999999998593573,
+      "dim_change": 2.19912976717751e-12,
+      "loss_before": 0.27915793657302856,
+      "loss_after": 0.4609965980052948,
+      "loss_change": 0.18183866143226624,
+      "num_coordinated_layers": 0
+    },
+    {
+      "jump_num": 4,
+      "type": "Type 4 (late, large)",
+      "step": 395,
+      "phase": 0.1975,
+      "cluster": 4,
+      "target_layer": "transformer.layers.2.linear2",
+      "dim_before": 0.9999999999404429,
+      "dim_during": 0.9999999999512482,
+      "dim_after": 0.9999999999527501,
+      "dim_change": 1.230726631717971e-11,
+      "loss_before": 0.488972008228302,
+      "loss_after": 0.20240920782089233,
+      "loss_change": -0.28656280040740967,
+      "num_coordinated_layers": 0
+    },
+    {
+      "jump_num": 5,
+      "type": "Type 4 (late, large)",
+      "step": 396,
+      "phase": 0.198,
+      "cluster": 4,
+      "target_layer": "transformer.layers.5.linear2",
+      "dim_before": 0.9999999998604154,
+      "dim_during": 0.9999999997602974,
+      "dim_after": 0.9999999998215542,
+      "dim_change": 3.886124755325682e-11,
+      "loss_before": 0.488972008228302,
+      "loss_after": 0.20240920782089233,
+      "loss_change": -0.28656280040740967,
+      "num_coordinated_layers": 0
+    }
+  ],
+  "coordination_details": [
+    {
+      "jump_num": 1,
+      "coordination_score": 0.0,
+      "num_layers_changing": 0,
+      "total_layers": 14,
+      "mean_change": 5.3704342560325e-12
+    },
+    {
+      "jump_num": 2,
+      "coordination_score": 0.0,
+      "num_layers_changing": 0,
+      "total_layers": 14,
+      "mean_change": 6.594296537392503e-12
+    },
+    {
+      "jump_num": 3,
+      "coordination_score": 0.0,
+      "num_layers_changing": 0,
+      "total_layers": 14,
+      "mean_change": 6.658491218709222e-12
+    },
+    {
+      "jump_num": 4,
+      "coordination_score": 0.0,
+      "num_layers_changing": 0,
+      "total_layers": 14,
+      "mean_change": 9.561367570703234e-12
+    },
+    {
+      "jump_num": 5,
+      "coordination_score": 0.0,
+      "num_layers_changing": 0,
+      "total_layers": 14,
+      "mean_change": 9.561367570703234e-12
+    }
+  ]
+}

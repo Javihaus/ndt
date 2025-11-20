@@ -1,0 +1,4 @@
+experiment,timing,num_jumps,mean_loss_change,loss_improving_fraction
+transformer_deep_mnist,early,80,-0.11598089242738391,0.6984126984126984
+transformer_deep_mnist,mid,86,0.02182869179997333,0.47674418604651164
+cnn_deep_mnist,early,42,-0.46500192272166413,0.625
