@@ -40,16 +40,20 @@ class FeatureVisualizer:
 
     def _save_gradient(self, name: str):
         """Create hook to save gradients."""
+
         def hook(grad):
             self.gradients[name] = grad.detach()
+
         return hook
 
     def _save_activation(self, name: str):
         """Create forward hook to save activations."""
+
         def hook(module, input, output):
             self.activations[name] = output.detach()
             if output.requires_grad:
                 output.register_hook(self._save_gradient(name))
+
         return hook
 
     def register_hooks(self, layer_names: Dict[str, nn.Module]) -> None:
@@ -75,7 +79,7 @@ class FeatureVisualizer:
         input_tensor: torch.Tensor,
         target_class: int,
         target_layer: nn.Module,
-        layer_name: str = 'target'
+        layer_name: str = "target",
     ) -> np.ndarray:
         """Generate Grad-CAM visualization.
 
@@ -149,10 +153,7 @@ class FeatureVisualizer:
             backward_handle.remove()
 
     def saliency_map(
-        self,
-        input_tensor: torch.Tensor,
-        target_class: int,
-        absolute: bool = True
+        self, input_tensor: torch.Tensor, target_class: int, absolute: bool = True
     ) -> np.ndarray:
         """Generate vanilla gradient saliency map.
 
@@ -201,7 +202,7 @@ class FeatureVisualizer:
         input_tensor: torch.Tensor,
         target_class: int,
         baseline: Optional[torch.Tensor] = None,
-        steps: int = 50
+        steps: int = 50,
     ) -> np.ndarray:
         """Compute Integrated Gradients attribution.
 
@@ -227,10 +228,9 @@ class FeatureVisualizer:
 
         # Generate interpolated inputs
         alphas = torch.linspace(0, 1, steps).to(input_tensor.device)
-        scaled_inputs = torch.stack([
-            baseline + alpha * (input_tensor - baseline)
-            for alpha in alphas
-        ])
+        scaled_inputs = torch.stack(
+            [baseline + alpha * (input_tensor - baseline) for alpha in alphas]
+        )
 
         # Compute gradients for all interpolated inputs
         scaled_inputs.requires_grad_(True)
@@ -257,9 +257,7 @@ class FeatureVisualizer:
         return ig.squeeze().detach().cpu().numpy()
 
     def attention_visualization(
-        self,
-        attention_weights: torch.Tensor,
-        head_idx: Optional[int] = None
+        self, attention_weights: torch.Tensor, head_idx: Optional[int] = None
     ) -> np.ndarray:
         """Visualize attention weights from transformer models.
 
@@ -278,11 +276,7 @@ class FeatureVisualizer:
 
         return attn.squeeze().detach().cpu().numpy()
 
-    def feature_maps(
-        self,
-        activation: torch.Tensor,
-        top_k: int = 16
-    ) -> List[np.ndarray]:
+    def feature_maps(self, activation: torch.Tensor, top_k: int = 16) -> List[np.ndarray]:
         """Extract top-k feature maps from a convolutional layer.
 
         Args:
@@ -313,7 +307,7 @@ class FeatureVisualizer:
         neuron_idx: int,
         input_shape: Tuple[int, ...],
         steps: int = 100,
-        lr: float = 0.1
+        lr: float = 0.1,
     ) -> torch.Tensor:
         """Generate input that maximizes a specific neuron's activation.
 
@@ -369,10 +363,7 @@ class FeatureVisualizer:
             handle.remove()
 
     def layer_conductance(
-        self,
-        input_tensor: torch.Tensor,
-        target_class: int,
-        target_layer: nn.Module
+        self, input_tensor: torch.Tensor, target_class: int, target_layer: nn.Module
     ) -> np.ndarray:
         """Compute layer conductance attribution.
 
@@ -430,7 +421,7 @@ class FeatureVisualizer:
         target_class: int,
         target_layer: nn.Module,
         checkpoint_before: str,
-        checkpoint_after: str
+        checkpoint_after: str,
     ) -> Dict[str, Any]:
         """Compare feature visualizations before and after a critical moment.
 
@@ -447,21 +438,21 @@ class FeatureVisualizer:
             Dictionary with CAMs before and after
         """
         # Load before checkpoint
-        state_before = torch.load(checkpoint_before, map_location='cpu')
-        self.model.load_state_dict(state_before['model_state_dict'])
+        state_before = torch.load(checkpoint_before, map_location="cpu")
+        self.model.load_state_dict(state_before["model_state_dict"])
         cam_before = self.grad_cam(input_tensor, target_class, target_layer)
 
         # Load after checkpoint
-        state_after = torch.load(checkpoint_after, map_location='cpu')
-        self.model.load_state_dict(state_after['model_state_dict'])
+        state_after = torch.load(checkpoint_after, map_location="cpu")
+        self.model.load_state_dict(state_after["model_state_dict"])
         cam_after = self.grad_cam(input_tensor, target_class, target_layer)
 
         # Compute difference
         cam_diff = cam_after - cam_before
 
         return {
-            'cam_before': cam_before,
-            'cam_after': cam_after,
-            'cam_diff': cam_diff,
-            'mean_change': np.abs(cam_diff).mean()
+            "cam_before": cam_before,
+            "cam_after": cam_after,
+            "cam_diff": cam_diff,
+            "mean_change": np.abs(cam_diff).mean(),
         }
