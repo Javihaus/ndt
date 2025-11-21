@@ -7,11 +7,15 @@ This module provides tools for analyzing neural network activations:
 - Geometry analysis (effective dimensionality, singular value distributions)
 """
 
-from typing import Any, Dict, Optional
+from typing import Any
+from typing import Dict
+from typing import Optional
+
 import numpy as np
 import torch
+from sklearn.cluster import DBSCAN
+from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
-from sklearn.cluster import KMeans, DBSCAN
 from sklearn.manifold import TSNE
 from sklearn.metrics import silhouette_score
 

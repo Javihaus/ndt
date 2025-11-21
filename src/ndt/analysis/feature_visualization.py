@@ -6,7 +6,12 @@ This module provides tools for visualizing what neural networks learn:
 - Attention visualization for Transformers
 """
 
-from typing import Dict, List, Optional, Tuple, Any
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Tuple
+
 import numpy as np
 import torch
 import torch.nn as nn
