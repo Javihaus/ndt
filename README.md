@@ -2,8 +2,7 @@
 
 <!-- logo: drop org logo here -->
 
-# ndt
-## Neural Dimensionality Tracker
+# ndt - Neural Dimensionality Tracker
 
 High-frequency monitoring of neural-network representational dimensionality during training.
 
@@ -17,7 +16,7 @@ High-frequency monitoring of neural-network representational dimensionality duri
 
 </div>
 
-> **A Groundlens tool.** Part of the [Groundlens](https://github.com/groundlens-dev) open-source family — alongside [groundlens](https://github.com/groundlens-dev/groundlens) (geometric LLM verification) and [otwin](https://github.com/groundlens-dev/otwin) (physics-informed digital twins).
+Part of the [Groundlens](https://github.com/groundlens-dev) open-source project.
 
 ---
 
