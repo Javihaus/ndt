@@ -405,7 +405,7 @@ We continuously benchmark NDT on:
 - Nightly builds: Full benchmark suite
 - Release candidates: Extended validation
 
-**See live benchmarks:** [GitHub Actions Performance Tab](https://github.com/Javihaus/ndt/actions)
+**See live benchmarks:** [GitHub Actions Performance Tab](https://github.com/groundlens-dev/ndt/actions)
 
 ---
 
@@ -415,7 +415,7 @@ All benchmarks reproducible:
 
 ```bash
 # Clone repository
-git clone https://github.com/Javihaus/ndt.git
+git clone https://github.com/groundlens-dev/ndt.git
 cd ndt
 
 # Install with dev dependencies
@@ -432,6 +432,6 @@ python benchmarks/generate_report.py
 
 ## See Also
 
-- [API Reference](api_reference.md)
-- [Architecture Support](architecture_support.md)
+- [API Reference](../api/index.md)
+- [Architecture Support](../guides/architecture_support.md)
 - [Troubleshooting](troubleshooting.md)

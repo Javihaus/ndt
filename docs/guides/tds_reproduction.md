@@ -448,7 +448,7 @@ When reproducing this experiment in your work, cite both NDT and the original ar
   author = {Marín, Javier},
   title = {Neural Dimensionality Tracker},
   year = {2024},
-  url = {https://github.com/Javihaus/ndt}
+  url = {https://github.com/groundlens-dev/ndt}
 }
 
 @article{marin2025measuring,
@@ -477,4 +477,4 @@ This experiment builds on:
 
 ---
 
-**Questions?** [Open an issue](https://github.com/Javihaus/ndt/issues) or [start a discussion](https://github.com/Javihaus/ndt/discussions)
+**Questions?** [Open an issue](https://github.com/groundlens-dev/ndt/issues) or [start a discussion](https://github.com/groundlens-dev/ndt/discussions)
