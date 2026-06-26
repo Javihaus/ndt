@@ -71,7 +71,7 @@ from ndt import plot_phases
 plot_phases(results, metric="stable_rank")
 ```
 
-That's it! See [Quickstart Guide](quickstart.md) for more details.
+That's it! See [Quickstart Guide](getting-started/quickstart.md) for more details.
 
 ## Why Track Dimensionality?
 
@@ -99,23 +99,23 @@ python examples/03_reproduce_tds_experiment.py
 - Phase 2 (Expansion): Steps 300-5000
 - Phase 3 (Stabilization): Steps 5000-8000
 
-See [TDS Article Reproduction](tds_reproduction.md) for details.
+See [TDS Article Reproduction](guides/tds_reproduction.md) for details.
 
 ## Documentation Structure
 
 ### Getting Started
-- [Quickstart Guide](quickstart.md) - Get started in 5 minutes
-- [Installation](INSTALL.md) - Detailed installation instructions
-- [Examples Gallery](examples_gallery.md) - Complete collection of examples
+- [Quickstart Guide](getting-started/quickstart.md) - Get started in 5 minutes
+- [Installation](getting-started/installation.md) - Detailed installation instructions
+- [Examples Gallery](guides/examples_gallery.md) - Complete collection of examples
 
 ### Reference
-- [API Reference](api_reference.md) - Complete API documentation
-- [Architecture Support](architecture_support.md) - Supported architectures and compatibility
-- [Performance Benchmarks](performance_benchmarks.md) - Overhead, memory, and scalability
-- [Troubleshooting](troubleshooting.md) - Common issues and solutions
+- [API Reference](api/index.md) - Complete API documentation
+- [Architecture Support](guides/architecture_support.md) - Supported architectures and compatibility
+- [Performance Benchmarks](reference/performance_benchmarks.md) - Overhead, memory, and scalability
+- [Troubleshooting](reference/troubleshooting.md) - Common issues and solutions
 
 ### Research
-- [TDS Article Reproduction](tds_reproduction.md) - Reproduce research results
+- [TDS Article Reproduction](guides/tds_reproduction.md) - Reproduce research results
 
 ### Contributing
 - [Contributing Guide](CONTRIBUTING.md) - How to contribute
@@ -146,7 +146,7 @@ See [TDS Article Reproduction](tds_reproduction.md) for details.
 | GPT | ⚠️ Partial | Specify layers |
 | ViT | ⚠️ Partial | Specify layers |
 
-See [Architecture Support](architecture_support.md) for complete matrix.
+See [Architecture Support](guides/architecture_support.md) for complete matrix.
 
 ## Performance
 
@@ -157,7 +157,7 @@ See [Architecture Support](architecture_support.md) for complete matrix.
 | Max model size | 1B params | Tested up to 1.5B |
 | Initialization | <1 second | 50-200ms |
 
-See [Performance Benchmarks](performance_benchmarks.md) for details.
+See [Performance Benchmarks](reference/performance_benchmarks.md) for details.
 
 ## Citation
 
@@ -169,7 +169,7 @@ If you use Neural Dimensionality Tracker in your research, please cite:
   title = {Neural Dimensionality Tracker: High-Frequency Monitoring of Neural Network Training Dynamics},
   year = {2024},
   publisher = {GitHub},
-  url = {https://github.com/Javihaus/ndt},
+  url = {https://github.com/groundlens-dev/ndt},
   version = {0.1.0}
 }
 ```
@@ -187,9 +187,9 @@ If you use Neural Dimensionality Tracker in your research, please cite:
 
 ## Community
 
-- **GitHub:** [github.com/Javihaus/ndt](https://github.com/Javihaus/ndt)
-- **Issues:** [Report bugs or request features](https://github.com/Javihaus/ndt/issues)
-- **Discussions:** [Ask questions](https://github.com/Javihaus/ndt/discussions)
+- **GitHub:** [github.com/groundlens-dev/ndt](https://github.com/groundlens-dev/ndt)
+- **Issues:** [Report bugs or request features](https://github.com/groundlens-dev/ndt/issues)
+- **Discussions:** [Ask questions](https://github.com/groundlens-dev/ndt/discussions)
 - **PyPI:** [pypi.org/project/ndtracker](https://pypi.org/project/ndtracker/)
 
 ## License
@@ -206,10 +206,10 @@ This work builds on research by:
 
 ## Next Steps
 
-- [Install NDT](INSTALL.md) and try the [Quickstart](quickstart.md)
-- Explore [Examples](examples_gallery.md)
-- Read the [API Reference](api_reference.md)
-- Reproduce the [TDS experiment](tds_reproduction.md)
+- [Install NDT](getting-started/installation.md) and try the [Quickstart](getting-started/quickstart.md)
+- Explore [Examples](guides/examples_gallery.md)
+- Read the [API Reference](api/index.md)
+- Reproduce the [TDS experiment](guides/tds_reproduction.md)
 - [Contribute](CONTRIBUTING.md) to the project
 
 ---

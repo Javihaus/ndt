@@ -1,123 +1,129 @@
-site_name: Neural Dimensionality Tracker (NDT)
-site_description: High-frequency monitoring of neural network representational dimensionality during training
+site_name: ndt
+site_description: High-frequency monitoring of neural network representational dimensionality
 site_author: Javier Marín
-site_url: https://javihaus.github.io/ndt
+site_url: https://docs.groundlens.dev/ndt
+repo_url: https://github.com/groundlens-dev/ndt
+repo_name: groundlens-dev/ndt
 
-repo_name: Javihaus/ndt
-repo_url: https://github.com/Javihaus/ndt
-edit_uri: edit/main/docs/
-
-copyright: Copyright &copy; 2024-2025 Javier Marín
+copyright: Copyright &copy; 2024-2026 Javier Marin
 
 theme:
   name: material
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
-      accent: indigo
+      accent: deep purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
-      accent: indigo
+      accent: deep purple
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  font:
-    text: Roboto
-    code: Roboto Mono
   features:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.indexes
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
   icon:
     repo: fontawesome/brands/github
-
-nav:
-  - Home: index.md
-  - Getting Started:
-      - Quickstart: quickstart.md
-      - Installation: INSTALL.md
-      - Examples Gallery: examples_gallery.md
-  - Documentation:
-      - API Reference: api_reference.md
-      - Architecture Support: architecture_support.md
-      - Performance Benchmarks: performance_benchmarks.md
-      - Troubleshooting: troubleshooting.md
-  - Research:
-      - TDS Article Reproduction: tds_reproduction.md
-  - Contributing: CONTRIBUTING.md
-  - License: LICENSE
+  font:
+    text: Inter
+    code: JetBrains Mono
 
 plugins:
   - search
   - mkdocstrings:
       handlers:
         python:
-          paths: [src]
+          paths:
+            - src
           options:
-            docstring_style: google
             show_source: true
             show_root_heading: true
-            show_root_toc_entry: true
-            show_object_full_path: false
             show_category_heading: true
-            show_if_no_docstring: false
-            inherited_members: false
             members_order: source
-            separate_signature: true
-            filters: ["!^_"]
+            docstring_style: google
+            merge_init_into_class: true
+            show_signature_annotations: true
+  - gen-files:
+      scripts:
+        - docs/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quickstart: getting-started/quickstart.md
+  - Concepts:
+    - How It Works: concepts/how-it-works.md
+  - Guides:
+    - Architecture Support: guides/architecture_support.md
+    - Examples Gallery: guides/examples_gallery.md
+    - TDS Reproduction: guides/tds_reproduction.md
+  - Reference:
+    - API Reference: api/index.md
+    - Performance Benchmarks: reference/performance_benchmarks.md
+    - Troubleshooting: reference/troubleshooting.md
 
 markdown_extensions:
   - admonition
-  - codehilite
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - toc:
-      permalink: true
-  - tables
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.keys
   - attr_list
   - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Javihaus/ndt
+      link: https://github.com/groundlens-dev/ndt
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/ndt/
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/jmarin
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/javihaus
-  analytics:
-    provider: google
-    property: G-XXXXXXXXXX
+      link: https://pypi.org/project/ndtracker/
+  generator: false
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
   - stylesheets/extra.css
-
-extra_javascript:
-  - javascripts/extra.js

@@ -1,13 +1,27 @@
-# Neural Dimensionality Tracker (NDT)
+<div align="center">
 
-[![Tests](https://github.com/Javihaus/ndt/workflows/Tests/badge.svg)](https://github.com/Javihaus/ndt/actions)
-[![codecov](https://codecov.io/gh/Javihaus/ndt/branch/main/graph/badge.svg)](https://codecov.io/gh/Javihaus/ndt)
-[![PyPI version](https://badge.fury.io/py/ndtracker.svg)](https://pypi.org/project/ndtracker/)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+<!-- logo: drop org logo here -->
 
-**Neural Dimensionality Tracker (NDT)** is a production-ready Python library for high-frequency monitoring of neural network representational dimensionality during training, enabling researchers and practitioners to track how internal representations evolve, detect discrete phase transitions (jumps), and gain mechanistic insights into the learning dynamics of deep neural networks across architectures (MLPs, CNNs, Transformers, Vision Transformers).
+# ndt
+## Neural Dimensionality Tracker
+
+High-frequency monitoring of neural-network representational dimensionality during training.
+
+[![Python](https://img.shields.io/badge/python-3.8%20|%203.9%20|%203.10%20|%203.11-blue?style=flat-square)](https://github.com/groundlens-dev/ndt)
+[![CI](https://img.shields.io/github/actions/workflow/status/groundlens-dev/ndt/tests.yml?branch=main&label=CI&style=flat-square)](https://github.com/groundlens-dev/ndt/actions)
+[![Docs](https://img.shields.io/badge/docs-docs.groundlens.dev%2Fndt-blue?style=flat-square)](https://docs.groundlens.dev/ndt)
+[![PyPI](https://img.shields.io/pypi/v/ndtracker?style=flat-square)](https://pypi.org/project/ndtracker/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
+
+[Documentation](https://docs.groundlens.dev/ndt) · [Examples](examples/) · [Contributing](CONTRIBUTING.md)
+
+</div>
+
+> **A Groundlens tool.** Part of the [Groundlens](https://github.com/groundlens-dev) open-source family — alongside [groundlens](https://github.com/groundlens-dev/groundlens) (geometric LLM verification) and [otwin](https://github.com/groundlens-dev/otwin) (physics-informed digital twins).
+
+---
+
+**ndt** (Neural Dimensionality Tracker) is a production-ready Python tool for high-frequency monitoring of neural-network representational dimensionality during training, enabling researchers and practitioners to track how internal representations evolve, detect discrete phase transitions (jumps), and gain mechanistic insight into the learning dynamics of deep neural networks across architectures (MLPs, CNNs, Transformers, Vision Transformers).
 
 ## Features
 
@@ -93,7 +107,7 @@ If you use Neural Dimensionality Tracker in your research, please cite:
   title = {Neural Dimensionality Tracker: High-Frequency Monitoring of Neural Network Training Dynamics},
   year = {2024},
   publisher = {GitHub},
-  url = {https://github.com/Javihaus/ndt},
+  url = {https://github.com/groundlens-dev/ndt},
   version = {0.1.0}
 }
 ```
@@ -127,3 +141,7 @@ This work builds on research by:
 - Achille, A., Rovere, M., & Soatto, S. (2019). Critical learning periods in deep networks. In International Conference on Learning Representations (ICLR). https://openreview.net/forum?id=BkeStsCcKQ
 - Ansuini, A., Laio, A., Macke, J. H., & Zoccolan, D. (2019). Intrinsic dimension of data representations in deep neural networks. In Advances in Neural Information Processing Systems (Vol. 32, pp. 6109-6119). https://proceedings.neurips.cc/paper/2019/hash/cfcce0621b49c983991ead4c3d4d3b6b-Abstract.html
 - Yang, J., Zhao, Y., & Zhu, Q. (2024). ε-rank and the staircase phenomenon: New insights into neural network training dynamics. arXiv preprint arXiv:2412.05144. https://arxiv.org/abs/2412.05144
+
+---
+
+An open-source tool by **Groundlens** · groundlens.dev
