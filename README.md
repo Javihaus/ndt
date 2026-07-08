@@ -1,7 +1,5 @@
 <div align="center">
 
-<!-- logo: drop org logo here -->
-
 # Neural Dimensionality Tracker - ndt
 
 High-frequency monitoring of neural-network representational dimensionality during training.
