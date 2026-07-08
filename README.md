@@ -128,7 +128,7 @@ If you use Neural Dimensionality Tracker in your research, please cite:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details
+Apache 2.0 - see [LICENSE](LICENSE) file for details
 
 ## Author
 
