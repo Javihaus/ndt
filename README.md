@@ -2,7 +2,7 @@
 
 <!-- logo: drop org logo here -->
 
-# ndt - Neural Dimensionality Tracker
+# Neural Dimensionality Tracker - ndt
 
 High-frequency monitoring of neural-network representational dimensionality during training.
 
@@ -10,9 +10,10 @@ High-frequency monitoring of neural-network representational dimensionality duri
 [![CI](https://img.shields.io/github/actions/workflow/status/groundlens-dev/ndt/tests.yml?branch=main&label=CI&style=flat-square)](https://github.com/groundlens-dev/ndt/actions)
 [![Docs](https://img.shields.io/badge/docs-docs.groundlens.dev%2Fndt-blue?style=flat-square)](https://docs.groundlens.dev/ndt)
 [![PyPI](https://img.shields.io/pypi/v/ndtracker?style=flat-square)](https://pypi.org/project/ndtracker/)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)](LICENSE)
-[![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/groundlens-dev/ndt?style=flat-square&label=OpenSSF%20Scorecard)](https://scorecard.dev/viewer/?uri=github.com/groundlens-dev/ndt)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/PROJECT_ID/badge)](https://www.bestpractices.dev/projects/PROJECT_ID)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)](LICENSE)[![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/groundlens-dev/ndt?style=flat-square&label=OpenSSF%20Scorecard)](https://scorecard.dev/viewer/?uri=github.com/groundlens-dev/ndt)
+
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/PROJECT_ID/badge)](https://www.bestpractices.dev/projects/13530)
+
 
 [Documentation](https://docs.groundlens.dev/ndt) · [Examples](examples/) · [Contributing](CONTRIBUTING.md)
 
