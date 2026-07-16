@@ -106,3 +106,37 @@ def test_recall_none_on_null_results():
     report = validate_detector(det)
     null_results = [r for r in report.results if r.is_null]
     assert all(r.recall is None for r in null_results)
+
+
+def test_silent_detector_misses_transitions_but_stays_quiet():
+    """A detector that never fires: silent on nulls, but misses every plant.
+
+    Verdict must be NOT VALID for under-reporting, not for false positives.
+    """
+
+    def silent(values):
+        return []
+
+    report = validate_detector(silent, name="silent")
+    assert report.valid is False
+    assert report.false_positives_on_null == 0
+    assert report.mean_recall == 0.0
+    assert "misses planted transitions" in report.message
+    # __str__ delegates to render()
+    assert str(report) == report.render()
+
+
+def test_detector_that_both_misses_and_fires_is_not_valid():
+    """A detector that fires in the wrong place: misses plants AND hits nulls.
+
+    Verdict must report both failure modes at once.
+    """
+
+    def wrong_everywhere(values):
+        return [1]  # never near a plant, always a false positive on nulls
+
+    report = validate_detector(wrong_everywhere, name="wrong_everywhere")
+    assert report.valid is False
+    assert report.mean_recall == 0.0
+    assert report.false_positives_on_null > 0
+    assert "reflect the method" in report.message

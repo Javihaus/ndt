@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main, develop ]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -15,10 +18,10 @@ jobs:
         python-version: ['3.8', '3.9', '3.10', '3.11']
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -45,7 +48,7 @@ jobs:
         pytest tests/ -v --cov=ndt --cov-report=xml --cov-report=term-missing
 
     - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         file: ./coverage.xml
@@ -56,10 +59,10 @@ jobs:
   lint-checks:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
       with:
         python-version: '3.10'
 
