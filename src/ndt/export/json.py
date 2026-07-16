@@ -8,7 +8,9 @@ from typing import Dict
 import pandas as pd
 
 
-def export_to_json(results: Dict[str, pd.DataFrame], output_path: str, pretty: bool = True) -> None:
+def export_to_json(
+    results: Dict[str, pd.DataFrame], output_path: str, pretty: bool = True
+) -> None:
     """Export tracking results to JSON format.
 
     Args:
@@ -75,7 +77,9 @@ def load_from_json(input_path: str) -> Dict[str, pd.DataFrame]:
     return results
 
 
-def export_metadata(metadata: Dict[str, Any], output_path: str, pretty: bool = True) -> None:
+def export_metadata(
+    metadata: Dict[str, Any], output_path: str, pretty: bool = True
+) -> None:
     """Export tracker metadata to JSON.
 
     Args:

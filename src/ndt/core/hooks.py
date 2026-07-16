@@ -59,7 +59,10 @@ class ActivationCapture:
         return hook
 
     def register_hooks(
-        self, model: nn.Module, layers: List[nn.Module], layer_names: Optional[List[str]] = None
+        self,
+        model: nn.Module,
+        layers: List[nn.Module],
+        layer_names: Optional[List[str]] = None,
     ) -> None:
         """Register forward hooks on specified layers.
 
@@ -79,7 +82,9 @@ class ActivationCapture:
 
         # Generate default names if not provided
         if layer_names is None:
-            layer_names = [f"{layer.__class__.__name__}_{i}" for i, layer in enumerate(layers)]
+            layer_names = [
+                f"{layer.__class__.__name__}_{i}" for i, layer in enumerate(layers)
+            ]
 
         # Register hooks
         for layer, name in zip(layers, layer_names):

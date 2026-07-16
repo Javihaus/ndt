@@ -1,9 +1,9 @@
 site_name: ndt
 site_description: High-frequency monitoring of neural network representational dimensionality
 site_author: Javier Marín
-site_url: https://docs.groundlens.dev/ndt
-repo_url: https://github.com/groundlens-dev/ndt
-repo_name: groundlens-dev/ndt
+site_url: https://javihaus.github.io/ndt
+repo_url: https://github.com/Javihaus/ndt
+repo_name: Javihaus/ndt
 
 copyright: Copyright &copy; 2024-2026 Javier Marin
 
@@ -116,7 +116,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/groundlens-dev/ndt
+      link: https://github.com/Javihaus/ndt
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/ndtracker/
   generator: false

@@ -45,7 +45,9 @@ def detect_architecture(model: nn.Module) -> Optional[ArchitectureHandler]:
     return None
 
 
-def get_handler(model: nn.Module, architecture: Optional[str] = None) -> ArchitectureHandler:
+def get_handler(
+    model: nn.Module, architecture: Optional[str] = None
+) -> ArchitectureHandler:
     """Get an architecture handler for a model.
 
     Args:

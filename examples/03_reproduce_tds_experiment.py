@@ -98,10 +98,15 @@ def main():
 
     # 3. Load MNIST dataset (60k train, 10k test)
     transform = transforms.Compose(
-        [transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]  # MNIST mean and std
+        [
+            transforms.ToTensor(),
+            transforms.Normalize((0.1307,), (0.3081,)),
+        ]  # MNIST mean and std
     )
 
-    train_dataset = datasets.MNIST("./data", train=True, download=True, transform=transform)
+    train_dataset = datasets.MNIST(
+        "./data", train=True, download=True, transform=transform
+    )
 
     # Use exact batch size from TDS article
     train_loader = DataLoader(
@@ -123,7 +128,9 @@ def main():
     )
 
     # 5. Setup optimizer with exact hyperparameters from TDS article
-    optimizer = optim.Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999))  # β1=0.9, β2=0.999
+    optimizer = optim.Adam(
+        model.parameters(), lr=0.001, betas=(0.9, 0.999)
+    )  # β1=0.9, β2=0.999
 
     # Cross-entropy loss
     criterion = nn.CrossEntropyLoss()
@@ -152,7 +159,9 @@ def main():
             loss.backward()
 
             # Compute gradient norm for correlation analysis
-            grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=float("inf"))
+            grad_norm = torch.nn.utils.clip_grad_norm_(
+                model.parameters(), max_norm=float("inf")
+            )
 
             optimizer.step()
 
@@ -208,7 +217,7 @@ def main():
 
         # Show first 5 jumps
         for i, jump in enumerate(jumps[:5]):
-            print(f"  Jump {i+1}: {jump}")
+            print(f"  Jump {i + 1}: {jump}")
 
         if len(jumps) > 5:
             print(f"  ... and {len(jumps) - 5} more jumps")
@@ -225,9 +234,13 @@ def main():
     # Figure 2 equivalent: Activation space analysis
     print("\nCreating activation space dimensionality plot (TDS Figure 2)...")
     fig_activation = plot_phases(
-        results, metric="stable_rank", title="Activation Space Dimensionality (Every 5 Steps)"
+        results,
+        metric="stable_rank",
+        title="Activation Space Dimensionality (Every 5 Steps)",
     )
-    fig_activation.savefig("tds_figure2_activation_space.png", dpi=300, bbox_inches="tight")
+    fig_activation.savefig(
+        "tds_figure2_activation_space.png", dpi=300, bbox_inches="tight"
+    )
     print("  Saved: tds_figure2_activation_space.png")
 
     # Figure 3 equivalent: Dimensionality vs Loss correlation
@@ -239,7 +252,9 @@ def main():
         layer_name="Layer2_256-128",
         title="Dimensionality vs Loss (ρ = -0.951 expected)",
     )
-    fig_correlation.savefig("tds_figure3_dimensionality_loss.png", dpi=300, bbox_inches="tight")
+    fig_correlation.savefig(
+        "tds_figure3_dimensionality_loss.png", dpi=300, bbox_inches="tight"
+    )
     print("  Saved: tds_figure3_dimensionality_loss.png")
 
     # Figure 4 equivalent: High vs low frequency comparison

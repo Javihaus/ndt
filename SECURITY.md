@@ -16,7 +16,7 @@ Only the latest release of `ndtracker` receives security patches.
 Report privately through either channel:
 
 - **GitHub:** use *Security → Advisories → Report a vulnerability* on this repository
-  (<https://github.com/groundlens-dev/ndt/security/advisories/new>).
+  (<https://github.com/Javihaus/ndt/security/advisories/new>).
 - **Email:** **javier@jmarin.info**
 
 Please include:

@@ -20,6 +20,10 @@ from ndt.core.jump_detector import Jump
 from ndt.core.jump_detector import JumpDetector
 from ndt.core.tracker import DimensionalityMetrics
 from ndt.core.tracker import HighFrequencyTracker
+from ndt.validity import validate_detector
+from ndt.validity import jump_detector_as_callable
+from ndt.validity import ValidityReport
+from ndt.validity import standard_battery
 from ndt.export import export_to_csv
 from ndt.export import export_to_hdf5
 from ndt.export import export_to_json
@@ -47,6 +51,11 @@ __all__ = [
     "JumpDetector",
     "Jump",
     "ActivationCapture",
+    # Validity harness
+    "validate_detector",
+    "jump_detector_as_callable",
+    "ValidityReport",
+    "standard_battery",
     # Architectures
     "detect_architecture",
     "get_handler",

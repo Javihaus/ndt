@@ -121,7 +121,11 @@ class ActivationAnalyzer:
         return results
 
     def cluster_analysis(
-        self, activations: np.ndarray, method: str = "kmeans", n_clusters: int = 5, **kwargs
+        self,
+        activations: np.ndarray,
+        method: str = "kmeans",
+        n_clusters: int = 5,
+        **kwargs,
     ) -> Dict[str, Any]:
         """Perform clustering analysis on activations.
 
@@ -160,7 +164,11 @@ class ActivationAnalyzer:
             labels = clusterer.fit_predict(activations)
 
             n_found = len(set(labels)) - (1 if -1 in labels else 0)
-            results = {"labels": labels, "n_clusters": n_found, "n_noise": np.sum(labels == -1)}
+            results = {
+                "labels": labels,
+                "n_clusters": n_found,
+                "n_noise": np.sum(labels == -1),
+            }
         else:
             raise ValueError(f"Unknown clustering method: {method}")
 
@@ -171,12 +179,18 @@ class ActivationAnalyzer:
         elif len(unique_labels) > 2:  # Has noise but also clusters
             mask = labels != -1
             if mask.sum() > 1:
-                results["silhouette_score"] = silhouette_score(activations[mask], labels[mask])
+                results["silhouette_score"] = silhouette_score(
+                    activations[mask], labels[mask]
+                )
 
         return results
 
     def manifold_embedding(
-        self, activations: np.ndarray, method: str = "tsne", n_components: int = 2, **kwargs
+        self,
+        activations: np.ndarray,
+        method: str = "tsne",
+        n_components: int = 2,
+        **kwargs,
     ) -> Dict[str, Any]:
         """Compute low-dimensional manifold embedding.
 
@@ -213,7 +227,9 @@ class ActivationAnalyzer:
 
         elif method == "umap":
             if not HAS_UMAP:
-                raise ImportError("UMAP not installed. Install with: pip install umap-learn")
+                raise ImportError(
+                    "UMAP not installed. Install with: pip install umap-learn"
+                )
 
             n_neighbors = kwargs.get("n_neighbors", min(15, activations.shape[0] - 1))
             reducer = umap.UMAP(
@@ -313,7 +329,9 @@ class ActivationAnalyzer:
             "participation_ratio": (
                 sv_after["participation_ratio"] - sv_before["participation_ratio"]
             ),
-            "n_components_90": (pca_after["n_components_90"] - pca_before["n_components_90"]),
+            "n_components_90": (
+                pca_after["n_components_90"] - pca_before["n_components_90"]
+            ),
         }
 
         # Subspace overlap (using principal angles)

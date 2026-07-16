@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ndtracker"
-version = "1.0.2"
+version = "2.0.0"
 description = "High-frequency monitoring of neural network representational dimensionality"
 readme = "README.md"
 authors = [{name = "Javier Marín", email = "javier@jmarin.info"}]
-license = {text = "MIT"}
+license = {text = "Apache-2.0"}
 requires-python = ">=3.8"
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -55,10 +55,10 @@ jax = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/groundlens-dev/ndt"
-Documentation = "https://docs.groundlens.dev/ndt"
-Repository = "https://github.com/groundlens-dev/ndt"
-"Bug Tracker" = "https://github.com/groundlens-dev/ndt/issues"
+Homepage = "https://github.com/Javihaus/ndt"
+Documentation = "https://javihaus.github.io/ndt"
+Repository = "https://github.com/Javihaus/ndt"
+"Bug Tracker" = "https://github.com/Javihaus/ndt/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

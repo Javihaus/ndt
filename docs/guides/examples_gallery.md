@@ -16,7 +16,7 @@ Complete collection of examples demonstrating Neural Dimensionality Tracker acro
 
 ### 01: Quickstart MNIST
 
-**File:** [`01_quickstart_mnist.py`](https://github.com/groundlens-dev/ndt/blob/main/examples/01_quickstart_mnist.py)
+**File:** [`01_quickstart_mnist.py`](https://github.com/Javihaus/ndt/blob/main/examples/01_quickstart_mnist.py)
 
 **Description:** Minimal example showing core NDT functionality with a simple MLP on MNIST.
 
@@ -68,7 +68,7 @@ python examples/01_quickstart_mnist.py
 
 ### 02: CNN on CIFAR-10
 
-**File:** [`02_cnn_cifar10.py`](https://github.com/groundlens-dev/ndt/blob/main/examples/02_cnn_cifar10.py)
+**File:** [`02_cnn_cifar10.py`](https://github.com/Javihaus/ndt/blob/main/examples/02_cnn_cifar10.py)
 
 **Description:** Track dimensionality in a convolutional neural network with both conv and FC layers.
 
@@ -117,7 +117,7 @@ python examples/02_cnn_cifar10.py
 
 ### 03: TDS Article Experiment
 
-**File:** [`03_reproduce_tds_experiment.py`](https://github.com/groundlens-dev/ndt/blob/main/examples/03_reproduce_tds_experiment.py)
+**File:** [`03_reproduce_tds_experiment.py`](https://github.com/Javihaus/ndt/blob/main/examples/03_reproduce_tds_experiment.py)
 
 **Description:** Exact reproduction of the experiment from the TDS article "I Measured Neural Network Training Every 5 Steps for 10,000 Iterations".
 
@@ -467,7 +467,7 @@ with HighFrequencyTracker(
 
 ```bash
 # Clone repository
-git clone https://github.com/groundlens-dev/ndt.git
+git clone https://github.com/Javihaus/ndt.git
 cd ndt
 
 # Install dependencies
@@ -589,6 +589,6 @@ Have an interesting use case? Contribute an example!
 
 ## Questions?
 
-- **Issues:** [GitHub Issues](https://github.com/groundlens-dev/ndt/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/groundlens-dev/ndt/discussions)
+- **Issues:** [GitHub Issues](https://github.com/Javihaus/ndt/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/Javihaus/ndt/discussions)
 - **Email:** javier@jmarin.info

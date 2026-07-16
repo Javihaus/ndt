@@ -59,13 +59,17 @@ class ViTHandler(ArchitectureHandler):
                     break  # Usually just one
 
         # 2. Attention layers
-        attn_layers = [m for m in model.modules() if isinstance(m, nn.MultiheadAttention)]
+        attn_layers = [
+            m for m in model.modules() if isinstance(m, nn.MultiheadAttention)
+        ]
         layers.extend(attn_layers)
 
         # 3. MLP/FFN blocks (sample to avoid too many)
         mlp_layers = []
         for name, module in model.named_modules():
-            if isinstance(module, nn.Linear) and ("mlp" in name.lower() or "ffn" in name.lower()):
+            if isinstance(module, nn.Linear) and (
+                "mlp" in name.lower() or "ffn" in name.lower()
+            ):
                 mlp_layers.append(module)
 
         # Sample MLP layers if too many (keep first Linear of each MLP block)

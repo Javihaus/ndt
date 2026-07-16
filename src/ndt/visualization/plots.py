@@ -69,7 +69,9 @@ def plot_single_metric(
         ax2.tick_params(axis="y", labelcolor="coral")
 
     ax.set_title(
-        f'{metric.replace("_", " ").title()} - {layer_name}', fontsize=14, fontweight="bold"
+        f"{metric.replace('_', ' ').title()} - {layer_name}",
+        fontsize=14,
+        fontweight="bold",
     )
     fig.tight_layout()
 
@@ -98,7 +100,12 @@ def plot_metrics_comparison(
         >>> plt.savefig("all_metrics.png")
     """
     if metrics is None:
-        metrics = ["stable_rank", "participation_ratio", "cumulative_90", "nuclear_norm_ratio"]
+        metrics = [
+            "stable_rank",
+            "participation_ratio",
+            "cumulative_90",
+            "nuclear_norm_ratio",
+        ]
 
     # Filter to available metrics
     metrics = [m for m in metrics if m in df.columns]
@@ -117,19 +124,30 @@ def plot_metrics_comparison(
         # Add loss as background on last plot
         if ax == axes[-1] and "loss" in df.columns:
             ax2 = ax.twinx()
-            ax2.plot(df["step"], df["loss"], linewidth=1, alpha=0.4, color="coral", linestyle="--")
+            ax2.plot(
+                df["step"],
+                df["loss"],
+                linewidth=1,
+                alpha=0.4,
+                color="coral",
+                linestyle="--",
+            )
             ax2.set_ylabel("Loss", fontsize=10, color="coral")
             ax2.tick_params(axis="y", labelcolor="coral")
 
     axes[-1].set_xlabel("Training Step", fontsize=12)
-    fig.suptitle(f"Dimensionality Metrics - {layer_name}", fontsize=14, fontweight="bold")
+    fig.suptitle(
+        f"Dimensionality Metrics - {layer_name}", fontsize=14, fontweight="bold"
+    )
     fig.tight_layout()
 
     return fig
 
 
 def plot_phases(
-    results_dict: Dict[str, pd.DataFrame], metric: str = "stable_rank", figsize: tuple = (15, 8)
+    results_dict: Dict[str, pd.DataFrame],
+    metric: str = "stable_rank",
+    figsize: tuple = (15, 8),
 ) -> plt.Figure:
     """Plot metric across multiple layers to visualize phase transitions.
 
@@ -155,7 +173,9 @@ def plot_phases(
     ax.set_xlabel("Training Step", fontsize=12)
     ax.set_ylabel(metric.replace("_", " ").title(), fontsize=12)
     ax.set_title(
-        f'{metric.replace("_", " ").title()} Across Layers', fontsize=14, fontweight="bold"
+        f"{metric.replace('_', ' ').title()} Across Layers",
+        fontsize=14,
+        fontweight="bold",
     )
     ax.legend(loc="best", fontsize=10)
     ax.grid(True, alpha=0.3)
@@ -250,7 +270,11 @@ def plot_correlation_heatmap(
     """
     if metrics is None:
         # Use all numeric columns except 'step'
-        metrics = [col for col in df.select_dtypes(include=[np.number]).columns if col != "step"]
+        metrics = [
+            col
+            for col in df.select_dtypes(include=[np.number]).columns
+            if col != "step"
+        ]
 
     correlation_matrix = df[metrics].corr()
 
