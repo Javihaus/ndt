@@ -4,7 +4,6 @@ This minimal example demonstrates the core functionality of the Neural
 Dimensionality Tracker in just a few lines of code.
 """
 
-import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
@@ -34,7 +33,9 @@ train_loader = DataLoader(train_data, batch_size=64, shuffle=True)
 
 # 3. Create tracker (automatically detects layers to monitor)
 tracker = HighFrequencyTracker(
-    model, sampling_frequency=10, enable_jump_detection=True  # Record every 10 steps
+    model,
+    sampling_frequency=10,
+    enable_jump_detection=True,  # Record every 10 steps
 )
 
 # 4. Standard training loop
@@ -45,8 +46,8 @@ print("Training MNIST with dimensionality tracking...")
 model.train()
 step = 0
 
-for epoch in range(2):  # Just 2 epochs for demo
-    for batch_idx, (data, target) in enumerate(train_loader):
+for _epoch in range(2):  # Just 2 epochs for demo
+    for _batch_idx, (data, target) in enumerate(train_loader):
         # Standard training step
         optimizer.zero_grad()
         output = model(data)

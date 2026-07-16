@@ -27,18 +27,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e ".[dev]"
 
-    - name: Lint with flake8
+    - name: Lint with ruff
       run: |
-        flake8 src/ndt --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 src/ndt --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
+        ruff check src/ndt tests examples
 
-    - name: Check formatting with black
+    - name: Check formatting with ruff
       run: |
-        black --check src/ndt tests
-
-    - name: Check import sorting with isort
-      run: |
-        isort --check-only src/ndt tests
+        ruff format --check src/ndt tests examples
 
     - name: Type check with mypy
       run: |
@@ -73,14 +68,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -e ".[dev]"
 
-    - name: Run flake8
+    - name: Lint with ruff
       run: |
-        flake8 src/ndt tests --max-line-length=100 --statistics
+        ruff check src/ndt tests examples
 
-    - name: Run black
+    - name: Check formatting with ruff
       run: |
-        black --check src/ndt tests examples
-
-    - name: Run isort
-      run: |
-        isort --check-only src/ndt tests examples
+        ruff format --check src/ndt tests examples

@@ -19,7 +19,7 @@ pip install ndtracker
 
 ```bash
 # Clone the repository
-git clone https://github.com/groundlens-dev/ndt.git
+git clone https://github.com/Javihaus/ndt.git
 cd ndt
 
 # Create virtual environment (recommended)
@@ -128,6 +128,6 @@ Pre-configured Docker images will be available for easy deployment.
 ## Support
 
 For installation issues:
-1. Check [GitHub Issues](https://github.com/groundlens-dev/ndt/issues)
+1. Check [GitHub Issues](https://github.com/Javihaus/ndt/issues)
 2. Search existing issues
 3. Create a new issue with your environment details

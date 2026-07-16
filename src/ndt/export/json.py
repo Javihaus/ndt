@@ -61,7 +61,7 @@ def load_from_json(input_path: str) -> Dict[str, pd.DataFrame]:
     if not input_path.exists():
         raise FileNotFoundError(f"File not found: {input_path}")
 
-    with open(input_path, "r") as f:
+    with open(input_path) as f:
         json_data = json.load(f)
 
     if not isinstance(json_data, dict):

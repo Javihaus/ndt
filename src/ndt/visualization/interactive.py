@@ -127,7 +127,7 @@ def create_multi_layer_plot(
             )
 
     fig.update_layout(
-        title=f'{metric.replace("_", " ").title()} Across Layers',
+        title=f"{metric.replace('_', ' ').title()} Across Layers",
         title_font_size=18,
         xaxis_title="Training Step",
         yaxis_title=metric.replace("_", " ").title(),

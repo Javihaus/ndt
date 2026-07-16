@@ -55,7 +55,7 @@ ImportError: No module named 'ndt'
 
 3. **Development installation:**
    ```bash
-   git clone https://github.com/groundlens-dev/ndt.git
+   git clone https://github.com/Javihaus/ndt.git
    cd ndt
    pip install -e .
    ```
@@ -801,7 +801,7 @@ tracker.close()
 
 If you encounter a bug:
 
-1. **Check existing issues:** [GitHub Issues](https://github.com/groundlens-dev/ndt/issues)
+1. **Check existing issues:** [GitHub Issues](https://github.com/Javihaus/ndt/issues)
 2. **Create new issue with:**
    - NDT version
    - PyTorch version
@@ -844,4 +844,4 @@ A: Not directly, but you can close and recreate the tracker.
 - [API Reference](../api/index.md)
 - [Architecture Support](../guides/architecture_support.md)
 - [Performance Benchmarks](performance_benchmarks.md)
-- [Examples](https://github.com/groundlens-dev/ndt/tree/main/examples)
+- [Examples](https://github.com/Javihaus/ndt/tree/main/examples)

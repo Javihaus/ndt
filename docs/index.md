@@ -169,7 +169,7 @@ If you use Neural Dimensionality Tracker in your research, please cite:
   title = {Neural Dimensionality Tracker: High-Frequency Monitoring of Neural Network Training Dynamics},
   year = {2024},
   publisher = {GitHub},
-  url = {https://github.com/groundlens-dev/ndt},
+  url = {https://github.com/Javihaus/ndt},
   version = {0.1.0}
 }
 ```
@@ -187,9 +187,9 @@ If you use Neural Dimensionality Tracker in your research, please cite:
 
 ## Community
 
-- **GitHub:** [github.com/groundlens-dev/ndt](https://github.com/groundlens-dev/ndt)
-- **Issues:** [Report bugs or request features](https://github.com/groundlens-dev/ndt/issues)
-- **Discussions:** [Ask questions](https://github.com/groundlens-dev/ndt/discussions)
+- **GitHub:** [github.com/Javihaus/ndt](https://github.com/Javihaus/ndt)
+- **Issues:** [Report bugs or request features](https://github.com/Javihaus/ndt/issues)
+- **Discussions:** [Ask questions](https://github.com/Javihaus/ndt/discussions)
 - **PyPI:** [pypi.org/project/ndtracker](https://pypi.org/project/ndtracker/)
 
 ## License

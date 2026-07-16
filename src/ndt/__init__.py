@@ -26,6 +26,10 @@ from ndt.export import export_to_json
 from ndt.utils import load_config
 from ndt.utils import save_config
 from ndt.utils import setup_logger
+from ndt.validity import ValidityReport
+from ndt.validity import jump_detector_as_callable
+from ndt.validity import standard_battery
+from ndt.validity import validate_detector
 from ndt.visualization import create_interactive_plot
 from ndt.visualization import create_multi_layer_plot
 from ndt.visualization import plot_jumps
@@ -47,6 +51,11 @@ __all__ = [
     "JumpDetector",
     "Jump",
     "ActivationCapture",
+    # Validity harness
+    "validate_detector",
+    "jump_detector_as_callable",
+    "ValidityReport",
+    "standard_battery",
     # Architectures
     "detect_architecture",
     "get_handler",

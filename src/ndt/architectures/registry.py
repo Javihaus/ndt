@@ -75,8 +75,7 @@ def get_handler(model: nn.Module, architecture: Optional[str] = None) -> Archite
 
         if architecture not in handler_map:
             raise ValueError(
-                f"Unknown architecture: {architecture}. "
-                f"Must be one of {list(handler_map.keys())}"
+                f"Unknown architecture: {architecture}. Must be one of {list(handler_map.keys())}"
             )
 
         handler = handler_map[architecture]

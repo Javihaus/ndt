@@ -88,7 +88,7 @@ def participation_ratio(matrix: torch.Tensor, eps: float = 1e-10) -> float:
         try:
             _, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)
         except RuntimeError as e:
-            raise ValueError(f"SVD computation failed: {e}")
+            raise ValueError(f"SVD computation failed: {e}") from e
 
         # Normalize singular values
         sv_normalized = singular_values / (torch.sum(singular_values) + eps)
@@ -134,7 +134,7 @@ def cumulative_energy_90(matrix: torch.Tensor, threshold: float = 0.90) -> int:
         try:
             _, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)
         except RuntimeError as e:
-            raise ValueError(f"SVD computation failed: {e}")
+            raise ValueError(f"SVD computation failed: {e}") from e
 
         # Compute explained variance
         explained_variance = singular_values**2
@@ -183,7 +183,7 @@ def nuclear_norm_ratio(matrix: torch.Tensor, eps: float = 1e-10) -> float:
         try:
             _, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)
         except RuntimeError as e:
-            raise ValueError(f"SVD computation failed: {e}")
+            raise ValueError(f"SVD computation failed: {e}") from e
 
         nuclear_norm = torch.sum(singular_values)
         spectral_norm = singular_values[0]  # Largest singular value
@@ -224,7 +224,7 @@ def compute_all_metrics(
         try:
             _, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)
         except RuntimeError as e:
-            raise ValueError(f"SVD computation failed: {e}")
+            raise ValueError(f"SVD computation failed: {e}") from e
 
         # Compute norms for stable rank
         frobenius_norm = torch.norm(matrix, p="fro")

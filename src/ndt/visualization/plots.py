@@ -69,7 +69,7 @@ def plot_single_metric(
         ax2.tick_params(axis="y", labelcolor="coral")
 
     ax.set_title(
-        f'{metric.replace("_", " ").title()} - {layer_name}', fontsize=14, fontweight="bold"
+        f"{metric.replace('_', ' ').title()} - {layer_name}", fontsize=14, fontweight="bold"
     )
     fig.tight_layout()
 
@@ -155,7 +155,7 @@ def plot_phases(
     ax.set_xlabel("Training Step", fontsize=12)
     ax.set_ylabel(metric.replace("_", " ").title(), fontsize=12)
     ax.set_title(
-        f'{metric.replace("_", " ").title()} Across Layers', fontsize=14, fontweight="bold"
+        f"{metric.replace('_', ' ').title()} Across Layers", fontsize=14, fontweight="bold"
     )
     ax.legend(loc="best", fontsize=10)
     ax.grid(True, alpha=0.3)

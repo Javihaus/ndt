@@ -142,7 +142,7 @@ def main():
     epoch = 0
     while step < target_steps:
         epoch += 1
-        for batch_idx, (data, target) in enumerate(train_loader):
+        for _batch_idx, (data, target) in enumerate(train_loader):
             data, target = data.to(device), target.to(device)
 
             # Standard training step
@@ -162,8 +162,7 @@ def main():
             # Progress reporting at key milestones
             if step in progress_milestones:
                 print(
-                    f"Step {step:5d} | Loss: {loss.item():.6f} | "
-                    f"Grad norm: {grad_norm.item():.4f}"
+                    f"Step {step:5d} | Loss: {loss.item():.6f} | Grad norm: {grad_norm.item():.4f}"
                 )
 
             step += 1
@@ -208,7 +207,7 @@ def main():
 
         # Show first 5 jumps
         for i, jump in enumerate(jumps[:5]):
-            print(f"  Jump {i+1}: {jump}")
+            print(f"  Jump {i + 1}: {jump}")
 
         if len(jumps) > 5:
             print(f"  ... and {len(jumps) - 5} more jumps")

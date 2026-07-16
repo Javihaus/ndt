@@ -70,8 +70,8 @@ def main():
     model.train()
     step = 0
 
-    for epoch in range(3):
-        for batch_idx, (data, target) in enumerate(train_loader):
+    for _epoch in range(3):
+        for _batch_idx, (data, target) in enumerate(train_loader):
             data, target = data.to(device), target.to(device)
 
             optimizer.zero_grad()

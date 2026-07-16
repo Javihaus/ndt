@@ -69,8 +69,8 @@ class TestQuickstartExample:
         model.train()
         step = 0
 
-        for epoch in range(1):  # Just 1 epoch for testing
-            for batch_idx, (data, target) in enumerate(train_loader):
+        for _epoch in range(1):  # Just 1 epoch for testing
+            for _batch_idx, (data, target) in enumerate(train_loader):
                 optimizer.zero_grad()
                 output = model(data)
                 loss = criterion(output, target)
@@ -320,9 +320,9 @@ class TestTDSExperiment:
         for layer_name, df in results.items():
             # With freq=5, expect ~20 measurements for 100 steps
             expected_measurements = target_steps // 5
-            assert (
-                len(df) == expected_measurements
-            ), f"{layer_name}: expected {expected_measurements} measurements, got {len(df)}"
+            assert len(df) == expected_measurements, (
+                f"{layer_name}: expected {expected_measurements} measurements, got {len(df)}"
+            )
 
             # Verify all metrics present
             assert "stable_rank" in df.columns
@@ -380,7 +380,7 @@ class TestTDSExperiment:
         results = tracker.get_results()
 
         # With freq=5, expect 20 measurements for 100 steps
-        for layer_name, df in results.items():
+        for _layer_name, df in results.items():
             assert len(df) == 20, f"Expected 20 measurements, got {len(df)}"
 
         tracker.close()
@@ -411,9 +411,9 @@ class TestExampleOutputs:
         if reproduce_tds_experiment is None:
             pytest.skip("torchvision not available - reproduce_tds_experiment could not be loaded")
 
-        assert hasattr(
-            reproduce_tds_experiment, "TDSExperimentMLP"
-        ), "Should have TDSExperimentMLP class"
+        assert hasattr(reproduce_tds_experiment, "TDSExperimentMLP"), (
+            "Should have TDSExperimentMLP class"
+        )
         assert hasattr(reproduce_tds_experiment, "main"), "Should have main function"
 
 

@@ -5,6 +5,37 @@ All notable changes to the Neural Dimensionality Tracker will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.0 -- The validity harness
+
+### Changed
+- **Toolchain unified to `ruff`** (formatting, linting and import sorting), replacing
+  black + isort + flake8, and pinned to a single version. This ends the format-drift
+  that came from three unpinned formatters on an EOL Python. CI runs `ruff check` and
+  `ruff format --check`. Applied `raise ... from e` in the SVD error paths and cleaned
+  unused loop variables surfaced by the linter.
+
+### Added
+- **`ndt.validity`**: a validity harness for transition detectors. Run any
+  detector against ground-truth fixtures (`planted_transition`, `planted_multi`,
+  `pure_noise`, `drift_no_jump`) and get a `ValidityReport` with recall on known
+  transitions and false-positive rate on known nulls, plus a plain verdict.
+  Synthetic fixtures cost nothing to generate; real-model fixtures (e.g. a
+  grokking run) plug into the same `Fixture` interface. New public API:
+  `validate_detector`, `jump_detector_as_callable`, `ValidityReport`,
+  `standard_battery`.
+
+### Changed
+- **Positioning corrected.** The README no longer claims ndt reliably "detects
+  discrete phase transitions." The companion study shows detectors built on
+  these metrics disagree with each other (threshold vs PELT correlate at -0.029)
+  and none is consistent across metrics. The included `JumpDetector` is now
+  documented as one detector to be validated, not a truth oracle. ndt's
+  distinctive value is the check, not the claim.
+- License field in `pyproject.toml` set to Apache-2.0 to match the LICENSE file
+  and the badge (was MIT).
+- Repository moved from the groundlens-dev organization to the author's account
+  (`Javihaus/ndt`); all URLs updated.
+
 ## [1.0.2] - 2025-11-13
 
 ### Changed

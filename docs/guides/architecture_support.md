@@ -491,12 +491,12 @@ Architectures under development:
 - ⏳ Neural ODEs
 - ⏳ Hypernetworks
 
-Request support for your architecture: [Open an issue](https://github.com/groundlens-dev/ndt/issues)
+Request support for your architecture: [Open an issue](https://github.com/Javihaus/ndt/issues)
 
 ---
 
 ## See Also
 
 - [API Reference](../api/index.md)
-- [Examples](https://github.com/groundlens-dev/ndt/tree/main/examples)
+- [Examples](https://github.com/Javihaus/ndt/tree/main/examples)
 - [Performance Benchmarks](../reference/performance_benchmarks.md)
