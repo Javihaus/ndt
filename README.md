@@ -1,6 +1,10 @@
 <div align="center">
+<br>
+<img src="docs/assets/ndt.png" alt="ndt" width="200">
+<br>
 
-# Neural Dimensionality Tracker - ndt
+
+# Neural Dimensionality Tracker
 
 High-frequency monitoring of neural-network representational dimensionality during training.
 
@@ -13,25 +17,24 @@ High-frequency monitoring of neural-network representational dimensionality duri
 
 
 [Documentation](https://javihaus.github.io/ndt) · [Examples](examples/) · [Contributing](CONTRIBUTING.md)
-
+<br>
 </div>
 
-By [Javier Marin](https://jmarin.info). A companion to the paper *Phase Transitions or Continuous Evolution? Methodological Sensitivity in Neural Network Training Dynamics*.
 
----
+Neural Dimensionality Tracker tracks how a network's representational dimensionality evolves during training, across MLPs, CNNs, Transformers and Vision Transformers, and it does one thing no other tracker does: **it tells you whether a detected phase transition is real or an artifact of your detection method.**
 
-**ndt** (Neural Dimensionality Tracker) tracks how a network's representational dimensionality evolves during training, across MLPs, CNNs, Transformers and Vision Transformers, and it does one thing no other tracker does: **it tells you whether a detected phase transition is real or an artifact of your detection method.**
-
-That check matters because it is easy to get wrong. In a companion study across 55 experiments and 30,147 measurement points, transition detectors built on these same metrics disagreed with each other almost completely (a threshold detector and the threshold-free PELT algorithm correlated at -0.029), and no transition appeared consistently across metrics. A detector can report a clean "phase transition" that is nothing but its own response to noise. So before you build a theory on a detected transition, run the validity harness on your detector and see what it does on ground truth you control.
+In a companion study across 55 experiments and 30,147 measurement points, transition detectors built on these same metrics disagreed with each other almost completely (a threshold detector and the threshold-free PELT algorithm correlated at -0.029), and no transition appeared consistently across metrics. A detector can report a clean "phase transition" that is nothing but its own response to noise. So before you build a theory on a detected transition, run the validity harness on your detector and see what it does on ground truth you control.
 
 ## Features
 
-- **Validity harness**: test any transition detector against ground-truth fixtures (a known transition and a known null) and get a plain verdict on whether its detections can be trusted. Runs in milliseconds, no training required.
-- **Dimensionality tracking**: add tracking to any PyTorch model in three lines, across MLPs, CNNs, Transformers and Vision Transformers.
-- **Four complementary metrics**: participation ratio, stable rank, cumulative energy, nuclear-norm ratio.
-- **Transition detection, honestly framed**: a z-score jump detector is included as *one* detector to be validated, not a truth oracle. Check it before you trust it.
-- **Rich visualization** and **flexible export** (CSV, JSON, HDF5).
-- Fully typed, tested, documented.
+| Feature | Description |
+|---|---|
+|**Validity harness** | Test any transition detector against ground-truth fixtures (a known transition and a known null) and get a plain verdict on whether its detections can be trusted. Runs in milliseconds, no training required.|
+|**Dimensionality tracking** | Add tracking to any PyTorch model in three lines, across MLPs, CNNs, Transformers and Vision Transformers.|
+|**Four complementary metrics** | Participation ratio, stable rank, cumulative energy, nuclear-norm ratio.|
+|**Transition detection, honestly framed** | A z-score jump detector is included as *one* detector to be validated, not a truth oracle. Check it before you trust it.|
+|**Rich visualization** and **flexible export** | (CSV, JSON, HDF5).|
+
 
 ## Installation
 
@@ -110,22 +113,6 @@ plot_phases(results, metric="stable_rank")
 - **Installation Guide**: [INSTALL.md](INSTALL.md)
 - **Contributing**: [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## Reproducing the TDS Article Experiment
-
-The repository includes a complete reproduction of the experiment described in the Towards Data Science article "I Measured Neural Network Training Every 5 Steps for 10,000 Iterations":
-
-```bash
-python examples/03_reproduce_tds_experiment.py
-```
-
-This script uses the exact specifications from the article:
-- Architecture: 784-256-128-10 (3-layer MLP)
-- Dataset: MNIST (60k train/10k test)
-- Optimizer: Adam (β1=0.9, β2=0.999)
-- Learning rate: 0.001, batch size: 64
-- Training: 8000 steps with measurements every 5 steps
-- Expected results: 3 distinct phases (collapse, expansion, stabilization)
-
 ## Citation
 
 If you use Neural Dimensionality Tracker in your research, please cite:
@@ -138,18 +125,6 @@ If you use Neural Dimensionality Tracker in your research, please cite:
   publisher = {GitHub},
   url = {https://github.com/Javihaus/ndt},
   version = {0.1.0}
-}
-```
-
-**Associated article:**
-```bibtex
-@article{marin2025measuring,
-  author = {Marín, Javier},
-  title = {I Measured Neural Network Training Every 5 Steps for 10,000 Iterations: What High-Resolution Training Dynamics Taught Me About Feature Formation},
-  journal = {Towards Data Science},
-  year = {2025},
-  month = {November},
-  url = {https://towardsdatascience.com/}
 }
 ```
 
