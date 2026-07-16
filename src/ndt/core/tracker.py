@@ -160,11 +160,7 @@ class HighFrequencyTracker:
         return layers
 
     def log(
-        self,
-        step: int,
-        loss: float,
-        grad_norm: Optional[float] = None,
-        force: bool = False,
+        self, step: int, loss: float, grad_norm: Optional[float] = None, force: bool = False
     ) -> None:
         """Log dimensionality metrics for the current step.
 
@@ -287,9 +283,7 @@ class HighFrequencyTracker:
             for name, metrics in self.metrics_history.items()
         }
 
-    def _metrics_to_dataframe(
-        self, metrics_list: List[DimensionalityMetrics]
-    ) -> pd.DataFrame:
+    def _metrics_to_dataframe(self, metrics_list: List[DimensionalityMetrics]) -> pd.DataFrame:
         """Convert list of metrics to DataFrame.
 
         Args:
@@ -322,9 +316,7 @@ class HighFrequencyTracker:
             ValueError: If jump detection is disabled or metric name is invalid
         """
         if not self.enable_jump_detection:
-            raise ValueError(
-                "Jump detection is disabled. Enable it during initialization."
-            )
+            raise ValueError("Jump detection is disabled. Enable it during initialization.")
 
         valid_metrics = [
             "stable_rank",
@@ -346,9 +338,7 @@ class HighFrequencyTracker:
             values = [getattr(m, metric) for m in self.metrics_history[name]]
 
             # Detect jumps
-            jumps = self.jump_detector.detect_jumps(
-                values, metric_name=f"{name}_{metric}"
-            )
+            jumps = self.jump_detector.detect_jumps(values, metric_name=f"{name}_{metric}")
             jumps_dict[name] = jumps
 
         return jumps_dict

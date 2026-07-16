@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
+from ndt.core.jump_detector import JumpDetector
 from ndt.validity import drift_no_jump
 from ndt.validity import jump_detector_as_callable
 from ndt.validity import planted_multi
@@ -11,8 +12,6 @@ from ndt.validity import planted_transition
 from ndt.validity import pure_noise
 from ndt.validity import standard_battery
 from ndt.validity import validate_detector
-from ndt.core.jump_detector import JumpDetector
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Fixtures carry the ground truth they claim

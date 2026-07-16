@@ -71,12 +71,7 @@ class CNNHandler(ArchitectureHandler):
         """
         # Check for common ResNet layer names
         for name, module in model.named_modules():
-            if (
-                "layer1" in name
-                or "layer2" in name
-                or "layer3" in name
-                or "layer4" in name
-            ):
+            if "layer1" in name or "layer2" in name or "layer3" in name or "layer4" in name:
                 return True
         return False
 

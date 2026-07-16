@@ -34,9 +34,7 @@ train_loader = DataLoader(train_data, batch_size=64, shuffle=True)
 
 # 3. Create tracker (automatically detects layers to monitor)
 tracker = HighFrequencyTracker(
-    model,
-    sampling_frequency=10,
-    enable_jump_detection=True,  # Record every 10 steps
+    model, sampling_frequency=10, enable_jump_detection=True  # Record every 10 steps
 )
 
 # 4. Standard training loop

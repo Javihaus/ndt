@@ -59,9 +59,7 @@ def export_to_csv(
             print("No data to export")
 
 
-def load_from_csv(
-    input_path: str, separate_files: bool = False
-) -> Dict[str, pd.DataFrame]:
+def load_from_csv(input_path: str, separate_files: bool = False) -> Dict[str, pd.DataFrame]:
     """Load tracking results from CSV format.
 
     Args:
@@ -89,9 +87,7 @@ def load_from_csv(
     if separate_files:
         # Load from directory
         if not input_path.is_dir():
-            raise ValueError(
-                f"Expected directory for separate_files=True, got: {input_path}"
-            )
+            raise ValueError(f"Expected directory for separate_files=True, got: {input_path}")
 
         results = {}
         for csv_file in input_path.glob("*.csv"):

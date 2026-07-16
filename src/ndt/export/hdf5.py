@@ -61,9 +61,7 @@ def export_to_hdf5(
                     col,
                     data=data,
                     compression=compression,
-                    compression_opts=compression_opts
-                    if compression == "gzip"
-                    else None,
+                    compression_opts=compression_opts if compression == "gzip" else None,
                 )
 
             # Store column names as attribute

@@ -51,9 +51,7 @@ def jump_detector_as_callable(detector, metric_name: str = "metric") -> Detector
     return _call
 
 
-def _match(
-    detected: Sequence[int], truth: Sequence[int], tol: int
-) -> tuple[int, int, int]:
+def _match(detected: Sequence[int], truth: Sequence[int], tol: int) -> tuple[int, int, int]:
     """Greedy one-to-one matching within ``tol`` steps.
 
     Returns (true_positives, false_positives, false_negatives).
@@ -139,13 +137,9 @@ class ValidityReport:
                 )
         lines.append("")
         lines.append(f"  mean recall on planted transitions : {self.mean_recall:.2f}")
-        lines.append(
-            f"  false positives on null controls   : {self.false_positives_on_null}"
-        )
+        lines.append(f"  false positives on null controls   : {self.false_positives_on_null}")
         lines.append("")
-        lines.append(
-            f"  VERDICT: {'VALID' if self.valid else 'NOT VALID'} on these fixtures"
-        )
+        lines.append(f"  VERDICT: {'VALID' if self.valid else 'NOT VALID'} on these fixtures")
         lines.append(f"  {self.message}")
         return "\n".join(lines)
 

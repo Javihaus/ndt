@@ -79,10 +79,7 @@ class JumpDetector:
         self.min_samples = min_samples
 
     def detect_jumps(
-        self,
-        values: List[float],
-        metric_name: str = "dimensionality",
-        step_offset: int = 0,
+        self, values: List[float], metric_name: str = "dimensionality", step_offset: int = 0
     ) -> List[Jump]:
         """Detect jumps in a sequence of dimensionality values.
 
@@ -156,9 +153,7 @@ class JumpDetector:
             ValueError: If direction is not valid
         """
         if direction not in [None, "up", "down"]:
-            raise ValueError(
-                f"direction must be None, 'up', or 'down', got {direction}"
-            )
+            raise ValueError(f"direction must be None, 'up', or 'down', got {direction}")
 
         all_jumps = self.detect_jumps(values, metric_name, step_offset)
 

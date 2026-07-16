@@ -47,9 +47,7 @@ class TestHighFrequencyTracker:
 
     def test_initialization_with_mlp(self, small_mlp):
         """Should initialize successfully with MLP."""
-        tracker = HighFrequencyTracker(
-            small_mlp, layers=[small_mlp[0], small_mlp[2], small_mlp[4]]
-        )
+        tracker = HighFrequencyTracker(small_mlp, layers=[small_mlp[0], small_mlp[2], small_mlp[4]])
 
         assert tracker.model is small_mlp
         assert len(tracker.layer_names) == 3
@@ -101,9 +99,7 @@ class TestHighFrequencyTracker:
 
     def test_sampling_frequency(self, small_mlp, sample_batch):
         """Should respect sampling frequency."""
-        tracker = HighFrequencyTracker(
-            small_mlp, layers=[small_mlp[0]], sampling_frequency=5
-        )
+        tracker = HighFrequencyTracker(small_mlp, layers=[small_mlp[0]], sampling_frequency=5)
 
         for step in range(20):
             _ = small_mlp(sample_batch)
@@ -119,9 +115,7 @@ class TestHighFrequencyTracker:
 
     def test_force_logging(self, small_mlp, sample_batch):
         """Should log when forced even if not at sampling interval."""
-        tracker = HighFrequencyTracker(
-            small_mlp, layers=[small_mlp[0]], sampling_frequency=10
-        )
+        tracker = HighFrequencyTracker(small_mlp, layers=[small_mlp[0]], sampling_frequency=10)
 
         # Log at step 3 with force=True
         _ = small_mlp(sample_batch)
@@ -149,9 +143,7 @@ class TestHighFrequencyTracker:
 
     def test_cnn_support(self, simple_cnn, sample_image_batch):
         """Should work with CNN architecture."""
-        tracker = HighFrequencyTracker(
-            simple_cnn, layers=[simple_cnn[0], simple_cnn[3]]
-        )
+        tracker = HighFrequencyTracker(simple_cnn, layers=[simple_cnn[0], simple_cnn[3]])
 
         _ = simple_cnn(sample_image_batch)
         tracker.log(step=0, loss=1.0)
@@ -164,9 +156,7 @@ class TestHighFrequencyTracker:
     def test_get_results_single_layer(self, small_mlp, sample_batch):
         """Should get results for specific layer."""
         tracker = HighFrequencyTracker(
-            small_mlp,
-            layers=[small_mlp[0], small_mlp[2]],
-            layer_names=["layer0", "layer1"],
+            small_mlp, layers=[small_mlp[0], small_mlp[2]], layer_names=["layer0", "layer1"]
         )
 
         _ = small_mlp(sample_batch)

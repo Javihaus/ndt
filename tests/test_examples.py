@@ -58,9 +58,7 @@ class TestQuickstartExample:
         )
 
         # Create tracker
-        tracker = HighFrequencyTracker(
-            model, sampling_frequency=10, enable_jump_detection=True
-        )
+        tracker = HighFrequencyTracker(model, sampling_frequency=10, enable_jump_detection=True)
 
         # Training loop (reduced steps)
         optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
@@ -189,9 +187,7 @@ class TestCNNExample:
             loss.backward()
 
             # Compute gradient norm
-            grad_norm = torch.nn.utils.clip_grad_norm_(
-                model.parameters(), max_norm=float("inf")
-            )
+            grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=float("inf"))
 
             optimizer.step()
 
@@ -235,9 +231,7 @@ class TestTDSExperiment:
         # Check architecture
         assert isinstance(model.layer1, nn.Linear), "Layer1 should be Linear"
         assert model.layer1.in_features == 784, "Layer1 input should be 784"
-        assert model.layer1.out_features == 256, (
-            "Layer1 output should be 256 (not 512!)"
-        )
+        assert model.layer1.out_features == 256, "Layer1 output should be 256 (not 512!)"
 
         assert isinstance(model.layer2, nn.Linear), "Layer2 should be Linear"
         assert model.layer2.in_features == 256, "Layer2 input should be 256"
@@ -301,9 +295,7 @@ class TestTDSExperiment:
             loss.backward()
 
             # Compute gradient norm
-            grad_norm = torch.nn.utils.clip_grad_norm_(
-                model.parameters(), max_norm=float("inf")
-            )
+            grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=float("inf"))
 
             optimizer.step()
 
@@ -328,9 +320,9 @@ class TestTDSExperiment:
         for layer_name, df in results.items():
             # With freq=5, expect ~20 measurements for 100 steps
             expected_measurements = target_steps // 5
-            assert len(df) == expected_measurements, (
-                f"{layer_name}: expected {expected_measurements} measurements, got {len(df)}"
-            )
+            assert (
+                len(df) == expected_measurements
+            ), f"{layer_name}: expected {expected_measurements} measurements, got {len(df)}"
 
             # Verify all metrics present
             assert "stable_rank" in df.columns
@@ -363,9 +355,7 @@ class TestTDSExperiment:
         """Test that TDS experiment samples at correct frequency."""
         from ndt import HighFrequencyTracker
 
-        model = nn.Sequential(
-            nn.Flatten(), nn.Linear(784, 256), nn.ReLU(), nn.Linear(256, 10)
-        )
+        model = nn.Sequential(nn.Flatten(), nn.Linear(784, 256), nn.ReLU(), nn.Linear(256, 10))
 
         # High-frequency sampling (TDS spec)
         tracker = HighFrequencyTracker(model, sampling_frequency=5)
@@ -419,13 +409,11 @@ class TestExampleOutputs:
         from examples import reproduce_tds_experiment
 
         if reproduce_tds_experiment is None:
-            pytest.skip(
-                "torchvision not available - reproduce_tds_experiment could not be loaded"
-            )
+            pytest.skip("torchvision not available - reproduce_tds_experiment could not be loaded")
 
-        assert hasattr(reproduce_tds_experiment, "TDSExperimentMLP"), (
-            "Should have TDSExperimentMLP class"
-        )
+        assert hasattr(
+            reproduce_tds_experiment, "TDSExperimentMLP"
+        ), "Should have TDSExperimentMLP class"
         assert hasattr(reproduce_tds_experiment, "main"), "Should have main function"
 
 

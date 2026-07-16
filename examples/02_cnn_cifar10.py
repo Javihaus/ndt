@@ -50,9 +50,7 @@ def main():
         [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
     )
 
-    train_data = datasets.CIFAR10(
-        "./data", train=True, download=True, transform=transform
-    )
+    train_data = datasets.CIFAR10("./data", train=True, download=True, transform=transform)
     train_loader = DataLoader(train_data, batch_size=128, shuffle=True, num_workers=2)
 
     # Create tracker - explicitly specify conv layers and fc layers
@@ -82,9 +80,7 @@ def main():
             loss.backward()
 
             # Compute gradient norm
-            grad_norm = torch.nn.utils.clip_grad_norm_(
-                model.parameters(), max_norm=float("inf")
-            )
+            grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=float("inf"))
 
             optimizer.step()
 

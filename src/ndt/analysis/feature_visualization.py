@@ -281,9 +281,7 @@ class FeatureVisualizer:
 
         return attn.squeeze().detach().cpu().numpy()
 
-    def feature_maps(
-        self, activation: torch.Tensor, top_k: int = 16
-    ) -> List[np.ndarray]:
+    def feature_maps(self, activation: torch.Tensor, top_k: int = 16) -> List[np.ndarray]:
         """Extract top-k feature maps from a convolutional layer.
 
         Args:

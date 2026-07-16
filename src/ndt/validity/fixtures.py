@@ -26,13 +26,7 @@ from dataclasses import field
 
 import numpy as np
 
-__all__ = [
-    "Fixture",
-    "planted_transition",
-    "planted_multi",
-    "pure_noise",
-    "drift_no_jump",
-]
+__all__ = ["Fixture", "planted_transition", "planted_multi", "pure_noise", "drift_no_jump"]
 
 
 @dataclass(frozen=True)
@@ -115,11 +109,7 @@ def pure_noise(n_steps: int = 400, noise: float = 1.0, seed: int = 0) -> Fixture
 
 
 def drift_no_jump(
-    n_steps: int = 400,
-    start: float = 10.0,
-    end: float = 20.0,
-    noise: float = 0.3,
-    seed: int = 0,
+    n_steps: int = 400, start: float = 10.0, end: float = 20.0, noise: float = 0.3, seed: int = 0
 ) -> Fixture:
     """A negative control with a slow, continuous drift and no discrete jump.
 

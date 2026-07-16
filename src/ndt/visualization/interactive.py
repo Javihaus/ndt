@@ -32,12 +32,7 @@ def create_interactive_plot(
         >>> fig.write_html("interactive_plot.html")
     """
     if metrics is None:
-        metrics = [
-            "stable_rank",
-            "participation_ratio",
-            "cumulative_90",
-            "nuclear_norm_ratio",
-        ]
+        metrics = ["stable_rank", "participation_ratio", "cumulative_90", "nuclear_norm_ratio"]
 
     # Filter to available metrics
     metrics = [m for m in metrics if m in df.columns]
@@ -132,7 +127,7 @@ def create_multi_layer_plot(
             )
 
     fig.update_layout(
-        title=f"{metric.replace('_', ' ').title()} Across Layers",
+        title=f'{metric.replace("_", " ").title()} Across Layers',
         title_font_size=18,
         xaxis_title="Training Step",
         yaxis_title=metric.replace("_", " ").title(),
@@ -206,9 +201,7 @@ def create_dashboard(
                 )
 
         fig.update_layout(
-            title_text=f"Comprehensive Dashboard - {layer_name}",
-            title_font_size=20,
-            height=900,
+            title_text=f"Comprehensive Dashboard - {layer_name}", title_font_size=20, height=900
         )
 
     else:
@@ -250,9 +243,7 @@ def create_dashboard(
                     )
 
         fig.update_layout(
-            title_text="Multi-Layer Comparison Dashboard",
-            title_font_size=20,
-            height=800,
+            title_text="Multi-Layer Comparison Dashboard", title_font_size=20, height=800
         )
 
     fig.update_xaxes(title_text="Training Step")
