@@ -2,9 +2,9 @@
 
 <img src="docs/assets/ndt-logo.svg" alt="ndt" width="140">
 
-# ndt
+# Neural Dimensionality Tracker - *ndt*
 
-### Know whether a detected phase transition is real, or an artifact of your method.
+## Is my model's representation healthy as it trains, or is it collapsing?
 
 [![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12-469BA7?style=flat-square)](https://github.com/Javihaus/ndt)
 [![CI](https://img.shields.io/github/actions/workflow/status/Javihaus/ndt/tests.yml?branch=main&label=CI&style=flat-square&color=469BA7)](https://github.com/Javihaus/ndt/actions)
@@ -20,28 +20,31 @@
 
 ---
 
-**ndt** tracks how a neural network's representational dimensionality evolves during training, across MLPs, CNNs, Transformers and Vision Transformers. It also does one thing no other tracker does: it tells you whether a detected phase transition is real, or an artifact of your detection method.
+Effective dimensionality, the thing ndt tracks, is precisely how people detect representation collapse, a named and feared failure in self-supervised, contrastive, and JEPA-style training, in ViTs, and in fine-tuning. A collapsing or stagnant representation is a failing run you usually cannot see in the loss curve; the dimensionality curve shows it. That is a decision: keep training, stop, or fix.
 
-That check matters because the mistake is easy to make. In a companion study across 55 experiments and 30,147 measurement points, transition detectors built on these same metrics disagreed with each other almost completely (a z-score threshold detector and the threshold-free PELT algorithm correlated at -0.029), and no transition appeared consistently across metrics. A detector can report a clean "phase transition" that is nothing but its own response to noise. So before you build a theory on a detected transition, run the validity harness on your detector and watch what it does on ground truth you control.
+:mag: *ndt* monitor how a neural network's representational dimensionality evolves during training and lets you watch the representation and catch collapse, and it verifies the signal. What *ndt* shows, in one number: roughly, "how many independent directions is the representation actually using?" Many directions, held steady or growing, means healthy and spread out. That number sliding toward a few means it is collapsing. So the health check is simply: is that number holding up, or falling? ndt draws you that curve while the model trains.
+
+**Unlike any other tracker, *ndt* tells you whether a change it detects is real or an artifact of your measurement.**
 
 ## Why ndt?
 
-| The situation | What ndt gives you |
+| The situation | What *ndt* gives you |
 | --- | --- |
 | A jump detector reports a clean transition in your training curve. | ndt runs that same detector on trajectories whose transitions you control, and reports its recall and its false-positive rate on pure noise. |
 | Two detectors on the same run disagree almost completely. | One verdict on ground truth, in milliseconds, before you commit to a claim. No model, no GPU, no training. |
 | You want to see representation geometry, not just loss. | Four dimensionality metrics per layer, logged on any PyTorch model in three lines. |
 | A reviewer asks how you know the transition is not an artifact. | A rendered report with a positive control, three null controls, and a plain PASS or FAIL. |
 
-## I want to...
+## You want to...
 
 | Goal | Start here |
 | --- | --- |
-| Check a detector before I trust it | [Tutorial 1](#tutorial-1-check-your-detector-before-you-trust-it) |
+| Check a detector before you trust it | [Tutorial 1](#tutorial-1-check-your-detector-before-you-trust-it) |
 | Track dimensionality during training | [Tutorial 2](#tutorial-2-track-dimensionality-during-training) |
-| Validate my own detector or my own data | [Tutorial 3](#tutorial-3-plug-in-your-own-detector-and-fixtures) |
+| Validate your own detector or your own data | [Tutorial 3](#tutorial-3-plug-in-your-own-detector-and-fixtures) |
 | Understand the result behind the tool | [The finding](#the-finding) |
-| Read the full API | [Documentation](https://javihaus.github.io/ndt) |
+
+ :point_right: Read the full API | [Documentation](https://javihaus.github.io/ndt) 
 
 ## Installation
 
