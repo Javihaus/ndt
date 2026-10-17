@@ -2,30 +2,43 @@
 
 <img src="docs/assets/ndt-logo.svg" alt="ndt" width="140">
 
-# Neural Dimensionality Tracker - *ndt*
+# Neural Dimensionality Tracker
 
-## Is my model's representation healthy as it trains, or is it collapsing?
+</div> 
+
+<br>
+
+### Is my model's representation healthy as it trains, or is it collapsing?
+
+<div align="center">
 
 <img src="docs/assets/ndt-overview.png" alt="Two real training runs. Both losses go down, but ndt shows run A using about 13 dimensions with 96% accuracy while run B stays collapsed at 1 to 3 dimensions with 77% accuracy. ndt also tests a jump detector on known data: it finds a planted jump but also fires on pure noise, so the verdict is NOT VALID." width="100%">
+
+<br>
+
+<br>
 
 [![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12-469BA7?style=flat-square)](https://github.com/Javihaus/ndt)
 [![Docs](https://img.shields.io/badge/docs-javihaus.github.io%2Fndt-005765?style=flat-square)](https://javihaus.github.io/ndt)
 [![PyPI](https://img.shields.io/pypi/v/ndtracker?style=flat-square&color=005765&label=pypi)](https://pypi.org/project/ndtracker/)
 [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/Javihaus/ndt?style=flat-square&label=OpenSSF%20Scorecard)](https://scorecard.dev/viewer/?uri=github.com/Javihaus/ndt)
-
 [![License](https://img.shields.io/badge/License-Apache_2.0-012731.svg?style=flat-square)](LICENSE)
 
-[Documentation](https://javihaus.github.io/ndt) · [Tutorials](#tutorials) · [The finding](#the-finding) · [Examples](examples/) · [Contributing](CONTRIBUTING.md)
+<br>
+
+ [Why ndt?](#why-ndt) · [Quick Start](#quick-start) · [Benchmark](#benchmark) · [Architecture](#architecture) · [Examples](examples/) · [Contributing](CONTRIBUTING.md) · [Documentation](https://javihaus.github.io/ndt)
 
 </div>
 
----
+<br>
 
-Effective dimensionality, the thing ndt tracks, is precisely how people detect representation collapse, a named and feared failure in self-supervised, contrastive, and JEPA-style training, in ViTs, and in fine-tuning. A collapsing or stagnant representation is a failing run you usually cannot see in the loss curve; the dimensionality curve shows it. That is a decision: keep training, stop, or fix.
+Effective dimensionalit is how usep to detect representation collapse in NN, a named and feared failure in self-supervised, contrastive, and JEPA-style training, in ViTs, and in fine-tuning. A collapsing or stagnant representation is a failing run you usually cannot see in the loss curve; the dimensionality curve shows it. That is a decision: keep training, stop, or fix.
 
 :mag: *ndt* monitor how a neural network's representational dimensionality evolves during training and lets you watch the representation and catch collapse, and it verifies the signal. What *ndt* shows, in one number: roughly, "how many independent directions is the representation actually using?" Many directions, held steady or growing, means healthy and spread out. That number sliding toward a few means it is collapsing. So the health check is simply: is that number holding up, or falling? ndt draws you that curve while the model trains.
 
-**Unlike any other tracker, *ndt* tells you whether a change it detects is real or an artifact of your measurement.**
+> Unlike any other tracker, *ndt* tells you whether a change it detects is real or an artifact of your measurement.
+
+<br>
 
 ## Why ndt?
 
@@ -36,18 +49,19 @@ Effective dimensionality, the thing ndt tracks, is precisely how people detect r
 | You want to see representation geometry, not just loss. | Four dimensionality metrics per layer, logged on any PyTorch model in three lines. |
 | A reviewer asks how you know the transition is not an artifact. | A rendered report with a positive control, three null controls, and a plain PASS or FAIL. |
 
-## You want to...
+<br>
 
-| Goal | Start here |
-| --- | --- |
-| Check a detector before you trust it | [Tutorial 1](#tutorial-1-check-your-detector-before-you-trust-it) |
-| Track dimensionality during training | [Tutorial 2](#tutorial-2-track-dimensionality-during-training) |
-| Validate your own detector or your own data | [Tutorial 3](#tutorial-3-plug-in-your-own-detector-and-fixtures) |
-| Understand the result behind the tool | [The finding](#the-finding) |
+<div align="center">
 
- :point_right: Read the full API | [Documentation](https://javihaus.github.io/ndt) 
+ :point_right: Read the full API [Documentation](https://javihaus.github.io/ndt) 
 
-## Installation
+</div>
+
+<br>
+
+## Quick Start
+
+### Installation
 
 ```bash
 pip install ndtracker
@@ -55,11 +69,11 @@ pip install ndtracker
 
 This pulls PyTorch and NumPy, everything the tracker and the harness need. The validity harness itself is pure NumPy, so its tests run without a GPU.
 
-## Tutorials
+<br>
 
 ### Tutorial 1: check your detector before you trust it
 
-This is the reason ndt exists. Take any transition detector, run it against a battery of ground-truth fixtures, and read a verdict. The built-in `JumpDetector` is included as one detector to be validated, not as a truth oracle.
+Take any transition detector, run it against a battery of ground-truth fixtures, and read a verdict. The built-in `JumpDetector` is included as one detector to be validated, not as a truth oracle.
 
 ```python
 from ndt import JumpDetector
@@ -165,7 +179,9 @@ print(report.render())
 
 A detector that passes here recovers your known transition and stays quiet on the null. A detector that fails is measuring its own method, whatever it reports on data you cannot check.
 
-## The finding
+<br>
+
+## Benchmark
 
 ndt is the tool built out of a result, so the result is worth stating plainly.
 
@@ -173,7 +189,7 @@ Across 55 training runs and 30,147 high-frequency measurements, transition detec
 
 The conclusion is not that transitions never happen. It is that a detection is a claim, and a claim about a transition is only as good as the detector's behavior on ground truth. ndt exists to make that behavior measurable in milliseconds, so the claim can carry weight. This is the same construct-validity idea that the evaluation-science literature applies to any measurement instrument, brought to training dynamics.
 
-Full method and results are in the companion paper, *Phase Transitions or Continuous Evolution? Methodological Sensitivity in Neural Network Training Dynamics*.
+<br>
 
 ## Architecture
 
@@ -196,6 +212,7 @@ Full method and results are in the companion paper, *Phase Transitions or Contin
                        ── validity harness ──
         any detector  →  ground-truth fixtures  →  PASS / FAIL verdict
 ```
+<br>
 
 ## Examples
 
@@ -204,6 +221,8 @@ Complete, runnable scripts live in [examples/](examples/):
 - [`01_quickstart_mnist.py`](examples/01_quickstart_mnist.py): basic MLP on MNIST
 - [`02_cnn_cifar10.py`](examples/02_cnn_cifar10.py): CNN on CIFAR-10
 - [`03_reproduce_tds_experiment.py`](examples/03_reproduce_tds_experiment.py): reproduces the 8000-step, 784-256-128-10 MNIST experiment from the Towards Data Science article, measurements every 5 steps
+
+<br>
 
 ## Citation
 
@@ -218,14 +237,17 @@ Complete, runnable scripts live in [examples/](examples/):
 }
 ```
 
+<br>
+
 ## Contributing
 
 Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, the ruff-based lint and format checks, and the test layout. The validity tests run on pure NumPy and need no GPU.
 
-## About
+<br>
 
-Built by [Javier Marín](https://jmarin.info). ndt is part of a body of work on trustworthy AI: respect the system, do not just fit the data.
 
-## License
+<div align="center">
 
-Apache 2.0. See [LICENSE](LICENSE).
+<sub> Copyright Javier Marín, 2025  |   Apache 2.0. See [LICENSE](LICENSE) <sub>
+
+</div> 
