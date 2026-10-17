@@ -29,6 +29,7 @@ dependencies = [
     "tqdm>=4.66.3",
     "pyyaml>=6.0.1",
     "h5py>=3.10.0",
+    "scikit-learn>=1.5.0",
 ]
 
 [project.optional-dependencies]
@@ -64,6 +65,9 @@ where = ["src"]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "-v --cov=ndt --cov-report=html --cov-report=term-missing"
+markers = [
+    "slow: long-running tests (deselect with '-m \"not slow\"')",
+]
 
 [tool.ruff]
 line-length = 100

@@ -169,3 +169,24 @@ def test_empty_matrix_raises_value_error(estimator, shape):
     """An empty matrix has no singular values: every estimator rejects it."""
     with pytest.raises(ValueError, match="non-empty"):
         estimator(torch.zeros(shape))
+
+
+@pytest.mark.parametrize(
+    "estimator",
+    [participation_ratio, cumulative_energy_90, nuclear_norm_ratio, compute_all_metrics],
+)
+def test_svd_failure_is_reported_as_value_error(estimator, monkeypatch):
+    """A RuntimeError raised by the SVD backend is re-raised as a ValueError."""
+
+    def failing_svd(*args, **kwargs):
+        raise RuntimeError("did not converge")
+
+    monkeypatch.setattr(torch.linalg, "svd", failing_svd)
+    with pytest.raises(ValueError, match="SVD computation failed: did not converge"):
+        estimator(torch.randn(4, 3))
+
+
+@pytest.mark.parametrize("estimator", [cumulative_energy_90, nuclear_norm_ratio])
+def test_non_2d_input_rejected(estimator):
+    with pytest.raises(ValueError, match="Expected 2D matrix, got 1D"):
+        estimator(torch.randn(5))
