@@ -1,8 +1,12 @@
 name: Publish to PyPI
 
+# Pushing a tag v* builds the package, publishes it to PyPI and creates the
+# GitHub release with the same files, each with a sigstore keyless signature
+# (`.sig` + `.pem`). Check a file with:
+#   cosign verify-blob <file> --signature <file>.sig --certificate <file>.pem \
+#     --certificate-identity-regexp 'https://github.com/Javihaus/ndt/' \
+#     --certificate-oidc-issuer https://token.actions.githubusercontent.com
 on:
-  release:
-    types: [published]
   push:
     tags:
       - 'v*'
@@ -11,29 +15,68 @@ permissions:
   contents: read
 
 jobs:
-  build-and-publish:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: '3.10'
+          python-version: '3.12'
 
-      - name: Install build dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install build twine
+      - name: Install the build tool (pinned by hash)
+        run: pip install --require-hashes -r .github/requirements/build.txt
 
       - name: Build package
         run: python -m build
 
-      - name: Check package
-        run: twine check dist/*
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: dist
+          path: dist
 
-      - name: Publish to PyPI
+  pypi:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: dist
+          path: dist
+      - uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # release/v1
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+  github-release:
+    needs: pypi
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # create the release and upload its files
+      id-token: write   # keyless sigstore signing
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: dist
+          path: dist
+      - uses: sigstore/cosign-installer@d58896d6a1865668819e1d91763c7751a165e159 # v3.9.2
+        with:
+          # cosign 3.x writes the new bundle format and drops the detached
+          # .sig/.pem files that Scorecard's Signed-Releases check looks for.
+          cosign-release: v2.6.5
+      - name: Sign each file with sigstore (keyless)
+        run: |
+          for f in dist/*; do
+            cosign sign-blob --yes \
+              --output-signature "$f.sig" \
+              --output-certificate "$f.pem" \
+              "$f"
+          done
+      - name: Create the GitHub release
         env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-        run: twine upload dist/*
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/* --repo "$GITHUB_REPOSITORY" \
+            --title "ndtracker $GITHUB_REF_NAME" --generate-notes

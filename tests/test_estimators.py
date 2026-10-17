@@ -152,3 +152,20 @@ class TestComputeAllMetrics:
         """Should raise error for invalid input."""
         with pytest.raises(ValueError, match="Expected 2D matrix"):
             compute_all_metrics(torch.randn(10, 20, 30))
+
+
+@pytest.mark.parametrize(
+    "estimator",
+    [
+        stable_rank,
+        participation_ratio,
+        cumulative_energy_90,
+        nuclear_norm_ratio,
+        compute_all_metrics,
+    ],
+)
+@pytest.mark.parametrize("shape", [(0, 5), (5, 0), (0, 0)])
+def test_empty_matrix_raises_value_error(estimator, shape):
+    """An empty matrix has no singular values: every estimator rejects it."""
+    with pytest.raises(ValueError, match="non-empty"):
+        estimator(torch.zeros(shape))

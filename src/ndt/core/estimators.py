@@ -41,6 +41,9 @@ def stable_rank(matrix: torch.Tensor, eps: float = 1e-10) -> float:
     if matrix.ndim != 2:
         raise ValueError(f"Expected 2D matrix, got {matrix.ndim}D")
 
+    if matrix.numel() == 0:
+        raise ValueError(f"Expected a non-empty matrix, got shape {tuple(matrix.shape)}")
+
     if torch.isnan(matrix).any() or torch.isinf(matrix).any():
         raise ValueError("Matrix contains NaN or Inf values")
 
@@ -84,6 +87,9 @@ def participation_ratio(matrix: torch.Tensor, eps: float = 1e-10) -> float:
     if matrix.ndim != 2:
         raise ValueError(f"Expected 2D matrix, got {matrix.ndim}D")
 
+    if matrix.numel() == 0:
+        raise ValueError(f"Expected a non-empty matrix, got shape {tuple(matrix.shape)}")
+
     with torch.no_grad():
         try:
             _, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)
@@ -126,6 +132,9 @@ def cumulative_energy_90(matrix: torch.Tensor, threshold: float = 0.90) -> int:
     """
     if matrix.ndim != 2:
         raise ValueError(f"Expected 2D matrix, got {matrix.ndim}D")
+
+    if matrix.numel() == 0:
+        raise ValueError(f"Expected a non-empty matrix, got shape {tuple(matrix.shape)}")
 
     if not 0 < threshold <= 1:
         raise ValueError(f"Threshold must be in (0, 1], got {threshold}")
@@ -179,6 +188,9 @@ def nuclear_norm_ratio(matrix: torch.Tensor, eps: float = 1e-10) -> float:
     if matrix.ndim != 2:
         raise ValueError(f"Expected 2D matrix, got {matrix.ndim}D")
 
+    if matrix.numel() == 0:
+        raise ValueError(f"Expected a non-empty matrix, got shape {tuple(matrix.shape)}")
+
     with torch.no_grad():
         try:
             _, singular_values, _ = torch.linalg.svd(matrix, full_matrices=False)
@@ -218,6 +230,9 @@ def compute_all_metrics(
     """
     if matrix.ndim != 2:
         raise ValueError(f"Expected 2D matrix, got {matrix.ndim}D")
+
+    if matrix.numel() == 0:
+        raise ValueError(f"Expected a non-empty matrix, got shape {tuple(matrix.shape)}")
 
     with torch.no_grad():
         # Compute SVD once for all metrics
