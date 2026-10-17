@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/ndt-logo.svg" alt="ndt" width="140">
+<img src="https://raw.githubusercontent.com/Javihaus/ndt/main/docs/assets/ndt-logo.svg" alt="ndt" width="140">
 
 # Neural Dimensionality Tracker
 
@@ -12,7 +12,7 @@
 
 <div align="center">
 
-<img src="docs/assets/ndt-overview.png" alt="Two real training runs. Both losses go down, but ndt shows run A using about 13 dimensions with 96% accuracy while run B stays collapsed at 1 to 3 dimensions with 77% accuracy. ndt also tests a jump detector on known data: it finds a planted jump but also fires on pure noise, so the verdict is NOT VALID." width="100%">
+<img src="https://raw.githubusercontent.com/Javihaus/ndt/main/docs/assets/ndt-overview.png" alt="Two real training runs. Both losses go down, but ndt shows run A using about 13 dimensions with 96% accuracy while run B stays collapsed at 1 to 3 dimensions with 77% accuracy. ndt also tests a jump detector on known data: it finds a planted jump but also fires on pure noise, so the verdict is NOT VALID." width="100%">
 
 <br>
 
@@ -216,11 +216,11 @@ The conclusion is not that transitions never happen. It is that a detection is a
 
 ## Examples
 
-Complete, runnable scripts live in [examples/](examples/):
+Complete, runnable scripts live in [examples/](https://github.com/Javihaus/ndt/tree/main/examples):
 
-- [`01_quickstart_mnist.py`](examples/01_quickstart_mnist.py): basic MLP on MNIST
-- [`02_cnn_cifar10.py`](examples/02_cnn_cifar10.py): CNN on CIFAR-10
-- [`03_reproduce_tds_experiment.py`](examples/03_reproduce_tds_experiment.py): reproduces the 8000-step, 784-256-128-10 MNIST experiment from the Towards Data Science article, measurements every 5 steps
+- [`01_quickstart_mnist.py`](https://github.com/Javihaus/ndt/blob/main/examples/01_quickstart_mnist.py): basic MLP on MNIST
+- [`02_cnn_cifar10.py`](https://github.com/Javihaus/ndt/blob/main/examples/02_cnn_cifar10.py): CNN on CIFAR-10
+- [`03_reproduce_tds_experiment.py`](https://github.com/Javihaus/ndt/blob/main/examples/03_reproduce_tds_experiment.py): reproduces the 8000-step, 784-256-128-10 MNIST experiment from the Towards Data Science article, measurements every 5 steps
 
 <br>
 
@@ -241,13 +241,12 @@ Complete, runnable scripts live in [examples/](examples/):
 
 ## Contributing
 
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, the ruff-based lint and format checks, and the test layout. The validity tests run on pure NumPy and need no GPU.
+Contributions are welcome. See [CONTRIBUTING.md](https://github.com/Javihaus/ndt/blob/main/CONTRIBUTING.md) for setup, the ruff-based lint and format checks, and the test layout. The validity tests run on pure NumPy and need no GPU.
 
 <br>
 
 
 <div align="center">
 
-<sub> Copyright Javier Marín, 2025  |   Apache 2.0. See [LICENSE](LICENSE) <sub>
+<sub> Copyright Javier Marín, 2025  |   Apache 2.0. See [LICENSE](https://github.com/Javihaus/ndt/blob/main/LICENSE). <sub>
 
-</div> 
