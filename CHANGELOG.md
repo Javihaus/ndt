@@ -5,6 +5,31 @@ All notable changes to the Neural Dimensionality Tracker will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased -- Supply chain
+
+### Fixed
+- **Scorecard workflow** failed on every run: `ossf/scorecard-action` v2.4.0 pulls
+  its image from `gcr.io`, which now refuses the request. Moved to v2.4.4.
+- **Empty matrices** (a zero dimension) crashed every estimator with `IndexError`;
+  they now raise `ValueError` like the other invalid inputs. Found while writing the
+  fuzz harness.
+
+### Changed
+- **Minimum versions with no known vulnerabilities**: `torch>=2.13.0` (23 advisories
+  below it) and, in `requirements.txt`, `scikit-learn>=1.5.0`.
+- **CI installs pinned by hash**: tests, docs, fuzzing and the build install from
+  `.github/requirements/*.txt` with `--require-hashes`, and the package itself with
+  `--no-deps`. Dependabot keeps those files current.
+- **Releases**: a tag `v*` builds the package, publishes it with
+  `pypa/gh-action-pypi-publish`, and creates the GitHub release with every file
+  signed by sigstore (`.sig` + `.pem`). The `release: published` trigger is gone, so a
+  release is no longer published twice.
+
+### Added
+- **Fuzzing**: `fuzz/fuzz_estimators.py` (Atheris) feeds arbitrary matrices to the
+  five estimators; CI runs it for two minutes on pull requests that touch
+  `src/ndt/core` and weekly.
+
 ## 2.0.0 -- The validity harness
 
 ### Changed
