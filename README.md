@@ -6,6 +6,8 @@
 
 ## Is my model's representation healthy as it trains, or is it collapsing?
 
+<img src="docs/assets/ndt-overview.png" alt="Two real training runs. Both losses go down, but ndt shows run A using about 13 dimensions with 96% accuracy while run B stays collapsed at 1 to 3 dimensions with 77% accuracy. ndt also tests a jump detector on known data: it finds a planted jump but also fires on pure noise, so the verdict is NOT VALID." width="100%">
+
 [![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12-469BA7?style=flat-square)](https://github.com/Javihaus/ndt)
 [![Docs](https://img.shields.io/badge/docs-javihaus.github.io%2Fndt-005765?style=flat-square)](https://javihaus.github.io/ndt)
 [![PyPI](https://img.shields.io/pypi/v/ndtracker?style=flat-square&color=005765&label=pypi)](https://pypi.org/project/ndtracker/)
