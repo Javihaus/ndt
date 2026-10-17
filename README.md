@@ -7,12 +7,11 @@
 ## Is my model's representation healthy as it trains, or is it collapsing?
 
 [![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12-469BA7?style=flat-square)](https://github.com/Javihaus/ndt)
-[![CI](https://img.shields.io/github/actions/workflow/status/Javihaus/ndt/tests.yml?branch=main&label=CI&style=flat-square&color=469BA7)](https://github.com/Javihaus/ndt/actions)
 [![Docs](https://img.shields.io/badge/docs-javihaus.github.io%2Fndt-005765?style=flat-square)](https://javihaus.github.io/ndt)
 [![PyPI](https://img.shields.io/pypi/v/ndtracker?style=flat-square&color=005765&label=pypi)](https://pypi.org/project/ndtracker/)
-[![License](https://img.shields.io/badge/License-Apache_2.0-012731.svg?style=flat-square)](LICENSE)
 [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/Javihaus/ndt?style=flat-square&label=OpenSSF%20Scorecard)](https://scorecard.dev/viewer/?uri=github.com/Javihaus/ndt)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13530/badge)](https://www.bestpractices.dev/projects/13530)
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-012731.svg?style=flat-square)](LICENSE)
 
 [Documentation](https://javihaus.github.io/ndt) · [Tutorials](#tutorials) · [The finding](#the-finding) · [Examples](examples/) · [Contributing](CONTRIBUTING.md)
 
