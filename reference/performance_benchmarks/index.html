@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2607,15 +2607,15 @@
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">model</span><span class="p">,</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">layer1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">conv1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layer2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">conv1</span><span class="p">,</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            <span class="n">model</span><span class="o">.</span><span class="n">layer3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">conv1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layer4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">conv1</span><span class="p">],</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">,</span> <span class="s2">&quot;L2&quot;</span><span class="p">,</span> <span class="s2">&quot;L3&quot;</span><span class="p">,</span> <span class="s2">&quot;L4&quot;</span><span class="p">]</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"L1"</span><span class="p">,</span> <span class="s2">"L2"</span><span class="p">,</span> <span class="s2">"L3"</span><span class="p">,</span> <span class="s2">"L4"</span><span class="p">]</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">)</span>  <span class="c1"># Tracks 4 layers, ~10x faster initialization</span>
 </span></code></pre></div>
 <h3 id="3-use-hdf5-for-large-datasets">3. Use HDF5 for Large Datasets<a class="headerlink" href="#3-use-hdf5-for-large-datasets" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># CSV for small datasets</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">export_to_csv</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;results.csv&quot;</span><span class="p">)</span>  <span class="c1"># 1.8 MB</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">export_to_csv</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">"results.csv"</span><span class="p">)</span>  <span class="c1"># 1.8 MB</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># HDF5 for large datasets (10x smaller)</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;results.h5&quot;</span><span class="p">)</span>  <span class="c1"># 0.18 MB</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">"results.h5"</span><span class="p">)</span>  <span class="c1"># 0.18 MB</span>
 </span></code></pre></div>
 <h3 id="4-disable-jump-detection-if-not-needed">4. Disable Jump Detection (if not needed)<a class="headerlink" href="#4-disable-jump-detection-if-not-needed" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># With jump detection</span>
@@ -2689,7 +2689,7 @@
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">cd</span><span class="w"> </span>ndt
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Install with dev dependencies</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[dev]"</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># Run benchmarks</span>
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>python<span class="w"> </span>benchmarks/run_all_benchmarks.py
@@ -2790,7 +2790,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

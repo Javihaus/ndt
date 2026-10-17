@@ -2,166 +2,166 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://javihaus.github.io/ndt/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/CONTRIBUTING/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/SUMMARY/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/analysis/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/analysis/activation_analysis/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/analysis/feature_visualization/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/architectures/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/architectures/base/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/architectures/cnn/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/architectures/mlp/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/architectures/registry/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/architectures/transformer/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/architectures/vit/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/core/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/core/estimators/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/core/hooks/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/core/jump_detector/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/core/tracker/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/export/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/export/csv/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/export/hdf5/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/export/json/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/utils/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/utils/config/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/utils/logging/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/validity/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/validity/fixtures/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/validity/harness/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/visualization/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/visualization/interactive/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/api/ndt/visualization/plots/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/concepts/how-it-works/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/getting-started/installation/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/getting-started/quickstart/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/guides/architecture_support/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/guides/examples_gallery/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/guides/tds_reproduction/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/reference/performance_benchmarks/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://javihaus.github.io/ndt/reference/troubleshooting/</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-10-17</lastmod>
     </url>
 </urlset>

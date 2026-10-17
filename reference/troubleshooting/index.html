@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2128,7 +2128,7 @@
 <hr />
 <h3 id="issue-import-error-after-installation">Issue: Import error after installation<a class="headerlink" href="#issue-import-error-after-installation" title="Permanent link">&para;</a></h3>
 <p><strong>Error message:</strong>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;ndt&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">'ndt'</span>
 </span></code></pre></div></p>
 <p><strong>Solutions:</strong></p>
 <ol>
@@ -2170,7 +2170,7 @@
    <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">model</span><span class="p">,</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">custom_layer1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">custom_layer2</span><span class="p">],</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Layer1&quot;</span><span class="p">,</span> <span class="s2">&quot;Layer2&quot;</span><span class="p">]</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"Layer1"</span><span class="p">,</span> <span class="s2">"Layer2"</span><span class="p">]</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
@@ -2178,7 +2178,7 @@
 <p><strong>Check for custom layers:</strong>
    <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Custom layers need explicit specification</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_modules</span><span class="p">():</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">module</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">module</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
 </ol>
@@ -2193,14 +2193,14 @@
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">model</span><span class="p">,</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">layer1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layer2</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layer3</span><span class="p">],</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Layer1&quot;</span><span class="p">,</span> <span class="s2">&quot;Layer2&quot;</span><span class="p">]</span>  <span class="c1"># Only 2 names for 3 layers!</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"Layer1"</span><span class="p">,</span> <span class="s2">"Layer2"</span><span class="p">]</span>  <span class="c1"># Only 2 names for 3 layers!</span>
 </span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">)</span>
 </span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1"># Correct</span>
 </span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
 </span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="n">model</span><span class="p">,</span>
 </span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">layer1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layer2</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layer3</span><span class="p">],</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Layer1&quot;</span><span class="p">,</span> <span class="s2">&quot;Layer2&quot;</span><span class="p">,</span> <span class="s2">&quot;Layer3&quot;</span><span class="p">]</span>  <span class="c1"># 3 names for 3 layers</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"Layer1"</span><span class="p">,</span> <span class="s2">"Layer2"</span><span class="p">,</span> <span class="s2">"Layer3"</span><span class="p">]</span>  <span class="c1"># 3 names for 3 layers</span>
 </span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="p">)</span>
 </span></code></pre></div></p>
 <hr />
@@ -2225,7 +2225,7 @@
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
 </span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="n">model</span><span class="p">,</span>
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">layer1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layer4</span><span class="p">],</span>  <span class="c1"># Just 2 layers</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;First&quot;</span><span class="p">,</span> <span class="s2">&quot;Last&quot;</span><span class="p">]</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"First"</span><span class="p">,</span> <span class="s2">"Last"</span><span class="p">]</span>
 </span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
@@ -2236,7 +2236,7 @@
 </li>
 <li>
 <p><strong>Move tracker to CPU:</strong>
-   <div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">))</span>
+   <div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cpu"</span><span class="p">))</span>
 </span></code></pre></div></p>
 </li>
 </ol>
@@ -2249,7 +2249,7 @@
 <p><strong>Solution:</strong> NDT automatically flattens activations. If this error occurs:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Check layer output shape</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">check_shape_hook</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output shape: </span><span class="si">{</span><span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Output shape: </span><span class="si">{</span><span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
 </span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="n">model</span><span class="o">.</span><span class="n">conv1</span><span class="o">.</span><span class="n">register_forward_hook</span><span class="p">(</span><span class="n">check_shape_hook</span><span class="p">)</span>
 </span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
@@ -2334,7 +2334,7 @@
    <div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Check for NaN/Inf</span>
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">results</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">for</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">layer_name</span><span class="si">}</span><span class="s2"> NaN count: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">layer_name</span><span class="si">}</span><span class="s2"> NaN count: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
 </span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="c1"># If NaN present, check model for:</span>
 </span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="c1"># - Exploding gradients</span>
@@ -2364,18 +2364,18 @@
 <p><strong>Check results exist:</strong>
    <div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">results</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">for</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">layer_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> measurements&quot;</span><span class="p">)</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">layer_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> measurements"</span><span class="p">)</span>
 </span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  WARNING: No data for </span><span class="si">{</span><span class="n">layer_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  WARNING: No data for </span><span class="si">{</span><span class="n">layer_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Verify metric name:</strong>
    <div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># Wrong</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;stable-rank&quot;</span><span class="p">)</span>  <span class="c1"># Wrong hyphen!</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">"stable-rank"</span><span class="p">)</span>  <span class="c1"># Wrong hyphen!</span>
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
 </span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c1"># Correct</span>
-</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;stable_rank&quot;</span><span class="p">)</span>  <span class="c1"># Underscore</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">"stable_rank"</span><span class="p">)</span>  <span class="c1"># Underscore</span>
 </span></code></pre></div></p>
 </li>
 <li>
@@ -2383,9 +2383,9 @@
    <div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">get_backend</span><span class="p">())</span>
 </span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
-</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1"># If &#39;agg&#39; (non-interactive), use:</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1"># If 'agg' (non-interactive), use:</span>
 </span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;output.png&quot;</span><span class="p">)</span>  <span class="c1"># Don&#39;t use plt.show()</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"output.png"</span><span class="p">)</span>  <span class="c1"># Don't use plt.show()</span>
 </span></code></pre></div></p>
 </li>
 </ol>
@@ -2401,15 +2401,15 @@
 </span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
 </span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="c1"># In script:</span>
-</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;dashboard.html&quot;</span><span class="p">)</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">"dashboard.html"</span><span class="p">)</span>
 </span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
-</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;dashboard.html&quot;</span><span class="p">)</span>
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"dashboard.html"</span><span class="p">)</span>
 </span></code></pre></div></p>
 <hr />
 <h2 id="export-issues">Export Issues<a class="headerlink" href="#export-issues" title="Permanent link">&para;</a></h2>
 <h3 id="issue-permission-denied-when-exporting">Issue: "Permission denied" when exporting<a class="headerlink" href="#issue-permission-denied-when-exporting" title="Permanent link">&para;</a></h3>
 <p><strong>Error message:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>PermissionError: [Errno 13] Permission denied: &#39;results.csv&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>PermissionError: [Errno 13] Permission denied: 'results.csv'
 </span></code></pre></div></p>
 <p><strong>Solutions:</strong></p>
 <ol>
@@ -2421,8 +2421,8 @@
 <li>
 <p><strong>Directory doesn't exist:</strong>
    <div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="n">export_to_csv</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;outputs/results.csv&quot;</span><span class="p">)</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">"outputs"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="n">export_to_csv</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">"outputs/results.csv"</span><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
 <li>
@@ -2431,7 +2431,7 @@
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>ls<span class="w"> </span>-la<span class="w"> </span>.
 </span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
 </span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="c1"># Use writable directory</span>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>export_to_csv<span class="o">(</span>results,<span class="w"> </span><span class="s2">&quot;/tmp/results.csv&quot;</span><span class="o">)</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>export_to_csv<span class="o">(</span>results,<span class="w"> </span><span class="s2">"/tmp/results.csv"</span><span class="o">)</span>
 </span></code></pre></div></p>
 </li>
 </ol>
@@ -2445,14 +2445,14 @@
 <li>
 <p><strong>File write was interrupted:</strong>
    <div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># Use context manager for safety</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s2">&quot;results.h5&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s2">"results.h5"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 </span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>    <span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Use built-in export function:</strong>
    <div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># This handles errors automatically</span>
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;results.h5&quot;</span><span class="p">)</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">"results.h5"</span><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
 <li>
@@ -2477,13 +2477,13 @@
 <p><strong>Reduce tracked layers:</strong>
    <div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># Count layers being tracked</span>
 </span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="n">results</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
-</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tracking </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> layers&quot;</span><span class="p">)</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tracking </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> layers"</span><span class="p">)</span>
 </span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
 </span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="c1"># If &gt;20 layers, reduce:</span>
 </span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
 </span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>    <span class="n">model</span><span class="p">,</span>
 </span><span id="__span-41-8"><a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">layer1</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">layer4</span><span class="p">],</span>  <span class="c1"># Track only 2</span>
-</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;First&quot;</span><span class="p">,</span> <span class="s2">&quot;Last&quot;</span><span class="p">]</span>
+</span><span id="__span-41-9"><a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"First"</span><span class="p">,</span> <span class="s2">"Last"</span><span class="p">]</span>
 </span><span id="__span-41-10"><a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
@@ -2506,7 +2506,7 @@
 </span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="n">tracker</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
 </span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a>
 </span><span id="__span-43-9"><a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a><span class="n">profiler</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
-</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="n">profiler</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;cumtime&#39;</span><span class="p">)</span>
+</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="n">profiler</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="s1">'cumtime'</span><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
 </ol>
@@ -2530,7 +2530,7 @@
 </span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>    <span class="c1"># Export every 10 epochs and clear</span>
 </span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>    <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 </span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>        <span class="n">results</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
-</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>        <span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;results_epoch</span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">.h5&quot;</span><span class="p">)</span>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>        <span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"results_epoch</span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">.h5"</span><span class="p">)</span>
 </span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>        <span class="n">tracker</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># Clear internal buffers</span>
 </span></code></pre></div></p>
 </li>
@@ -2540,7 +2540,7 @@
 </span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
 </span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>    <span class="n">model</span><span class="p">,</span>
 </span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>    <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">layer1</span><span class="p">],</span>  <span class="c1"># Only one layer</span>
-</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Layer1&quot;</span><span class="p">]</span>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"Layer1"</span><span class="p">]</span>
 </span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
@@ -2571,12 +2571,12 @@
 </span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>
 </span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="c1"># For DataParallel</span>
 </span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">DataParallel</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span><span class="p">))</span>
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda:0"</span><span class="p">))</span>
 </span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>
 </span><span id="__span-49-7"><a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a><span class="c1"># For DistributedDataParallel</span>
 </span><span id="__span-49-8"><a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">DistributedDataParallel</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</span><span id="__span-49-9"><a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a><span class="n">local_rank</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LOCAL_RANK&quot;</span><span class="p">])</span>
-</span><span id="__span-49-10"><a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cuda:</span><span class="si">{</span><span class="n">local_rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+</span><span id="__span-49-9"><a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a><span class="n">local_rank</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"LOCAL_RANK"</span><span class="p">])</span>
+</span><span id="__span-49-10"><a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">module</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="sa">f</span><span class="s2">"cuda:</span><span class="si">{</span><span class="n">local_rank</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
 </span></code></pre></div></p>
 <hr />
 <h2 id="framework-integration-issues">Framework Integration Issues<a class="headerlink" href="#framework-integration-issues" title="Permanent link">&para;</a></h2>
@@ -2609,7 +2609,7 @@
 </span><span id="__span-50-24"><a id="__codelineno-50-24" name="__codelineno-50-24" href="#__codelineno-50-24"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">on_train_end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-50-25"><a id="__codelineno-50-25" name="__codelineno-50-25" href="#__codelineno-50-25"></a>        <span class="c1"># Export results</span>
 </span><span id="__span-50-26"><a id="__codelineno-50-26" name="__codelineno-50-26" href="#__codelineno-50-26"></a>        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
-</span><span id="__span-50-27"><a id="__codelineno-50-27" name="__codelineno-50-27" href="#__codelineno-50-27"></a>        <span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;results.h5&quot;</span><span class="p">)</span>
+</span><span id="__span-50-27"><a id="__codelineno-50-27" name="__codelineno-50-27" href="#__codelineno-50-27"></a>        <span class="n">export_to_hdf5</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">"results.h5"</span><span class="p">)</span>
 </span><span id="__span-50-28"><a id="__codelineno-50-28" name="__codelineno-50-28" href="#__codelineno-50-28"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div></p>
 <hr />
@@ -2619,7 +2619,7 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">BertModel</span>
 </span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ndt</span><span class="w"> </span><span class="kn">import</span> <span class="n">HighFrequencyTracker</span>
 </span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>
-</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">BertModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;bert-base-uncased&quot;</span><span class="p">)</span>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">BertModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">"bert-base-uncased"</span><span class="p">)</span>
 </span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>
 </span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="c1"># Print model structure to find layers</span>
 </span><span id="__span-51-7"><a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_modules</span><span class="p">():</span>
@@ -2632,7 +2632,7 @@
 </span><span id="__span-51-14"><a id="__codelineno-51-14" name="__codelineno-51-14" href="#__codelineno-51-14"></a>        <span class="n">model</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">layer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">intermediate</span><span class="o">.</span><span class="n">dense</span><span class="p">,</span>
 </span><span id="__span-51-15"><a id="__codelineno-51-15" name="__codelineno-51-15" href="#__codelineno-51-15"></a>        <span class="n">model</span><span class="o">.</span><span class="n">encoder</span><span class="o">.</span><span class="n">layer</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">intermediate</span><span class="o">.</span><span class="n">dense</span>
 </span><span id="__span-51-16"><a id="__codelineno-51-16" name="__codelineno-51-16" href="#__codelineno-51-16"></a>    <span class="p">],</span>
-</span><span id="__span-51-17"><a id="__codelineno-51-17" name="__codelineno-51-17" href="#__codelineno-51-17"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L0_FFN&quot;</span><span class="p">,</span> <span class="s2">&quot;L11_FFN&quot;</span><span class="p">]</span>
+</span><span id="__span-51-17"><a id="__codelineno-51-17" name="__codelineno-51-17" href="#__codelineno-51-17"></a>    <span class="n">layer_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"L0_FFN"</span><span class="p">,</span> <span class="s2">"L11_FFN"</span><span class="p">]</span>
 </span><span id="__span-51-18"><a id="__codelineno-51-18" name="__codelineno-51-18" href="#__codelineno-51-18"></a><span class="p">)</span>
 </span></code></pre></div></p>
 <hr />
@@ -2641,7 +2641,7 @@
 <p><strong>Cause:</strong> Z-score threshold too high</p>
 <p><strong>Solution:</strong>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="c1"># Default threshold is 2.0, try lowering</span>
-</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;stable_rank&quot;</span><span class="p">,</span> <span class="n">threshold_z</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">"stable_rank"</span><span class="p">,</span> <span class="n">threshold_z</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
 </span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>
 </span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="c1"># Or adjust during initialization</span>
 </span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span>
@@ -2657,7 +2657,7 @@
 <ol>
 <li>
 <p><strong>Increase threshold:</strong>
-   <div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;stable_rank&quot;</span><span class="p">,</span> <span class="n">threshold_z</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
+   <div class="language-python highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">"stable_rank"</span><span class="p">,</span> <span class="n">threshold_z</span><span class="o">=</span><span class="mf">3.0</span><span class="p">)</span>
 </span></code></pre></div></p>
 </li>
 <li>
@@ -2708,21 +2708,21 @@
 <h3 id="3-modifying-model-after-tracker-creation">3. Modifying model after tracker creation<a class="headerlink" href="#3-modifying-model-after-tracker-creation" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="c1"># Wrong: Model changed after tracker created</span>
 </span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">&quot;new_layer&quot;</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>  <span class="c1"># Tracker doesn&#39;t know!</span>
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">"new_layer"</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>  <span class="c1"># Tracker doesn't know!</span>
 </span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>
 </span><span id="__span-58-5"><a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="c1"># Correct: Create tracker after model is finalized</span>
-</span><span id="__span-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">&quot;new_layer&quot;</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>
+</span><span id="__span-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">"new_layer"</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">))</span>
 </span><span id="__span-58-7"><a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">HighFrequencyTracker</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>  <span class="c1"># Now tracks all layers</span>
 </span></code></pre></div>
 <hr />
 <h3 id="4-using-wrong-metric-names">4. Using wrong metric names<a class="headerlink" href="#4-using-wrong-metric-names" title="Permanent link">&para;</a></h3>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="c1"># Wrong</span>
-</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;stable-rank&quot;</span><span class="p">)</span>  <span class="c1"># Hyphen!</span>
-</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;pr&quot;</span><span class="p">)</span>  <span class="c1"># Abbreviation!</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">"stable-rank"</span><span class="p">)</span>  <span class="c1"># Hyphen!</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">"pr"</span><span class="p">)</span>  <span class="c1"># Abbreviation!</span>
 </span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>
 </span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="c1"># Correct</span>
-</span><span id="__span-59-6"><a id="__codelineno-59-6" name="__codelineno-59-6" href="#__codelineno-59-6"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;stable_rank&quot;</span><span class="p">)</span>  <span class="c1"># Underscore</span>
-</span><span id="__span-59-7"><a id="__codelineno-59-7" name="__codelineno-59-7" href="#__codelineno-59-7"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">&quot;participation_ratio&quot;</span><span class="p">)</span>  <span class="c1"># Full name</span>
+</span><span id="__span-59-6"><a id="__codelineno-59-6" name="__codelineno-59-6" href="#__codelineno-59-6"></a><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_phases</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">"stable_rank"</span><span class="p">)</span>  <span class="c1"># Underscore</span>
+</span><span id="__span-59-7"><a id="__codelineno-59-7" name="__codelineno-59-7" href="#__codelineno-59-7"></a><span class="n">jumps</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">detect_jumps</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="s2">"participation_ratio"</span><span class="p">)</span>  <span class="c1"># Full name</span>
 </span></code></pre></div>
 <hr />
 <h2 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
@@ -2766,7 +2766,7 @@
 </span><span id="__span-62-20"><a id="__codelineno-62-20" name="__codelineno-62-20" href="#__codelineno-62-20"></a><span class="c1"># Check results</span>
 </span><span id="__span-62-21"><a id="__codelineno-62-21" name="__codelineno-62-21" href="#__codelineno-62-21"></a><span class="n">results</span> <span class="o">=</span> <span class="n">tracker</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </span><span id="__span-62-22"><a id="__codelineno-62-22" name="__codelineno-62-22" href="#__codelineno-62-22"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="__span-62-23"><a id="__codelineno-62-23" name="__codelineno-62-23" href="#__codelineno-62-23"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> measurements&quot;</span><span class="p">)</span>
+</span><span id="__span-62-23"><a id="__codelineno-62-23" name="__codelineno-62-23" href="#__codelineno-62-23"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> measurements"</span><span class="p">)</span>
 </span><span id="__span-62-24"><a id="__codelineno-62-24" name="__codelineno-62-24" href="#__codelineno-62-24"></a>
 </span><span id="__span-62-25"><a id="__codelineno-62-25" name="__codelineno-62-25" href="#__codelineno-62-25"></a><span class="n">tracker</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div>
@@ -2890,7 +2890,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

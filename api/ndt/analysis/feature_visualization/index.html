@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1275,11 +1275,11 @@ has learned at different layers and training stages.</p>
 <span class="normal"><a href="#__codelineno-0-42">42</a></span>
 <span class="normal"><a href="#__codelineno-0-43">43</a></span>
 <span class="normal"><a href="#__codelineno-0-44">44</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the feature visualizer.</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="sd">"""Initialize the feature visualizer.</span>
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>
 </span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="sd">    Args:</span>
 </span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="sd">        model: The neural network model to visualize</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="sd">    """</span>
 </span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
 </span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">gradients</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 </span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">activations</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1356,11 +1356,11 @@ has learned at different layers and training stages.</p>
 <span class="normal"><a href="#__codelineno-0-70">70</a></span>
 <span class="normal"><a href="#__codelineno-0-71">71</a></span>
 <span class="normal"><a href="#__codelineno-0-72">72</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="k">def</span><span class="w"> </span><span class="nf">register_hooks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_names</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Register hooks on specified layers.</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">    </span><span class="sd">"""Register hooks on specified layers.</span>
 </span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a>
 </span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="sd">    Args:</span>
 </span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="sd">        layer_names: Dictionary mapping names to layer modules</span>
-</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="sd">    """</span>
 </span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70"></a>    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">layer_names</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 </span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a>        <span class="n">hook</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">register_forward_hook</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_save_activation</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 </span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hook</span><span class="p">)</span>
@@ -1393,7 +1393,7 @@ has learned at different layers and training stages.</p>
 <span class="normal"><a href="#__codelineno-0-78">78</a></span>
 <span class="normal"><a href="#__codelineno-0-79">79</a></span>
 <span class="normal"><a href="#__codelineno-0-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="k">def</span><span class="w"> </span><span class="nf">remove_hooks</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Remove all registered hooks.&quot;&quot;&quot;</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">    </span><span class="sd">"""Remove all registered hooks."""</span>
 </span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="k">for</span> <span class="n">hook</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hooks</span><span class="p">:</span>
 </span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a>        <span class="n">hook</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
 </span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">hooks</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
@@ -1409,7 +1409,7 @@ has learned at different layers and training stages.</p>
 
 
 <h6 id="ndt.analysis.feature_visualization.FeatureVisualizer.grad_cam" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">grad_cam</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">target_layer</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;target&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span></code>
+            <code class="highlight language-python"><span class="n">grad_cam</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">target_layer</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'target'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span></code>
 
 <a href="#ndt.analysis.feature_visualization.FeatureVisualizer.grad_cam" class="headerlink" title="Permanent link">&para;</a></h6>
 
@@ -1612,9 +1612,9 @@ via Gradient-based Localization", ICCV 2017</p>
 </span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a>    <span class="n">input_tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
 </span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85"></a>    <span class="n">target_class</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
 </span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86"></a>    <span class="n">target_layer</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
-</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a>    <span class="n">layer_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;target&quot;</span><span class="p">,</span>
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a>    <span class="n">layer_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"target"</span><span class="p">,</span>
 </span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate Grad-CAM visualization.</span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="w">    </span><span class="sd">"""Generate Grad-CAM visualization.</span>
 </span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a>
 </span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="sd">    Grad-CAM uses gradients flowing into the target layer to produce</span>
 </span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="sd">    a coarse localization map highlighting important regions.</span>
@@ -1629,9 +1629,9 @@ via Gradient-based Localization", ICCV 2017</p>
 </span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">        CAM heatmap as numpy array</span>
 </span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102"></a>
 </span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">    References:</span>
-</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">        Selvaraju et al., &quot;Grad-CAM: Visual Explanations from Deep Networks</span>
-</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="sd">        via Gradient-based Localization&quot;, ICCV 2017</span>
-</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">        Selvaraju et al., "Grad-CAM: Visual Explanations from Deep Networks</span>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="sd">        via Gradient-based Localization", ICCV 2017</span>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="sd">    """</span>
 </span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 </span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108"></a>
 </span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="c1"># Register hooks</span>
@@ -1840,7 +1840,7 @@ the input pixels.</p>
 <span class="normal"><a href="#__codelineno-0-203">203</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-160"><a id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="k">def</span><span class="w"> </span><span class="nf">saliency_map</span><span class="p">(</span>
 </span><span id="__span-0-161"><a id="__codelineno-0-161" name="__codelineno-0-161"></a>    <span class="bp">self</span><span class="p">,</span> <span class="n">input_tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">absolute</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 </span><span id="__span-0-162"><a id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-</span><span id="__span-0-163"><a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate vanilla gradient saliency map.</span>
+</span><span id="__span-0-163"><a id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="w">    </span><span class="sd">"""Generate vanilla gradient saliency map.</span>
 </span><span id="__span-0-164"><a id="__codelineno-0-164" name="__codelineno-0-164"></a>
 </span><span id="__span-0-165"><a id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="sd">    Computes the gradient of the target class score with respect to</span>
 </span><span id="__span-0-166"><a id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="sd">    the input pixels.</span>
@@ -1852,7 +1852,7 @@ the input pixels.</p>
 </span><span id="__span-0-172"><a id="__codelineno-0-172" name="__codelineno-0-172"></a>
 </span><span id="__span-0-173"><a id="__codelineno-0-173" name="__codelineno-0-173"></a><span class="sd">    Returns:</span>
 </span><span id="__span-0-174"><a id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="sd">        Saliency map as numpy array</span>
-</span><span id="__span-0-175"><a id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-175"><a id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="sd">    """</span>
 </span><span id="__span-0-176"><a id="__codelineno-0-176" name="__codelineno-0-176"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 </span><span id="__span-0-177"><a id="__codelineno-0-177" name="__codelineno-0-177"></a>
 </span><span id="__span-0-178"><a id="__codelineno-0-178" name="__codelineno-0-178"></a>    <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">input_tensor</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -2076,7 +2076,7 @@ providing more stable attributions than vanilla gradients.</p>
 </span><span id="__span-0-209"><a id="__codelineno-0-209" name="__codelineno-0-209"></a>    <span class="n">baseline</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="__span-0-210"><a id="__codelineno-0-210" name="__codelineno-0-210"></a>    <span class="n">steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
 </span><span id="__span-0-211"><a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-</span><span id="__span-0-212"><a id="__codelineno-0-212" name="__codelineno-0-212"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute Integrated Gradients attribution.</span>
+</span><span id="__span-0-212"><a id="__codelineno-0-212" name="__codelineno-0-212"></a><span class="w">    </span><span class="sd">"""Compute Integrated Gradients attribution.</span>
 </span><span id="__span-0-213"><a id="__codelineno-0-213" name="__codelineno-0-213"></a>
 </span><span id="__span-0-214"><a id="__codelineno-0-214" name="__codelineno-0-214"></a><span class="sd">    Accumulates gradients along the path from baseline to input,</span>
 </span><span id="__span-0-215"><a id="__codelineno-0-215" name="__codelineno-0-215"></a><span class="sd">    providing more stable attributions than vanilla gradients.</span>
@@ -2091,8 +2091,8 @@ providing more stable attributions than vanilla gradients.</p>
 </span><span id="__span-0-224"><a id="__codelineno-0-224" name="__codelineno-0-224"></a><span class="sd">        Attribution map as numpy array</span>
 </span><span id="__span-0-225"><a id="__codelineno-0-225" name="__codelineno-0-225"></a>
 </span><span id="__span-0-226"><a id="__codelineno-0-226" name="__codelineno-0-226"></a><span class="sd">    References:</span>
-</span><span id="__span-0-227"><a id="__codelineno-0-227" name="__codelineno-0-227"></a><span class="sd">        Sundararajan et al., &quot;Axiomatic Attribution for Deep Networks&quot;, ICML 2017</span>
-</span><span id="__span-0-228"><a id="__codelineno-0-228" name="__codelineno-0-228"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-227"><a id="__codelineno-0-227" name="__codelineno-0-227"></a><span class="sd">        Sundararajan et al., "Axiomatic Attribution for Deep Networks", ICML 2017</span>
+</span><span id="__span-0-228"><a id="__codelineno-0-228" name="__codelineno-0-228"></a><span class="sd">    """</span>
 </span><span id="__span-0-229"><a id="__codelineno-0-229" name="__codelineno-0-229"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 </span><span id="__span-0-230"><a id="__codelineno-0-230" name="__codelineno-0-230"></a>
 </span><span id="__span-0-231"><a id="__codelineno-0-231" name="__codelineno-0-231"></a>    <span class="k">if</span> <span class="n">baseline</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -2240,7 +2240,7 @@ providing more stable attributions than vanilla gradients.</p>
 <span class="normal"><a href="#__codelineno-0-282">282</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-264"><a id="__codelineno-0-264" name="__codelineno-0-264"></a><span class="k">def</span><span class="w"> </span><span class="nf">attention_visualization</span><span class="p">(</span>
 </span><span id="__span-0-265"><a id="__codelineno-0-265" name="__codelineno-0-265"></a>    <span class="bp">self</span><span class="p">,</span> <span class="n">attention_weights</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">head_idx</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 </span><span id="__span-0-266"><a id="__codelineno-0-266" name="__codelineno-0-266"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-</span><span id="__span-0-267"><a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Visualize attention weights from transformer models.</span>
+</span><span id="__span-0-267"><a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="w">    </span><span class="sd">"""Visualize attention weights from transformer models.</span>
 </span><span id="__span-0-268"><a id="__codelineno-0-268" name="__codelineno-0-268"></a>
 </span><span id="__span-0-269"><a id="__codelineno-0-269" name="__codelineno-0-269"></a><span class="sd">    Args:</span>
 </span><span id="__span-0-270"><a id="__codelineno-0-270" name="__codelineno-0-270"></a><span class="sd">        attention_weights: Attention tensor (batch, heads, seq, seq)</span>
@@ -2248,7 +2248,7 @@ providing more stable attributions than vanilla gradients.</p>
 </span><span id="__span-0-272"><a id="__codelineno-0-272" name="__codelineno-0-272"></a>
 </span><span id="__span-0-273"><a id="__codelineno-0-273" name="__codelineno-0-273"></a><span class="sd">    Returns:</span>
 </span><span id="__span-0-274"><a id="__codelineno-0-274" name="__codelineno-0-274"></a><span class="sd">        Attention matrix as numpy array</span>
-</span><span id="__span-0-275"><a id="__codelineno-0-275" name="__codelineno-0-275"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-275"><a id="__codelineno-0-275" name="__codelineno-0-275"></a><span class="sd">    """</span>
 </span><span id="__span-0-276"><a id="__codelineno-0-276" name="__codelineno-0-276"></a>    <span class="k">if</span> <span class="n">head_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="__span-0-277"><a id="__codelineno-0-277" name="__codelineno-0-277"></a>        <span class="n">attn</span> <span class="o">=</span> <span class="n">attention_weights</span><span class="p">[:,</span> <span class="n">head_idx</span><span class="p">]</span>
 </span><span id="__span-0-278"><a id="__codelineno-0-278" name="__codelineno-0-278"></a>    <span class="k">else</span><span class="p">:</span>
@@ -2372,7 +2372,7 @@ providing more stable attributions than vanilla gradients.</p>
 <span class="normal"><a href="#__codelineno-0-305">305</a></span>
 <span class="normal"><a href="#__codelineno-0-306">306</a></span>
 <span class="normal"><a href="#__codelineno-0-307">307</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-284"><a id="__codelineno-0-284" name="__codelineno-0-284"></a><span class="k">def</span><span class="w"> </span><span class="nf">feature_maps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">activation</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
-</span><span id="__span-0-285"><a id="__codelineno-0-285" name="__codelineno-0-285"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract top-k feature maps from a convolutional layer.</span>
+</span><span id="__span-0-285"><a id="__codelineno-0-285" name="__codelineno-0-285"></a><span class="w">    </span><span class="sd">"""Extract top-k feature maps from a convolutional layer.</span>
 </span><span id="__span-0-286"><a id="__codelineno-0-286" name="__codelineno-0-286"></a>
 </span><span id="__span-0-287"><a id="__codelineno-0-287" name="__codelineno-0-287"></a><span class="sd">    Args:</span>
 </span><span id="__span-0-288"><a id="__codelineno-0-288" name="__codelineno-0-288"></a><span class="sd">        activation: Activation tensor (batch, channels, H, W)</span>
@@ -2380,7 +2380,7 @@ providing more stable attributions than vanilla gradients.</p>
 </span><span id="__span-0-290"><a id="__codelineno-0-290" name="__codelineno-0-290"></a>
 </span><span id="__span-0-291"><a id="__codelineno-0-291" name="__codelineno-0-291"></a><span class="sd">    Returns:</span>
 </span><span id="__span-0-292"><a id="__codelineno-0-292" name="__codelineno-0-292"></a><span class="sd">        List of feature map arrays</span>
-</span><span id="__span-0-293"><a id="__codelineno-0-293" name="__codelineno-0-293"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-293"><a id="__codelineno-0-293" name="__codelineno-0-293"></a><span class="sd">    """</span>
 </span><span id="__span-0-294"><a id="__codelineno-0-294" name="__codelineno-0-294"></a>    <span class="c1"># Compute activation magnitudes</span>
 </span><span id="__span-0-295"><a id="__codelineno-0-295" name="__codelineno-0-295"></a>    <span class="n">magnitudes</span> <span class="o">=</span> <span class="n">activation</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># (batch, channels)</span>
 </span><span id="__span-0-296"><a id="__codelineno-0-296" name="__codelineno-0-296"></a>
@@ -2604,7 +2604,7 @@ a target neuron.</p>
 </span><span id="__span-0-314"><a id="__codelineno-0-314" name="__codelineno-0-314"></a>    <span class="n">steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
 </span><span id="__span-0-315"><a id="__codelineno-0-315" name="__codelineno-0-315"></a>    <span class="n">lr</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
 </span><span id="__span-0-316"><a id="__codelineno-0-316" name="__codelineno-0-316"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-</span><span id="__span-0-317"><a id="__codelineno-0-317" name="__codelineno-0-317"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate input that maximizes a specific neuron&#39;s activation.</span>
+</span><span id="__span-0-317"><a id="__codelineno-0-317" name="__codelineno-0-317"></a><span class="w">    </span><span class="sd">"""Generate input that maximizes a specific neuron's activation.</span>
 </span><span id="__span-0-318"><a id="__codelineno-0-318" name="__codelineno-0-318"></a>
 </span><span id="__span-0-319"><a id="__codelineno-0-319" name="__codelineno-0-319"></a><span class="sd">    Uses gradient ascent to find an input that maximally activates</span>
 </span><span id="__span-0-320"><a id="__codelineno-0-320" name="__codelineno-0-320"></a><span class="sd">    a target neuron.</span>
@@ -2618,7 +2618,7 @@ a target neuron.</p>
 </span><span id="__span-0-328"><a id="__codelineno-0-328" name="__codelineno-0-328"></a>
 </span><span id="__span-0-329"><a id="__codelineno-0-329" name="__codelineno-0-329"></a><span class="sd">    Returns:</span>
 </span><span id="__span-0-330"><a id="__codelineno-0-330" name="__codelineno-0-330"></a><span class="sd">        Optimized input tensor</span>
-</span><span id="__span-0-331"><a id="__codelineno-0-331" name="__codelineno-0-331"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-331"><a id="__codelineno-0-331" name="__codelineno-0-331"></a><span class="sd">    """</span>
 </span><span id="__span-0-332"><a id="__codelineno-0-332" name="__codelineno-0-332"></a>    <span class="c1"># Initialize with random noise</span>
 </span><span id="__span-0-333"><a id="__codelineno-0-333" name="__codelineno-0-333"></a>    <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">*</span><span class="n">input_shape</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-0-334"><a id="__codelineno-0-334" name="__codelineno-0-334"></a>
@@ -2820,7 +2820,7 @@ final prediction.</p>
 <span class="normal"><a href="#__codelineno-0-421">421</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-370"><a id="__codelineno-0-370" name="__codelineno-0-370"></a><span class="k">def</span><span class="w"> </span><span class="nf">layer_conductance</span><span class="p">(</span>
 </span><span id="__span-0-371"><a id="__codelineno-0-371" name="__codelineno-0-371"></a>    <span class="bp">self</span><span class="p">,</span> <span class="n">input_tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">target_layer</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span>
 </span><span id="__span-0-372"><a id="__codelineno-0-372" name="__codelineno-0-372"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-</span><span id="__span-0-373"><a id="__codelineno-0-373" name="__codelineno-0-373"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute layer conductance attribution.</span>
+</span><span id="__span-0-373"><a id="__codelineno-0-373" name="__codelineno-0-373"></a><span class="w">    </span><span class="sd">"""Compute layer conductance attribution.</span>
 </span><span id="__span-0-374"><a id="__codelineno-0-374" name="__codelineno-0-374"></a>
 </span><span id="__span-0-375"><a id="__codelineno-0-375" name="__codelineno-0-375"></a><span class="sd">    Measures how much each neuron in a layer contributes to the</span>
 </span><span id="__span-0-376"><a id="__codelineno-0-376" name="__codelineno-0-376"></a><span class="sd">    final prediction.</span>
@@ -2832,7 +2832,7 @@ final prediction.</p>
 </span><span id="__span-0-382"><a id="__codelineno-0-382" name="__codelineno-0-382"></a>
 </span><span id="__span-0-383"><a id="__codelineno-0-383" name="__codelineno-0-383"></a><span class="sd">    Returns:</span>
 </span><span id="__span-0-384"><a id="__codelineno-0-384" name="__codelineno-0-384"></a><span class="sd">        Conductance values for each neuron</span>
-</span><span id="__span-0-385"><a id="__codelineno-0-385" name="__codelineno-0-385"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-385"><a id="__codelineno-0-385" name="__codelineno-0-385"></a><span class="sd">    """</span>
 </span><span id="__span-0-386"><a id="__codelineno-0-386" name="__codelineno-0-386"></a>    <span class="c1"># Use integrated gradients through the layer</span>
 </span><span id="__span-0-387"><a id="__codelineno-0-387" name="__codelineno-0-387"></a>    <span class="n">activation_grads</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-0-388"><a id="__codelineno-0-388" name="__codelineno-0-388"></a>
@@ -3058,7 +3058,7 @@ final prediction.</p>
 </span><span id="__span-0-428"><a id="__codelineno-0-428" name="__codelineno-0-428"></a>    <span class="n">checkpoint_before</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="__span-0-429"><a id="__codelineno-0-429" name="__codelineno-0-429"></a>    <span class="n">checkpoint_after</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="__span-0-430"><a id="__codelineno-0-430" name="__codelineno-0-430"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-</span><span id="__span-0-431"><a id="__codelineno-0-431" name="__codelineno-0-431"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Compare feature visualizations before and after a critical moment.</span>
+</span><span id="__span-0-431"><a id="__codelineno-0-431" name="__codelineno-0-431"></a><span class="w">    </span><span class="sd">"""Compare feature visualizations before and after a critical moment.</span>
 </span><span id="__span-0-432"><a id="__codelineno-0-432" name="__codelineno-0-432"></a>
 </span><span id="__span-0-433"><a id="__codelineno-0-433" name="__codelineno-0-433"></a><span class="sd">    Loads model weights from checkpoints and compares Grad-CAM visualizations.</span>
 </span><span id="__span-0-434"><a id="__codelineno-0-434" name="__codelineno-0-434"></a>
@@ -3071,25 +3071,25 @@ final prediction.</p>
 </span><span id="__span-0-441"><a id="__codelineno-0-441" name="__codelineno-0-441"></a>
 </span><span id="__span-0-442"><a id="__codelineno-0-442" name="__codelineno-0-442"></a><span class="sd">    Returns:</span>
 </span><span id="__span-0-443"><a id="__codelineno-0-443" name="__codelineno-0-443"></a><span class="sd">        Dictionary with CAMs before and after</span>
-</span><span id="__span-0-444"><a id="__codelineno-0-444" name="__codelineno-0-444"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-444"><a id="__codelineno-0-444" name="__codelineno-0-444"></a><span class="sd">    """</span>
 </span><span id="__span-0-445"><a id="__codelineno-0-445" name="__codelineno-0-445"></a>    <span class="c1"># Load before checkpoint</span>
-</span><span id="__span-0-446"><a id="__codelineno-0-446" name="__codelineno-0-446"></a>    <span class="n">state_before</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">checkpoint_before</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-</span><span id="__span-0-447"><a id="__codelineno-0-447" name="__codelineno-0-447"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">state_before</span><span class="p">[</span><span class="s2">&quot;model_state_dict&quot;</span><span class="p">])</span>
+</span><span id="__span-0-446"><a id="__codelineno-0-446" name="__codelineno-0-446"></a>    <span class="n">state_before</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">checkpoint_before</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s2">"cpu"</span><span class="p">)</span>
+</span><span id="__span-0-447"><a id="__codelineno-0-447" name="__codelineno-0-447"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">state_before</span><span class="p">[</span><span class="s2">"model_state_dict"</span><span class="p">])</span>
 </span><span id="__span-0-448"><a id="__codelineno-0-448" name="__codelineno-0-448"></a>    <span class="n">cam_before</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grad_cam</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">,</span> <span class="n">target_class</span><span class="p">,</span> <span class="n">target_layer</span><span class="p">)</span>
 </span><span id="__span-0-449"><a id="__codelineno-0-449" name="__codelineno-0-449"></a>
 </span><span id="__span-0-450"><a id="__codelineno-0-450" name="__codelineno-0-450"></a>    <span class="c1"># Load after checkpoint</span>
-</span><span id="__span-0-451"><a id="__codelineno-0-451" name="__codelineno-0-451"></a>    <span class="n">state_after</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">checkpoint_after</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-</span><span id="__span-0-452"><a id="__codelineno-0-452" name="__codelineno-0-452"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">state_after</span><span class="p">[</span><span class="s2">&quot;model_state_dict&quot;</span><span class="p">])</span>
+</span><span id="__span-0-451"><a id="__codelineno-0-451" name="__codelineno-0-451"></a>    <span class="n">state_after</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">checkpoint_after</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s2">"cpu"</span><span class="p">)</span>
+</span><span id="__span-0-452"><a id="__codelineno-0-452" name="__codelineno-0-452"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">state_after</span><span class="p">[</span><span class="s2">"model_state_dict"</span><span class="p">])</span>
 </span><span id="__span-0-453"><a id="__codelineno-0-453" name="__codelineno-0-453"></a>    <span class="n">cam_after</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grad_cam</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">,</span> <span class="n">target_class</span><span class="p">,</span> <span class="n">target_layer</span><span class="p">)</span>
 </span><span id="__span-0-454"><a id="__codelineno-0-454" name="__codelineno-0-454"></a>
 </span><span id="__span-0-455"><a id="__codelineno-0-455" name="__codelineno-0-455"></a>    <span class="c1"># Compute difference</span>
 </span><span id="__span-0-456"><a id="__codelineno-0-456" name="__codelineno-0-456"></a>    <span class="n">cam_diff</span> <span class="o">=</span> <span class="n">cam_after</span> <span class="o">-</span> <span class="n">cam_before</span>
 </span><span id="__span-0-457"><a id="__codelineno-0-457" name="__codelineno-0-457"></a>
 </span><span id="__span-0-458"><a id="__codelineno-0-458" name="__codelineno-0-458"></a>    <span class="k">return</span> <span class="p">{</span>
-</span><span id="__span-0-459"><a id="__codelineno-0-459" name="__codelineno-0-459"></a>        <span class="s2">&quot;cam_before&quot;</span><span class="p">:</span> <span class="n">cam_before</span><span class="p">,</span>
-</span><span id="__span-0-460"><a id="__codelineno-0-460" name="__codelineno-0-460"></a>        <span class="s2">&quot;cam_after&quot;</span><span class="p">:</span> <span class="n">cam_after</span><span class="p">,</span>
-</span><span id="__span-0-461"><a id="__codelineno-0-461" name="__codelineno-0-461"></a>        <span class="s2">&quot;cam_diff&quot;</span><span class="p">:</span> <span class="n">cam_diff</span><span class="p">,</span>
-</span><span id="__span-0-462"><a id="__codelineno-0-462" name="__codelineno-0-462"></a>        <span class="s2">&quot;mean_change&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cam_diff</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+</span><span id="__span-0-459"><a id="__codelineno-0-459" name="__codelineno-0-459"></a>        <span class="s2">"cam_before"</span><span class="p">:</span> <span class="n">cam_before</span><span class="p">,</span>
+</span><span id="__span-0-460"><a id="__codelineno-0-460" name="__codelineno-0-460"></a>        <span class="s2">"cam_after"</span><span class="p">:</span> <span class="n">cam_after</span><span class="p">,</span>
+</span><span id="__span-0-461"><a id="__codelineno-0-461" name="__codelineno-0-461"></a>        <span class="s2">"cam_diff"</span><span class="p">:</span> <span class="n">cam_diff</span><span class="p">,</span>
+</span><span id="__span-0-462"><a id="__codelineno-0-462" name="__codelineno-0-462"></a>        <span class="s2">"mean_change"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cam_diff</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
 </span><span id="__span-0-463"><a id="__codelineno-0-463" name="__codelineno-0-463"></a>    <span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -3199,7 +3199,7 @@ final prediction.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../javascripts/mathjax.js"></script>
       
