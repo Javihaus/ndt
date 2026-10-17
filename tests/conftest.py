@@ -1,8 +1,24 @@
 """Pytest fixtures for testing neural dimensionality tracker."""
 
+import random
+
+import matplotlib
+import numpy as np
 import pytest
 import torch
 import torch.nn as nn
+
+# Headless backend for every test module that plots.
+matplotlib.use("Agg")
+
+
+@pytest.fixture(autouse=True)
+def _seed_everything():
+    """Seed all RNGs so every test is deterministic."""
+    random.seed(0)
+    np.random.seed(0)
+    torch.manual_seed(0)
+    yield
 
 
 @pytest.fixture

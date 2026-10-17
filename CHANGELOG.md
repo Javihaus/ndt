@@ -5,6 +5,23 @@ All notable changes to the Neural Dimensionality Tracker will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased -- Tests
+
+### Added
+- Tests for every module: architectures, export (CSV, JSON, HDF5), analysis,
+  visualization, utils and hooks. Coverage goes from 49 % to 99 %.
+
+### Fixed
+- **scikit-learn** is now a declared dependency. `ndt.analysis` imports it, so
+  `import ndt.analysis` failed on a clean `pip install ndtracker`.
+
+### Known bugs (tests marked `xfail`, strict)
+- HDF5 export fails on tables with a text column (`export/hdf5.py`).
+- `JumpDetector` skips a clean step on a flat signal, because the look-back window
+  has zero spread (`core/jump_detector.py`).
+- With more than 20 layers, automatic layer selection thins unevenly instead of
+  keeping every other layer (`core/tracker.py`).
+
 ## Unreleased -- Supply chain
 
 ### Fixed

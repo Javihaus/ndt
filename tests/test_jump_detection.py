@@ -198,3 +198,51 @@ class TestJumpDetector:
         assert len(jumps) >= 1
         # But not too many false positives
         assert len(jumps) < 10
+
+
+class TestJumpDirection:
+    """Direction filtering on signals with real step changes."""
+
+    @staticmethod
+    def noisy_steps():
+        rng = np.random.default_rng(0)
+        levels = [10.0] * 30 + [20.0] * 30 + [5.0] * 30
+        return list(np.array(levels) + 0.05 * rng.standard_normal(len(levels)))
+
+    def test_invalid_min_samples(self):
+        with pytest.raises(ValueError, match="min_samples must be >= 1"):
+            JumpDetector(min_samples=0)
+
+    def test_up_and_down_jumps_are_separated(self):
+        detector = JumpDetector(window_size=10, z_threshold=3.0, min_samples=5)
+        values = self.noisy_steps()
+
+        up = detector.detect_jumps_with_direction(values, direction="up")
+        down = detector.detect_jumps_with_direction(values, direction="down")
+        all_jumps = detector.detect_jumps_with_direction(values, step_offset=100)
+
+        up_steps = {j.step for j in up}
+        down_steps = {j.step for j in down}
+        assert 30 in up_steps and 30 not in down_steps
+        assert 60 in down_steps and 60 not in up_steps
+        assert all(j.value_after > j.value_before for j in up)
+        assert all(j.value_after < j.value_before for j in down)
+        assert {130, 160} <= {j.step for j in all_jumps}
+
+        jump_30 = next(j for j in up if j.step == 30)
+        assert jump_30.value_before == pytest.approx(10.0, abs=0.3)
+        assert jump_30.value_after == pytest.approx(20.0, abs=0.3)
+
+    @pytest.mark.xfail(
+        strict=True,
+        reason=(
+            "src bug: jump_detector.py skips any step whose look-back window has zero "
+            "std, so a clean step change on a flat baseline is never reported at the "
+            "step itself; later 'jumps' have value_before == value_after"
+        ),
+    )
+    def test_clean_step_change_detected_at_step(self):
+        detector = JumpDetector(window_size=10, z_threshold=2.0, min_samples=5)
+        values = [10.0] * 20 + [20.0] * 20
+        up = detector.detect_jumps_with_direction(values, direction="up")
+        assert [j.step for j in up] == [20]

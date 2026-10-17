@@ -1,6 +1,10 @@
 """Tests for HighFrequencyTracker."""
 
+import logging
+
 import pytest
+import torch
+import torch.nn as nn
 
 from ndt.core.tracker import DimensionalityMetrics
 from ndt.core.tracker import HighFrequencyTracker
@@ -212,4 +216,132 @@ class TestJumpDetectionIntegration:
         with pytest.raises(ValueError, match="Jump detection is disabled"):
             tracker.detect_jumps()
 
+        tracker.close()
+
+
+class TestTrackerEdgeCases:
+    """Validation, auto-detection and activation-shape handling."""
+
+    def test_rejects_non_module(self):
+        with pytest.raises(ValueError, match="must be a torch.nn.Module"):
+            HighFrequencyTracker("not a model")
+
+    def test_no_trackable_layers(self):
+        with pytest.raises(ValueError, match="No layers to track"):
+            HighFrequencyTracker(nn.Sequential(nn.LayerNorm(4)))
+
+    def test_auto_detect_includes_linear_and_conv(self, simple_cnn):
+        tracker = HighFrequencyTracker(simple_cnn)
+        assert tracker.layer_names == ["Conv2d_0", "Conv2d_1", "Linear_2"]
+        tracker.close()
+
+    def test_auto_detect_subsamples_more_than_20_layers(self):
+        model = nn.Sequential(*[nn.Linear(3, 3) for _ in range(21)])
+        tracker = HighFrequencyTracker(model)
+        expected = [model[i] for i in range(0, 21, 2)]
+        assert list(tracker.activation_capture._layer_names) == expected
+        assert len(tracker.layer_names) == 11
+        tracker.close()
+
+    @pytest.mark.xfail(
+        strict=True,
+        reason=(
+            "src bug: tracker.py _auto_detect_layers halves the list inside the loop, "
+            "so with 30 layers it keeps 20 (early layers thinned, late layers all kept) "
+            "instead of every other layer"
+        ),
+    )
+    def test_auto_detect_samples_evenly_for_30_layers(self):
+        model = nn.Sequential(*[nn.Linear(3, 3) for _ in range(30)])
+        tracker = HighFrequencyTracker(model)
+        try:
+            assert len(tracker.layer_names) == 15
+        finally:
+            tracker.close()
+
+    def test_log_without_forward_warns_and_records_nothing(self, small_mlp, caplog):
+        tracker = HighFrequencyTracker(small_mlp, layers=[small_mlp[0]], layer_names=["fc"])
+        with caplog.at_level(logging.WARNING, logger="ndt.core.tracker"):
+            tracker.log(step=3, loss=1.0)
+        assert "No activation captured for layer fc at step 3" in caplog.text
+        assert tracker.metrics_history["fc"] == []
+        assert tracker.get_results("fc").empty
+        tracker.close()
+
+    def test_metric_errors_are_logged_not_raised(self, small_mlp, caplog):
+        tracker = HighFrequencyTracker(small_mlp, layers=[small_mlp[0]], layer_names=["fc"])
+        x = torch.randn(8, 10)
+        x[0, 0] = float("nan")
+        small_mlp(x)
+        with caplog.at_level(logging.ERROR, logger="ndt.core.tracker"):
+            tracker.log(step=0, loss=1.0)
+        assert "Error computing metrics for fc at step 0" in caplog.text
+        assert tracker.metrics_history["fc"] == []
+        # Activations are still cleared for the next step.
+        assert tracker.activation_capture.activations == {}
+        tracker.close()
+
+    def test_three_dimensional_activations(self):
+        lin = nn.Linear(6, 4)
+        tracker = HighFrequencyTracker(lin, layers=[lin], layer_names=["proj"])
+        lin(torch.randn(2, 5, 6))  # (batch, seq, hidden)
+        tracker.log(step=0, loss=0.5, grad_norm=0.1)
+        df = tracker.get_results("proj")
+        assert len(df) == 1
+        # Flattened to (batch * seq, hidden) = (10, 4): rank is at most 4.
+        assert 1.0 <= df["stable_rank"].iloc[0] <= 4.0
+        assert df["grad_norm"].iloc[0] == pytest.approx(0.1)
+        tracker.close()
+
+    @pytest.mark.parametrize(
+        "shape,expected",
+        [
+            ((3, 7), (3, 7)),
+            ((2, 3, 4), (6, 4)),
+            ((2, 3, 4, 5), (2, 60)),
+            ((2, 1, 2, 2, 2), (2, 8)),
+        ],
+    )
+    def test_prepare_activation_matrix(self, small_mlp, shape, expected):
+        tracker = HighFrequencyTracker(small_mlp, layers=[small_mlp[0]])
+        act = torch.arange(float(torch.Size(shape).numel())).view(shape)
+        matrix = tracker._prepare_activation_matrix(act)
+        assert tuple(matrix.shape) == expected
+        torch.testing.assert_close(matrix.flatten(), act.flatten())
+        tracker.close()
+
+    def test_detect_jumps_invalid_metric(self, small_mlp):
+        tracker = HighFrequencyTracker(small_mlp, layers=[small_mlp[0]])
+        with pytest.raises(ValueError, match="metric must be one of"):
+            tracker.detect_jumps(metric="loss")
+        tracker.close()
+
+    def test_detect_jumps_unknown_layer_is_skipped(self, small_mlp):
+        tracker = HighFrequencyTracker(small_mlp, layers=[small_mlp[0]])
+        assert tracker.detect_jumps(layer_name="nonexistent") == {}
+        tracker.close()
+
+    def test_detect_jumps_finds_rank_collapse(self):
+        lin = nn.Linear(6, 6, bias=False)
+        with torch.no_grad():
+            lin.weight.copy_(torch.eye(6))
+        tracker = HighFrequencyTracker(
+            lin, layers=[lin], layer_names=["id"], jump_window_size=10, jump_z_threshold=3.0
+        )
+        gen = torch.Generator().manual_seed(0)
+        for step in range(40):
+            if step < 30:
+                x = torch.randn(32, 6, generator=gen)
+            else:
+                # Rank-1 inputs: stable rank collapses to 1.
+                x = torch.randn(32, 1, generator=gen) @ torch.ones(1, 6)
+            lin(x)
+            tracker.log(step=step, loss=1.0)
+
+        jumps = tracker.detect_jumps(layer_name="id", metric="stable_rank")["id"]
+        assert 30 in [j.step for j in jumps]
+        first = next(j for j in jumps if j.step == 30)
+        assert first.value_after == pytest.approx(1.0, abs=1e-3)
+        assert first.value_before > 1.5
+        assert first.metric_name == "id_stable_rank"
         tracker.close()
