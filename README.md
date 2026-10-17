@@ -1,21 +1,21 @@
 <div align="center">
 
-<img src="docs/assets/ndt-logo.svg" alt="ndt" width="140">
+<img src="https://raw.githubusercontent.com/Javihaus/ndt/main/docs/assets/ndt-logo.svg" alt="ndt" width="140">
 
 # Neural Dimensionality Tracker - *ndt*
 
 ## Is my model's representation healthy as it trains, or is it collapsing?
 
-<img src="docs/assets/ndt-overview.png" alt="Two real training runs. Both losses go down, but ndt shows run A using about 13 dimensions with 96% accuracy while run B stays collapsed at 1 to 3 dimensions with 77% accuracy. ndt also tests a jump detector on known data: it finds a planted jump but also fires on pure noise, so the verdict is NOT VALID." width="100%">
+<img src="https://raw.githubusercontent.com/Javihaus/ndt/main/docs/assets/ndt-overview.png" alt="Two real training runs. Both losses go down, but ndt shows run A using about 13 dimensions with 96% accuracy while run B stays collapsed at 1 to 3 dimensions with 77% accuracy. ndt also tests a jump detector on known data: it finds a planted jump but also fires on pure noise, so the verdict is NOT VALID." width="100%">
 
 [![Python](https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12-469BA7?style=flat-square)](https://github.com/Javihaus/ndt)
 [![Docs](https://img.shields.io/badge/docs-javihaus.github.io%2Fndt-005765?style=flat-square)](https://javihaus.github.io/ndt)
 [![PyPI](https://img.shields.io/pypi/v/ndtracker?style=flat-square&color=005765&label=pypi)](https://pypi.org/project/ndtracker/)
 [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/Javihaus/ndt?style=flat-square&label=OpenSSF%20Scorecard)](https://scorecard.dev/viewer/?uri=github.com/Javihaus/ndt)
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-012731.svg?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-012731.svg?style=flat-square)](https://github.com/Javihaus/ndt/blob/main/LICENSE)
 
-[Documentation](https://javihaus.github.io/ndt) · [Tutorials](#tutorials) · [The finding](#the-finding) · [Examples](examples/) · [Contributing](CONTRIBUTING.md)
+[Documentation](https://javihaus.github.io/ndt) · [Tutorials](#tutorials) · [The finding](#the-finding) · [Examples](https://github.com/Javihaus/ndt/tree/main/examples) · [Contributing](https://github.com/Javihaus/ndt/blob/main/CONTRIBUTING.md)
 
 </div>
 
@@ -199,11 +199,11 @@ Full method and results are in the companion paper, *Phase Transitions or Contin
 
 ## Examples
 
-Complete, runnable scripts live in [examples/](examples/):
+Complete, runnable scripts live in [examples/](https://github.com/Javihaus/ndt/tree/main/examples):
 
-- [`01_quickstart_mnist.py`](examples/01_quickstart_mnist.py): basic MLP on MNIST
-- [`02_cnn_cifar10.py`](examples/02_cnn_cifar10.py): CNN on CIFAR-10
-- [`03_reproduce_tds_experiment.py`](examples/03_reproduce_tds_experiment.py): reproduces the 8000-step, 784-256-128-10 MNIST experiment from the Towards Data Science article, measurements every 5 steps
+- [`01_quickstart_mnist.py`](https://github.com/Javihaus/ndt/blob/main/examples/01_quickstart_mnist.py): basic MLP on MNIST
+- [`02_cnn_cifar10.py`](https://github.com/Javihaus/ndt/blob/main/examples/02_cnn_cifar10.py): CNN on CIFAR-10
+- [`03_reproduce_tds_experiment.py`](https://github.com/Javihaus/ndt/blob/main/examples/03_reproduce_tds_experiment.py): reproduces the 8000-step, 784-256-128-10 MNIST experiment from the Towards Data Science article, measurements every 5 steps
 
 ## Citation
 
@@ -220,7 +220,7 @@ Complete, runnable scripts live in [examples/](examples/):
 
 ## Contributing
 
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, the ruff-based lint and format checks, and the test layout. The validity tests run on pure NumPy and need no GPU.
+Contributions are welcome. See [CONTRIBUTING.md](https://github.com/Javihaus/ndt/blob/main/CONTRIBUTING.md) for setup, the ruff-based lint and format checks, and the test layout. The validity tests run on pure NumPy and need no GPU.
 
 ## About
 
@@ -228,4 +228,4 @@ Built by [Javier Marín](https://jmarin.info). ndt is part of a body of work on 
 
 ## License
 
-Apache 2.0. See [LICENSE](LICENSE).
+Apache 2.0. See [LICENSE](https://github.com/Javihaus/ndt/blob/main/LICENSE).

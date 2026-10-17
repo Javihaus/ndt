@@ -5,56 +5,10 @@ All notable changes to the Neural Dimensionality Tracker will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased -- Tests
+## [2.0.0] - 2026-10-17
 
-### Added
-- Tests for every module: architectures, export (CSV, JSON, HDF5), analysis,
-  visualization, utils and hooks. Coverage goes from 49 % to 99 %.
-
-### Fixed
-- **scikit-learn** is now a declared dependency. `ndt.analysis` imports it, so
-  `import ndt.analysis` failed on a clean `pip install ndtracker`.
-
-### Known bugs (tests marked `xfail`, strict)
-- HDF5 export fails on tables with a text column (`export/hdf5.py`).
-- `JumpDetector` skips a clean step on a flat signal, because the look-back window
-  has zero spread (`core/jump_detector.py`).
-- With more than 20 layers, automatic layer selection thins unevenly instead of
-  keeping every other layer (`core/tracker.py`).
-
-## Unreleased -- Supply chain
-
-### Fixed
-- **Scorecard workflow** failed on every run: `ossf/scorecard-action` v2.4.0 pulls
-  its image from `gcr.io`, which now refuses the request. Moved to v2.4.4.
-- **Empty matrices** (a zero dimension) crashed every estimator with `IndexError`;
-  they now raise `ValueError` like the other invalid inputs. Found while writing the
-  fuzz harness.
-
-### Changed
-- **Minimum versions with no known vulnerabilities**: `torch>=2.13.0` (23 advisories
-  below it) and, in `requirements.txt`, `scikit-learn>=1.5.0`.
-- **CI installs pinned by hash**: tests, docs, fuzzing and the build install from
-  `.github/requirements/*.txt` with `--require-hashes`, and the package itself with
-  `--no-deps`. Dependabot keeps those files current.
-- **Releases**: a tag `v*` builds the package, publishes it with
-  `pypa/gh-action-pypi-publish`, and creates the GitHub release with every file
-  signed by sigstore (`.sig` + `.pem`). The `release: published` trigger is gone, so a
-  release is no longer published twice.
-
-### Added
-- **Fuzzing**: `fuzz/fuzz_estimators.py` (Atheris) feeds arbitrary matrices to the
-  five estimators; CI runs it for two minutes on pull requests that touch
-  `src/ndt/core` and weekly.
-
-## 2.0.0 -- The validity harness
-
-### Changed
-- **Toolchain unified to `ruff`** (formatting, linting and import sorting), replacing
-  black + isort + flake8, and pinned to a single version. This ends the format-drift
-  that came from three unpinned formatters on an EOL Python. CI runs `ruff check` and
-  `ruff format --check`. Applied `raise ... from e` in the SVD error paths and cleaned
-  unused loop variables surfaced by the linter.
+The validity harness, a test suite that covers the whole package, and a
+hardened supply chain. First release since 1.0.2.
 
 ### Added
 - **`ndt.validity`**: a validity harness for transition detectors. Run any
@@ -65,6 +19,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   grokking run) plug into the same `Fixture` interface. New public API:
   `validate_detector`, `jump_detector_as_callable`, `ValidityReport`,
   `standard_battery`.
+- **Tests for every module**: architectures, export (CSV, JSON, HDF5), analysis,
+  visualization, utils and hooks. Coverage goes from 49 % to 99 %.
+- **Fuzzing**: `fuzz/fuzz_estimators.py` (Atheris) feeds arbitrary matrices to the
+  five estimators; CI runs it for two minutes on pull requests that touch
+  `src/ndt/core` and weekly.
+- **Overview figure** under the README title: what ndt shows on two real runs, and
+  the validity check on a jump detector.
 
 ### Changed
 - **Positioning corrected.** The README no longer claims ndt reliably "detects
@@ -73,10 +34,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   and none is consistent across metrics. The included `JumpDetector` is now
   documented as one detector to be validated, not a truth oracle. ndt's
   distinctive value is the check, not the claim.
+- **Minimum versions with no known vulnerabilities**: `torch>=2.13.0` (23 advisories
+  below it) and `scikit-learn>=1.5.0`.
+- **Toolchain unified to `ruff`** (formatting, linting and import sorting), replacing
+  black + isort + flake8, pinned to a single version. CI runs `ruff check` and
+  `ruff format --check`.
+- **CI installs pinned by hash**: tests, docs, fuzzing and the build install from
+  `.github/requirements/*.txt` with `--require-hashes`, and the package itself with
+  `--no-deps`. Dependabot keeps those files current.
+- **Releases**: a tag `v*` builds the package, publishes it with
+  `pypa/gh-action-pypi-publish`, and creates the GitHub release with every file
+  signed by sigstore (`.sig` + `.pem`).
 - License field in `pyproject.toml` set to Apache-2.0 to match the LICENSE file
-  and the badge (was MIT).
+  (was MIT).
 - Repository moved from the groundlens-dev organization to the author's account
-  (`Javihaus/ndt`); all URLs updated.
+  (`Javihaus/ndt`); all URLs updated. README links are absolute so they also work
+  on PyPI.
+
+### Fixed
+- **scikit-learn** is now a declared dependency. `ndt.analysis` imports it, so
+  `import ndt.analysis` failed on a clean `pip install ndtracker`.
+- **Empty matrices** (a zero dimension) crashed every estimator with `IndexError`;
+  they now raise `ValueError` like the other invalid inputs.
+- **Scorecard workflow** failed on every run (`gcr.io` refused the image of
+  `ossf/scorecard-action` v2.4.0). Moved to v2.4.4.
+- `raise ... from e` in the SVD error paths.
+
+### Known issues (tests marked `xfail`, strict)
+- HDF5 export fails on tables with a text column (`export/hdf5.py`).
+- `JumpDetector` skips a clean step on a flat signal, because the look-back window
+  has zero spread (`core/jump_detector.py`).
+- With more than 20 layers, automatic layer selection thins unevenly instead of
+  keeping every other layer (`core/tracker.py`).
 
 ## [1.0.2] - 2025-11-13
 

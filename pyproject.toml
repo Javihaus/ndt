@@ -8,7 +8,8 @@ version = "2.0.0"
 description = "High-frequency monitoring of neural network representational dimensionality"
 readme = "README.md"
 authors = [{name = "Javier Marín", email = "javier@jmarin.info"}]
-license = {text = "Apache-2.0"}
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 4 - Beta",
